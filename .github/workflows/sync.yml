@@ -54,7 +54,7 @@ jobs:
       # Health history is the memory that makes scores meaningful, so it is
       # restored from the cache and from the state branch.
       - name: Restore state
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .data
           key: nexus-state-${{ github.run_id }}
