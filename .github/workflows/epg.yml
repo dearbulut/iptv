@@ -37,7 +37,7 @@ jobs:
     outputs:
       matrix: ${{ steps.sites.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - id: sites
         run: |
@@ -70,7 +70,7 @@ jobs:
       - name: Clone the iptv-org grabber
         run: git clone --depth 1 -b master https://github.com/iptv-org/epg.git epg
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
@@ -118,7 +118,7 @@ jobs:
             cp guide.xml.gz "out/${{ matrix.slug }}.xml.gz" 2>/dev/null || gzip -9 -c guide.xml > "out/${{ matrix.slug }}.xml.gz"
           fi
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: steps.verify.outputs.ok == '1'
         with:
           name: epg-${{ matrix.slug }}
@@ -131,9 +131,9 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: downloaded
           pattern: epg-*
