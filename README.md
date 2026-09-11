@@ -1,5 +1,9 @@
 # IPTV Nexus
 
+I've spent the last 7 years building IPTV systems end to end — multi-platform player apps (iOS, Android TV, Tizen, webOS), streaming backends, and reseller/admin panels. 
+If you need a custom build or want to take an existing setup further, let's talk. 
+Telegram: t.me/bulutworksdev
+
 A self-updating index of free-to-air IPTV channels, with **live stream health
 scoring**, **merged EPG data**, a **free static JSON API** and a **web player** —
 all running on GitHub Actions and GitHub Pages at zero cost.
