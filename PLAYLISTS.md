@@ -1,9 +1,9 @@
 # Playlists
 
 > Generated automatically — do not edit by hand.
-> Last updated **2026-09-13 04:52 UTC**.
+> Last updated **2026-09-13 11:57 UTC**.
 
-9,912 channels with a working stream, out of 29,931 indexed. 12,220 streams responded on the last scan.
+9,912 channels with a working stream, out of 30,011 indexed. 12,242 streams responded on the last scan.
 
 ## Main playlists
 
@@ -228,17 +228,17 @@ One playlist per category — news, sports, movies, music and so on.
 | Category | Channels | Streams | URL |
 | --- | ---: | ---: | --- |
 | General | 2,465 | 2,465 | `https://dearbulut.github.io/iptv/playlists/category/general.m3u` |
-| News | 937 | 937 | `https://dearbulut.github.io/iptv/playlists/category/news.m3u` |
-| Entertainment | 770 | 770 | `https://dearbulut.github.io/iptv/playlists/category/entertainment.m3u` |
+| News | 936 | 936 | `https://dearbulut.github.io/iptv/playlists/category/news.m3u` |
+| Entertainment | 771 | 771 | `https://dearbulut.github.io/iptv/playlists/category/entertainment.m3u` |
 | Religious | 731 | 731 | `https://dearbulut.github.io/iptv/playlists/category/religious.m3u` |
 | Music | 711 | 711 | `https://dearbulut.github.io/iptv/playlists/category/music.m3u` |
 | Movies | 589 | 589 | `https://dearbulut.github.io/iptv/playlists/category/movies.m3u` |
 | Series | 408 | 408 | `https://dearbulut.github.io/iptv/playlists/category/series.m3u` |
-| Sports | 384 | 384 | `https://dearbulut.github.io/iptv/playlists/category/sports.m3u` |
+| Sports | 385 | 385 | `https://dearbulut.github.io/iptv/playlists/category/sports.m3u` |
 | Kids | 344 | 344 | `https://dearbulut.github.io/iptv/playlists/category/kids.m3u` |
 | Education | 234 | 234 | `https://dearbulut.github.io/iptv/playlists/category/education.m3u` |
 | Documentary | 210 | 210 | `https://dearbulut.github.io/iptv/playlists/category/documentary.m3u` |
-| Culture | 184 | 184 | `https://dearbulut.github.io/iptv/playlists/category/culture.m3u` |
+| Culture | 185 | 185 | `https://dearbulut.github.io/iptv/playlists/category/culture.m3u` |
 | Legislative | 179 | 179 | `https://dearbulut.github.io/iptv/playlists/category/legislative.m3u` |
 | Comedy | 160 | 160 | `https://dearbulut.github.io/iptv/playlists/category/comedy.m3u` |
 | Lifestyle | 122 | 122 | `https://dearbulut.github.io/iptv/playlists/category/lifestyle.m3u` |
@@ -264,11 +264,11 @@ One playlist per category — news, sports, movies, music and so on.
 One playlist per broadcast language.
 
 <details>
-<summary><b>212 playlists</b> — click to expand</summary>
+<summary><b>214 playlists</b> — click to expand</summary>
 
 | Language | Channels | Streams | URL |
 | --- | ---: | ---: | --- |
-| English | 2,498 | 2,498 | `https://dearbulut.github.io/iptv/playlists/language/eng.m3u` |
+| English | 2,500 | 2,500 | `https://dearbulut.github.io/iptv/playlists/language/eng.m3u` |
 | Spanish | 2,286 | 2,286 | `https://dearbulut.github.io/iptv/playlists/language/spa.m3u` |
 | Russian | 571 | 571 | `https://dearbulut.github.io/iptv/playlists/language/rus.m3u` |
 | Portuguese | 473 | 473 | `https://dearbulut.github.io/iptv/playlists/language/por.m3u` |
@@ -409,6 +409,8 @@ One playlist per broadcast language.
 | Sindhi | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/snd.m3u` |
 | Santali | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/sat.m3u` |
 | Isekiri | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/its.m3u` |
+| Tok Pisin | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/tpi.m3u` |
+| Hiri Motu | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/hmo.m3u` |
 | Yakut | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/sah.m3u` |
 | Western Frisian | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/fry.m3u` |
 | Gen | 1 | 1 | `https://dearbulut.github.io/iptv/playlists/language/gej.m3u` |
