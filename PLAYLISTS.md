@@ -1,9 +1,9 @@
 # Playlists
 
 > Generated automatically — do not edit by hand.
-> Last updated **2026-09-25 17:15 UTC**.
+> Last updated **2026-09-25 21:37 UTC**.
 
-9,920 channels with a working stream, out of 30,083 indexed. 12,410 streams responded on the last scan.
+9,920 channels with a working stream, out of 30,107 indexed. 12,364 streams responded on the last scan.
 
 ## Main playlists
 
@@ -281,7 +281,7 @@ One playlist per broadcast language.
 | Persian | 206 | 206 | `https://dearbulut.github.io/iptv/playlists/language/fas.m3u` |
 | Dutch | 192 | 192 | `https://dearbulut.github.io/iptv/playlists/language/nld.m3u` |
 | Ukrainian | 178 | 178 | `https://dearbulut.github.io/iptv/playlists/language/ukr.m3u` |
-| Turkish | 177 | 177 | `https://dearbulut.github.io/iptv/playlists/language/tur.m3u` |
+| Turkish | 178 | 178 | `https://dearbulut.github.io/iptv/playlists/language/tur.m3u` |
 | Danish | 156 | 156 | `https://dearbulut.github.io/iptv/playlists/language/dan.m3u` |
 | Romanian | 151 | 151 | `https://dearbulut.github.io/iptv/playlists/language/ron.m3u` |
 | Hungarian | 147 | 147 | `https://dearbulut.github.io/iptv/playlists/language/hun.m3u` |
