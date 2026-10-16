@@ -35,7 +35,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
   },
   "dependencies": {
-    "commander": "^12.1.0",
+    "commander": "^15.0.0",
     "fast-xml-parser": "^4.5.0",
     "yaml": "^2.6.0"
   },
