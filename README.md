@@ -4,6 +4,42 @@ I've spent the last 7 years building IPTV systems end to end — multi-platform 
 If you need a custom build or want to take an existing setup further, let's talk. 
 Telegram: t.me/bulutworksdev
 
+Here are just a few examples of projects I have worked on previously;
+
+
+We build powerful, scalable, and modern software for IPTV providers and businesses worldwide.
+
+📺 Our flagship app, Point TV, is now live on 4 platforms:
+
+🟢 Android & Android TV — Google Play
+https://play.google.com/store/apps/details?id=com.pointtv.app
+
+iOS (iPhone & iPad) — App Store
+https://apps.apple.com/app/id6778933243
+
+📺 LG Smart TV (webOS) — LG Content Store
+https://tr.lgappstv.com/main/tvapp/detail?appId=1307447&catCode1=&moreYn=N&cateYn=N&orderType=0&headerName=&appRankCode=&sellrUsrNo=
+
+🪟 Windows — Microsoft Store
+https://apps.microsoft.com/detail/9nsxfq0w6n2s
+
+What we do:
+💻 Custom Software Development
+📺 IPTV Apps — LG webOS, Samsung Tizen, Android, Android TV, iOS, Apple TV, Windows & macOS
+🔗 Xtream API & M3U Integration
+⚙️ IPTV Middleware & Management Panels
+🌐 Web & Mobile Applications
+☁️ Cloud Infrastructure & API Integrations
+
+Whether you're launching a new IPTæV platform or scaling an existing one, BulutWorks delivers reliable, high-performance solutions tailored to your needs.
+
+🌐 Website: https://bulutworks.com
+
+https://bonu.tv
+
+https://pointtv.tv
+
+
 A self-updating index of free-to-air IPTV channels, with **live stream health
 scoring**, **merged EPG data**, a **free static JSON API** and a **web player** —
 all running on GitHub Actions and GitHub Pages at zero cost.
