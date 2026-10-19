@@ -2,7 +2,7 @@
 
 I've spent the last 7 years building IPTV systems end to end — multi-platform player apps (iOS, Android TV, Tizen, webOS), streaming backends, and reseller/admin panels. 
 If you need a custom build or want to take an existing setup further, let's talk. 
-Telegram: t.me/bulutworksdev
+Telegram: https://t.me/bulutworksdev
 
 Here are just a few examples of projects I have worked on previously;
 
