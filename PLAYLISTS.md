@@ -1,9 +1,9 @@
 # Playlists
 
 > Generated automatically — do not edit by hand.
-> Last updated **2026-11-03 01:01 UTC**.
+> Last updated **2026-11-03 14:21 UTC**.
 
-10,336 channels with a working stream, out of 30,914 indexed. 12,948 streams responded on the last scan.
+10,335 channels with a working stream, out of 30,916 indexed. 12,965 streams responded on the last scan.
 
 ## Main playlists
 
@@ -46,7 +46,7 @@ One playlist per country, best stream per channel.
 | 🇮🇹 Italy | 273 | 273 | `https://dearbulut.github.io/iptv/playlists/country/it.m3u` |
 | 🇪🇸 Spain | 250 | 250 | `https://dearbulut.github.io/iptv/playlists/country/es.m3u` |
 | 🇩🇴 Dominican Republic | 248 | 248 | `https://dearbulut.github.io/iptv/playlists/country/do.m3u` |
-| 🇬🇧 United Kingdom | 214 | 214 | `https://dearbulut.github.io/iptv/playlists/country/uk.m3u` |
+| 🇬🇧 United Kingdom | 213 | 213 | `https://dearbulut.github.io/iptv/playlists/country/uk.m3u` |
 | 🇨🇱 Chile | 197 | 197 | `https://dearbulut.github.io/iptv/playlists/country/cl.m3u` |
 | 🇸🇪 Sweden | 197 | 197 | `https://dearbulut.github.io/iptv/playlists/country/se.m3u` |
 | 🇹🇷 Turkiye | 194 | 194 | `https://dearbulut.github.io/iptv/playlists/country/tr.m3u` |
@@ -234,7 +234,7 @@ One playlist per category — news, sports, movies, music and so on.
 | News | 1,004 | 1,004 | `https://dearbulut.github.io/iptv/playlists/category/news.m3u` |
 | Entertainment | 801 | 801 | `https://dearbulut.github.io/iptv/playlists/category/entertainment.m3u` |
 | Religious | 773 | 773 | `https://dearbulut.github.io/iptv/playlists/category/religious.m3u` |
-| Music | 755 | 755 | `https://dearbulut.github.io/iptv/playlists/category/music.m3u` |
+| Music | 754 | 754 | `https://dearbulut.github.io/iptv/playlists/category/music.m3u` |
 | Movies | 623 | 623 | `https://dearbulut.github.io/iptv/playlists/category/movies.m3u` |
 | Sports | 427 | 427 | `https://dearbulut.github.io/iptv/playlists/category/sports.m3u` |
 | Series | 404 | 404 | `https://dearbulut.github.io/iptv/playlists/category/series.m3u` |
@@ -271,7 +271,7 @@ One playlist per broadcast language.
 
 | Language | Channels | Streams | URL |
 | --- | ---: | ---: | --- |
-| English | 2,579 | 2,579 | `https://dearbulut.github.io/iptv/playlists/language/eng.m3u` |
+| English | 2,578 | 2,578 | `https://dearbulut.github.io/iptv/playlists/language/eng.m3u` |
 | Spanish | 2,354 | 2,354 | `https://dearbulut.github.io/iptv/playlists/language/spa.m3u` |
 | Russian | 594 | 594 | `https://dearbulut.github.io/iptv/playlists/language/rus.m3u` |
 | Portuguese | 503 | 503 | `https://dearbulut.github.io/iptv/playlists/language/por.m3u` |
