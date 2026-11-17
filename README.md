@@ -73,7 +73,12 @@ Upstream + your sources  →  merge & dedupe  →  probe & score  →  static AP
 | **Permanent channel numbers** (`tvg-chno`) | — | ✅ never change, never reused |
 | **Geo-blocked streams shown as "Regional"** | — | ✅ instead of "offline" |
 | **Stremio addon** | — | ✅ static, no server |
-| **Xtream Codes login** (TiviMate, Smarters…) | — | ✅ via a free Cloudflare Worker |
+| **Xtream Codes login** (TiviMate, Smarters…) | — | ✅ via a free Cloudflare Worker, with now/next guide |
+| **Custom playlists** (country + category + language) | one dimension per file | ✅ any combination, one URL |
+| **Automatic failover** to a working stream | — | ✅ smart links, checked near the viewer |
+| **Fix any playlist's EPG ids** (for providers and panels) | — | ✅ in the browser, nothing uploaded |
+| **AI assistants** (MCP) | — | ✅ search channels, read the guide |
+| **Change feed** (new / lost channels) | — | ✅ JSON and Atom |
 | **Automatic source discovery** | manual PRs | ✅ scan → validate → PR |
 
 ### Stream health scoring
@@ -145,8 +150,16 @@ version:
 | Player | Add |
 | --- | --- |
 | Any M3U player | `https://dearbulut.github.io/iptv/playlists/country/tr.m3u` (or `best.m3u`) — the guide is picked up from the playlist |
+| Your own mix | `https://iptv-nexus-xtream.bulutworks.workers.dev/m3u?country=tr,de&category=news&online=1` — or build it on the [Tools page](https://dearbulut.github.io/iptv/tools.html) |
 | Stremio | `https://dearbulut.github.io/iptv/stremio/manifest.json` |
-| Xtream-only apps | deploy [`workers/xtream`](workers/xtream/README.md) (free) and log in with its URL |
+| Xtream-only apps | server `https://iptv-nexus-xtream.bulutworks.workers.dev`, any username and password |
+| AI assistants (MCP) | `https://iptv-nexus-xtream.bulutworks.workers.dev/mcp` |
+| Follow changes | `https://dearbulut.github.io/iptv/api/v1/changes.xml` (Atom) |
+
+**Run a panel or have a provider playlist with a broken guide?** Open
+[Tools → Fix my playlist](https://dearbulut.github.io/iptv/tools.html#fix), load
+the M3U, and download it back with `tvg-id`, logos and channel numbers filled
+in. Matching runs in your browser; the playlist is never uploaded.
 
 ### Use the API (nothing to install)
 
@@ -301,7 +314,11 @@ Full machine-readable schema: **`/api/v1/openapi.json`**. Human summary:
 | `/epg/{country}.xml[.gz]` | Per-country guide |
 | `/api/v1/epg-unmatched.json` | Guide channels not yet matched — fix in `config/epg-overrides.yml` |
 | `/stremio/manifest.json` | Stremio addon |
-| `/xtream/index.json` | Data for the Xtream Codes Worker |
+| `/xtream/index.json` | Data for the Worker |
+| `/api/v1/match.json` | Index for matching any playlist to Nexus ids |
+| `/api/v1/changes.json`, `/api/v1/changes.xml` | Channels that became or stopped being watchable (JSON, Atom) |
+| `/epg/channels/{id}.json` | One channel's guide, next 48 hours |
+| Worker `/m3u`, `/play/{number}`, `/mcp`, `player_api.php` | Playlist builder, smart links, MCP, Xtream — see [`workers/xtream`](workers/xtream/README.md) |
 
 ---
 

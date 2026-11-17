@@ -273,10 +273,40 @@ Guide channels that no rule could link to a Nexus channel, grouped by guide:
 A fix is one entry in `config/epg-overrides.yml` — `{ site, site_id, channel }`
 to link it, or `{ site, site_id, skip: true }` for a channel we do not carry.
 
+## Changes
+
+### `GET /api/v1/changes.json` · `GET /api/v1/changes.xml`
+
+Channels that became watchable (gained their first stream) or stopped being
+watchable, one entry per build that changed something, newest first, up to
+120 entries. `changes.xml` is the same as an Atom feed. Online/offline
+flapping of individual streams is not included; see `health.json`.
+
+```json
+{
+  "version": 1,
+  "entries": [
+    {
+      "at": "2026-11-17T12:23:44.401Z",
+      "added": [{ "id": "TRT1.tr", "name": "TRT 1", "country": "TR" }],
+      "removed": [],
+      "playable": 10469
+    }
+  ]
+}
+```
+
+### `GET /epg/channels/{id}.json`
+
+One channel's guide from three hours ago to 48 hours ahead — enough for
+"now / next" without downloading the merged guide. 404 when the guide has no
+programmes for the channel.
+
 ## Clients
 
 | Path | Contents |
 | --- | --- |
+| `/api/v1/match.json` | Every channel's id, name, aliases, country, logo, number, state and guide flag as positional rows; what the browser playlist fixer uses |
 | `/stremio/manifest.json` | Static Stremio addon — install this URL in Stremio |
 | `/xtream/index.json` | Data behind the Xtream Codes Worker ([`workers/xtream`](../workers/xtream/README.md)) |
 
