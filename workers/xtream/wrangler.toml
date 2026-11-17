@@ -9,3 +9,16 @@ compatibility_date = "2026-01-01"
 NEXUS_ORIGIN = "https://dearbulut.github.io/iptv"
 # Optional: require this password. Prefer a secret over a plain var:
 #   npx wrangler secret put XTREAM_PASSWORD
+
+# Regional availability ("where does this channel work?") needs a D1 database.
+# Free plan is plenty. Create it once, then uncomment the block below with the
+# database_id that the first command prints:
+#
+#   npx wrangler d1 create iptv-nexus
+#
+# The table is created automatically on first use.
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "iptv-nexus"
+# database_id = "paste-the-id-here"

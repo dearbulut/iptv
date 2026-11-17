@@ -45,6 +45,7 @@ import { assignChannelNumbers, normaliseRegistry } from './channel-numbers.js';
 import { buildStremioAddon } from './stremio.js';
 import { buildXtreamIndex } from './xtream.js';
 import { changesAtom, computeChanges, normaliseHistory, normaliseSnapshot } from './changes.js';
+import { fetchRegional, regionalByChannel, type Regional } from './regional.js';
 import type { EpgLink } from '../epg/index.js';
 
 const log = new Logger('api');
@@ -104,6 +105,8 @@ interface PublicChannel {
   stream_count: number;
   /** At least one stream plays in a browser. */
   browser_playable: boolean;
+  /** Where it works, by viewer country, from the Worker's checks. Empty when unknown. */
+  regional: Regional;
   best_quality: string | null;
   streams: PublicStream[];
   guides: EnrichedChannel['guides'];
@@ -169,6 +172,7 @@ function toPublicChannel(
   channel: EnrichedChannel,
   includeOffline: boolean,
   number: number | null = null,
+  regional: Regional = {},
 ): PublicChannel {
   const streams = includeOffline
     ? channel.streams
@@ -198,6 +202,7 @@ function toPublicChannel(
     number,
     stream_count: streams.length,
     browser_playable: streams.some((stream) => isBrowserPlayable(stream)),
+    regional,
     best_quality: bestQuality(streams),
     streams: streams.map(toPublicStream),
     guides: channel.guides,
@@ -346,13 +351,27 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   await writeJson(numbersPath, registry);
   if (assigned > 0) log.info(`Assigned ${assigned} new channel number(s); highest is ${registry.last}`);
 
+  // ---- regional availability ---------------------------------------------
+  const regionalSummary = await fetchRegional(settings.project.worker_url);
+  const regional = regionalByChannel(regionalSummary, registry.numbers);
+
   // ---- collections --------------------------------------------------------
   const publicChannels = dataset.channels.map((channel) =>
     toPublicChannel(
       channel,
       settings.api.include_offline,
       channel.streams.length > 0 ? (registry.numbers[channel.id] ?? null) : null,
+      regional.get(channel.id),
     ),
+  );
+  await emit(
+    'regional.json',
+    {
+      generated_at: regionalSummary?.generated_at ?? null,
+      days: regionalSummary?.days ?? null,
+      channels: Object.fromEntries(regional),
+    },
+    true,
   );
   const playable = publicChannels.filter((channel) => channel.stream_count > 0);
 
@@ -653,6 +672,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       epg_unmatched: publicUrl(settings, 'api/v1/epg-unmatched.json'),
       match: publicUrl(settings, 'api/v1/match.json'),
       changes: publicUrl(settings, 'api/v1/changes.json'),
+      regional: publicUrl(settings, 'api/v1/regional.json'),
       changes_feed: publicUrl(settings, 'api/v1/changes.xml'),
       channel_guide: publicUrl(settings, 'epg/channels/{id}.json'),
       stremio: publicUrl(settings, 'stremio/manifest.json'),

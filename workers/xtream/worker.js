@@ -12,6 +12,10 @@
  *                         XCIPTV and TV boxes that only take an Xtream login
  *   /mcp                  Model Context Protocol endpoint, so AI assistants
  *                         can search channels and read the guide
+ *   /check/<number>       tests a channel's streams from the viewer's
+ *                         nearest Cloudflare location
+ *   /regional.json        where channels work, by viewer country, from those
+ *                         checks and from playback reports (needs D1)
  *
  * It stores nothing and streams nothing. Its data is `xtream/index.json` and
  * `epg/channels/<id>.json`, which the Sync workflow publishes to GitHub Pages;
@@ -20,10 +24,18 @@
  * Environment (wrangler.toml [vars] or dashboard):
  *   NEXUS_ORIGIN     Pages site, default https://dearbulut.github.io/iptv
  *   XTREAM_PASSWORD  optional; when set, Xtream logins must use it
+ *   DB               optional D1 binding for regional availability
+ *
+ * Regional availability: a Worker always runs at the Cloudflare location
+ * nearest whoever made the request, so when a viewer in Turkey opens a
+ * channel, its streams are tested from Turkey. Each outcome is counted per
+ * viewer country and channel — never per person; no IP address is stored.
  */
 
 const DEFAULT_ORIGIN = 'https://dearbulut.github.io/iptv';
-const VERSION = '1.1.0';
+const VERSION = '1.2.0';
+/** Days of regional checks summarised in /regional.json; older rows are deleted after 30. */
+const REGIONAL_DAYS = 14;
 /** How long an isolate reuses the index before refetching it. */
 const INDEX_TTL_MS = 10 * 60 * 1000;
 /** How long the failover choice for a channel is remembered per location. */
@@ -70,6 +82,118 @@ const redirect = (url) =>
   new Response(null, { status: 302, headers: { location: url, 'cache-control': 'no-store', ...CORS } });
 
 const has = (row, i) => row.length > i && row[i] !== undefined && row[i] !== null;
+
+// --------------------------------------------------------------- regional
+
+let schemaReady = false;
+
+async function ensureSchema(db) {
+  if (schemaReady) return;
+  await db.exec(
+    'CREATE TABLE IF NOT EXISTS regional (day TEXT NOT NULL, country TEXT NOT NULL, channel INTEGER NOT NULL, ok INTEGER NOT NULL DEFAULT 0, fail INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, country, channel))',
+  );
+  schemaReady = true;
+}
+
+/** Real two-letter countries only: not Tor (T1), unknown (XX) or missing. */
+const viewerCountry = (request) => {
+  const country = request.cf?.country;
+  return typeof country === 'string' && /^[A-Z]{2}$/.test(country) && country !== 'XX' && country !== 'T1' ? country : null;
+};
+
+/** Counts one outcome for a channel in the viewer's country. Never blocks the response. */
+function recordOutcome(env, ctx, request, channel, ok) {
+  const country = viewerCountry(request);
+  if (!env.DB || !country) return;
+  const day = new Date().toISOString().slice(0, 10);
+  ctx.waitUntil(
+    ensureSchema(env.DB)
+      .then(() =>
+        env.DB.prepare(
+          'INSERT INTO regional (day, country, channel, ok, fail) VALUES (?1, ?2, ?3, ?4, ?5) ' +
+            'ON CONFLICT (day, country, channel) DO UPDATE SET ok = ok + excluded.ok, fail = fail + excluded.fail',
+        )
+          .bind(day, country, channel, ok ? 1 : 0, ok ? 0 : 1)
+          .run(),
+      )
+      .catch(() => {}),
+  );
+}
+
+async function regionalSummary(env, ctx) {
+  if (!env.DB) return json({ error: 'Regional data is not enabled on this Worker (no D1 binding).' }, 404);
+  const cache = caches.default;
+  const key = new Request('https://nexus.invalid/regional.json');
+  const hit = await cache.match(key);
+  if (hit) return hit;
+
+  await ensureSchema(env.DB);
+  const since = new Date(Date.now() - REGIONAL_DAYS * 86_400_000).toISOString().slice(0, 10);
+  const { results } = await env.DB.prepare(
+    'SELECT channel, country, SUM(ok) AS ok, SUM(fail) AS fail FROM regional WHERE day >= ?1 GROUP BY channel, country',
+  )
+    .bind(since)
+    .all();
+  const channels = {};
+  for (const row of results ?? []) {
+    (channels[row.channel] ??= {})[row.country] = [row.ok, row.fail];
+  }
+  const response = json(
+    { generated_at: new Date().toISOString(), days: REGIONAL_DAYS, channels },
+    200,
+    { 'cache-control': 'public, max-age=3600' },
+  );
+  ctx.waitUntil(
+    Promise.all([
+      cache.put(key, response.clone()),
+      env.DB.prepare('DELETE FROM regional WHERE day < ?1')
+        .bind(new Date(Date.now() - 30 * 86_400_000).toISOString().slice(0, 10))
+        .run()
+        .catch(() => {}),
+    ]),
+  );
+  return response;
+}
+
+/** Tests every candidate stream of a channel from here, for the Tools page. */
+async function checkHere(id, request, env, ctx) {
+  const { byId } = await loadIndex(env.NEXUS_ORIGIN || DEFAULT_ORIGIN);
+  const row = byId.get(Number(id));
+  if (!row) return json({ error: 'Unknown channel number' }, 404);
+  const candidates = [row[R.URL], ...(has(row, R.FALLBACKS) ? row[R.FALLBACKS] : [])];
+  const results = await Promise.all(candidates.map(async (url) => ({ url, ok: await answers(url) })));
+  const ok = results.some((result) => result.ok);
+  recordOutcome(env, ctx, request, row[R.ID], ok);
+  return json(
+    {
+      channel: row[R.NAME],
+      number: row[R.ID],
+      country: request.cf?.country ?? null,
+      location: request.cf?.colo ?? null,
+      works: ok,
+      streams: results,
+      note: row[R.REFERRER] || row[R.USER_AGENT] ? 'This channel needs special headers; results are for the stream without them.' : undefined,
+    },
+    200,
+    { 'cache-control': 'no-store' },
+  );
+}
+
+/** Playback reports from the website's player: successes only (see site/app.js). */
+async function playbackReport(request, env, ctx) {
+  if (request.method !== 'POST') return text('POST only', 405);
+  let body;
+  try {
+    body = JSON.parse(await request.text());
+  } catch {
+    return text('Bad request', 400);
+  }
+  const { byId } = await loadIndex(env.NEXUS_ORIGIN || DEFAULT_ORIGIN);
+  const number = Number(body?.number);
+  if (!byId.has(number) || body?.ok !== true) return new Response(null, { status: 204, headers: CORS });
+  recordOutcome(env, ctx, request, number, true);
+  return new Response(null, { status: 204, headers: CORS });
+}
 const list = (value) => (value ? String(value).split(';').filter(Boolean) : []);
 
 // ------------------------------------------------------------- smart links
@@ -102,7 +226,7 @@ async function answers(url) {
  * for a few minutes, so a channel is probed at most once per location in
  * that window however many people zap to it.
  */
-async function chooseStream(row, ctx) {
+async function chooseStream(row, ctx, onProbed) {
   const candidates = [row[R.URL], ...(has(row, R.FALLBACKS) ? row[R.FALLBACKS] : [])];
   if (candidates.length === 1) return candidates[0];
 
@@ -115,22 +239,27 @@ async function chooseStream(row, ctx) {
   }
 
   let chosen = candidates[0];
+  let anyAnswered = false;
   for (const candidate of candidates) {
     if (await answers(candidate)) {
       chosen = candidate;
+      anyAnswered = true;
       break;
     }
   }
+  onProbed?.(anyAnswered);
   ctx.waitUntil(
     cache.put(key, new Response(chosen, { headers: { 'cache-control': `max-age=${PLAY_CACHE_SECONDS}` } })),
   );
   return chosen;
 }
 
-async function play(id, env, ctx) {
+async function play(id, env, ctx, request) {
   const { byId } = await loadIndex(env.NEXUS_ORIGIN || DEFAULT_ORIGIN);
   const row = byId.get(Number(id));
-  return row ? redirect(await chooseStream(row, ctx)) : text('Unknown channel number', 404);
+  if (!row) return text('Unknown channel number', 404);
+  // Every real probe doubles as a regional data point for the viewer's country.
+  return redirect(await chooseStream(row, ctx, (ok) => recordOutcome(env, ctx, request, row[R.ID], ok)));
 }
 
 // -------------------------------------------------------- playlist builder
@@ -577,7 +706,14 @@ export default {
       if (path === '/mcp') return await mcp(request, env, url);
 
       const smart = path.match(/^\/play\/(\d+)(?:\.\w+)?$/);
-      if (smart) return await play(smart[1], env, ctx);
+      if (smart) return await play(smart[1], env, ctx, request);
+
+      const check = path.match(/^\/check\/(\d+)$/);
+      if (check) return await checkHere(check[1], request, env, ctx);
+
+      if (path === '/report') return await playbackReport(request, env, ctx);
+
+      if (path === '/regional.json') return await regionalSummary(env, ctx);
 
       if (path === '/m3u' || path === '/playlist.m3u') return await buildPlaylist(url, env);
 
@@ -594,7 +730,7 @@ export default {
       const live = path.match(/^\/(?:live\/)?([^/]+)\/([^/]+)\/(\d+)(?:\.\w+)?$/);
       if (live) {
         if (!authorised(env, decodeURIComponent(live[2]))) return text('Invalid password', 401);
-        return await play(live[3], env, ctx);
+        return await play(live[3], env, ctx, request);
       }
 
       if (path === '/' || path === '') {
@@ -606,6 +742,8 @@ export default {
             `Smart link        ${url.origin}/play/<channel number>`,
             `Xtream login      server ${url.origin}, any username (or "country"), password ${env.XTREAM_PASSWORD ? 'from the owner' : 'anything'}`,
             `MCP endpoint      ${url.origin}/mcp`,
+            `Check a channel   ${url.origin}/check/<channel number>`,
+            `Regional data     ${url.origin}/regional.json${env.DB ? '' : ' (disabled: no D1 binding)'}`,
             '',
             `Catalogue         ${origin}`,
           ].join('\n') + '\n',

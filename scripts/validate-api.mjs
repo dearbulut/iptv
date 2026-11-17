@@ -297,6 +297,8 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
       fail('match.json rows have the wrong arity');
     }
   }
+  const regional = await readJson('api/v1/regional.json');
+  if (regional && typeof regional.channels !== 'object') fail('regional.json has no channels object');
   const changes = await readJson('api/v1/changes.json');
   if (changes && !Array.isArray(changes.entries)) fail('changes.json has no entries array');
   try {

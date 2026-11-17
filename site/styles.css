@@ -1243,3 +1243,40 @@ select:focus {
 .result > * {
   min-width: 0;
 }
+
+/* ------------------------------------------------------- regional chips */
+
+.player__regional {
+  display: grid;
+  gap: 8px;
+}
+
+.regional {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.regional__chip {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+}
+
+.regional__chip--ok {
+  color: var(--good);
+  border-color: color-mix(in srgb, var(--good) 40%, transparent);
+  background: color-mix(in srgb, var(--good) 10%, transparent);
+}
+
+.regional__chip--fail {
+  color: var(--bad);
+  border-color: color-mix(in srgb, var(--bad) 40%, transparent);
+  background: color-mix(in srgb, var(--bad) 10%, transparent);
+}
+
+.player__regional .btn {
+  justify-self: start;
+}

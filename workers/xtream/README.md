@@ -8,6 +8,7 @@ One small, free Cloudflare Worker that adds what a static site cannot:
 | **Smart links** | `/play/<channel number>` | Automatic failover to a working stream |
 | **Xtream Codes API** | server = the Worker URL | TiviMate, IPTV Smarters, XCIPTV, TV boxes |
 | **MCP endpoint** | `/mcp` | AI assistants: search channels, read the guide |
+| **Regional availability** | `/regional.json`, `/check/<number>` | Where each channel works, by viewer country |
 
 It stores nothing and no video passes through it. Its data is
 `xtream/index.json` and `epg/channels/<id>.json`, which the Sync workflow
@@ -117,6 +118,41 @@ ChatGPT, Cursor or any MCP client. Tools:
 | `build_playlist` | A playlist builder URL for a given mix |
 
 Try: *"Which Turkish news channels work right now, and what is on TRT Haber?"*
+
+## Regional availability
+
+A Worker always runs at the Cloudflare location nearest whoever made the
+request. So when a viewer in Turkey opens a smart link, the channel's streams
+are tested from Turkey; a viewer in Germany tests them from Germany. The
+Worker counts each outcome per **viewer country and channel**, adds successful
+plays reported by the website's player, and publishes the last 14 days at
+`/regional.json`. The Sync workflow folds that into the API (`regional` on each
+channel) and the website shows it as "Where it works".
+
+Nothing about the viewer is stored except the country Cloudflare reports for
+the request — no IP address, no identifier. A country needs at least three data
+points before it is shown. The website's player reports successful plays only:
+a browser failure is usually CORS or mixed content, not geography.
+
+`/check/<channel number>` tests a channel from the caller's location on demand;
+the website's "Check from my location" button uses it.
+
+### Turning it on (once)
+
+```bash
+cd workers/xtream
+npx wrangler d1 create iptv-nexus
+```
+
+Copy the `database_id` it prints into the commented `[[d1_databases]]` block at
+the end of `wrangler.toml`, uncomment the block, and deploy again:
+
+```bash
+npx wrangler deploy
+```
+
+The table is created on first use. D1's free plan (5 GB, 100,000 writes a day)
+covers this comfortably: one write per tested channel switch or play.
 
 ## Limits
 

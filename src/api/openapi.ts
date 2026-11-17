@@ -181,6 +181,17 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
         },
       ],
       [
+        '/api/v1/regional.json',
+        {
+          get: {
+            summary: 'Where each channel works, by viewer country',
+            operationId: 'getRegional',
+            tags: ['meta'],
+            responses: { '200': { description: 'channel id → country → {ok, fail, ratio}', content: { 'application/json': {} } } },
+          },
+        },
+      ],
+      [
         '/api/v1/changes.json',
         {
           get: {
@@ -304,6 +315,15 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
             },
             stream_count: { type: 'integer' },
             browser_playable: { type: 'boolean', description: 'At least one stream plays in a browser' },
+            regional: {
+              type: 'object',
+              description:
+                'Where the channel works, by viewer country (ISO 3166-1), from the last 14 days of checks made from the Cloudflare location nearest each viewer and of successful plays. Countries with fewer than 3 data points are omitted.',
+              additionalProperties: {
+                type: 'object',
+                properties: { ok: { type: 'integer' }, fail: { type: 'integer' }, ratio: { type: 'number' } },
+              },
+            },
             best_quality: { type: ['string', 'null'] },
             streams: { type: 'array', items: { $ref: '#/components/schemas/Stream' } },
             guides: { type: 'array', items: { $ref: '#/components/schemas/Guide' } },

@@ -484,6 +484,7 @@ async function openChannel(id) {
   renderStreamList(channel);
   renderEpg(channel);
   renderMeta(channel);
+  renderRegional(channel);
 
   const streams = channel.streams ?? [];
   if (streams.length === 0) {
@@ -691,7 +692,10 @@ function playStream(stream, index) {
 
   setStatus('Connecting…');
 
-  const onReady = () => setStatus(null);
+  const onReady = () => {
+    setStatus(null);
+    reportPlayback(state.current);
+  };
   const onFail = (detail) =>
     setStatus(
       `This stream could not be played in the browser${detail ? ` (${detail})` : ''}. ` +
@@ -784,6 +788,83 @@ function renderUptime(stream) {
     ),
   );
   container.append(row);
+}
+
+// -------------------------------------------------------------- regional
+
+const workerUrl = () => state.manifest?.endpoints?.worker ?? null;
+
+/** 🇹🇷 from "TR". */
+const flag = (code) =>
+  /^[A-Z]{2}$/.test(code) ? String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0))) : '';
+
+const reported = new Set();
+
+/**
+ * Tells the Worker this channel played here, so it counts towards "works in
+ * <your country>". Successes only: a failure in a browser is usually CORS or
+ * mixed content, not geography, and would read as a regional block. The Worker
+ * sees the country from the request; nothing else is sent or stored.
+ */
+function reportPlayback(channel) {
+  const base = workerUrl();
+  if (!base || !channel?.number || reported.has(channel.number)) return;
+  reported.add(channel.number);
+  try {
+    navigator.sendBeacon(`${base}/report`, JSON.stringify({ number: channel.number, ok: true }));
+  } catch {
+    /* reporting is best effort */
+  }
+}
+
+function renderRegional(channel) {
+  const container = $('#player-regional');
+  if (!container) return;
+  container.innerHTML = '';
+  const entries = Object.entries(channel.regional ?? {}).sort(
+    (a, b) => b[1].ok + b[1].fail - (a[1].ok + a[1].fail),
+  );
+  if (entries.length === 0 && !(workerUrl() && channel.number)) return;
+
+  container.append(el('p', 'section-title', 'Where it works'));
+  if (entries.length > 0) {
+    const list = el('div', 'regional');
+    for (const [country, { ok, fail, ratio }] of entries.slice(0, 16)) {
+      const works = ratio >= 0.5;
+      const chip = el('span', `regional__chip ${works ? 'regional__chip--ok' : 'regional__chip--fail'}`);
+      chip.title = `${country}: worked in ${ok} of ${ok + fail} checks over the last two weeks`;
+      chip.textContent = `${flag(country)} ${country} ${works ? '✓' : '✗'}`;
+      list.append(chip);
+    }
+    container.append(list);
+  } else {
+    container.append(el('p', 'muted small', 'No regional data yet. It builds up as people watch.'));
+  }
+
+  if (workerUrl() && channel.number) {
+    const result = el('p', 'muted small');
+    const button = el('button', 'btn btn--ghost', 'Check from my location');
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      result.textContent = 'Testing from the nearest location…';
+      try {
+        const response = await fetch(`${workerUrl()}/check/${channel.number}`);
+        const data = await response.json();
+        const working = data.streams.filter((stream) => stream.ok).length;
+        result.textContent =
+          `${data.country ? `${flag(data.country)} From ${data.country}` : 'From your location'}` +
+          `${data.location ? ` (${data.location})` : ''}: ` +
+          (data.works
+            ? `works — ${working} of ${data.streams.length} stream${data.streams.length === 1 ? '' : 's'} answered.`
+            : `none of the ${data.streams.length} stream${data.streams.length === 1 ? '' : 's'} answered.`);
+      } catch {
+        result.textContent = 'The check could not be run right now.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+    container.append(button, result);
+  }
 }
 
 /** Copy / open-in-player actions, which work for every stream. */
