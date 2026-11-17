@@ -105,6 +105,9 @@ describe('VOD: archive.org parsing', () => {
     assert.equal(isFamilySafe(doc('a')), true);
     assert.equal(isFamilySafe(doc('b', { subject: ['stag film'] })), false);
     assert.equal(isFamilySafe(doc('c', { title: 'Erotica 1920' })), false);
+    assert.equal(isFamilySafe(doc('d', { title: 'Diary of a Nudist' })), false);
+    assert.equal(isFamilySafe(doc('e', { title: 'Sex Madness' })), false);
+    assert.equal(isFamilySafe(doc('f', { title: 'Sussex Holiday' })), true);
   });
 
   it('picks the most playable derivative of each original', () => {

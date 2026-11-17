@@ -74,7 +74,8 @@ export function openLicense(url: string | undefined): VodLicense | null {
 }
 
 /** Titles and tags that keep an item out of a general-audience catalogue. */
-const ADULT = /\b(porn|xxx|erotic|erotica|nude|nudity|sexploitation|stag film|burlesque|adult film)\b/i;
+const ADULT =
+  /\b(porn\w*|xxx|erotic\w*|nude|nudes|nudity|nudis[mt]\w*|naturis[mt]\w*|sex|sexy|sexual\w*|sexploitation|strip-?tease|stripper\w*|stag films?|burlesque|adult films?|orgy|orgies|exploitation)\b/i;
 
 export function isFamilySafe(doc: ArchiveDoc): boolean {
   return !ADULT.test([first(doc.title), ...all(doc.subject)].join(' '));
