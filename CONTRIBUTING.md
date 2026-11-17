@@ -10,9 +10,22 @@ npm run typecheck && npm test
 Node 20+ is required. `ffprobe` (FFmpeg) is optional — health checks fall back
 to HTTP-only when it is missing.
 
+## Adding a stream or a channel
+
+Use the [Add a stream](https://github.com/dearbulut/iptv/issues/new?template=add-stream.yml)
+issue form — no pull request needed. A bot checks the stream, probes it and adds
+it to `data/nexus/` within minutes, creating the channel if it is new. Streams
+must be free to watch; subscription (reseller panel) streams are rejected.
+
+## Correcting a channel
+
+Corrections go in `data/nexus/channels.ndjson`: one JSON object per line with
+the channel `id` and only the fields you change. They override the iptv-org
+copy field by field and survive every database sync. Open a pull request.
+
 ## Adding a source
 
-Most contributions are a single entry in `config/sources.yml`:
+Whole playlists are an entry in `config/sources.yml`:
 
 ```yaml
   - id: unique-id

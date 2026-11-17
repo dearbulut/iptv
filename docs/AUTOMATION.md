@@ -7,6 +7,7 @@ normal day.
 
 | Time | Workflow | What happens |
 | --- | --- | --- |
+| 01:30 | **Database Sync** | Updates `data/iptv-org` — our copy of the iptv-org database — with the day's additions, corrections and removals; refuses mass removals and opens an alert issue instead |
 | 01:00 | **EPG Grab** | Scrapes each site in `config/epg-grab.yml`, one job per site, publishes XMLTV to the `state` branch |
 | 02:00 | **Discover Streams** | Scans configured playlists for streams we lack, probes each, commits the survivors to `config/discovered.m3u` |
 | 03:00 | **Health Scan** | Probes every stream in 6 parallel shards, updates rolling scores, retires dead links |
@@ -17,8 +18,15 @@ Plus **CI** on every push and pull request, and **Dependabot** monthly.
 
 ## What updates without you
 
-- **New channels and streams from upstream.** iptv-org changes constantly; every
-  sync picks that up. This is the main source of new content.
+- **New channels and streams from iptv-org.** The Database Sync copies the
+  day's changes into `data/iptv-org` and commits them, with a report of what was
+  added and removed. If iptv-org breaks or disappears, the last good copy stays
+  and everything keeps running on it.
+- **Community submissions.** The *Add a stream* issue form is processed by the
+  Community workflow within minutes: the stream is checked, probed, matched to
+  a channel (or a new channel is created) and written to `data/nexus`.
+- **Takedown requests.** The *Copyright / takedown request* form removes the
+  listed channels and streams immediately and assigns the owner to review.
 - **New streams from discovery.** Anything matching a channel we already index,
   from a source already listed in `config/discovery.yml`, that answers a live
   probe.
@@ -30,7 +38,9 @@ Plus **CI** on every push and pull request, and **Dependabot** monthly.
 
 ## What still needs you
 
-Exactly one thing: **adding a new source**.
+Two things: **adding a new source**, and **reviewing takedown requests** after
+the fact (they are applied automatically; the review is whether to keep them).
+A refused database sync also opens an issue for you.
 
 `config/sources.yml`, `config/discovery.yml` and `config/epg-grab.yml` are the
 trust boundary. Everything downstream of them is automatic; deciding that a
@@ -74,6 +84,7 @@ Every workflow has a **Run workflow** button with useful inputs:
 | Workflow | Inputs |
 | --- | --- |
 | EPG Grab | `sites` (comma-separated subset), `days` |
+| Database Sync | `force` (apply a mass removal the guard refused) |
 | Discover Streams | `max_probes`, `apply` (off = open a PR instead of committing) |
 | Health Scan | `limit` (streams per shard, 0 = all) |
 | Sync & Deploy | `skip_epg` |

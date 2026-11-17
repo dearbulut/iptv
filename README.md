@@ -79,7 +79,10 @@ Upstream + your sources  →  merge & dedupe  →  probe & score  →  static AP
 | **Fix any playlist's EPG ids** (for providers and panels) | — | ✅ in the browser, nothing uploaded |
 | **AI assistants** (MCP) | — | ✅ search channels, read the guide |
 | **Change feed** (new / lost channels) | — | ✅ JSON and Atom |
-| **Automatic source discovery** | manual PRs | ✅ scan → validate → PR |
+| **Automatic source discovery** | manual PRs | ✅ scan → validate → commit |
+| **Own database** | — | ✅ `data/` holds every channel and stream; survives upstream outages |
+| **Add a stream** | pull request, human review | ✅ issue form, checked and added by a bot in minutes |
+| **Takedowns** | manual | ✅ form, applied automatically, owner reviews |
 
 ### Stream health scoring
 
@@ -322,6 +325,26 @@ Full machine-readable schema: **`/api/v1/openapi.json`**. Human summary:
 
 ---
 
+## Your own database, and how to contribute
+
+Everything IPTV Nexus knows lives in this repository, under `data/`:
+
+- `data/iptv-org/` — a full copy of the [iptv-org](https://github.com/iptv-org/database)
+  database (channels, feeds, logos, streams, guides, blocklist…), one record per
+  line. The **Database Sync** workflow applies iptv-org's changes every night,
+  with a report in the commit, and refuses a mass removal rather than lose data.
+- `data/nexus/` — our own data: streams and channels added by the community,
+  corrections, and takedowns. The sync never touches it.
+
+**Add a stream:** open an [Add a stream](https://github.com/dearbulut/iptv/issues/new?template=add-stream.yml)
+issue. A bot checks it within minutes: if it is free to watch and plays, it is
+added (new channels too) and goes live with the next sync. If not, the bot says
+why; edit the issue and it checks again.
+
+**Remove something you hold the rights to:** use the
+[takedown form](https://github.com/dearbulut/iptv/issues/new?template=takedown.yml).
+Removal is immediate; see [`docs/LEGAL.md`](docs/LEGAL.md).
+
 ## How the automation works
 
 | Workflow | Schedule | Does |
@@ -330,6 +353,8 @@ Full machine-readable schema: **`/api/v1/openapi.json`**. Human summary:
 | `health.yml` | 2×/day | Probe streams in 6 parallel shards, merge, persist |
 | `epg.yml` | nightly 01:00 | Grab each configured EPG site, publish XMLTV |
 | `discover.yml` | nightly 02:00 | Find new streams, probe them, commit the survivors |
+| `database.yml` | nightly 01:30 | Copy the day's iptv-org changes into `data/`; refuse mass removals |
+| `community.yml` | on issue | Process *Add a stream* and *takedown* forms automatically |
 | `ci.yml` | on push/PR | Typecheck, unit tests, pipeline smoke test |
 
 Full detail, including how to run the automation under its own bot identity:
@@ -402,6 +427,6 @@ stream's `sources`. Playback in the browser uses
 
 ## License
 
-[MIT](LICENSE) for the code. Channel data comes from upstream under its own
-terms; stream availability and legality are the responsibility of whoever
-operates each stream.
+[The Unlicense](LICENSE): code and data are in the public domain, like the
+iptv-org database they started from. Streams themselves belong to whoever
+operates them; IPTV Nexus links to them and hosts nothing.
