@@ -9,24 +9,20 @@
  *   playlists/vod/*.m3u      films, and series episode by episode
  */
 
-import type { VodCatalog, VodMovie, VodSeries } from "../vod/index.js";
-import type { StremioFile } from "./stremio.js";
+import type { VodCatalog, VodMovie, VodSeries } from '../vod/index.js';
+import type { StremioFile } from './stremio.js';
 
-export const VOD_PREFIX = "nexusvod-";
+export const VOD_PREFIX = 'nexusvod-';
 const PAGE = 100;
 
 const attr = (value: unknown) =>
-  String(value ?? "")
+  String(value ?? '')
     .replace(/"/g, "'")
-    .replace(/[\r\n]+/g, " ");
+    .replace(/[\r\n]+/g, ' ');
 
 /** Shelves, by name, with stable ids derived from the sorted names. */
-function shelves(
-  items: ReadonlyArray<VodMovie | VodSeries>,
-): Array<[number, string]> {
-  return [...new Set(items.flatMap((item) => item.categories))]
-    .sort((a, b) => a.localeCompare(b))
-    .map((name, i) => [i + 1, name]);
+function shelves(items: ReadonlyArray<VodMovie | VodSeries>): Array<[number, string]> {
+  return [...new Set(items.flatMap((item) => item.categories))].sort((a, b) => a.localeCompare(b)).map((name, i) => [i + 1, name]);
 }
 
 export interface XtreamVod {
@@ -36,19 +32,7 @@ export interface XtreamVod {
     series: Array<[number, string]>;
   };
   /** [number, title, poster, year, category ids, url, runtime seconds, description, licence label] */
-  movies: Array<
-    [
-      number,
-      string,
-      string,
-      number | null,
-      number[],
-      string,
-      number | null,
-      string,
-      string,
-    ]
-  >;
+  movies: Array<[number, string, string, number | null, number[], string, number | null, string, string]>;
   series: Array<{
     number: number;
     title: string;
@@ -86,24 +70,15 @@ export function xtreamVod(catalog: VodCatalog): XtreamVod {
       title: series.title,
       poster: series.poster,
       year: series.year,
-      categories: series.categories
-        .map((name) => seriesId.get(name)!)
-        .filter(Boolean),
+      categories: series.categories.map((name) => seriesId.get(name)!).filter(Boolean),
       description: series.description.slice(0, 400),
       license: series.license.label,
-      episodes: series.episodes.map((episode) => [
-        episode.number,
-        episode.episode,
-        episode.title,
-        episode.url,
-        episode.runtime,
-      ]),
+      episodes: series.episodes.map((episode) => [episode.number, episode.episode, episode.title, episode.url, episode.runtime]),
     })),
   };
 }
 
-const credit = (item: VodMovie | VodSeries) =>
-  `${item.license.label} · Internet Archive${item.year ? ` · ${item.year}` : ""}`;
+const credit = (item: VodMovie | VodSeries) => `${item.license.label} · Internet Archive${item.year ? ` · ${item.year}` : ''}`;
 
 /** Stremio catalogues, metas and streams, plus the manifest entries for them. */
 export function stremioVod(catalog: VodCatalog): {
@@ -113,7 +88,7 @@ export function stremioVod(catalog: VodCatalog): {
   const files: StremioFile[] = [];
   const catalogs: Array<Record<string, unknown>> = [];
 
-  const preview = (item: VodMovie | VodSeries, type: "movie" | "series") => ({
+  const preview = (item: VodMovie | VodSeries, type: 'movie' | 'series') => ({
     id: VOD_PREFIX + item.id,
     type,
     name: item.title,
@@ -123,33 +98,17 @@ export function stremioVod(catalog: VodCatalog): {
     description: item.description || undefined,
   });
 
-  const shelf = (
-    type: "movie" | "series",
-    id: string,
-    name: string,
-    items: ReadonlyArray<VodMovie | VodSeries>,
-  ) => {
+  const shelf = (type: 'movie' | 'series', id: string, name: string, items: ReadonlyArray<VodMovie | VodSeries>) => {
     if (items.length === 0) return;
     const byGenre = new Map<string, Array<VodMovie | VodSeries>>();
-    for (const item of items)
-      for (const genre of item.categories)
-        byGenre.set(genre, [...(byGenre.get(genre) ?? []), item]);
-    const paginate = (
-      list: ReadonlyArray<VodMovie | VodSeries>,
-      extra: string | null,
-    ) => {
+    for (const item of items) for (const genre of item.categories) byGenre.set(genre, [...(byGenre.get(genre) ?? []), item]);
+    const paginate = (list: ReadonlyArray<VodMovie | VodSeries>, extra: string | null) => {
       for (let skip = 0; skip === 0 || skip < list.length; skip += PAGE) {
-        const args = [extra, skip > 0 ? `skip=${skip}` : null]
-          .filter(Boolean)
-          .join("&");
+        const args = [extra, skip > 0 ? `skip=${skip}` : null].filter(Boolean).join('&');
         files.push({
-          path: args
-            ? `catalog/${type}/${id}/${args}.json`
-            : `catalog/${type}/${id}.json`,
+          path: args ? `catalog/${type}/${id}/${args}.json` : `catalog/${type}/${id}.json`,
           data: {
-            metas: list
-              .slice(skip, skip + PAGE)
-              .map((item) => preview(item, type)),
+            metas: list.slice(skip, skip + PAGE).map((item) => preview(item, type)),
           },
         });
       }
@@ -160,15 +119,12 @@ export function stremioVod(catalog: VodCatalog): {
       type,
       id,
       name,
-      extra: [
-        { name: "genre", options: [...byGenre.keys()].sort() },
-        { name: "skip" },
-      ],
+      extra: [{ name: 'genre', options: [...byGenre.keys()].sort() }, { name: 'skip' }],
     });
   };
 
-  shelf("movie", "nexus-movies", "IPTV Nexus · Free Films", catalog.movies);
-  shelf("series", "nexus-series", "IPTV Nexus · Free Series", catalog.series);
+  shelf('movie', 'nexus-movies', 'IPTV Nexus · Free Films', catalog.movies);
+  shelf('series', 'nexus-series', 'IPTV Nexus · Free Series', catalog.series);
 
   for (const movie of catalog.movies) {
     const id = VOD_PREFIX + movie.id;
@@ -176,24 +132,18 @@ export function stremioVod(catalog: VodCatalog): {
       path: `meta/movie/${id}.json`,
       data: {
         meta: {
-          ...preview(movie, "movie"),
+          ...preview(movie, 'movie'),
           background: movie.poster,
-          runtime: movie.runtime
-            ? `${Math.round(movie.runtime / 60)} min`
-            : undefined,
+          runtime: movie.runtime ? `${Math.round(movie.runtime / 60)} min` : undefined,
           language: movie.language ?? undefined,
-          links: [
-            { name: credit(movie), category: "Source", url: movie.source_url },
-          ],
+          links: [{ name: credit(movie), category: 'Source', url: movie.source_url }],
         },
       },
     });
     files.push({
       path: `stream/movie/${id}.json`,
       data: {
-        streams: [
-          { url: movie.url, name: "Internet Archive", title: credit(movie) },
-        ],
+        streams: [{ url: movie.url, name: 'Internet Archive', title: credit(movie) }],
       },
     });
   }
@@ -205,12 +155,12 @@ export function stremioVod(catalog: VodCatalog): {
       path: `meta/series/${id}.json`,
       data: {
         meta: {
-          ...preview(series, "series"),
+          ...preview(series, 'series'),
           background: series.poster,
           links: [
             {
               name: credit(series),
-              category: "Source",
+              category: 'Source',
               url: series.source_url,
             },
           ],
@@ -231,7 +181,7 @@ export function stremioVod(catalog: VodCatalog): {
           streams: [
             {
               url: episode.url,
-              name: "Internet Archive",
+              name: 'Internet Archive',
               title: credit(series),
             },
           ],
@@ -247,14 +197,14 @@ export function vodPlaylists(catalog: VodCatalog): {
   movies: string;
   series: string;
 } {
-  const movies = ["#EXTM3U"];
+  const movies = ['#EXTM3U'];
   for (const movie of catalog.movies) {
     movies.push(
-      `#EXTINF:${movie.runtime ?? -1} tvg-id="" tvg-name="${attr(movie.title)}" tvg-logo="${attr(movie.poster)}" group-title="${attr(movie.categories[0])}",${movie.title}${movie.year ? ` (${movie.year})` : ""}`,
+      `#EXTINF:${movie.runtime ?? -1} tvg-id="" tvg-name="${attr(movie.title)}" tvg-logo="${attr(movie.poster)}" group-title="${attr(movie.categories[0])}",${movie.title}${movie.year ? ` (${movie.year})` : ''}`,
       movie.url,
     );
   }
-  const series = ["#EXTM3U"];
+  const series = ['#EXTM3U'];
   for (const show of catalog.series) {
     for (const episode of show.episodes) {
       series.push(
@@ -263,7 +213,7 @@ export function vodPlaylists(catalog: VodCatalog): {
       );
     }
   }
-  return { movies: `${movies.join("\n")}\n`, series: `${series.join("\n")}\n` };
+  return { movies: `${movies.join('\n')}\n`, series: `${series.join('\n')}\n` };
 }
 
 /** The public API document: the catalogue without internal bookkeeping. */
@@ -275,7 +225,7 @@ export function vodApi(catalog: VodCatalog) {
       series: catalog.series.length,
       episodes: catalog.series.reduce((n, s) => n + s.episodes.length, 0),
     },
-    note: "Openly licensed films and series (public domain or Creative Commons) from the Internet Archive. Videos play from archive.org.",
+    note: 'Openly licensed films and series (public domain or Creative Commons) from the Internet Archive. Videos play from archive.org.',
     movies: catalog.movies,
     series: catalog.series,
   };

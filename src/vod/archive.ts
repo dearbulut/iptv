@@ -9,16 +9,16 @@
  * Videos are linked, not copied: playback goes straight to archive.org.
  */
 
-import { httpGetJson } from "../core/http.js";
-import { mapConcurrent } from "../core/concurrency.js";
-import { Logger } from "../core/logger.js";
+import { httpGetJson } from '../core/http.js';
+import { mapConcurrent } from '../core/concurrency.js';
+import { Logger } from '../core/logger.js';
 
-const log = new Logger("vod:archive");
+const log = new Logger('vod:archive');
 
-const SEARCH = "https://archive.org/advancedsearch.php";
-const METADATA = "https://archive.org/metadata";
-export const DOWNLOAD = "https://archive.org/download";
-export const POSTER = "https://archive.org/services/img";
+const SEARCH = 'https://archive.org/advancedsearch.php';
+const METADATA = 'https://archive.org/metadata';
+export const DOWNLOAD = 'https://archive.org/download';
+export const POSTER = 'https://archive.org/services/img';
 
 export interface ArchiveDoc {
   identifier: string;
@@ -50,56 +50,49 @@ export interface VodLicense {
   url: string;
 }
 
-const first = (value: string | string[] | undefined): string =>
-  (Array.isArray(value) ? value[0] : value)?.toString().trim() ?? "";
+const first = (value: string | string[] | undefined): string => (Array.isArray(value) ? value[0] : value)?.toString().trim() ?? '';
 const all = (value: string | string[] | undefined): string[] =>
-  (Array.isArray(value) ? value : value ? [value] : [])
-    .map((v) => String(v).trim())
-    .filter(Boolean);
+  (Array.isArray(value) ? value : value ? [value] : []).map((v) => String(v).trim()).filter(Boolean);
+
+const CC_ORDER = ['BY', 'NC', 'SA', 'ND'];
 
 /** Recognises an open licence from its URL, or returns null. */
 export function openLicense(url: string | undefined): VodLicense | null {
   if (!url) return null;
-  const clean = url.trim().replace(/^http:/, "https:");
-  if (/creativecommons\.org\/publicdomain\/zero/i.test(clean))
-    return { label: "CC0", url: clean };
-  if (/creativecommons\.org\/publicdomain\/mark/i.test(clean))
-    return { label: "Public Domain", url: clean };
+  const clean = url.trim().replace(/^http:/, 'https:');
+  if (/creativecommons\.org\/publicdomain\/zero/i.test(clean)) return { label: 'CC0', url: clean };
+  // The Public Domain Mark, and the retired CC Public Domain Dedication (licenses/publicdomain).
+  if (/creativecommons\.org\/(publicdomain\/mark|licenses\/publicdomain)/i.test(clean)) return { label: 'Public Domain', url: clean };
   const cc = clean.match(/creativecommons\.org\/licenses\/([a-z-]+)\/?/i);
-  if (cc) return { label: `CC ${cc[1]!.toUpperCase()}`, url: clean };
+  if (cc) {
+    // Canonical order, so "nd-nc" and "nc-nd" read the same: BY, NC, SA, ND.
+    const parts = [...new Set(cc[1]!.toUpperCase().split('-').filter(Boolean))];
+    if (parts.some((part) => !CC_ORDER.includes(part))) return null;
+    return { label: `CC ${parts.sort((a, b) => CC_ORDER.indexOf(a) - CC_ORDER.indexOf(b)).join('-')}`, url: clean };
+  }
   return null;
 }
 
 /** Titles and tags that keep an item out of a general-audience catalogue. */
-const ADULT =
-  /\b(porn|xxx|erotic|erotica|nude|nudity|sexploitation|stag film|burlesque|adult film)\b/i;
+const ADULT = /\b(porn|xxx|erotic|erotica|nude|nudity|sexploitation|stag film|burlesque|adult film)\b/i;
 
 export function isFamilySafe(doc: ArchiveDoc): boolean {
-  return !ADULT.test([first(doc.title), ...all(doc.subject)].join(" "));
+  return !ADULT.test([first(doc.title), ...all(doc.subject)].join(' '));
 }
 
 /** Video formats archive.org derives, most widely playable first. */
-const FORMAT_RANK = [
-  "h.264",
-  "h.264 ia",
-  "mpeg4",
-  "h.264 hd",
-  "512kb mpeg4",
-  "matroska",
-  "ogg video",
-  "webm",
-];
+const FORMAT_RANK = ['h.264', 'h.264 ia', 'mpeg4', 'h.264 hd', '512kb mpeg4', 'matroska', 'ogg video', 'webm'];
 
 const formatRank = (format: string | undefined) => {
-  const index = FORMAT_RANK.indexOf((format ?? "").toLowerCase());
+  const index = FORMAT_RANK.indexOf((format ?? '').toLowerCase());
   return index === -1 ? Number.POSITIVE_INFINITY : index;
 };
 
 /** A file's "base" name, so derivatives of one original group together. */
 const baseName = (name: string) =>
   name
-    .replace(/\.[^.]+$/, "")
-    .replace(/(_512kb|\.ia|_h264|\.h264|_hd)$/i, "")
+    .replace(/\.[^.]+$/, '')
+    .replace(/(_512kb|\.ia|_h264|\.h264|_hd)$/i, '')
     .toLowerCase();
 
 export interface VideoFile {
@@ -117,10 +110,7 @@ export interface VideoFile {
  * the item's own order. A film is usually one entry; a series item holds one
  * per episode.
  */
-export function pickVideos(
-  identifier: string,
-  files: readonly ArchiveFile[],
-): VideoFile[] {
+export function pickVideos(identifier: string, files: readonly ArchiveFile[]): VideoFile[] {
   const best = new Map<string, ArchiveFile>();
   const order: string[] = [];
   for (const file of files) {
@@ -136,15 +126,13 @@ export function pickVideos(
   }
   return order
     .map((key) => best.get(key)!)
-    .sort((a, b) => a.name.localeCompare(b.name, "en", { numeric: true }))
+    .sort((a, b) => a.name.localeCompare(b.name, 'en', { numeric: true }))
     .map((file) => ({
       name: file.name,
-      url: `${DOWNLOAD}/${encodeURIComponent(identifier)}/${file.name.split("/").map(encodeURIComponent).join("/")}`,
-      title: (file.title ?? file.name.replace(/\.[^.]+$/, ""))
-        .replace(/[_]+/g, " ")
-        .trim(),
+      url: `${DOWNLOAD}/${encodeURIComponent(identifier)}/${file.name.split('/').map(encodeURIComponent).join('/')}`,
+      title: (file.title ?? file.name.replace(/\.[^.]+$/, '')).replace(/[_]+/g, ' ').trim(),
       duration: parseDuration(file.length),
-      format: file.format ?? "",
+      format: file.format ?? '',
       size: Number(file.size ?? 0),
     }));
 }
@@ -153,37 +141,32 @@ export function pickVideos(
 export function parseDuration(value: string | undefined): number | null {
   if (!value) return null;
   if (/^\d+(\.\d+)?$/.test(value)) return Math.round(Number(value));
-  const parts = value.split(":").map(Number);
+  const parts = value.split(':').map(Number);
   if (parts.some((part) => Number.isNaN(part))) return null;
   return parts.reduce((total, part) => total * 60 + part, 0);
 }
 
 export function yearOf(doc: ArchiveDoc): number | null {
-  const match = String(doc.year ?? doc.date ?? "").match(/\b(18|19|20)\d{2}\b/);
+  const match = String(doc.year ?? doc.date ?? '').match(/\b(18|19|20)\d{2}\b/);
   return match ? Number(match[0]) : null;
 }
 
 /** Plain text from archive.org's HTML descriptions, trimmed. */
-export function plainText(
-  value: string | string[] | undefined,
-  max = 600,
-): string {
+export function plainText(value: string | string[] | undefined, max = 600): string {
   const text = all(value)
-    .join("\n")
-    .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<[^>]+>/g, "")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
+    .join('\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/[ \t]+/g, " ")
-    .replace(/\n{3,}/g, "\n\n")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
     .trim();
-  return text.length > max
-    ? `${text.slice(0, max - 1).replace(/\s+\S*$/, "")}…`
-    : text;
+  return text.length > max ? `${text.slice(0, max - 1).replace(/\s+\S*$/, '')}…` : text;
 }
 
 export const titleOf = (doc: ArchiveDoc) => first(doc.title) || doc.identifier;
@@ -195,22 +178,19 @@ export const subjectsOf = (doc: ArchiveDoc) =>
 export const languageOf = (doc: ArchiveDoc) => first(doc.language) || null;
 
 /** Searches archive.org, most downloaded first, up to `max` items. */
-export async function searchArchive(
-  query: string,
-  max: number,
-): Promise<ArchiveDoc[]> {
+export async function searchArchive(query: string, max: number): Promise<ArchiveDoc[]> {
   const fields = [
-    "identifier",
-    "title",
-    "date",
-    "year",
-    "description",
-    "licenseurl",
-    "subject",
-    "language",
-    "runtime",
-    "downloads",
-    "collection",
+    'identifier',
+    'title',
+    'date',
+    'year',
+    'description',
+    'licenseurl',
+    'subject',
+    'language',
+    'runtime',
+    'downloads',
+    'collection',
   ];
   const rows = Math.min(500, max);
   const docs: ArchiveDoc[] = [];
@@ -219,10 +199,10 @@ export async function searchArchive(
       q: query,
       rows: String(rows),
       page: String(page),
-      output: "json",
+      output: 'json',
     });
-    for (const field of fields) params.append("fl[]", field);
-    params.append("sort[]", "downloads desc");
+    for (const field of fields) params.append('fl[]', field);
+    params.append('sort[]', 'downloads desc');
     const response = await httpGetJson<{
       response?: { docs?: ArchiveDoc[]; numFound?: number };
     }>(`${SEARCH}?${params}`, {
@@ -237,21 +217,15 @@ export async function searchArchive(
   return docs.slice(0, max);
 }
 
-export async function fetchFiles(
-  identifiers: readonly string[],
-  concurrency = 6,
-): Promise<Map<string, ArchiveFile[]>> {
+export async function fetchFiles(identifiers: readonly string[], concurrency = 6): Promise<Map<string, ArchiveFile[]>> {
   const result = new Map<string, ArchiveFile[]>();
   await mapConcurrent(
     identifiers,
     async (identifier) => {
-      const metadata = await httpGetJson<{ files?: ArchiveFile[] }>(
-        `${METADATA}/${encodeURIComponent(identifier)}`,
-        {
-          timeoutMs: 30_000,
-          attempts: 2,
-        },
-      );
+      const metadata = await httpGetJson<{ files?: ArchiveFile[] }>(`${METADATA}/${encodeURIComponent(identifier)}`, {
+        timeoutMs: 30_000,
+        attempts: 2,
+      });
       result.set(identifier, metadata.files ?? []);
     },
     { concurrency, tolerant: true },

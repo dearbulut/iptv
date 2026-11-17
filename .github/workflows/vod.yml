@@ -78,7 +78,8 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' && steps.build.outputs.kept != '1' }}
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run sync.yml --ref main -f skip_epg=true || echo "::notice::Sync will pick the catalogue up on its next run."
+        # A full Sync: a run without the guide would deploy a site without one.
+        run: gh workflow run sync.yml --ref main || echo "::notice::Sync will pick the catalogue up on its next run."
 
       - name: Summarise
         if: always()
