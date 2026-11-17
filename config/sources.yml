@@ -18,6 +18,18 @@ sources:
     license: The Unlicense
     homepage: https://github.com/iptv-org/iptv
 
+  # Official broadcaster-published free-to-air feed; the playlist supplies
+  # its current stream and logo metadata. This channel also exists upstream,
+  # so the aggregator can deduplicate it by channel identity.
+  - id: alabbassia-tv-official
+    name: Alabbassia TV - official broadcaster playlist
+    type: m3u
+    url: https://raw.githubusercontent.com/Alabbassia2026/Alabbassia-TV-Official/main/alabbassia.m3u
+    enabled: true
+    trust: 0.95
+    country: IQ
+    homepage: https://alabbassia.com/
+
   # Streams found by the nightly discovery run and auto-accepted: each one
   # matched a channel we already index and answered a live probe. Trust is low
   # so a curated list always outranks them, and health scoring retires them
