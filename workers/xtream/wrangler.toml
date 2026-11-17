@@ -10,15 +10,11 @@ NEXUS_ORIGIN = "https://dearbulut.github.io/iptv"
 # Optional: require this password. Prefer a secret over a plain var:
 #   npx wrangler secret put XTREAM_PASSWORD
 
-# Regional availability ("where does this channel work?") needs a D1 database.
-# Free plan is plenty. Create it once, then uncomment the block below with the
-# database_id that the first command prints:
-#
-#   npx wrangler d1 create iptv-nexus
-#
-# The table is created automatically on first use.
-#
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "iptv-nexus"
-# database_id = "paste-the-id-here"
+# Regional availability ("where does this channel work?") is stored in D1.
+# The binding must be called DB — that is the name the Worker looks for.
+# The table is created automatically on first use. For a fork, create your
+# own with `npx wrangler d1 create iptv-nexus` and put its id here.
+[[d1_databases]]
+binding = "DB"
+database_name = "iptv-nexus"
+database_id = "441a33b2-5d51-4065-81be-5def679dfc1c"

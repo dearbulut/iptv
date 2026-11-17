@@ -144,8 +144,9 @@ cd workers/xtream
 npx wrangler d1 create iptv-nexus
 ```
 
-Copy the `database_id` it prints into the commented `[[d1_databases]]` block at
-the end of `wrangler.toml`, uncomment the block, and deploy again:
+Put the `database_id` it prints into the `[[d1_databases]]` block at the end of
+`wrangler.toml` — keep `binding = "DB"`, whatever name wrangler suggests — and
+deploy again:
 
 ```bash
 npx wrangler deploy
