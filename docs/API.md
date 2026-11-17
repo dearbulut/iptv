@@ -296,6 +296,18 @@ flapping of individual streams is not included; see `health.json`.
 }
 ```
 
+### `GET /api/v1/regional.json`
+
+Where each channel works, by viewer country, over the last 14 days:
+
+```json
+{ "channels": { "TRT1.tr": { "TR": { "ok": 41, "fail": 1, "ratio": 0.98 }, "DE": { "ok": 2, "fail": 9, "ratio": 0.18 } } } }
+```
+
+Counts come from the Worker: channel streams tested from the Cloudflare
+location nearest each viewer, plus successful plays in the web player. The same
+data is on each channel as `regional`. Only the viewer's country is recorded.
+
 ### `GET /epg/channels/{id}.json`
 
 One channel's guide from three hours ago to 48 hours ahead — enough for

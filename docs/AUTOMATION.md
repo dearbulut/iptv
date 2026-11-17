@@ -7,6 +7,7 @@ normal day.
 
 | Time | Workflow | What happens |
 | --- | --- | --- |
+| Sun 04:20 | **Database Dump** | Builds `iptv-nexus.sqlite.gz` and `iptv-nexus-data.zip` and uploads them to the `database` release |
 | 01:30 | **Database Sync** | Updates `data/iptv-org` — our copy of the iptv-org database — with the day's additions, corrections and removals; refuses mass removals and opens an alert issue instead |
 | 01:00 | **EPG Grab** | Scrapes each site in `config/epg-grab.yml`, one job per site, publishes XMLTV to the `state` branch |
 | 02:00 | **Discover Streams** | Scans configured playlists for streams we lack, probes each, commits the survivors to `config/discovered.m3u` |
@@ -27,6 +28,19 @@ Plus **CI** on every push and pull request, and **Dependabot** monthly.
   a channel (or a new channel is created) and written to `data/nexus`.
 - **Takedown requests.** The *Copyright / takedown request* form removes the
   listed channels and streams immediately and assigns the owner to review.
+- **Broken-stream reports.** The *Report a broken stream* form re-tests the
+  channel's streams; dead ones are hidden for 7 days (`data/nexus/reports.ndjson`)
+  and come back to be tested again.
+- **Issues and pull requests** (Repository Bot): source proposals get an
+  automatic evaluation; issues without a form get pointed at the right one;
+  pull requests that only add lines to `data/nexus/` are checked like the forms
+  and merged; Dependabot updates are merged when CI passes (major single-package
+  updates wait for review). Code, config and workflow changes are always left
+  for you.
+- **Regional availability.** The Worker counts, per viewer country, whether a
+  channel's streams answered when tested from the viewer's nearest Cloudflare
+  location; Sync folds it into the API (needs the D1 database, see
+  `workers/xtream/README.md`).
 - **New streams from discovery.** Anything matching a channel we already index,
   from a source already listed in `config/discovery.yml`, that answers a live
   probe.

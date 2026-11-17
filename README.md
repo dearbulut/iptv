@@ -83,6 +83,9 @@ Upstream + your sources  →  merge & dedupe  →  probe & score  →  static AP
 | **Own database** | — | ✅ `data/` holds every channel and stream; survives upstream outages |
 | **Add a stream** | pull request, human review | ✅ issue form, checked and added by a bot in minutes |
 | **Takedowns** | manual | ✅ form, applied automatically, owner reviews |
+| **Broken-stream reports** | manual | ✅ re-tested by a bot; dead streams hidden for 7 days |
+| **Where a channel works, by country** | — | ✅ measured from viewers' nearest Cloudflare locations |
+| **Weekly SQLite dump** | — | ✅ one file, every table, release asset |
 
 ### Stream health scoring
 
@@ -341,6 +344,18 @@ issue. A bot checks it within minutes: if it is free to watch and plays, it is
 added (new channels too) and goes live with the next sync. If not, the bot says
 why; edit the issue and it checks again.
 
+**A channel does not play:** [report it](https://github.com/dearbulut/iptv/issues/new?template=broken-stream.yml).
+Its streams are re-tested within minutes; dead ones are hidden for a week and
+then tested again.
+
+**Pull requests** that only add lines to `data/nexus/` are checked the same
+way and merged automatically when they pass. Code changes are reviewed by a
+person.
+
+**Download everything:** the
+[database release](https://github.com/dearbulut/iptv/releases/tag/database)
+has the whole database as one SQLite file, rebuilt every Sunday.
+
 **Remove something you hold the rights to:** use the
 [takedown form](https://github.com/dearbulut/iptv/issues/new?template=takedown.yml).
 Removal is immediate; see [`docs/LEGAL.md`](docs/LEGAL.md).
@@ -354,7 +369,9 @@ Removal is immediate; see [`docs/LEGAL.md`](docs/LEGAL.md).
 | `epg.yml` | nightly 01:00 | Grab each configured EPG site, publish XMLTV |
 | `discover.yml` | nightly 02:00 | Find new streams, probe them, commit the survivors |
 | `database.yml` | nightly 01:30 | Copy the day's iptv-org changes into `data/`; refuse mass removals |
-| `community.yml` | on issue | Process *Add a stream* and *takedown* forms automatically |
+| `community.yml` | on issue | Process *Add a stream*, *broken stream* and *takedown* forms automatically |
+| `bot.yml` | on issue / PR | Evaluate source proposals, guide other issues, check and merge data-only PRs, merge passing Dependabot updates |
+| `dump.yml` | Sundays | Publish the database as one SQLite file to the `database` release |
 | `ci.yml` | on push/PR | Typecheck, unit tests, pipeline smoke test |
 
 Full detail, including how to run the automation under its own bot identity:
