@@ -11,9 +11,13 @@ import { buildEpg } from './epg/index.js';
 import { runDiscovery } from './discovery/index.js';
 import { buildApi } from './api/build.js';
 import { promises as fsp } from 'node:fs';
-import { appendNexus, loadDatabase, NEXUS_DIR, readTable } from './database/index.js';
+import { appendNexus, appendNexusFile, loadDatabase, NEXUS_DIR, readTable } from './database/index.js';
 import { reportMarkdown, syncDatabase } from './database/sync.js';
-import { processStreamSubmission, processTakedown } from './database/community.js';
+import { buildDump } from './database/dump.js';
+import { evaluateSource, evaluationMarkdown, reviewPullRequest, type ChangedFile } from './database/review.js';
+import { execFileSync } from 'node:child_process';
+import { httpGetText } from './core/http.js';
+import { processBrokenReport, processStreamSubmission, processTakedown } from './database/community.js';
 import { hasFfprobe, probeStream } from './health/probe.js';
 import { streamKey } from './core/http.js';
 import type { Channel } from './core/types.js';
@@ -187,10 +191,95 @@ program
     if (!report.applied) process.exitCode = 3;
   });
 
+/** Probe function and lookup sets shared by the bot commands. */
+async function botContext() {
+  const { settings } = await loadConfig();
+  const { data } = await loadDatabase();
+  const community = await readTable(NEXUS_DIR, 'streams');
+  const useFfprobe = await hasFfprobe();
+  return {
+    settings,
+    data,
+    channels: data.channels as Channel[],
+    knownStreams: new Set(
+      [...data.streams.map((stream) => stream.url), ...community.map((stream) => String(stream['url']))].map(streamKey),
+    ),
+    countries: new Set(data.countries.map((country) => country.code.toUpperCase())),
+    probe: (url: string, referrer: string | null, userAgent: string | null) =>
+      probeStream(url, {
+        timeoutMs: settings.health.timeout_seconds * 1000,
+        referrer,
+        userAgent,
+        useFfprobe,
+        probeDuration: settings.health.probe_duration,
+      }),
+  };
+}
+
+program
+  .command('review-pr')
+  .description('Review a pull request between two git refs (files are read as data, never run)')
+  .requiredOption('--base <ref>', 'base ref, e.g. origin/main')
+  .requiredOption('--head <ref>', 'pull request head ref')
+  .requiredOption('--out <file>', 'write {verdict, message} JSON here')
+  .action(async (options: { base: string; head: string; out: string }) => {
+    const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+    const show = (ref: string, file: string) => {
+      try {
+        return git('show', `${ref}:${file}`);
+      } catch {
+        return null;
+      }
+    };
+    // Shallow clones may lack the merge base; diffing against the base itself
+    // is then a close enough approximation for a data-only check.
+    let mergeBase = options.base;
+    try {
+      mergeBase = git('merge-base', options.base, options.head).trim();
+    } catch {
+      logger.warn('No merge base found; diffing against the base ref');
+    }
+    const paths = git('diff', '--name-only', mergeBase, options.head).split('\n').filter(Boolean);
+    const files: ChangedFile[] = paths.map((file) => ({ path: file, before: show(options.base, file), after: show(options.head, file) }));
+    const ctx = await botContext();
+    const result = await reviewPullRequest(files, ctx);
+    await fsp.writeFile(options.out, JSON.stringify(result, null, 2));
+    logger.info(`review: ${result.verdict} (${files.length} file(s))`);
+  });
+
+program
+  .command('evaluate-source')
+  .description('Measure what a proposed playlist would add, for a source proposal issue')
+  .requiredOption('--url <url>', 'playlist URL')
+  .requiredOption('--out <file>', 'write the Markdown report here')
+  .action(async (options: { url: string; out: string }) => {
+    const ctx = await botContext();
+    let report: string;
+    try {
+      if (!/^https?:\/\//i.test(options.url)) throw new Error('not an http(s) URL');
+      const playlist = await httpGetText(options.url, { timeoutMs: 30_000, attempts: 1 });
+      if (playlist.length > 20 * 1024 * 1024) throw new Error('larger than 20 MB');
+      const playable = new Set<string>((ctx.data.streams.map((stream) => stream.channel).filter(Boolean) as string[]));
+      report = evaluationMarkdown(options.url, await evaluateSource(playlist, { ...ctx, playable }));
+    } catch (error) {
+      report = `Could not evaluate \`${options.url}\`: ${(error as Error).message}. A maintainer will look at it.`;
+    }
+    await fsp.writeFile(options.out, `${report}\n`);
+  });
+
+program
+  .command('dump')
+  .description('Write the whole database as one SQLite file')
+  .requiredOption('--out <file>', 'SQLite file to create')
+  .option('--channels <file>', 'built api/v1/channels.json, adds status and health tables')
+  .action(async (options: { out: string; channels?: string }) => {
+    await logger.time('Database dump', () => buildDump({ out: options.out, channelsJson: options.channels }));
+  });
+
 program
   .command('community')
   .description('Process a community issue: a stream submission or a takedown request')
-  .requiredOption('--kind <kind>', 'stream | takedown')
+  .requiredOption('--kind <kind>', 'stream | takedown | broken')
   .requiredOption('--body-file <file>', 'the issue body (Markdown from the issue form)')
   .requiredOption('--author <login>', 'GitHub login of the issue author')
   .requiredOption('--issue <number>', 'issue number', Number)
@@ -205,7 +294,41 @@ program
       const now = new Date().toISOString();
       let result: { status: string; message: string; changed: boolean; commit: string };
 
-      if (options.kind === 'takedown') {
+      const probeWith = async () => {
+        const useFfprobe = await hasFfprobe();
+        return (url: string, referrer: string | null, userAgent: string | null) =>
+          probeStream(url, {
+            timeoutMs: settings.health.timeout_seconds * 1000,
+            referrer,
+            userAgent,
+            useFfprobe,
+            probeDuration: settings.health.probe_duration,
+          });
+      };
+
+      if (options.kind === 'broken') {
+        const community = await readTable(NEXUS_DIR, 'streams');
+        const streamsByChannel = new Map<string, Array<{ url: string; referrer: string | null; user_agent: string | null }>>();
+        for (const stream of [...data.streams, ...(community as unknown as typeof data.streams)]) {
+          if (!stream.channel) continue;
+          const bucket = streamsByChannel.get(stream.channel) ?? [];
+          bucket.push({ url: stream.url, referrer: stream.referrer ?? null, user_agent: stream.user_agent ?? null });
+          streamsByChannel.set(stream.channel, bucket);
+        }
+        const outcome = await processBrokenReport(body, options.issue, {
+          channels,
+          streamsByChannel,
+          probe: await probeWith(),
+          now,
+        });
+        await appendNexusFile('reports', outcome.reports);
+        result = {
+          status: outcome.status,
+          message: outcome.message,
+          changed: outcome.reports.length > 0,
+          commit: `data: hide ${outcome.reports.length} dead stream(s) reported in #${options.issue}`,
+        };
+      } else if (options.kind === 'takedown') {
         const outcome = processTakedown(body, options.issueUrl, channels, now);
         if (outcome.entries.length > 0) await appendNexus('blocklist', outcome.entries as never);
         result = {

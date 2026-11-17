@@ -1,0 +1,185 @@
+name: Repository Bot
+
+# Handles issues and pull requests that the Community workflow does not:
+#
+#   issues          source proposals ([source] form) get an automatic
+#                   evaluation; issues without a form get pointed at the right
+#                   one. Forms for streams, broken streams and takedowns are
+#                   handled by community.yml.
+#   pull requests   PRs that only ADD lines to data/nexus/{channels,feeds,
+#                   logos,streams}.ndjson are checked with the same rules as
+#                   the issue forms (streams probed live) and merged when they
+#                   pass. Everything else is summarised for a maintainer.
+#   dependabot      patch and minor updates are merged once CI passes; major
+#                   updates are labelled for review.
+#
+# pull_request_target runs this workflow from main with write access, so it
+# must never execute code from the pull request. It doesn't: the PR's files
+# are only read with `git show`, as data.
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: bot-${{ github.event.issue.number || github.event.pull_request.number || github.event.workflow_run.head_branch }}
+  cancel-in-progress: false
+
+jobs:
+  triage:
+    if: >-
+      github.event_name == 'issues' &&
+      github.event.issue.user.type != 'Bot' &&
+      github.event.issue.user.login != github.repository_owner &&
+      !startsWith(github.event.issue.title, '[Stream]') &&
+      !startsWith(github.event.issue.title, '[Takedown]') &&
+      !startsWith(github.event.issue.title, '[Broken]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        if: startsWith(github.event.issue.title, '[source]')
+
+      - uses: actions/setup-node@v4
+        if: startsWith(github.event.issue.title, '[source]')
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Evaluate the proposed source
+        if: startsWith(github.event.issue.title, '[source]')
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          npm ci
+          URL=$(node -e '
+            const body = process.env.BODY || "";
+            const section = body.split(/^###\s+/m).find((part) => /^Playlist or stream URL/i.test(part)) || "";
+            const match = section.match(/https?:\/\/\S+/);
+            process.stdout.write(match ? match[0] : "");
+          ')
+          npm run --silent cli -- evaluate-source --url "$URL" --out "$RUNNER_TEMP/reply.md"
+
+      - name: Point at the right form
+        if: "!startsWith(github.event.issue.title, '[source]')"
+        run: |
+          cat > "$RUNNER_TEMP/reply.md" <<'EOF2'
+          Thanks for opening an issue! Most requests are handled automatically through a form:
+
+          - **A channel does not play** → [Report a broken stream](../issues/new?template=broken-stream.yml) — re-tested and hidden if dead, within minutes.
+          - **Add a stream or a new channel** → [Add a stream](../issues/new?template=add-stream.yml) — checked and added within minutes.
+          - **Copyright / takedown** → [Takedown request](../issues/new?template=takedown.yml) — applied immediately.
+          - **Propose a whole playlist** → [Add a stream source](../issues/new?template=add-source.yml) — evaluated automatically, then decided by a maintainer.
+          - **The programme guide is missing for your own playlist** → [Fix my playlist](https://dearbulut.github.io/iptv/tools.html#fix).
+
+          If this is something else — a bug, an idea, a question — it stays open for a maintainer.
+          EOF2
+
+      - name: Reply
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABEL: ${{ startsWith(github.event.issue.title, '[source]') && 'source-review' || 'needs-triage' }}
+        run: |
+          gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/reply.md"
+          gh issue edit "$NUMBER" --add-label "$LABEL" >/dev/null 2>&1 || true
+
+  pull-request:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.type != 'Bot' &&
+      github.event.pull_request.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # The default branch — never the pull request's code.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 100
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Review
+        id: review
+        env:
+          NUMBER: ${{ github.event.pull_request.number }}
+          BASE: ${{ github.event.repository.default_branch }}
+        run: |
+          git fetch --quiet --depth=100 origin "$BASE"
+          git fetch --quiet --depth=100 origin "pull/$NUMBER/head:pr-head"
+          npm run --silent cli -- review-pr --base "origin/$BASE" --head pr-head --out "$RUNNER_TEMP/review.json"
+          node -e '
+            const r = require(process.argv[1]);
+            require("fs").writeFileSync(process.argv[2], r.message + "\n");
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `verdict=${r.verdict}\n`);
+          ' "$RUNNER_TEMP/review.json" "$RUNNER_TEMP/reply.md"
+
+      - name: Reply and act
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          VERDICT: ${{ steps.review.outputs.verdict }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          gh pr comment "$NUMBER" --body-file "$RUNNER_TEMP/reply.md"
+          case "$VERDICT" in
+            merge)
+              gh pr edit "$NUMBER" --add-label auto-merged >/dev/null 2>&1 || true
+              # Pin the reviewed commit: if something was pushed meanwhile, the merge fails safely.
+              gh pr merge "$NUMBER" --squash --match-head-commit "$HEAD_SHA" ;;
+            changes)
+              gh pr edit "$NUMBER" --add-label needs-changes >/dev/null 2>&1 || true ;;
+            *)
+              gh pr edit "$NUMBER" --add-label needs-review >/dev/null 2>&1 || true ;;
+          esac
+
+  dependabot:
+    if: >-
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.actor.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge safe updates
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          [ -n "$PR" ] || { echo "No open PR for $BRANCH"; exit 0; }
+          if [ "$CONCLUSION" != "success" ]; then
+            gh pr edit "$PR" --add-label needs-review >/dev/null 2>&1 || true
+            echo "CI did not pass; leaving PR #$PR for review"
+            exit 0
+          fi
+          TITLE=$(gh pr view "$PR" --json title --jq .title)
+          # Single updates name versions ("from 1.2.3 to 1.4.0"); a different major
+          # waits for review. Grouped updates have no versions in the title and
+          # merge on a green CI, which is what tests the group as a whole.
+          FROM=$(echo "$TITLE" | sed -nE 's/.* from v?([0-9]+)\..* to v?([0-9]+)\..*/\1/p')
+          TO=$(echo "$TITLE" | sed -nE 's/.* from v?([0-9]+)\..* to v?([0-9]+)\..*/\2/p')
+          if [ -n "$FROM" ] && [ "$FROM" != "$TO" ]; then
+            gh pr edit "$PR" --add-label needs-review >/dev/null 2>&1 || true
+            gh pr comment "$PR" --body "Major version update ($FROM → $TO): CI passed, but a maintainer should check the changelog before merging." >/dev/null 2>&1 || true
+            exit 0
+          fi
+          gh pr merge "$PR" --squash --match-head-commit "$SHA"

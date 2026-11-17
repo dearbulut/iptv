@@ -1,11 +1,13 @@
 name: Community
 
-# Processes the "Add a stream" and "Copyright / takedown request" issue forms
-# without a human in the loop:
+# Processes the "Add a stream", "Report a broken stream" and "Copyright /
+# takedown request" issue forms without a human in the loop:
 #
 #   stream     validate → probe live → match or create the channel → write to
 #              data/nexus → comment and close. Problems are explained and the
 #              issue stays open; editing it runs the checks again.
+#   broken     re-probe the channel's streams; hide the dead ones for 7 days
+#              (data/nexus/reports.ndjson); they are re-tested afterwards.
 #   takedown   remove the listed channels/streams at once (data/nexus/
 #              blocklist.ndjson), confirm to the requester, and assign the
 #              owner to review. Restoring an entry is deleting its line.
@@ -32,8 +34,10 @@ jobs:
       github.event.issue.state == 'open' &&
       (startsWith(github.event.issue.title, '[Stream]') ||
        startsWith(github.event.issue.title, '[Takedown]') ||
+       startsWith(github.event.issue.title, '[Broken]') ||
        contains(github.event.issue.labels.*.name, 'stream-submission') ||
-       contains(github.event.issue.labels.*.name, 'takedown'))
+       contains(github.event.issue.labels.*.name, 'takedown') ||
+       contains(github.event.issue.labels.*.name, 'broken-stream'))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -53,7 +57,7 @@ jobs:
           AUTHOR: ${{ github.event.issue.user.login }}
           NUMBER: ${{ github.event.issue.number }}
           URL: ${{ github.event.issue.html_url }}
-          KIND: ${{ (startsWith(github.event.issue.title, '[Takedown]') || contains(github.event.issue.labels.*.name, 'takedown')) && 'takedown' || 'stream' }}
+          KIND: ${{ (startsWith(github.event.issue.title, '[Takedown]') || contains(github.event.issue.labels.*.name, 'takedown')) && 'takedown' || (startsWith(github.event.issue.title, '[Broken]') || contains(github.event.issue.labels.*.name, 'broken-stream')) && 'broken' || 'stream' }}
         run: |
           printf '%s' "$BODY" > "$RUNNER_TEMP/body.md"
           npm run --silent cli -- community --kind "$KIND" --body-file "$RUNNER_TEMP/body.md" \
@@ -89,9 +93,11 @@ jobs:
         run: |
           gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/message.md"
           case "$STATUS" in
-            accepted|duplicate)
+            accepted|duplicate|hidden|working)
               gh issue edit "$NUMBER" --add-label accepted --remove-label needs-changes >/dev/null 2>&1 || true
               gh issue close "$NUMBER" --reason completed ;;
+            manual)
+              gh issue edit "$NUMBER" --add-label needs-triage >/dev/null 2>&1 || true ;;
             removed)
               gh issue edit "$NUMBER" --add-label removed --remove-label needs-changes --add-assignee "$OWNER" >/dev/null 2>&1 || true ;;
             *)

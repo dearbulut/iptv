@@ -100,3 +100,8 @@ jobs:
           gh label create accepted --color 0E8A16 --description "Processed and added" --force >/dev/null 2>&1 || true
           gh label create needs-changes --color FBCA04 --description "The bot could not process it yet" --force >/dev/null 2>&1 || true
           gh label create removed --color 5319E7 --description "Takedown applied" --force >/dev/null 2>&1 || true
+          gh label create broken-stream --color D93F0B --description "Reported as not playing" --force >/dev/null 2>&1 || true
+          gh label create needs-triage --color C5DEF5 --description "Needs a person" --force >/dev/null 2>&1 || true
+          gh label create needs-review --color C5DEF5 --description "A maintainer reviews this" --force >/dev/null 2>&1 || true
+          gh label create source-review --color 1D76DB --description "Proposed source, evaluated automatically" --force >/dev/null 2>&1 || true
+          gh label create auto-merged --color 0E8A16 --description "Checked and merged by the bot" --force >/dev/null 2>&1 || true

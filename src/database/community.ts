@@ -379,3 +379,116 @@ export function processTakedown(
     ].join('\n'),
   };
 }
+
+// ------------------------------------------------------- broken streams
+
+/** How long a stream reported and confirmed dead stays hidden. */
+export const HIDE_DAYS = 7;
+
+export interface ReportContext {
+  channels: readonly Channel[];
+  /** Every stream we list, by channel id. */
+  streamsByChannel: ReadonlyMap<string, ReadonlyArray<{ url: string; referrer: string | null; user_agent: string | null }>>;
+  probe: (url: string, referrer: string | null, userAgent: string | null) => Promise<HealthCheck>;
+  now: string;
+}
+
+export interface ReportResult {
+  status: 'hidden' | 'working' | 'manual' | 'rejected';
+  message: string;
+  /** Rows for data/nexus/reports.ndjson. */
+  reports: Array<Record<string, unknown>>;
+}
+
+/**
+ * A "this does not play" report: every stream of the channel (or the one
+ * named) is probed again. Dead ones are hidden for HIDE_DAYS — not deleted —
+ * so a stream that was down for an afternoon comes back and is re-tested.
+ * Problems a probe cannot judge (wrong channel, wrong details) go to a human.
+ */
+export async function processBrokenReport(body: string, issue: number, ctx: ReportContext): Promise<ReportResult> {
+  const fields = parseIssueForm(body);
+  const problem = field(fields, 'Problem');
+  const input = field(fields, 'Channel');
+  const named = field(fields, 'Stream URL');
+  const country = field(fields, 'Your country').toUpperCase().slice(0, 2);
+
+  const idFromLink = input.match(/[?&]channel=([^&\s]+)/)?.[1];
+  const wanted = decodeURIComponent(idFromLink ?? input).trim();
+  const index = buildChannelIndex(ctx.channels as Channel[], []);
+  const channel =
+    index.byId.get(wanted) ??
+    index.byLowerId.get(wanted.toLowerCase().split('@')[0]!) ??
+    resolveChannel(wanted, index, { country: country || null }, 0.92)?.channel;
+  if (!channel) {
+    return {
+      status: 'rejected',
+      reports: [],
+      message: `**No channel matches "${wanted}".** Use the channel's id from its page on the website (\`?channel=…\`) and edit this issue.`,
+    };
+  }
+
+  if (problem && !/does not play/i.test(problem)) {
+    return {
+      status: 'manual',
+      reports: [],
+      message: `Thanks — "${problem}" needs a person to look at it, so this stays open for the maintainers. Channel: \`${channel.id}\` (${channel.name}).`,
+    };
+  }
+
+  const listed = ctx.streamsByChannel.get(channel.id) ?? [];
+  const streams = named ? listed.filter((stream) => streamKey(stream.url) === streamKey(named)) : listed;
+  if (named && streams.length === 0) {
+    return {
+      status: 'rejected',
+      reports: [],
+      message: `That URL is not one of the streams we list for \`${channel.id}\`, so there is nothing to hide. Leave the URL empty to test all of the channel's streams.`,
+    };
+  }
+  if (streams.length === 0) {
+    return { status: 'manual', reports: [], message: `\`${channel.id}\` has no streams listed at the moment, so there is nothing to test.` };
+  }
+
+  const expires = new Date(Date.parse(ctx.now) + HIDE_DAYS * 86_400_000).toISOString();
+  const results: Array<{ stream: (typeof streams)[number]; check: HealthCheck }> = [];
+  for (const stream of streams.slice(0, 10)) {
+    results.push({ stream, check: await ctx.probe(stream.url, stream.referrer, stream.user_agent) });
+  }
+  const dead = results.filter(({ check }) => ['offline', 'error', 'timeout'].includes(check.status));
+  const blocked = results.filter(({ check }) => check.status === 'blocked');
+  const working = results.filter(({ check }) => check.status === 'online');
+
+  const line = ({ stream, check }: (typeof results)[number]) =>
+    `- \`${stream.url}\` — **${check.status}**${check.http_status ? ` (HTTP ${check.http_status})` : ''}${check.media?.resolution ? `, ${check.media.resolution}` : ''}`;
+  const reports = dead.map(({ stream, check }) => ({
+    url: stream.url,
+    channel: channel.id,
+    status: check.status,
+    reported_at: ctx.now,
+    expires_at: expires,
+    issue,
+  }));
+
+  const lines = [`Tested ${results.length} stream${results.length === 1 ? '' : 's'} of \`${channel.id}\` (${channel.name}):`, '', ...results.map(line), ''];
+  if (dead.length > 0) {
+    lines.push(`**Hidden ${dead.length} dead stream${dead.length === 1 ? '' : 's'}** for ${HIDE_DAYS} days, from the next sync. After that they are tested again and come back if they work. Thank you!`);
+  }
+  if (working.length > 0) {
+    lines.push(
+      `${working.length} stream${working.length === 1 ? ' works' : 's work'} from our checker. If it still does not play for you, it may be blocked in your country${country ? ` (${country})` : ''}, need a different player (try VLC), or be blocked by your network.`,
+    );
+  }
+  if (blocked.length > 0) {
+    lines.push(`${blocked.length} refused our checker — usually a regional block, so they are kept.`);
+  }
+  return {
+    status: dead.length > 0 ? 'hidden' : 'working',
+    reports,
+    message: lines.join('\n'),
+  };
+}
+
+/** Reports whose hiding period has not ended. */
+export function activeReports<T extends { expires_at?: unknown }>(reports: readonly T[], now: string): T[] {
+  return reports.filter((report) => String(report.expires_at ?? '') > now);
+}

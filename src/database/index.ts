@@ -103,6 +103,13 @@ export async function appendNexus(table: Table, rows: readonly Row[]): Promise<v
   await writeTable(NEXUS_DIR, table, [...existing, ...rows]);
 }
 
+/** Appends rows to any data/nexus file, including ones that are not upstream tables. */
+export async function appendNexusFile(name: string, rows: readonly Row[]): Promise<void> {
+  if (rows.length === 0) return;
+  await fs.mkdir(NEXUS_DIR, { recursive: true });
+  await fs.appendFile(path.join(NEXUS_DIR, `${name}.ndjson`), serialiseTable(rows));
+}
+
 export async function databaseExists(): Promise<boolean> {
   try {
     await fs.access(path.join(MIRROR_DIR, 'channels.ndjson'));
@@ -180,6 +187,15 @@ export async function loadDatabase(): Promise<LoadedDatabase> {
       trust: COMMUNITY_TRUST,
     }));
 
+  // Streams reported and confirmed dead are hidden until their report expires.
+  const reports = await fs
+    .readFile(path.join(NEXUS_DIR, 'reports.ndjson'), 'utf8')
+    .then(parseTable)
+    .catch(() => [] as Row[]);
+  const hidden = reports
+    .filter((report) => String(report['expires_at'] ?? '') > now && report['url'])
+    .map((report) => ({ channel: '', url: String(report['url']), reason: 'reported-dead', ref: `#${report['issue'] ?? ''}` }));
+
   const merged = (table: Table) => [...tables[table], ...nexus[table]];
   const data = {
     channels: [...channels.values()],
@@ -193,14 +209,15 @@ export async function loadDatabase(): Promise<LoadedDatabase> {
     subdivisions: merged('subdivisions'),
     regions: merged('regions'),
     timezones: merged('timezones'),
-    blocklist: merged('blocklist'),
+    blocklist: [...merged('blocklist'), ...hidden],
     fetched_at: meta?.synced_at ?? now,
     source: `IPTV Nexus database (iptv-org mirror ${meta?.synced_at?.slice(0, 10) ?? 'unknown'})`,
   } as unknown as UpstreamData;
 
   log.info(
     `Database: ${data.channels.length} channels, ${data.streams.length} mirrored + ` +
-      `${communityStreams.length} community streams, ${data.blocklist.length} blocklist entries`,
+      `${communityStreams.length} community streams, ${data.blocklist.length - hidden.length} blocklist entries, ` +
+      `${hidden.length} hidden after reports`,
   );
   return { data, communityStreams };
 }

@@ -1,12 +1,17 @@
-name: Report a broken or misattributed stream
-description: A stream is dead, wrong, or attached to the wrong channel
-title: '[stream] '
-labels: [stream]
+name: Report a broken stream
+description: A channel does not play — checked automatically, dead streams are hidden
+title: '[Broken] '
+labels: [broken-stream]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        A bot re-tests the channel's streams within a few minutes. Streams that are dead are **hidden for 7 days**, then tested again. If the streams work from our checker, the bot tells you — the problem may be your player, your network or a regional block.
   - type: input
     id: channel
     attributes:
-      label: Channel ID
+      label: Channel
+      description: The channel's id (like `BBCNews.uk`), a link to its page on the website, or its name.
       placeholder: BBCNews.uk
     validations:
       required: true
@@ -14,20 +19,26 @@ body:
     id: url
     attributes:
       label: Stream URL
+      description: Optional. Leave empty to test all of the channel's streams.
   - type: dropdown
     id: problem
     attributes:
       label: Problem
       options:
-        - Stream is dead but still listed
-        - Stream works but is scored as broken
-        - Stream is attached to the wrong channel
-        - Wrong quality / metadata
+        - It does not play
+        - It plays the wrong channel
+        - The quality or details are wrong
         - Other
     validations:
       required: true
+  - type: input
+    id: country
+    attributes:
+      label: Your country
+      description: Two-letter code. Many "broken" streams are only blocked in some countries.
+      placeholder: TR
   - type: textarea
     id: details
     attributes:
       label: Details
-      description: Your country helps — many "broken" streams are geo-restricted.
+      description: Which app or player, and what happens.

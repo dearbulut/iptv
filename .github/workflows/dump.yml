@@ -1,0 +1,75 @@
+name: Database Dump
+
+# Publishes the whole database every week as release assets on the rolling
+# `database` release, for developers who want it in one file:
+#   iptv-nexus.sqlite.gz   every table, plus channel status and stream health
+#   iptv-nexus-data.zip    the raw data/ directory (NDJSON, one record a line)
+
+on:
+  schedule:
+    # Sundays 04:20 UTC, after the nightly database sync and health scan.
+    - cron: '20 4 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dump
+  cancel-in-progress: true
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch the live status from the API
+        env:
+          BASE: ${{ format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+        run: |
+          curl -fsSL "$BASE/api/v1/channels.json.gz" | gunzip > "$RUNNER_TEMP/channels.json" \
+            || curl -fsSL "$BASE/api/v1/channels.json" -o "$RUNNER_TEMP/channels.json"
+
+      - name: Build the dump
+        run: |
+          mkdir -p dist
+          npm run --silent cli -- dump --out dist/iptv-nexus.sqlite --channels "$RUNNER_TEMP/channels.json"
+          gzip -9 dist/iptv-nexus.sqlite
+          zip -qr9 dist/iptv-nexus-data.zip data LICENSE
+          ls -la dist
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(date -u +%F)
+          cat > "$RUNNER_TEMP/notes.md" <<NOTES
+          The whole IPTV Nexus database, rebuilt every Sunday. Last update: **${DATE}**.
+
+          | File | Contents |
+          | --- | --- |
+          | \`iptv-nexus.sqlite.gz\` | One SQLite file: channels, feeds, logos, streams (iptv-org and community), guides, categories, languages, countries, subdivisions, regions, timezones, blocklist, plus \`channel_status\` (number, availability, quality) and \`stream_health\` (status, uptime, resolution) from the live API. Views: \`working_channels\`, \`channel_streams\`. |
+          | \`iptv-nexus-data.zip\` | The raw \`data/\` directory: one JSON record per line. |
+
+          \`\`\`sh
+          gunzip iptv-nexus.sqlite.gz
+          sqlite3 iptv-nexus.sqlite "SELECT name, number FROM working_channels WHERE country = 'TR' ORDER BY number"
+          \`\`\`
+
+          Array fields are JSON text. Released under the Unlicense.
+          NOTES
+          if ! gh release view database >/dev/null 2>&1; then
+            gh release create database --title "Database snapshot" --notes-file "$RUNNER_TEMP/notes.md" --latest=false
+          else
+            gh release edit database --notes-file "$RUNNER_TEMP/notes.md"
+          fi
+          gh release upload database dist/iptv-nexus.sqlite.gz dist/iptv-nexus-data.zip --clobber
