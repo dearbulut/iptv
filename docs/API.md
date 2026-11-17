@@ -112,7 +112,10 @@ document (`api.channel_details: playable`).
   "logo": "https://…/bbcnews.png",
   "score": 92,
   "online": true,
+  "availability": "online",
+  "number": 1873,
   "stream_count": 3,
+  "browser_playable": true,
   "best_quality": "1080p",
   "streams": [
     {
@@ -125,10 +128,13 @@ document (`api.channel_details: playable`).
       "quality": "1080p",
       "rank": 84.2,
       "sources": ["iptv-org"],
+      "browser_playable": true,
+      "browser_blocker": null,
       "health": {
         "status": "online",
         "score": 92,
         "uptime": 96.7,
+        "history": "111111110111111111111111111111",
         "checked_at": "2026-07-26T15:02:11.000Z",
         "last_online": "2026-07-26T15:02:11.000Z",
         "latency_ms": 210,
@@ -153,6 +159,11 @@ document (`api.channel_details: playable`).
 | --- | --- |
 | `score` | Best rolling availability score across the channel's streams, 0–100. **`0` means "not conclusively checked yet"**, not "broken" — check `streams[].health` to tell the difference. |
 | `online` | At least one stream responded on the most recent scan. |
+| `availability` | `online`, `regional` (nothing answered, but a stream refused our scanner with a geo-block — it may well work where you are), `offline`, `unchecked` or `none` (no stream). |
+| `number` | Permanent channel number, also emitted as `tvg-chno` in playlists. Never changes and is never reused. `null` for channels without a stream. |
+| `browser_playable` | At least one stream can play on an HTTPS web page. |
+| `streams[].browser_playable` / `browser_blocker` | Whether this stream plays in a browser, and if not why: `insecure` (plain `http://`, blocked as mixed content), `headers` (needs Referer/User-Agent) or `format` (`.ts`, DASH, RTMP…). Such streams still work in VLC, Kodi, TiviMate and similar. |
+| `streams[].health.history` | Recorded checks, oldest first: `1` up, `0` down. |
 | `streams[].rank` | Sort weight combining health, quality, latency and source trust. Streams are pre-sorted best-first; you can just take `streams[0]`. |
 | `streams[].sources` | Which configured sources contributed this URL. |
 | `streams[].health.uptime` | Percentage of recorded checks that succeeded. |
@@ -220,6 +231,12 @@ gives you sensible "top results" for free.
 | `/playlists/language/{code}.m3u` | Per language |
 | `/api/v1/playlists.json` | Index of every generated playlist |
 
+Entries are ordered by channel number and carry `tvg-chno`, `tvg-id` (the
+Nexus id, matching the guide), `group-title` and, where a stream needs them,
+`#EXTVLCOPT:http-referrer` / `http-user-agent` lines. Country playlists point
+`x-tvg-url` at that country's own guide shard, so a TV app downloads only the
+guide it needs; the rest point at the merged guide.
+
 Entries carry standard `tvg-id`, `tvg-name`, `tvg-logo`, `tvg-country`,
 `tvg-language` and `group-title` attributes, plus a non-standard `nexus-score`
 holding the health score. The `#EXTM3U` header sets `x-tvg-url` to the merged
@@ -240,6 +257,31 @@ Streams that need custom headers emit `#EXTVLCOPT:http-user-agent` and
 Standard XMLTV. Channel ids are **Nexus channel ids**, matching `tvg-id` in the
 playlists and `id` in the API — that is the whole point of the matching stage,
 and it means one guide URL works for every playlist.
+
+### `GET /api/v1/epg-unmatched.json`
+
+Guide channels that no rule could link to a Nexus channel, grouped by guide:
+
+```json
+{
+  "total": 1067,
+  "by_site": { "pluto-tv": 410, "mi-tv": 316 },
+  "channels": [{ "site": "tvplus-com-tr", "site_id": "4355", "name": "EKOL TV" }]
+}
+```
+
+A fix is one entry in `config/epg-overrides.yml` — `{ site, site_id, channel }`
+to link it, or `{ site, site_id, skip: true }` for a channel we do not carry.
+
+## Clients
+
+| Path | Contents |
+| --- | --- |
+| `/stremio/manifest.json` | Static Stremio addon — install this URL in Stremio |
+| `/xtream/index.json` | Data behind the Xtream Codes Worker ([`workers/xtream`](../workers/xtream/README.md)) |
+
+Setup for Jellyfin, Plex, Kodi, TiviMate, Stremio and others:
+[CLIENTS.md](CLIENTS.md).
 
 ---
 

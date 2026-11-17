@@ -50,6 +50,7 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
       { name: 'meta', description: 'Manifest and health reporting' },
       { name: 'collections', description: 'Full collections' },
       { name: 'shards', description: 'Pre-filtered slices for cheap client fetches' },
+      { name: 'clients', description: 'Stremio addon and Xtream Codes data' },
       { name: 'detail', description: 'Single-resource documents' },
     ],
     paths: Object.fromEntries([
@@ -155,6 +156,42 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
         },
       ],
       [
+        '/api/v1/epg-unmatched.json',
+        {
+          get: {
+            summary: 'Guide channels no rule could link to a Nexus channel',
+            description: 'Fix one by adding it to config/epg-overrides.yml.',
+            operationId: 'getEpgUnmatched',
+            tags: ['meta'],
+            responses: { '200': { description: 'Unmatched guide channels', content: { 'application/json': {} } } },
+          },
+        },
+      ],
+      [
+        '/stremio/manifest.json',
+        {
+          get: {
+            summary: 'Stremio addon manifest (install this URL in Stremio)',
+            operationId: 'getStremioManifest',
+            tags: ['clients'],
+            responses: { '200': { description: 'Stremio manifest', content: { 'application/json': {} } } },
+          },
+        },
+      ],
+      [
+        '/xtream/index.json',
+        {
+          get: {
+            summary: 'Precomputed data for the Xtream Codes Worker',
+            description:
+              'Rows are [stream_id, name, icon, epg_channel_id, category ids, country category id, url]. See workers/xtream.',
+            operationId: 'getXtreamIndex',
+            tags: ['clients'],
+            responses: { '200': { description: 'Xtream index', content: { 'application/json': {} } } },
+          },
+        },
+      ],
+      [
         '/playlists/index.m3u',
         {
           get: {
@@ -205,6 +242,19 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
               description: 'Best rolling availability score across the channel’s streams',
             },
             online: { type: 'boolean' },
+            availability: {
+              type: 'string',
+              enum: ['online', 'regional', 'offline', 'unchecked', 'none'],
+              description:
+                '`regional`: nothing answered, but a stream refused our scanner with a geo-block — it may work from the viewer’s region',
+            },
+            number: {
+              type: ['integer', 'null'],
+              description: 'Permanent channel number (`tvg-chno`); never changes or gets reused. Null without a stream.',
+            },
+            stream_count: { type: 'integer' },
+            browser_playable: { type: 'boolean', description: 'At least one stream plays in a browser' },
+            best_quality: { type: ['string', 'null'] },
             streams: { type: 'array', items: { $ref: '#/components/schemas/Stream' } },
             guides: { type: 'array', items: { $ref: '#/components/schemas/Guide' } },
           },
@@ -221,6 +271,16 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
             user_agent: { type: ['string', 'null'] },
             quality: { type: ['string', 'null'], example: '1080p' },
             rank: { type: 'number', description: 'Sort weight; higher is better' },
+            sources: { type: 'array', items: { type: 'string' } },
+            browser_playable: {
+              type: 'boolean',
+              description: 'HTTPS, no custom headers and a browser-supported format',
+            },
+            browser_blocker: {
+              type: ['string', 'null'],
+              enum: ['insecure', 'headers', 'format', null],
+              description: 'Why the stream cannot play in a browser, when it cannot',
+            },
             health: { $ref: '#/components/schemas/Health' },
           },
         },
@@ -236,6 +296,11 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
             last_online: { type: ['string', 'null'], format: 'date-time' },
             latency_ms: { type: ['integer', 'null'] },
             uptime: { type: 'number', description: 'Uptime percentage over recorded history' },
+            history: {
+              type: 'string',
+              example: '1110111111',
+              description: 'Recorded checks, oldest first: `1` up, `0` down',
+            },
             media: {
               type: ['object', 'null'],
               properties: {

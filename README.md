@@ -69,7 +69,11 @@ Upstream + your sources  →  merge & dedupe  →  probe & score  →  static AP
 | **Merged, channel-matched EPG** | separate repo | ✅ built in, fuzzy-matched |
 | **JSON API with filters** | flat files only | ✅ shards, per-channel docs, search index |
 | **OpenAPI schema** | — | ✅ |
-| **Web UI + player** | — | ✅ |
+| **Web UI + player** | — | ✅ with uptime graphs, "plays in browser" filter |
+| **Permanent channel numbers** (`tvg-chno`) | — | ✅ never change, never reused |
+| **Geo-blocked streams shown as "Regional"** | — | ✅ instead of "offline" |
+| **Stremio addon** | — | ✅ static, no server |
+| **Xtream Codes login** (TiviMate, Smarters…) | — | ✅ via a free Cloudflare Worker |
 | **Automatic source discovery** | manual PRs | ✅ scan → validate → PR |
 
 ### Stream health scoring
@@ -131,6 +135,18 @@ shards, so one guide URL works with every generated playlist.
 Per-country, per-category and per-language playlists: [**PLAYLISTS.md**](PLAYLISTS.md).
 
 <!-- PLAYLISTS:END -->
+
+### Use it in your player
+
+Jellyfin, Plex, Kodi, TiviMate, IPTV Smarters, Channels DVR, VLC and Stremio
+are covered step by step in [**docs/CLIENTS.md**](docs/CLIENTS.md). The short
+version:
+
+| Player | Add |
+| --- | --- |
+| Any M3U player | `https://dearbulut.github.io/iptv/playlists/country/tr.m3u` (or `best.m3u`) — the guide is picked up from the playlist |
+| Stremio | `https://dearbulut.github.io/iptv/stremio/manifest.json` |
+| Xtream-only apps | deploy [`workers/xtream`](workers/xtream/README.md) (free) and log in with its URL |
 
 ### Use the API (nothing to install)
 
@@ -227,6 +243,7 @@ write down what you want to change.
 | `sources.yml` | Extra stream sources beyond upstream |
 | `epg-grab.yml` | Which sites the nightly EPG scraper visits |
 | `epg-sources.yml` | Which grabbed guides the sync consumes, and their countries |
+| `epg-overrides.yml` | Hand fixes for EPG matching (link or skip a guide channel) |
 | `discovery.yml` | Where automatic discovery looks for new streams |
 
 Adding a source:
@@ -282,6 +299,9 @@ Full machine-readable schema: **`/api/v1/openapi.json`**. Human summary:
 | `/playlists/{country,category,language}/{key}.m3u` | Filtered playlists |
 | `/epg/guide.xml[.gz]` | Merged guide |
 | `/epg/{country}.xml[.gz]` | Per-country guide |
+| `/api/v1/epg-unmatched.json` | Guide channels not yet matched — fix in `config/epg-overrides.yml` |
+| `/stremio/manifest.json` | Stremio addon |
+| `/xtream/index.json` | Data for the Xtream Codes Worker |
 
 ---
 
