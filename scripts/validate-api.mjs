@@ -277,9 +277,35 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
       const ids = new Set(xtream.streams.map((row) => row[0]));
       if (ids.size !== xtream.streams.length) fail('xtream/index.json has duplicate stream ids');
       if (xtream.streams.some((row) => !/^https?:\/\//.test(row[6]))) fail('xtream/index.json has a non-HTTP stream');
+      if (xtream.streams.some((row) => row.length < 15 || !Array.isArray(row[7]))) {
+        fail('xtream/index.json rows lack the builder/failover fields');
+      }
       console.log(`xtream: ${xtream.streams.length} live streams`);
     }
   }
+}
+
+// --- enricher index and change feed ---------------------------------------
+
+{
+  const match = await readJson('api/v1/match.json');
+  if (match) {
+    if (!Array.isArray(match.fields) || !Array.isArray(match.channels)) fail('match.json is malformed');
+    else if (Array.isArray(channels) && match.channels.length !== channels.length) {
+      fail(`match.json has ${match.channels.length} rows for ${channels.length} channels`);
+    } else if (match.channels.some((row) => row.length !== match.fields.length)) {
+      fail('match.json rows have the wrong arity');
+    }
+  }
+  const changes = await readJson('api/v1/changes.json');
+  if (changes && !Array.isArray(changes.entries)) fail('changes.json has no entries array');
+  try {
+    const atom = await fs.readFile(path.join(apiDir, 'changes.xml'), 'utf8');
+    if (!atom.includes('<feed xmlns="http://www.w3.org/2005/Atom">')) fail('changes.xml is not an Atom feed');
+  } catch {
+    fail('api/v1/changes.xml is missing');
+  }
+  await fs.access(path.join(publicDir, 'tools.html')).catch(() => fail('tools.html is missing'));
 }
 
 // --- gzip siblings ----------------------------------------------------------

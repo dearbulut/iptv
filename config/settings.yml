@@ -10,6 +10,9 @@ project:
   # CI overrides it automatically via the NEXUS_BASE_URL environment variable.
   base_url: https://dearbulut.github.io/iptv
   repository: https://github.com/dearbulut/iptv
+  # The deployed workers/xtream Worker: playlist builder, smart links, Xtream
+  # login and the MCP endpoint. Leave empty if you have not deployed one.
+  worker_url: https://iptv-nexus-xtream.bulutworks.workers.dev
 
 aggregate:
   upstream_api: https://iptv-org.github.io/api

@@ -168,6 +168,56 @@ export function buildOpenApi(settings: Settings, generatedAt: string): unknown {
         },
       ],
       [
+        '/api/v1/match.json',
+        {
+          get: {
+            summary: 'Compact index for matching any playlist to Nexus channel ids',
+            description:
+              'Rows follow `fields`: id, name, alt (aliases joined by |), country, logo, number, state (2 working, 1 has a stream, 0 none), guide (1 when the merged guide has programmes). Used by tools.html.',
+            operationId: 'getMatchIndex',
+            tags: ['clients'],
+            responses: { '200': { description: 'Match index', content: { 'application/json': {} } } },
+          },
+        },
+      ],
+      [
+        '/api/v1/changes.json',
+        {
+          get: {
+            summary: 'Channels that became or stopped being watchable, newest first',
+            operationId: 'getChanges',
+            tags: ['meta'],
+            responses: { '200': { description: 'Change history', content: { 'application/json': {} } } },
+          },
+        },
+      ],
+      [
+        '/api/v1/changes.xml',
+        {
+          get: {
+            summary: 'The change history as an Atom feed',
+            operationId: 'getChangesFeed',
+            tags: ['meta'],
+            responses: { '200': { description: 'Atom feed', content: { 'application/atom+xml': {} } } },
+          },
+        },
+      ],
+      [
+        '/epg/channels/{channelId}.json',
+        {
+          get: {
+            summary: "One channel's guide for the next 48 hours",
+            operationId: 'getChannelGuide',
+            tags: ['detail'],
+            parameters: [{ name: 'channelId', in: 'path', required: true, schema: { type: 'string' }, example: 'BBCNews.uk' }],
+            responses: {
+              '200': { description: 'Programmes: start, stop, title, sub_title, description, categories, icon', content: { 'application/json': {} } },
+              '404': { description: 'No guide data for this channel' },
+            },
+          },
+        },
+      ],
+      [
         '/stremio/manifest.json',
         {
           get: {

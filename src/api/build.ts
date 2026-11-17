@@ -44,6 +44,7 @@ import {
 import { assignChannelNumbers, normaliseRegistry } from './channel-numbers.js';
 import { buildStremioAddon } from './stremio.js';
 import { buildXtreamIndex } from './xtream.js';
+import { changesAtom, computeChanges, normaliseHistory, normaliseSnapshot } from './changes.js';
 import type { EpgLink } from '../epg/index.js';
 
 const log = new Logger('api');
@@ -409,6 +410,63 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   await emit('timezones.json', dataset.timezones, true);
   await emit('guides.json', dataset.guides);
 
+  // ---- match index ----------------------------------------------------------
+  // Everything the browser-side M3U enricher (site/tools.html) needs to map a
+  // provider's playlist onto Nexus ids, for every channel — not only those we
+  // have streams for, since a provider's own streams still need a tvg-id for
+  // the guide. Compact positional rows, like search.json.
+  const guideChannels = new Set(epgLinks.map((link) => link.channel));
+  const matchFields = ['id', 'name', 'alt', 'country', 'logo', 'number', 'state', 'guide'] as const;
+  await emit('match.json', {
+    fields: matchFields,
+    count: publicChannels.length,
+    channels: publicChannels.map((channel) => [
+      channel.id,
+      channel.name,
+      channel.alt_names.join('|'),
+      channel.country,
+      channel.logo ?? '',
+      channel.number,
+      /** 2 working now, 1 has a stream, 0 none. */
+      channel.online ? 2 : channel.stream_count > 0 ? 1 : 0,
+      guideChannels.has(channel.id) ? 1 : 0,
+    ]),
+  });
+
+  // ---- changes since the previous build --------------------------------------
+  // Snapshot and history are restored from (and published back to) the state
+  // branch by Sync, like the channel numbers.
+  const snapshotPath = path.join(PATHS.data, 'catalogue-snapshot.json');
+  const historyPath = path.join(PATHS.data, 'changes.json');
+  const changes = computeChanges(
+    normaliseSnapshot(await readJsonOr<unknown>(snapshotPath, null)),
+    publicChannels.map((channel) => ({
+      id: channel.id,
+      name: channel.name,
+      country: channel.country,
+      playable: channel.stream_count > 0,
+    })),
+    normaliseHistory(await readJsonOr<unknown>(historyPath, null)),
+    new Date().toISOString(),
+  );
+  await writeJson(snapshotPath, changes.snapshot);
+  await writeJson(historyPath, changes.history);
+  if (changes.entry) {
+    log.info(`Changes: ${changes.entry.added.length} new, ${changes.entry.removed.length} gone`);
+  }
+  await emit('changes.json', changes.history);
+  const siteUrl = settings.project.base_url ?? '';
+  await writeText(
+    path.join(PATHS.api, 'changes.xml'),
+    changesAtom(changes.history, {
+      title: settings.project.name,
+      siteUrl,
+      feedUrl: publicUrl(settings, 'api/v1/changes.xml'),
+      updated: dataset.generated_at,
+    }),
+  );
+  files++;
+
   // ---- client integrations ------------------------------------------------
   const countryNames = new Map(dataset.countries.map((country) => [country.code, country.name]));
   const categoryNames = new Map(dataset.categories.map((category) => [category.id, category.name]));
@@ -593,8 +651,21 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       playlist_best: publicUrl(settings, 'playlists/best.m3u'),
       epg: publicUrl(settings, 'epg/guide.xml.gz'),
       epg_unmatched: publicUrl(settings, 'api/v1/epg-unmatched.json'),
+      match: publicUrl(settings, 'api/v1/match.json'),
+      changes: publicUrl(settings, 'api/v1/changes.json'),
+      changes_feed: publicUrl(settings, 'api/v1/changes.xml'),
+      channel_guide: publicUrl(settings, 'epg/channels/{id}.json'),
       stremio: publicUrl(settings, 'stremio/manifest.json'),
       xtream_data: publicUrl(settings, 'xtream/index.json'),
+      ...(settings.project.worker_url
+        ? {
+            worker: settings.project.worker_url,
+            playlist_builder: `${settings.project.worker_url}/m3u`,
+            smart_link: `${settings.project.worker_url}/play/{number}`,
+            xtream: settings.project.worker_url,
+            mcp: `${settings.project.worker_url}/mcp`,
+          }
+        : {}),
       openapi: publicUrl(settings, 'api/v1/openapi.json'),
     },
     upstream: dataset.upstream,

@@ -83,6 +83,10 @@ jobs:
           # Channel numbers must never change once assigned, so the registry
           # is restored before every build rather than rebuilt from scratch.
           restore channel-numbers.json
+          # The previous catalogue snapshot and the change history behind
+          # api/v1/changes.json and the Atom feed.
+          restore catalogue-snapshot.json
+          restore changes.json
           ls -la .data || true
 
       - name: Aggregate channels and streams
@@ -111,15 +115,17 @@ jobs:
 
       # Persist newly assigned channel numbers. Runs only after validation
       # passed, so a broken build cannot record numbers for a bad catalogue.
-      - name: Publish channel numbers
+      - name: Publish channel numbers and change history
         # Only when the state branch was readable: otherwise this run may have
         # numbered from an empty registry and must not overwrite the real one.
         if: ${{ github.ref == 'refs/heads/main' && steps.restore.outputs.state == 'ok' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bash scripts/publish-state.sh "numbers: $(date -u +%FT%TZ)" \
-            .data/channel-numbers.json:channel-numbers.json
+          bash scripts/publish-state.sh "catalogue: $(date -u +%FT%TZ)" \
+            .data/channel-numbers.json:channel-numbers.json \
+            .data/catalogue-snapshot.json:catalogue-snapshot.json \
+            .data/changes.json:changes.json
 
       - name: Summarise
         id: summary

@@ -103,6 +103,11 @@ export interface Settings {
     /** Public base URL of the deployed API, e.g. `https://user.github.io/repo`. */
     base_url: string | null;
     repository: string | null;
+    /**
+     * Deployed URL of workers/xtream (playlist builder, smart links, Xtream,
+     * MCP), e.g. `https://iptv-nexus-xtream.you.workers.dev`. Null when none.
+     */
+    worker_url: string | null;
   };
   aggregate: {
     /** Upstream iptv-org API base. */
@@ -206,6 +211,7 @@ export const DEFAULT_SETTINGS: Settings = {
     description: 'Self-updating IPTV channel, stream and EPG index with a free static API.',
     base_url: null,
     repository: null,
+    worker_url: null,
   },
   aggregate: {
     upstream_api: 'https://iptv-org.github.io/api',
@@ -292,6 +298,8 @@ function applyEnvOverrides(settings: Settings): Settings {
   if (baseUrl) settings.project.base_url = baseUrl.replace(/\/+$/, '');
   if (repository) settings.project.repository = repository;
   if (name) settings.project.name = name;
+  const workerUrl = process.env['NEXUS_WORKER_URL'];
+  if (workerUrl) settings.project.worker_url = workerUrl.replace(/\/+$/, '');
   if (process.env['NEXUS_DISABLE_HEALTH'] === '1') settings.health.enabled = false;
   if (process.env['NEXUS_DISABLE_EPG'] === '1') settings.epg.enabled = false;
   return settings;

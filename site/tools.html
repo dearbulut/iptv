@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>IPTV Nexus Tools</title>
+    <meta
+      name="description"
+      content="Build a custom IPTV playlist, fix the EPG ids and logos of any M3U playlist in your browser, and connect Stremio, Xtream apps and AI assistants."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0e14" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235b8cff'/%3E%3Cpath d='M9 12h14v10H9z' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M12 8l4 4 4-4' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      try {
+        const stored = localStorage.getItem('nexus:theme');
+        if (stored) document.documentElement.dataset.theme = stored;
+        else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.dataset.theme = 'light';
+      } catch {}
+    </script>
+  </head>
+
+  <body class="tools-page">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="./">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="currentColor" />
+            <path d="M9 12h14v10H9z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" />
+            <path d="M12 8l4 4 4-4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>
+            <span class="brand__name">IPTV Nexus</span>
+            <span class="brand__meta">Tools</span>
+          </div>
+        </a>
+        <nav class="tools-nav" aria-label="Tools">
+          <a href="#builder">Playlist builder</a>
+          <a href="#fix">Fix my playlist</a>
+          <a href="#connect">Connect apps</a>
+        </nav>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="./">Channels</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="tools">
+      <!-- ------------------------------------------------ builder -->
+      <section class="tool" id="builder" aria-labelledby="builder-title">
+        <header class="tool__head">
+          <h1 id="builder-title">Playlist builder</h1>
+          <p class="muted">
+            Pick any mix of countries, categories and languages and get one playlist URL for VLC, Kodi,
+            TiviMate, Jellyfin or anything that takes M3U. Channels keep their permanent numbers and the
+            guide is attached.
+          </p>
+        </header>
+
+        <div class="tool__body" id="builder-body">
+          <div class="pickers">
+            <label class="picker">
+              <span>Countries</span>
+              <select id="b-country" multiple size="8"></select>
+            </label>
+            <label class="picker">
+              <span>Categories</span>
+              <select id="b-category" multiple size="8"></select>
+            </label>
+            <label class="picker">
+              <span>Languages</span>
+              <select id="b-language" multiple size="8"></select>
+            </label>
+          </div>
+          <p class="muted small">Hold Ctrl (⌘ on Mac) to pick several. Nothing picked means everything.</p>
+
+          <div class="options">
+            <label class="switch"><input type="checkbox" id="b-online" /><span></span>Working now only</label>
+            <label class="switch"><input type="checkbox" id="b-smart" checked /><span></span>Smart links (automatic failover)</label>
+            <label class="inline">
+              Group by
+              <select id="b-group">
+                <option value="category">Category</option>
+                <option value="country">Country</option>
+                <option value="language">Language</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="result">
+            <code id="b-url" class="result__url">…</code>
+            <div class="result__actions">
+              <button class="btn" id="b-copy">Copy URL</button>
+              <button class="btn btn--ghost" id="b-test">Count channels</button>
+              <a class="btn btn--ghost" id="b-open" href="#" target="_blank" rel="noopener">Open</a>
+            </div>
+            <p class="muted small" id="b-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <details class="explain">
+            <summary>What are smart links?</summary>
+            <p>
+              Each channel points at <code>/play/&lt;number&gt;</code> instead of a fixed stream. When you
+              open it, the Worker checks the channel's streams from the Cloudflare location nearest to you
+              and sends you to the first one that answers, so a channel keeps working when one of its
+              streams goes down. Channels whose streams need special headers use the direct URL instead.
+            </p>
+          </details>
+        </div>
+        <p class="notice" id="builder-missing" hidden>
+          The playlist builder needs the IPTV Nexus Worker, and this site does not have one configured.
+          The fixed playlists in <a href="https://github.com/dearbulut/iptv/blob/main/PLAYLISTS.md">PLAYLISTS.md</a>
+          still work.
+        </p>
+      </section>
+
+      <!-- ------------------------------------------------ enricher -->
+      <section class="tool" id="fix" aria-labelledby="fix-title">
+        <header class="tool__head">
+          <h1 id="fix-title">Fix my playlist</h1>
+          <p class="muted">
+            Load any M3U playlist — from your provider, your panel or your own collection. Each channel is
+            matched to the IPTV Nexus database, then <code>tvg-id</code>, logos and channel numbers are filled
+            in so the programme guide lines up. Your streams stay exactly as they were.
+          </p>
+          <p class="privacy">
+            <strong>Private:</strong> matching runs entirely in your browser. Your playlist, your stream
+            URLs and any credentials in them are never uploaded anywhere.
+          </p>
+        </header>
+
+        <div class="tool__body">
+          <div class="loader">
+            <label class="btn" for="f-file">Choose .m3u file</label>
+            <input type="file" id="f-file" accept=".m3u,.m3u8,audio/x-mpegurl,text/plain" hidden />
+            <span class="muted">or paste it below</span>
+          </div>
+          <textarea id="f-text" rows="6" spellcheck="false" placeholder="#EXTM3U&#10;#EXTINF:-1 group-title=&quot;TR | National&quot;,TR: TRT 1 FHD&#10;http://…"></textarea>
+
+          <div class="options">
+            <label class="switch"><input type="checkbox" id="f-logos" checked /><span></span>Add missing logos</label>
+            <label class="switch"><input type="checkbox" id="f-numbers" /><span></span>Add channel numbers</label>
+            <label class="switch"><input type="checkbox" id="f-guide" checked /><span></span>Set the guide URL</label>
+            <label class="switch"><input type="checkbox" id="f-unsure" /><span></span>Accept uncertain matches</label>
+          </div>
+          <button class="btn btn--primary" id="f-run">Match channels</button>
+          <p class="muted small" id="f-status" role="status" aria-live="polite"></p>
+
+          <div id="f-result" hidden>
+            <div class="stats" id="f-stats"></div>
+            <div class="result__actions">
+              <a class="btn btn--primary" id="f-download" download="playlist-nexus.m3u" href="#">Download fixed playlist</a>
+              <button class="btn btn--ghost" id="f-copy">Copy</button>
+            </div>
+            <div class="table-wrap">
+              <table class="matches">
+                <thead>
+                  <tr><th>In your playlist</th><th>Matched to</th><th>How</th><th>Guide</th></tr>
+                </thead>
+                <tbody id="f-rows"></tbody>
+              </table>
+            </div>
+            <p class="muted small" id="f-more"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------ connect -->
+      <section class="tool" id="connect" aria-labelledby="connect-title">
+        <header class="tool__head">
+          <h1 id="connect-title">Connect apps</h1>
+          <p class="muted">Copy the address for your app. Step-by-step guides are in <a href="https://github.com/dearbulut/iptv/blob/main/docs/CLIENTS.md">CLIENTS.md</a>.</p>
+        </header>
+        <div class="connect" id="connect-list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="tools.js"></script>
+  </body>
+</html>
