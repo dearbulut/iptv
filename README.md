@@ -394,7 +394,10 @@ are honoured via the upstream blocklist and applied on the next sync.
 ## Credits
 
 Built on [iptv-org/database](https://github.com/iptv-org/database) and
-[iptv-org/api](https://github.com/iptv-org/api). Playback in the browser uses
+[iptv-org/api](https://github.com/iptv-org/api). Additional official free
+streams are discovered from [Free-TV/IPTV](https://github.com/Free-TV/IPTV);
+each one is probed before it is added, and the API lists `free-tv` among a
+stream's `sources`. Playback in the browser uses
 [hls.js](https://github.com/video-dev/hls.js).
 
 ## License

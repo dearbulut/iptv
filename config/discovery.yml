@@ -28,15 +28,14 @@ sources:
   # them matching a channel we already index, 540 giving a first stream to a
   # channel that currently has none (before the live probe).
   #
-  # DISABLED pending the owner's decision: the repository publishes no licence,
-  # so its compilation is all-rights-reserved by default. Discovery does not
-  # republish the list -- it takes individual URLs of official free streams,
-  # probes each one, and records "free-tv" as provenance in the API -- but it
-  # is the owner's call whether that is acceptable. Set enabled: true to use it.
+  # Enabled by the owner on 2026-11-17. The repository publishes no licence.
+  # Discovery does not republish the list: it takes individual URLs of
+  # official free streams, probes each one, records "free-tv" as provenance in
+  # the API, and the README credits the project. Set enabled: false to stop.
   - id: free-tv
     name: Free-TV/IPTV
     url: https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8
-    enabled: false
+    enabled: true
     mode: playlist
     trust: 0.7
 
