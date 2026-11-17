@@ -33,14 +33,17 @@ export interface XtreamIndex {
  * online one, then the best-ranked.
  */
 export function pickXtreamStream(channel: StremioChannel): StremioChannel['streams'][number] | null {
+  // Xtream clients request `/live/u/p/<id>.ts` and follow a redirect, which
+  // only works for HTTP(S). RTMP/RTSP/UDP streams are left to the M3U lists.
+  const streams = channel.streams.filter((stream) => /^https?:\/\//i.test(stream.url));
   const plain = (stream: StremioChannel['streams'][number]) => !stream.referrer && !stream.user_agent;
   const online = (stream: StremioChannel['streams'][number]) => stream.health?.status === 'online';
   return (
-    channel.streams.find((s) => online(s) && plain(s)) ??
-    channel.streams.find((s) => plain(s) && s.health?.status === 'blocked') ??
-    channel.streams.find(online) ??
-    channel.streams.find(plain) ??
-    channel.streams[0] ??
+    streams.find((s) => online(s) && plain(s)) ??
+    streams.find((s) => plain(s) && s.health?.status === 'blocked') ??
+    streams.find(online) ??
+    streams.find(plain) ??
+    streams[0] ??
     null
   );
 }

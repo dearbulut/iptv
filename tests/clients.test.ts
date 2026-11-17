@@ -104,4 +104,12 @@ describe('Xtream index', () => {
     );
     assert.equal(picked?.url, 'https://a/good.m3u8');
   });
+
+  it('never hands a redirect-only client a non-HTTP stream', () => {
+    assert.equal(pickXtreamStream(channel('R.tr', { streams: [stream('rtmp://a/live', 'online')] })), null);
+    const picked = pickXtreamStream(
+      channel('M.tr', { streams: [stream('rtmp://a/live', 'online'), stream('http://a/x.m3u8', null)] }),
+    );
+    assert.equal(picked?.url, 'http://a/x.m3u8');
+  });
 });
