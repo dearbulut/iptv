@@ -156,6 +156,34 @@ function toPublicChannel(channel: EnrichedChannel, includeOffline: boolean): Pub
   };
 }
 
+/**
+ * Directories under `public/` written by other pipeline stages, which a clean
+ * API build must leave alone.
+ *
+ * `epg/` is produced by `cli epg`, which runs *before* `cli api` in both the
+ * Sync workflow and `cli pipeline`. A clean build used to `rm -rf public/`
+ * wholesale, so the guide was generated and then deleted moments later: the
+ * manifest still reported 111k programmes (that count comes from
+ * `.data/epg/report.json`), every playlist's `x-tvg-url` pointed at the guide,
+ * and the guide itself 404'd. See issue #14.
+ */
+const PRESERVED_ON_CLEAN = new Set(['epg']);
+
+/** Empties `public/` except for directories owned by other stages. */
+async function cleanPublic(): Promise<void> {
+  const { promises: fs } = await import('node:fs');
+  let entries: string[];
+  try {
+    entries = await fs.readdir(PATHS.public);
+  } catch {
+    return; // nothing to clean
+  }
+  for (const entry of entries) {
+    if (PRESERVED_ON_CLEAN.has(entry)) continue;
+    await remove(path.join(PATHS.public, entry));
+  }
+}
+
 export interface ApiBuildResult {
   generated_at: string;
   files: number;
@@ -175,7 +203,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   const healthDb = await loadHealthDb();
   attachHealth(dataset.channels, healthDb);
 
-  if (options.clean) await remove(PATHS.public);
+  if (options.clean) await cleanPublic();
   await ensureDir(PATHS.api);
 
   let files = 0;
@@ -367,7 +395,18 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   }
 
   // ---- playlists ----------------------------------------------------------
-  const playlistResult = await buildPlaylists(dataset.channels, settings, {
+  // Point players at the guide only when one is actually being published;
+  // otherwise every playlist header would send them to a 404.
+  const guideAvailable =
+    (await exists(path.join(PATHS.epg, 'guide.xml.gz'))) ||
+    (await exists(path.join(PATHS.epg, 'guide.xml')));
+  const playlistSettings: Settings = guideAvailable
+    ? settings
+    : { ...settings, playlists: { ...settings.playlists, link_epg: false } };
+  if (!guideAvailable && settings.playlists.link_epg) {
+    log.warn('No EPG guide in public/epg — playlists will omit x-tvg-url');
+  }
+  const playlistResult = await buildPlaylists(dataset.channels, playlistSettings, {
     countries: new Map(dataset.countries.map((country) => [country.code, country.name])),
     categories: new Map(dataset.categories.map((category) => [category.id, category.name])),
     languages: new Map(dataset.languages.map((language) => [language.code, language.name])),
@@ -379,6 +418,15 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     path.join(PATHS.epgDb, 'report.json'),
     {},
   );
+  // Only advertise programmes that are actually being served. The report lives
+  // in `.data/`, which CI restores from cache, so it can describe a guide from
+  // an earlier run even when this run's guide is missing. Reporting that count
+  // anyway is how the manifest claimed 111k programmes while the guide 404'd.
+  const guideShipped = guideAvailable;
+  if (!guideShipped && (epgReport.programmes ?? 0) > 0) {
+    log.warn('EPG report exists but no guide is in public/epg — reporting 0 programmes');
+  }
+  const servedProgrammes = guideShipped ? (epgReport.programmes ?? 0) : 0;
 
   const manifest: ApiManifest = {
     name: settings.project.name,
@@ -394,7 +442,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       streams: allStreams.length,
       online_streams: summary.online,
       guides: dataset.guides.length,
-      epg_programmes: epgReport.programmes ?? 0,
+      epg_programmes: servedProgrammes,
       countries: countries.filter((country) => country.channels > 0).length,
       languages: languages.filter((language) => language.channels > 0).length,
       categories: categories.filter((category) => category.channels > 0).length,

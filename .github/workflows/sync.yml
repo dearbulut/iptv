@@ -95,6 +95,11 @@ jobs:
           NEXUS_REPOSITORY: ${{ github.server_url }}/${{ github.repository }}
         run: npm run cli -- api --clean
 
+      # Fail before deploying rather than publish a broken API. This is what
+      # would have caught issue #14 on the first run.
+      - name: Validate output
+        run: node scripts/validate-api.mjs
+
       - name: Summarise
         id: summary
         run: |

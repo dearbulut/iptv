@@ -180,6 +180,51 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
   }
 }
 
+// --- EPG ----------------------------------------------------------------------
+//
+// Issue #14: the guide was generated and then deleted by a later `--clean`, so
+// the manifest advertised programmes, every playlist's x-tvg-url pointed at the
+// guide, and the guide itself 404'd. All three must agree.
+
+{
+  const guideGz = path.join(publicDir, 'epg', 'guide.xml.gz');
+  const guidePlain = path.join(publicDir, 'epg', 'guide.xml');
+  const guideExists = await fs
+    .stat(guideGz)
+    .then((stats) => stats.size > 0)
+    .catch(() => false);
+  const advertised = manifest?.counts?.epg_programmes ?? 0;
+
+  if (advertised > 0 && !guideExists) {
+    fail(`manifest advertises ${advertised} EPG programmes but epg/guide.xml.gz is missing`);
+  }
+
+  if (guideExists) {
+    try {
+      const { gunzipSync } = await import('node:zlib');
+      const xml = gunzipSync(await fs.readFile(guideGz)).toString('utf8');
+      const programmes = (xml.match(/<programme /g) ?? []).length;
+      if (!xml.includes('<tv')) fail('epg/guide.xml.gz is not an XMLTV document');
+      if (programmes === 0) fail('epg/guide.xml.gz contains no programmes');
+      console.log(`epg/guide.xml.gz: ${programmes} programmes`);
+    } catch (error) {
+      fail(`epg/guide.xml.gz could not be read: ${error.message}`);
+    }
+  } else {
+    await fs.access(guidePlain).catch(() => warn('no EPG guide published'));
+  }
+
+  // A playlist must never point players at a guide that is not there.
+  try {
+    const head = (await fs.readFile(path.join(publicDir, 'playlists', 'best.m3u'), 'utf8')).split('\n', 1)[0];
+    if (/x-tvg-url=/.test(head) && !guideExists) {
+      fail('playlists/best.m3u sets x-tvg-url but no guide is published');
+    }
+  } catch {
+    /* playlist absence is reported above */
+  }
+}
+
 // --- gzip siblings ----------------------------------------------------------
 
 try {

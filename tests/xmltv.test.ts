@@ -115,3 +115,43 @@ describe('writeXmltv', () => {
     assert.doesNotThrow(() => parseXmltv(xml));
   });
 });
+
+describe('parseXmltv entity limits', () => {
+  it('parses a large guide full of predefined entities', () => {
+    // Regression: fast-xml-parser capped *all* entity replacements at 1000 per
+    // document, so every large real-world guide failed to parse.
+    const programmes = Array.from(
+      { length: 3000 },
+      (_, i) =>
+        `<programme start="20240101${String(i % 24).padStart(2, '0')}0000 +0000" channel="a">` +
+        `<title>Tom &amp; Jerry &lt;${i}&gt;</title><desc>Cats &amp; mice &quot;live&quot;</desc></programme>`,
+    ).join('');
+    const xml = `<?xml version="1.0"?><tv><channel id="a"><display-name>A &amp; B</display-name></channel>${programmes}</tv>`;
+
+    const parsed = parseXmltv(xml);
+    assert.equal(parsed.programmes.length, 3000);
+    assert.equal(parsed.programmes[0]!.title, 'Tom & Jerry <0>');
+    assert.equal(parsed.programmes[0]!.description, 'Cats & mice "live"');
+    assert.equal(parsed.channels[0]!.display_names[0], 'A & B');
+  });
+
+  it('still refuses a billion-laughs style declared-entity bomb', () => {
+    const entities = ['<!ENTITY a "lollollollollollollollollollol">'];
+    for (let i = 1; i < 10; i++) {
+      const prev = String.fromCharCode(96 + i);
+      const next = String.fromCharCode(97 + i);
+      entities.push(`<!ENTITY ${next} "${`&${prev};`.repeat(10)}">`);
+    }
+    const bomb = `<?xml version="1.0"?><!DOCTYPE tv [${entities.join('')}]><tv><channel id="x"><display-name>&j;</display-name></channel></tv>`;
+
+    let expandedLength = 0;
+    try {
+      const parsed = parseXmltv(bomb);
+      expandedLength = parsed.channels[0]?.display_names[0]?.length ?? 0;
+    } catch {
+      return; // refused outright — the desired outcome
+    }
+    // If it parsed at all, the expansion must have been capped, not 30 GB.
+    assert.ok(expandedLength <= 100_000, `expanded to ${expandedLength} chars`);
+  });
+});

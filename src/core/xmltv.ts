@@ -3,6 +3,31 @@
 import { XMLParser } from 'fast-xml-parser';
 import type { EpgChannel, EpgProgramme } from './types.js';
 
+/**
+ * Entity handling for real-world XMLTV.
+ *
+ * With `processEntities: true` fast-xml-parser caps the *total* number of
+ * entity replacements across the whole document at 1000 — and it counts the
+ * five predefined XML entities (`&amp;`, `&lt;`, …) towards that cap. Any guide
+ * with more than a thousand "Tom &amp; Jerry"-style titles therefore failed to
+ * parse with "Entity expansion limit exceeded", which silently took out every
+ * large source we had (Pluto, mi.tv, Plex, Onet) and left only the smallest.
+ *
+ * The cap exists to stop billion-laughs attacks, which work through entities
+ * *declared* in a DOCTYPE internal subset. XMLTV never needs those, so they
+ * stay tightly limited here; only the predefined entities are uncapped.
+ */
+const ENTITY_LIMITS = {
+  enabled: true,
+  // Predefined entities are a fixed-size substitution and cannot amplify.
+  maxTotalExpansions: Number.MAX_SAFE_INTEGER,
+  // Declared entities: XMLTV has none, so these limits are deliberately small.
+  maxEntityCount: 100,
+  maxEntitySize: 1_000,
+  maxExpansionDepth: 5,
+  maxExpandedLength: 100_000,
+};
+
 const parser = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: '@',
@@ -10,6 +35,7 @@ const parser = new XMLParser({
   parseAttributeValue: false,
   parseTagValue: false,
   trimValues: true,
+  processEntities: ENTITY_LIMITS,
   isArray: (name) => ['channel', 'programme', 'display-name', 'category', 'icon'].includes(name),
 });
 
