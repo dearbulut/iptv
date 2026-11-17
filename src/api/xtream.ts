@@ -16,8 +16,23 @@
 import type { StremioChannel } from './stremio.js';
 import { stremioEligible } from './stremio.js';
 
-/** One row per channel: [stream_id, name, icon, epg_id, category ids, country category id, url]. */
-export type XtreamRow = [number, string, string, string, number[], number, string];
+/**
+ * One row per channel. The first seven fields are the original layout, so a
+ * Worker deployed before the extra fields existed keeps working:
+ *
+ *   0 stream_id (channel number)   7  fallback URLs (header-free, best first)
+ *   1 name                         8  country code
+ *   2 icon                         9  category ids, `;`-joined
+ *   3 epg channel id               10 language codes, `;`-joined
+ *   4 category ids (Xtream)        11 state: 2 online, 1 regional/unchecked
+ *   5 country category id          12 referrer the primary URL needs, or ''
+ *   6 primary URL                  13 user agent the primary URL needs, or ''
+ *                                  14 quality, e.g. `1080p`, or ''
+ */
+export type XtreamRow = [
+  number, string, string, string, number[], number, string,
+  string[], string, string, string, number, string, string, string,
+];
 
 export interface XtreamIndex {
   version: 1;
@@ -32,20 +47,36 @@ export interface XtreamIndex {
  * User-Agent headers, so a stream that needs none is preferred, then an
  * online one, then the best-ranked.
  */
-export function pickXtreamStream(channel: StremioChannel): StremioChannel['streams'][number] | null {
-  // Xtream clients request `/live/u/p/<id>.ts` and follow a redirect, which
-  // only works for HTTP(S). RTMP/RTSP/UDP streams are left to the M3U lists.
-  const streams = channel.streams.filter((stream) => /^https?:\/\//i.test(stream.url));
-  const plain = (stream: StremioChannel['streams'][number]) => !stream.referrer && !stream.user_agent;
-  const online = (stream: StremioChannel['streams'][number]) => stream.health?.status === 'online';
-  return (
-    streams.find((s) => online(s) && plain(s)) ??
-    streams.find((s) => plain(s) && s.health?.status === 'blocked') ??
-    streams.find(online) ??
-    streams.find(plain) ??
-    streams[0] ??
-    null
-  );
+type Stream = StremioChannel['streams'][number];
+
+const isHttp = (stream: Stream) => /^https?:\/\//i.test(stream.url);
+const isPlain = (stream: Stream) => !stream.referrer && !stream.user_agent;
+const isOnline = (stream: Stream) => stream.health?.status === 'online';
+
+/**
+ * HTTP(S) streams in the order a redirect-based client should try them:
+ * online and header-free first, then geo-blocked header-free (it may work for
+ * the viewer), then online, then header-free, then the rest. Xtream clients
+ * request `/live/u/p/<id>.ts` and follow a redirect, which cannot play RTMP or
+ * RTSP; those are left to the M3U lists.
+ */
+export function orderXtreamStreams(channel: StremioChannel): Stream[] {
+  const tier = (stream: Stream): number =>
+    isOnline(stream) && isPlain(stream) ? 0
+    : isPlain(stream) && stream.health?.status === 'blocked' ? 1
+    : isOnline(stream) ? 2
+    : isPlain(stream) ? 3
+    : 4;
+  return channel.streams
+    .filter(isHttp)
+    .map((stream, index) => ({ stream, index }))
+    .sort((a, b) => tier(a.stream) - tier(b.stream) || a.index - b.index)
+    .map(({ stream }) => stream);
+}
+
+/** The stream an Xtream client gets first. */
+export function pickXtreamStream(channel: StremioChannel): Stream | null {
+  return orderXtreamStreams(channel)[0] ?? null;
 }
 
 export function buildXtreamIndex(
@@ -76,8 +107,17 @@ export function buildXtreamIndex(
 
   const streams: XtreamRow[] = [];
   for (const channel of listed) {
-    const stream = pickXtreamStream(channel);
+    const ordered = orderXtreamStreams(channel);
+    const stream = ordered[0];
     if (!stream) continue;
+    // Fallbacks for the Worker's failover: a redirect cannot carry headers,
+    // so only header-free streams qualify.
+    const fallbacks = ordered
+      .slice(1)
+      .filter(isPlain)
+      .filter((candidate) => candidate.health?.status !== 'offline')
+      .slice(0, 3)
+      .map((candidate) => candidate.url);
     const cats = channel.categories
       .map((id) => categoryId.get(ctx.categories.get(id) ?? id))
       .filter((id): id is number => id !== undefined);
@@ -89,6 +129,14 @@ export function buildXtreamIndex(
       cats.length > 0 ? cats : [OTHER],
       countryId.get(ctx.countries.get(channel.country) ?? channel.country) ?? 0,
       stream.url,
+      fallbacks,
+      channel.country,
+      channel.categories.join(';'),
+      channel.languages.join(';'),
+      channel.availability === 'online' ? 2 : 1,
+      stream.referrer ?? '',
+      stream.user_agent ?? '',
+      stream.quality ?? '',
     ]);
   }
 
