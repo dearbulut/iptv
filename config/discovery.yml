@@ -22,6 +22,24 @@ sources:
     mode: playlist
     trust: 0.8
 
+  # Free-TV/IPTV: strictly free, officially provided channels only (DVB-T/S,
+  # Samsung TV Plus, Pluto, Plex, Roku, YouTube live), marks geo-blocked feeds.
+  # Measured 2026-11-17 against our index: 1192 URLs we do not have, 1127 of
+  # them matching a channel we already index, 540 giving a first stream to a
+  # channel that currently has none (before the live probe).
+  #
+  # DISABLED pending the owner's decision: the repository publishes no licence,
+  # so its compilation is all-rights-reserved by default. Discovery does not
+  # republish the list -- it takes individual URLs of official free streams,
+  # probes each one, and records "free-tv" as provenance in the API -- but it
+  # is the owner's call whether that is acceptable. Set enabled: true to use it.
+  - id: free-tv
+    name: Free-TV/IPTV
+    url: https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8
+    enabled: false
+    mode: playlist
+    trust: 0.7
+
   # - id: community-index
   #   name: A community index page listing public playlists
   #   url: https://example.com/free-iptv-lists
