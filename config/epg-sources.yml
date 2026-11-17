@@ -19,7 +19,7 @@ sources:
   - id: tvtv-us
     name: tvtv.us (US / Canada listings)
     url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/tvtv-us.xml.gz
-    enabled: true
+    enabled: false  # grab disabled in epg-grab.yml (no output)
     lang: en
     countries: [US, CA]
     # 97% of this site's channels are already mapped upstream — highest trust
@@ -82,7 +82,7 @@ sources:
   - id: digiturk-com-tr
     name: Digiturk
     url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/digiturk-com-tr.xml.gz
-    enabled: true
+    enabled: false  # grab disabled in epg-grab.yml (no output)
     lang: tr
     countries: [TR]
     trust: 0.85
@@ -90,7 +90,7 @@ sources:
   - id: turksatkablo-com-tr
     name: Türksat Kablo
     url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/turksatkablo-com-tr.xml.gz
-    enabled: true
+    enabled: false  # grab disabled in epg-grab.yml (no output)
     lang: tr
     countries: [TR]
     trust: 0.8
@@ -111,4 +111,54 @@ sources:
     enabled: true
     lang: pl
     countries: [PL]
+    trust: 0.8
+
+  # --- Added 2026-11 (see config/epg-grab.yml for how these were chosen) ---
+
+  - id: tataplay-com
+    name: Tata Play (India)
+    url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/tataplay-com.xml.gz
+    enabled: true
+    lang: en
+    countries: [IN]
+    trust: 0.85
+
+  - id: dishtv-in
+    name: Dish TV (India)
+    url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/dishtv-in.xml.gz
+    enabled: true
+    lang: en
+    countries: [IN]
+    trust: 0.8
+
+  - id: tv-mail-ru
+    name: Mail.ru TV (Russia)
+    url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/tv-mail-ru.xml.gz
+    enabled: true
+    lang: ru
+    countries: [RU, BY, KZ]
+    trust: 0.8
+
+  - id: programetv-ro
+    name: ProgrameTV (Romania)
+    url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/programetv-ro.xml.gz
+    enabled: true
+    lang: ro
+    countries: [RO, MD]
+    trust: 0.8
+
+  - id: superguidatv-it
+    name: SuperGuidaTV (Italy)
+    url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/superguidatv-it.xml.gz
+    enabled: true
+    lang: it
+    countries: [IT]
+    trust: 0.8
+
+  - id: movistarplus-es
+    name: Movistar Plus+ (Spain)
+    url: https://raw.githubusercontent.com/dearbulut/iptv/state/epg/movistarplus-es.xml.gz
+    enabled: true
+    lang: es
+    countries: [ES]
     trust: 0.8

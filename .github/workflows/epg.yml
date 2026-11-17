@@ -63,7 +63,8 @@ jobs:
     timeout-minutes: 120
     strategy:
       fail-fast: false
-      max-parallel: 4
+      # 11 sites; at 4 at a time the run already took ~1h30m.
+      max-parallel: 6
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:

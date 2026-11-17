@@ -30,7 +30,9 @@ sites:
     lang: en
     countries: [US, CA]
     # 2299 channels, 97% already mapped — the single best source available.
-    enabled: true
+    # Disabled 2026-11: returned 2299 channels and 0 programmes on every run —
+    # the site does not serve listings to GitHub runners.
+    enabled: false
     timeout: 30000
     max_connections: 10
 
@@ -69,7 +71,9 @@ sites:
     lang: tr
     countries: [TR]
     # 112 channels, 81% mapped.
-    enabled: true
+    # Disabled 2026-11: produced no usable guide on any run, and would add
+    # EPG to only 2 currently-live channels we do not already cover.
+    enabled: false
     timeout: 30000
     max_connections: 5
 
@@ -77,7 +81,9 @@ sites:
     lang: tr
     countries: [TR]
     # 177 channels, 67% mapped.
-    enabled: true
+    # Disabled 2026-11: produced no usable guide on any run, and would add
+    # EPG to only 9 currently-live channels we do not already cover.
+    enabled: false
     timeout: 30000
     max_connections: 5
 
@@ -95,6 +101,69 @@ sites:
     lang: pl
     countries: [PL]
     # 590 channels, 60% mapped.
+    enabled: true
+    timeout: 30000
+    max_connections: 5
+
+  # --- Added 2026-11 to close the largest coverage gaps --------------------
+  # Chosen by *marginal* gain: how many currently-live channels each site adds
+  # that no already-enabled source covers. Live channels with a guide before
+  # these: 19.0%. Measured gain, in order (cumulative coverage in brackets):
+  #   tataplay.com +378 (23.8%)  tv.mail.ru +203 (26.3%)  programetv.ro +89
+  #   (27.4%)  superguidatv.it +43 (28.0%)  dishtv.in +31 (28.3%)
+  #   movistarplus.es +19 (28.8%)
+  # Rejected for low marginal gain: airtelxstream.in +20 (overlaps the Indian
+  # sites above), orangetv.orange.es +3, guidatv.sky.it +3. jiotv.com lists
+  # 1094 channels but none carry an xmltv_id, so it matches nothing.
+  #
+  # Sites hosted in India or Russia may refuse GitHub's US runners the way
+  # tvtv.us did. That is safe: an empty grab is skipped and reported in the
+  # workflow summary. If one stays empty for a week, disable it here.
+
+  - site: tataplay.com
+    lang: en
+    countries: [IN]
+    # 905 channels; +378 live channels gain EPG.
+    enabled: true
+    timeout: 30000
+    max_connections: 6
+
+  - site: dishtv.in
+    lang: en
+    countries: [IN]
+    # 637 channels; +31 beyond tataplay.
+    enabled: true
+    timeout: 30000
+    max_connections: 6
+
+  - site: tv.mail.ru
+    lang: ru
+    countries: [RU, BY, KZ]
+    # 520 channels; +203 live channels gain EPG.
+    enabled: true
+    timeout: 30000
+    max_connections: 6
+
+  - site: programetv.ro
+    lang: ro
+    countries: [RO, MD]
+    # 331 channels; +89 — Romania had no EPG at all before this.
+    enabled: true
+    timeout: 30000
+    max_connections: 5
+
+  - site: superguidatv.it
+    lang: it
+    countries: [IT]
+    # 204 channels; +43.
+    enabled: true
+    timeout: 30000
+    max_connections: 5
+
+  - site: movistarplus.es
+    lang: es
+    countries: [ES]
+    # 143 channels; +19.
     enabled: true
     timeout: 30000
     max_connections: 5
