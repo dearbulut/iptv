@@ -3,8 +3,11 @@ import { buildMatcher, enrichPlaylist, parseM3u, writeM3u } from './enrich-core.
 const API = 'api/v1';
 const $ = (selector) => document.querySelector(selector);
 
+// Revalidate rather than trust the browser cache: Pages serves JSON with a
+// ten-minute max-age, and a stale manifest right after a deploy would hide
+// the Worker features. Unchanged files come back as a cheap 304.
 const getJson = async (url) => {
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: 'no-cache' });
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
   return response.json();
 };
