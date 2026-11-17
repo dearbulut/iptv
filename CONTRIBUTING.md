@@ -7,7 +7,7 @@ npm install
 npm run typecheck && npm test
 ```
 
-Node 20+ is required. `ffprobe` (FFmpeg) is optional — health checks fall back
+Node 22.12+ is required. `ffprobe` (FFmpeg) is optional — health checks fall back
 to HTTP-only when it is missing.
 
 ## Adding a stream or a channel
