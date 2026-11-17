@@ -1,100 +1,41 @@
 # IPTV Nexus
 
+**Free TV from around the world — checked every day, with a programme guide, in any app.**
+
+[![Sync & Deploy](https://github.com/dearbulut/iptv/actions/workflows/sync.yml/badge.svg)](https://github.com/dearbulut/iptv/actions/workflows/sync.yml)
+[![CI](https://github.com/dearbulut/iptv/actions/workflows/ci.yml/badge.svg)](https://github.com/dearbulut/iptv/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/dearbulut/iptv)](https://github.com/dearbulut/iptv/releases/latest)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue)](LICENSE)
+
 Built by [BulutWorks](https://bulutworks.com) · Telegram: [@bulutworksdev](https://t.me/bulutworksdev)
 
-A self-updating index of free-to-air IPTV channels, with **live stream health
-scoring**, **merged EPG data**, a **free static JSON API** and a **web player** —
-all running on GitHub Actions and GitHub Pages at zero cost.
+IPTV Nexus is an open database of **31,000+ TV channels** in 230 countries, with
+**10,000+ that have a free stream** and around **8,000 working at any moment**.
+Every stream is tested twice a day, dead links are retired, and a merged
+programme guide covers **270,000+ programmes**. Watch in the browser, add a
+playlist to any player, log in from TiviMate or IPTV Smarters, install it in
+Stremio — or use the data in your own app.
 
-It builds on the excellent [iptv-org](https://github.com/iptv-org/iptv) database
-and adds the layer that database deliberately leaves out: knowing which streams
-actually work right now, how good they are, and serving all of it as a queryable
-API instead of one enormous playlist.
+Everything runs on GitHub Actions, GitHub Pages and a free Cloudflare Worker.
+No server, no cost, no account needed.
 
-```
-Upstream + your sources  →  merge & dedupe  →  probe & score  →  static API
-                                    ↓                ↓               ↓
-                             EPG grab/match    retire dead     web player
-```
+**[▶ Open the channel browser](https://dearbulut.github.io/iptv)** · **[🛠 Tools](https://dearbulut.github.io/iptv/tools.html)** ·
+**[📖 Setup guides](docs/CLIENTS.md)** · **[⬇ Download the database](https://github.com/dearbulut/iptv/releases/tag/database)**
 
 ---
 
-## What it adds over a plain playlist repo
+## Watch
 
-| | iptv-org/iptv | IPTV Nexus |
-| --- | --- | --- |
-| Channel database | ✅ | ✅ (same upstream) |
-| M3U playlists | ✅ | ✅ + health-filtered variants |
-| **Stream health scoring** | — | ✅ rolling 0–100 score, uptime history |
-| **Resolution / codec / bitrate** | — | ✅ via ffprobe |
-| **Automatic dead-link retirement** | — | ✅ |
-| **Merged, channel-matched EPG** | separate repo | ✅ built in, fuzzy-matched |
-| **JSON API with filters** | flat files only | ✅ shards, per-channel docs, search index |
-| **OpenAPI schema** | — | ✅ |
-| **Web UI + player** | — | ✅ with uptime graphs, "plays in browser" filter |
-| **Permanent channel numbers** (`tvg-chno`) | — | ✅ never change, never reused |
-| **Geo-blocked streams shown as "Regional"** | — | ✅ instead of "offline" |
-| **Stremio addon** | — | ✅ static, no server |
-| **Xtream Codes login** (TiviMate, Smarters…) | — | ✅ via a free Cloudflare Worker, with now/next guide |
-| **Custom playlists** (country + category + language) | one dimension per file | ✅ any combination, one URL |
-| **Automatic failover** to a working stream | — | ✅ smart links, checked near the viewer |
-| **Fix any playlist's EPG ids** (for providers and panels) | — | ✅ in the browser, nothing uploaded |
-| **AI assistants** (MCP) | — | ✅ search channels, read the guide |
-| **Change feed** (new / lost channels) | — | ✅ JSON and Atom |
-| **Automatic source discovery** | manual PRs | ✅ scan → validate → commit |
-| **Own database** | — | ✅ `data/` holds every channel and stream; survives upstream outages |
-| **Add a stream** | pull request, human review | ✅ issue form, checked and added by a bot in minutes |
-| **Takedowns** | manual | ✅ form, applied automatically, owner reviews |
-| **Broken-stream reports** | manual | ✅ re-tested by a bot; dead streams hidden for 7 days |
-| **Where a channel works, by country** | — | ✅ measured from viewers' nearest Cloudflare locations |
-| **Weekly SQLite dump** | — | ✅ one file, every table, release asset |
+| You use | Add this |
+| --- | --- |
+| **A web browser** | [dearbulut.github.io/iptv](https://dearbulut.github.io/iptv) — search, filter, play, check where a channel works |
+| **VLC, Kodi, Jellyfin, Plex, Channels DVR…** | `https://dearbulut.github.io/iptv/playlists/country/tr.m3u` (any country) or `best.m3u` — the guide comes with it |
+| **Your own mix** | `https://iptv-nexus-xtream.bulutworks.workers.dev/m3u?country=tr,de&category=news&online=1` — or build it on the [Tools page](https://dearbulut.github.io/iptv/tools.html#builder) |
+| **TiviMate, IPTV Smarters, XCIPTV, TV boxes** | Xtream login — server `https://iptv-nexus-xtream.bulutworks.workers.dev`, any username and password (username `country` groups by country) |
+| **Stremio** | `https://dearbulut.github.io/iptv/stremio/manifest.json` |
+| **An AI assistant** (Claude, ChatGPT, Cursor…) | MCP server `https://iptv-nexus-xtream.bulutworks.workers.dev/mcp` — "which Turkish news channels work right now?" |
 
-### Stream health scoring
-
-Every stream is probed on a schedule. Each probe records HTTP status, time to
-first byte, and — via `ffprobe` — resolution, frame rate, bitrate and codecs.
-Results feed an exponentially weighted score in 0–100, so a stream is judged on
-its *history*, not on one unlucky request.
-
-Two details make this trustworthy rather than noisy:
-
-- **A single failure does not condemn a stream.** With the default `score_alpha`
-  of `0.3` it takes several consecutive failures to fall below the healthy
-  threshold, and a stream that recovers climbs back.
-- **Geo-blocking is not counted as failure.** GitHub's runners are in a handful
-  of regions, so a perfectly good regional channel often answers `403`. Those
-  results are recorded but excluded from scoring, and can never retire a stream.
-  This is the difference between a health checker and a tool that quietly
-  deletes half the world's television.
-
-A channel is only given a score once at least one of its streams has produced a
-conclusive observation; until then the API reports `0` and the UI says
-"unchecked" rather than inventing a number.
-
-### Merged EPG
-
-The guide is grabbed, not borrowed. A nightly workflow runs the
-[iptv-org/epg](https://github.com/iptv-org/epg) scraper against the sites listed
-in `config/epg-grab.yml` — one parallel job per site, so a single broken scraper
-cannot take the guide down — and publishes the XMLTV to this repository's own
-`state` branch. Pointing at a third party's EPG dump would be less code and a
-worse idea; those dumps are exactly what `docs/LEGAL.md` warns about, and they
-go offline without notice.
-
-The sync then downloads those guides, normalises everything to UTC, and matches
-each guide channel to a channel id — first via upstream's authoritative
-mappings, then by exact id, then by fuzzy name matching narrowed to the guide's
-countries. Anything below the confidence threshold is reported as unmatched
-rather than guessed at.
-
-The output is a single XMLTV file keyed by *Nexus channel id*, plus per-country
-shards, so one guide URL works with every generated playlist.
-
----
-
-## Quick start
-
-### Get a playlist (nothing to install)
+Step-by-step instructions for every player: **[docs/CLIENTS.md](docs/CLIENTS.md)**.
 
 <!-- PLAYLISTS:START -->
 
@@ -109,303 +50,210 @@ Per-country, per-category and per-language playlists: [**PLAYLISTS.md**](PLAYLIS
 
 <!-- PLAYLISTS:END -->
 
-### Use it in your player
+---
 
-Jellyfin, Plex, Kodi, TiviMate, IPTV Smarters, Channels DVR, VLC and Stremio
-are covered step by step in [**docs/CLIENTS.md**](docs/CLIENTS.md). The short
-version:
+## What makes it different
 
-| Player | Add |
-| --- | --- |
-| Any M3U player | `https://dearbulut.github.io/iptv/playlists/country/tr.m3u` (or `best.m3u`) — the guide is picked up from the playlist |
-| Your own mix | `https://iptv-nexus-xtream.bulutworks.workers.dev/m3u?country=tr,de&category=news&online=1` — or build it on the [Tools page](https://dearbulut.github.io/iptv/tools.html) |
-| Stremio | `https://dearbulut.github.io/iptv/stremio/manifest.json` |
-| Xtream-only apps | server `https://iptv-nexus-xtream.bulutworks.workers.dev`, any username and password |
-| AI assistants (MCP) | `https://iptv-nexus-xtream.bulutworks.workers.dev/mcp` |
-| Follow changes | `https://dearbulut.github.io/iptv/api/v1/changes.xml` (Atom) |
+**For viewers**
 
-**Run a panel or have a provider playlist with a broken guide?** Open
-[Tools → Fix my playlist](https://dearbulut.github.io/iptv/tools.html#fix), load
-the M3U, and download it back with `tvg-id`, logos and channel numbers filled
-in. Matching runs in your browser; the playlist is never uploaded.
+- **Tested, not just listed.** Every stream is probed twice a day for status,
+  resolution, codec and latency. Scores follow a stream's history, so one bad
+  minute doesn't remove it; channels that stop working are retired.
+- **Where it works.** Each channel shows the countries where it plays and where
+  it doesn't, measured from viewers' nearest Cloudflare locations — and a
+  "Check from my location" button.
+- **Automatic failover.** Smart links send you to whichever of a channel's
+  streams answers right now, so a channel survives a dead stream.
+- **Permanent channel numbers.** Numbers never change and are never reused, so
+  favourites and channel order survive every update.
+- **A guide that lines up.** One programme guide, matched to the channel ids
+  in every playlist; country playlists load only their own country's guide.
+- **Honest status.** Channels that geo-block our checker are shown as
+  *Regional*, not *offline*; streams a browser can't play say why and offer
+  *Open in player*.
 
-### Use the API (nothing to install)
+**For panel owners and providers**
 
-Once deployed, everything is a plain file on a CDN. No key, no rate limit:
+- **[Fix my playlist](https://dearbulut.github.io/iptv/tools.html#fix).** Load any M3U and get it back with
+  `tvg-id`, logos and channel numbers filled in, so the guide works. It runs in
+  your browser — the playlist and its credentials are never uploaded. 99.9%
+  correct on 10,000 channels written the way panels write them.
+- **Guide corrections in one line:** [`config/epg-overrides.yml`](config/epg-overrides.yml),
+  with every unmatched guide channel listed in [`epg-unmatched.json`](https://dearbulut.github.io/iptv/api/v1/epg-unmatched.json).
 
-```bash
-BASE=https://dearbulut.github.io/iptv
+**For developers**
 
-curl "$BASE/api/v1/index.json"                  # manifest & counts
-curl "$BASE/api/v1/channels.json"               # every channel
-curl "$BASE/api/v1/by-country/tr.json"          # channels in Türkiye
-curl "$BASE/api/v1/by-category/news.json"       # news channels
-curl "$BASE/api/v1/channels/BBCNews.uk.json"    # one channel in detail
-curl "$BASE/api/v1/health.json"                 # aggregate health report
-curl "$BASE/playlists/best.m3u"                 # best stream per channel
-curl "$BASE/epg/guide.xml.gz"                   # merged EPG
+- A **free static JSON API** with an [OpenAPI schema](https://dearbulut.github.io/iptv/api/v1/openapi.json):
+  channels, streams with health, shards by country/category/language, search
+  index, per-channel guide, regional availability.
+- A **change feed** ([JSON](https://dearbulut.github.io/iptv/api/v1/changes.json), [Atom](https://dearbulut.github.io/iptv/api/v1/changes.xml))
+  of channels that became or stopped being watchable.
+- The **whole database as one SQLite file**, rebuilt every Sunday:
+  [database release](https://github.com/dearbulut/iptv/releases/tag/database).
+- An **MCP server** for AI tools, and an **Xtream Codes API**, both in one
+  [Cloudflare Worker](workers/xtream/README.md) you can deploy in two minutes.
+
+---
+
+## Contribute — no pull request needed
+
+| You want to | Use | What happens |
+| --- | --- | --- |
+| Add a stream or a new channel | [Add a stream](https://github.com/dearbulut/iptv/issues/new?template=add-stream.yml) | A bot checks the URL, plays it, matches or creates the channel and adds it — in minutes |
+| Report a channel that doesn't play | [Report a broken stream](https://github.com/dearbulut/iptv/issues/new?template=broken-stream.yml) | Its streams are re-tested; dead ones are hidden for 7 days and tested again |
+| Remove content you hold the rights to | [Takedown request](https://github.com/dearbulut/iptv/issues/new?template=takedown.yml) | Removed immediately, then reviewed — see [docs/LEGAL.md](docs/LEGAL.md) |
+| Propose a whole playlist | [Add a stream source](https://github.com/dearbulut/iptv/issues/new?template=add-source.yml) | Evaluated automatically; a maintainer decides |
+
+Only streams that are **free to watch** are accepted: official broadcaster
+streams, FAST channels, public service media. Subscription (reseller panel)
+links are rejected automatically.
+
+Pull requests that only **add** lines to `data/nexus/` are checked the same way
+and merged automatically. Code changes are reviewed by a person — see
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## How it works
+
+```
+                 ┌──────────────── data/ ─────────────────┐
+  nightly sync → │ iptv-org/  31k channels, 18k streams   │
+                 │ nexus/     community streams, channels,│ ← issue forms, PRs, bots
+                 │            corrections, takedowns      │
+                 └───────────────────┬────────────────────┘
+                                     ▼
+          aggregate → health scan (2×/day) → guide (nightly) → build
+                                     ▼
+   GitHub Pages: site · API · playlists · guide · Stremio addon · weekly SQLite
+                                     ▼
+   Cloudflare Worker: playlist builder · smart links · Xtream · MCP · regional data
 ```
 
-Every JSON document over 32 KB also has a `.gz` sibling.
+### The database
+
+Everything lives in this repository, under [`data/`](data):
+
+- **`data/iptv-org/`** — the channel database this project started from: every
+  channel, feed, logo, stream, guide mapping and blocklist entry, one record per
+  line. The *Database Sync* workflow brings in the day's additions, corrections
+  and removals every night, with a report in the commit — and refuses a mass
+  removal, keeping the last good copy, so an upstream outage never empties the
+  catalogue.
+- **`data/nexus/`** — our own data: streams and channels added by the
+  community, corrections, hidden broken streams and takedowns. The sync never
+  touches it, and its records take precedence.
+
+### Automation
+
+| Workflow | When | What it does |
+| --- | --- | --- |
+| **Sync & Deploy** | every 6 h | Build the catalogue, guide, API, playlists, site and addon; deploy to Pages |
+| **Health Scan** | 2×/day | Probe every stream in 6 parallel shards; update scores; retire dead links |
+| **EPG Grab** | nightly | Scrape each guide site in `config/epg-grab.yml` into XMLTV |
+| **Database Sync** | nightly | Apply the day's upstream changes to `data/`; refuse mass removals |
+| **Discover Streams** | nightly | Find new streams in listed sources, probe them, add the ones that work |
+| **Community** | on issue | Process *add a stream*, *broken stream* and *takedown* forms |
+| **Repository Bot** | on issue / PR | Evaluate proposed sources, guide other issues, merge passing data PRs and Dependabot updates |
+| **Database Dump** | Sundays | Publish the database as one SQLite file |
+| **CI** | on push / PR | Typecheck, tests, pipeline smoke test |
+
+Details, schedules and manual controls: [docs/AUTOMATION.md](docs/AUTOMATION.md).
+
+---
+
+## API
+
+Everything is a static file on a CDN — no key, no rate limit. Files over 32 KB
+also come gzipped (`.gz`).
+
+| Endpoint | Contents |
+| --- | --- |
+| [`/api/v1/index.json`](https://dearbulut.github.io/iptv/api/v1/index.json) | Manifest: counts and every endpoint |
+| `/api/v1/channels.json` | All channels with streams, health, numbers, availability |
+| `/api/v1/channels/{id}.json` | One channel in detail |
+| `/api/v1/by-country/{code}.json` · `by-category` · `by-language` | Shards |
+| `/api/v1/search.json` | Compact index for client-side search |
+| `/api/v1/regional.json` | Where each channel works, by country |
+| `/api/v1/changes.json` · `changes.xml` | What became or stopped being watchable |
+| `/epg/guide.xml.gz` · `/epg/{country}.xml.gz` · `/epg/channels/{id}.json` | Guide: merged, by country, by channel |
+| `/playlists/…` | M3U playlists — see [PLAYLISTS.md](PLAYLISTS.md) |
+| `/stremio/manifest.json` | Stremio addon |
 
 ```js
-// "Working HD news channels in Germany, best stream first"
+const BASE = 'https://dearbulut.github.io/iptv';
 const channels = await (await fetch(`${BASE}/api/v1/by-country/de.json`)).json();
-
-const picks = channels
-  .filter((c) => c.online && c.categories.includes('news'))
-  .filter((c) => parseInt(c.best_quality) >= 720)
-  .sort((a, b) => b.score - a.score);
-
-console.log(picks[0].name, picks[0].streams[0].url);
+const news = channels.filter((c) => c.availability === 'online' && c.categories.includes('news'));
+console.log(news[0].name, news[0].number, news[0].streams[0].url);
 ```
 
-### Run your own copy
+Full reference: [docs/API.md](docs/API.md) · schema: [`openapi.json`](https://dearbulut.github.io/iptv/api/v1/openapi.json).
 
-1. **Fork this repository.**
-2. Enable GitHub Pages: *Settings → Pages → Source: **GitHub Actions***.
-3. Run the **Sync & Deploy** workflow from the Actions tab.
-4. Your API is live at `https://dearbulut.github.io/iptv/`.
+---
 
-From then on it maintains itself: sync every 6 hours, health scans twice daily,
-source discovery weekly.
+## Run your own copy
 
-### Run locally
+1. **Fork** this repository.
+2. *Settings → Pages → Source:* **GitHub Actions**.
+3. In `config/settings.yml`, set `project.base_url` to your Pages URL.
+4. Run **Database Sync**, then **Sync & Deploy**, from the Actions tab.
+5. Optional: deploy [the Worker](workers/xtream/README.md) for the playlist
+   builder, smart links, Xtream, MCP and regional data, and set
+   `project.worker_url`.
+
+From then on it maintains itself.
+
+### Locally
+
+Requires Node 22.12+. `ffprobe` (FFmpeg) is optional; without it health checks
+still run but report no resolution or codecs.
 
 ```bash
 git clone https://github.com/dearbulut/iptv.git && cd iptv
 npm install
 
-npm run cli -- aggregate               # fetch and merge the dataset
-npm run cli -- health --limit 200      # probe a sample of streams
-npm run cli -- epg                     # build the guide (needs EPG sources)
-npm run cli -- api --clean             # render public/
-npm run serve                          # → http://localhost:8080
+npm run cli -- aggregate             # build the catalogue from data/
+npm run cli -- health --limit 200    # probe a sample of streams
+npm run cli -- epg                   # build the guide
+npm run cli -- api --clean           # render public/
+npm run serve                        # → http://localhost:8080
 ```
-
-`ffprobe` (from FFmpeg) is optional but recommended — without it, health checks
-still run but report no media metadata.
-
----
-
-## CLI
 
 | Command | What it does |
 | --- | --- |
-| `aggregate` | Fetch upstream + configured sources, merge, dedupe, resolve channels |
-| `health` | Probe streams, update scores, mark dead links |
-| `epg` | Grab guides, normalise, match to channels, write XMLTV |
-| `discover` | Scan for new streams, validate, write a review proposal |
-| `api` | Render the static JSON API, playlists and site into `public/` |
-| `pipeline` | All of the above in order |
-| `config` | Print the resolved configuration |
-| `clean` | Remove generated output |
+| `aggregate` | Read `data/` and the configured sources; merge, dedupe, resolve channels |
+| `health` | Probe streams, update scores, retire dead links |
+| `epg` | Normalise grabbed guides, match them to channels, write XMLTV |
+| `api` | Render the API, playlists, site, Stremio addon and Worker data |
+| `db-sync` | Update `data/iptv-org` from upstream (refuses mass removals) |
+| `dump` | Write the whole database as one SQLite file |
+| `discover` | Find new streams in listed sources and validate them |
+| `pipeline` | aggregate → health → epg → api |
 
-Useful flags:
-
-```bash
-npm run cli -- health --shard-count 6 --shard-index 2   # parallel CI shards
-npm run cli -- health --min-age 300 --prune             # skip fresh, drop dead
-npm run cli -- discover --skip-validation               # fast dry run
-npm run cli -- aggregate --upstream-only                # ignore extra sources
-npm run cli -- --log-level debug api
-```
+Configuration lives in [`config/`](config) — `settings.yml`, `sources.yml`,
+`discovery.yml`, `epg-grab.yml`, `epg-sources.yml`, `epg-overrides.yml` — and
+every value has a sensible default.
 
 ---
-
-## Configuration
-
-Everything lives in `config/`, and every value has a sensible default — you only
-write down what you want to change.
-
-| File | Purpose |
-| --- | --- |
-| `settings.yml` | Global behaviour: scoring, thresholds, output shape |
-| `sources.yml` | Extra stream sources beyond upstream |
-| `epg-grab.yml` | Which sites the nightly EPG scraper visits |
-| `epg-sources.yml` | Which grabbed guides the sync consumes, and their countries |
-| `epg-overrides.yml` | Hand fixes for EPG matching (link or skip a guide channel) |
-| `discovery.yml` | Where automatic discovery looks for new streams |
-
-Adding a source:
-
-```yaml
-sources:
-  - id: my-list
-    name: My curated channels
-    type: m3u
-    url: https://example.com/channels.m3u
-    enabled: true
-    trust: 0.8          # 0-1, biases ranking when lists disagree
-    country: TR         # helps match channels that have no tvg-id
-    exclude: "(?i)adult"
-```
-
-The settings worth knowing about:
-
-| Setting | Default | Why you might change it |
-| --- | --- | --- |
-| `health.score_alpha` | `0.3` | Higher reacts to outages faster, but is noisier |
-| `health.retire_after_failures` | `10` | Lower prunes dead links sooner |
-| `health.timeout_seconds` | `12` | Raise for slow origins, lower for faster scans |
-| `aggregate.exclude_nsfw` | `true` | Set `false` to include adult channels |
-| `api.channel_details` | `playable` | `all` emits ~40k files (~300 MB) instead of ~11k |
-| `playlists.min_score` | `0` | Raise to publish only proven streams |
-
----
-
-## API reference
-
-Full machine-readable schema: **`/api/v1/openapi.json`**. Human summary:
-[`docs/API.md`](docs/API.md).
-
-| Endpoint | Contents |
-| --- | --- |
-| `/api/v1/index.json` | Manifest: counts, endpoint map, generation time |
-| `/api/v1/channels.json` | All channels with streams, health, guide links |
-| `/api/v1/channels.online.json` | Only channels with a working stream |
-| `/api/v1/channels/{id}.json` | One channel |
-| `/api/v1/streams.json` | Flattened stream list |
-| `/api/v1/by-country/{code}.json` | Country shard (`tr`, `de`, `us`, …) |
-| `/api/v1/by-category/{id}.json` | Category shard (`news`, `sports`, …) |
-| `/api/v1/by-language/{code}.json` | Language shard (`eng`, `tur`, …) |
-| `/api/v1/countries.json` | Countries with channel counts |
-| `/api/v1/categories.json` | Categories with channel counts |
-| `/api/v1/languages.json` | Languages with channel counts |
-| `/api/v1/health.json` | Aggregate health report |
-| `/api/v1/search.json` | Compact positional index for client-side search |
-| `/playlists/index.m3u` | Every stream |
-| `/playlists/best.m3u` | Best stream per channel |
-| `/playlists/online.m3u` | Healthy streams only |
-| `/playlists/{country,category,language}/{key}.m3u` | Filtered playlists |
-| `/epg/guide.xml[.gz]` | Merged guide |
-| `/epg/{country}.xml[.gz]` | Per-country guide |
-| `/api/v1/epg-unmatched.json` | Guide channels not yet matched — fix in `config/epg-overrides.yml` |
-| `/stremio/manifest.json` | Stremio addon |
-| `/xtream/index.json` | Data for the Worker |
-| `/api/v1/match.json` | Index for matching any playlist to Nexus ids |
-| `/api/v1/changes.json`, `/api/v1/changes.xml` | Channels that became or stopped being watchable (JSON, Atom) |
-| `/epg/channels/{id}.json` | One channel's guide, next 48 hours |
-| Worker `/m3u`, `/play/{number}`, `/mcp`, `player_api.php` | Playlist builder, smart links, MCP, Xtream — see [`workers/xtream`](workers/xtream/README.md) |
-
----
-
-## Your own database, and how to contribute
-
-Everything IPTV Nexus knows lives in this repository, under `data/`:
-
-- `data/iptv-org/` — a full copy of the [iptv-org](https://github.com/iptv-org/database)
-  database (channels, feeds, logos, streams, guides, blocklist…), one record per
-  line. The **Database Sync** workflow applies iptv-org's changes every night,
-  with a report in the commit, and refuses a mass removal rather than lose data.
-- `data/nexus/` — our own data: streams and channels added by the community,
-  corrections, and takedowns. The sync never touches it.
-
-**Add a stream:** open an [Add a stream](https://github.com/dearbulut/iptv/issues/new?template=add-stream.yml)
-issue. A bot checks it within minutes: if it is free to watch and plays, it is
-added (new channels too) and goes live with the next sync. If not, the bot says
-why; edit the issue and it checks again.
-
-**A channel does not play:** [report it](https://github.com/dearbulut/iptv/issues/new?template=broken-stream.yml).
-Its streams are re-tested within minutes; dead ones are hidden for a week and
-then tested again.
-
-**Pull requests** that only add lines to `data/nexus/` are checked the same
-way and merged automatically when they pass. Code changes are reviewed by a
-person.
-
-**Download everything:** the
-[database release](https://github.com/dearbulut/iptv/releases/tag/database)
-has the whole database as one SQLite file, rebuilt every Sunday.
-
-**Remove something you hold the rights to:** use the
-[takedown form](https://github.com/dearbulut/iptv/issues/new?template=takedown.yml).
-Removal is immediate; see [`docs/LEGAL.md`](docs/LEGAL.md).
-
-## How the automation works
-
-| Workflow | Schedule | Does |
-| --- | --- | --- |
-| `sync.yml` | every 6 h | Aggregate → EPG → API → deploy to Pages, refresh `PLAYLISTS.md` |
-| `health.yml` | 2×/day | Probe streams in 6 parallel shards, merge, persist |
-| `epg.yml` | nightly 01:00 | Grab each configured EPG site, publish XMLTV |
-| `discover.yml` | nightly 02:00 | Find new streams, probe them, commit the survivors |
-| `database.yml` | nightly 01:30 | Copy the day's iptv-org changes into `data/`; refuse mass removals |
-| `community.yml` | on issue | Process *Add a stream*, *broken stream* and *takedown* forms automatically |
-| `bot.yml` | on issue / PR | Evaluate source proposals, guide other issues, check and merge data-only PRs, merge passing Dependabot updates |
-| `dump.yml` | Sundays | Publish the database as one SQLite file to the `database` release |
-| `ci.yml` | on push/PR | Typecheck, unit tests, pipeline smoke test |
-
-Full detail, including how to run the automation under its own bot identity:
-[`docs/AUTOMATION.md`](docs/AUTOMATION.md).
-
-Health history and grabbed guides both live on an orphan `state` branch between
-runs — health history is the memory that makes scoring mean anything, and
-re-grabbing every guide on every sync would be gratuitous. Health Scan and EPG
-Grab each own their own paths there and merge rather than force-push, so
-neither can wipe the other's data. Sync only reads it.
-
-Discovery commits directly, but only within a boundary that a human set: a
-stream is auto-accepted only if it came from a source already listed in
-`config/discovery.yml`, matched a channel already in the index, and answered a
-live probe. It lands in `config/discovered.m3u` at low trust, so a curated list
-always outranks it and health scoring retires it like anything else. Adding a
-new *source* is still a human decision — that is the line between a curated
-index and an unattended scraper.
-
----
-
-## Architecture
-
-```
-src/
-├── core/          types, config, HTTP+cache, M3U & XMLTV codecs, text matching
-├── aggregate/     upstream client, extra sources, channel resolution, merge
-├── health/        ffprobe + HTTP probing, rolling scores, retirement
-├── epg/           guide grabbing, normalisation, channel matching
-├── discovery/     candidate scanning, validation, proposal generation
-├── api/           static JSON API, playlists, search index, OpenAPI
-└── cli.ts
-site/              the web player — no build step, no framework
-```
-
-The library is published as ESM, so you can build on it directly:
-
-```ts
-import { aggregate, runHealthScan, buildApi } from 'iptv-nexus';
-```
-
----
-
-## Contributing
-
-```bash
-npm run typecheck && npm test
-```
-
-Adding a source is a one-entry change to `config/sources.yml`. Please only add
-sources you have the right to index — see [`docs/LEGAL.md`](docs/LEGAL.md).
 
 ## Legal
 
-IPTV Nexus **hosts no video and rebroadcasts nothing**. It indexes stream URLs
-that are already publicly listed elsewhere, in the same spirit as a search
-engine. It provides no access to paid or encrypted services.
-
-If you own a stream indexed here and want it removed, open an issue — removals
-are honoured via the upstream blocklist and applied on the next sync.
+IPTV Nexus **hosts no video**. It lists links to streams on third-party servers
+— official free-to-air broadcasts, FAST channels and public service media — and
+describes whether they work. Subscription and credential-protected streams are
+excluded. Rights holders can have anything removed instantly with the
+[takedown form](https://github.com/dearbulut/iptv/issues/new?template=takedown.yml). Details:
+[docs/LEGAL.md](docs/LEGAL.md).
 
 ## Credits
 
-Built on [iptv-org/database](https://github.com/iptv-org/database) and
-[iptv-org/api](https://github.com/iptv-org/api). Additional official free
-streams are discovered from [Free-TV/IPTV](https://github.com/Free-TV/IPTV);
-each one is probed before it is added, and the API lists `free-tv` among a
-stream's `sources`. Playback in the browser uses
-[hls.js](https://github.com/video-dev/hls.js).
+The channel database began as a copy of [iptv-org](https://github.com/iptv-org/database),
+which is in the public domain, and still receives its daily updates. Guides are
+grabbed with [iptv-org/epg](https://github.com/iptv-org/epg). Additional free
+streams are discovered from [Free-TV/IPTV](https://github.com/Free-TV/IPTV).
+Browser playback uses [hls.js](https://github.com/video-dev/hls.js).
 
 ## License
 
-[The Unlicense](LICENSE): code and data are in the public domain, like the
-iptv-org database they started from. Streams themselves belong to whoever
-operates them; IPTV Nexus links to them and hosts nothing.
+[The Unlicense](LICENSE) — code and data are in the public domain. Streams belong
+to whoever operates them.
