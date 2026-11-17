@@ -89,6 +89,13 @@ export async function buildPlaylists(
     languages: Map<string, string>;
     /** Stable channel numbers (see channel-numbers.ts). */
     numbers?: ReadonlyMap<string, number>;
+    /**
+     * Countries (lower-case) that have their own guide shard in `epg/`.
+     * Country playlists point at that shard instead of the full guide: a TV
+     * app loading the Turkish playlist then downloads ~25 KB of guide rather
+     * than 13 MB, most of it for channels it does not have.
+     */
+    guideShards?: ReadonlySet<string>;
   },
 ): Promise<PlaylistBuildResult> {
   await ensureDir(PATHS.playlists);
@@ -108,11 +115,12 @@ export async function buildPlaylists(
     group: string,
     entries: M3uEntry[],
     channelCount: number,
+    headerOverride?: Record<string, string>,
   ): Promise<void> => {
     if (entries.length === 0) return;
     const target = path.join(PATHS.playlists, relativePath);
     await ensureDir(path.dirname(target));
-    await writeText(target, writeM3u(entries, { header }));
+    await writeText(target, writeM3u(entries, { header: headerOverride ?? header }));
     files.push({
       path: `playlists/${relativePath}`,
       name,
@@ -207,12 +215,21 @@ export async function buildPlaylists(
         const best = playableStreams(channel, settings, true)[0];
         if (best) entries.push(toEntry(channel, best, context, groupFor(channel)));
       }
+      let shardHeader: Record<string, string> | undefined;
+      if (directory === 'country' && epgUrl && meta.guideShards) {
+        // No shard means no programmes for any channel of this country, so
+        // the full guide would not help either; leave the header out.
+        shardHeader = meta.guideShards.has(key)
+          ? { 'x-tvg-url': publicUrl(settings, `epg/${key}.xml.gz`) }
+          : {};
+      }
       await write(
         `${directory}/${slugify(key) || key}.m3u`,
         label(key),
         directory,
         entries,
         bucket.length,
+        shardHeader,
       );
     }
   }

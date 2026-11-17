@@ -5,6 +5,7 @@
  * can be served by GitHub Pages / any CDN with no server and no rate limits.
  */
 
+import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { loadConfig, PATHS, publicUrl, type Settings } from '../core/config.js';
 import {
@@ -107,6 +108,20 @@ interface PublicChannel {
   guides: EnrichedChannel['guides'];
 }
 
+/** Country codes with a gzipped guide shard in public/epg (`tr.xml.gz`, …). */
+async function listGuideShards(): Promise<Set<string>> {
+  try {
+    const entries = await fs.readdir(PATHS.epg);
+    return new Set(
+      entries
+        .map((name) => /^([a-z]{2,3})\.xml\.gz$/.exec(name)?.[1])
+        .filter((code): code is string => Boolean(code)),
+    );
+  } catch {
+    return new Set();
+  }
+}
+
 function toPublicStream(stream: EnrichedStream): PublicStream {
   return {
     channel: stream.channel,
@@ -203,7 +218,6 @@ const PRESERVED_ON_CLEAN = new Set(['epg']);
 
 /** Empties `public/` except for directories owned by other stages. */
 async function cleanPublic(): Promise<void> {
-  const { promises: fs } = await import('node:fs');
   let entries: string[];
   try {
     entries = await fs.readdir(PATHS.public);
@@ -521,6 +535,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     categories: new Map(dataset.categories.map((category) => [category.id, category.name])),
     languages: new Map(dataset.languages.map((language) => [language.code, language.name])),
     numbers: new Map(Object.entries(registry.numbers)),
+    guideShards: guideAvailable && settings.epg.gzip ? await listGuideShards() : undefined,
   });
   await emit('playlists.json', playlistResult.files, true);
 

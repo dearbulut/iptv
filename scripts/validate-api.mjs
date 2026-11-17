@@ -223,6 +223,22 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
   } catch {
     /* playlist absence is reported above */
   }
+
+  // Country playlists point at their own guide shard; it must exist.
+  try {
+    const dir = path.join(publicDir, 'playlists', 'country');
+    let broken = 0;
+    for (const name of await fs.readdir(dir)) {
+      const head = (await fs.readFile(path.join(dir, name), 'utf8')).split('\n', 1)[0];
+      const shard = /x-tvg-url="[^"]*\/epg\/([a-z]+\.xml\.gz)"/.exec(head)?.[1];
+      if (shard && shard !== 'guide.xml.gz') {
+        await fs.access(path.join(publicDir, 'epg', shard)).catch(() => broken++);
+      }
+    }
+    if (broken > 0) fail(`${broken} country playlist(s) point at a missing guide shard`);
+  } catch {
+    /* no country playlists */
+  }
 }
 
 // --- client integrations ----------------------------------------------------
