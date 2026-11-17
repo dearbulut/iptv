@@ -48,7 +48,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          # Enough history to see when the catalogue was last committed.
+          fetch-depth: 50
 
       - uses: actions/setup-node@v4
         with:
@@ -124,6 +125,23 @@ jobs:
             echo "Catalogue unchanged"
             exit 0
           fi
+
+          # Every sync changes the timestamp and the live counts, which used to
+          # mean a commit on every run — 393 of the first 404 commits on main
+          # were this one line of automation. Commit immediately only when the
+          # set of playlists itself changed (a country or category appeared or
+          # disappeared); otherwise at most once every 20 hours.
+          urls() { grep -o 'https://[^`|]*\.m3u' "$@" | sort -u; }
+          BEFORE=$(git show HEAD:PLAYLISTS.md 2>/dev/null | urls - || true)
+          AFTER=$(urls PLAYLISTS.md || true)
+          LAST=$(git log -1 --format=%ct -- PLAYLISTS.md 2>/dev/null || echo 0)
+          AGE=$(( $(date +%s) - ${LAST:-0} ))
+          if [ "$BEFORE" = "$AFTER" ] && [ "$AGE" -lt 72000 ]; then
+            echo "Only counts changed, and the catalogue was refreshed $((AGE / 3600))h ago — skipping"
+            git checkout -- PLAYLISTS.md README.md
+            exit 0
+          fi
+
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add PLAYLISTS.md README.md
