@@ -21,6 +21,8 @@ export interface PlaylistIndexEntry {
 interface BuildContext {
   settings: Settings;
   epgUrl: string | null;
+  /** Stable channel numbers, emitted as `tvg-chno`. */
+  numbers: ReadonlyMap<string, number>;
 }
 
 function toEntry(
@@ -42,6 +44,7 @@ function toEntry(
     url: stream.url,
     attributes: {
       'tvg-id': channel.id,
+      'tvg-chno': context.numbers.has(channel.id) ? String(context.numbers.get(channel.id)) : '',
       'tvg-name': channel.name,
       'tvg-logo': channel.logo ?? '',
       'tvg-country': channel.country ?? '',
@@ -84,12 +87,15 @@ export async function buildPlaylists(
     countries: Map<string, string>;
     categories: Map<string, string>;
     languages: Map<string, string>;
+    /** Stable channel numbers (see channel-numbers.ts). */
+    numbers?: ReadonlyMap<string, number>;
   },
 ): Promise<PlaylistBuildResult> {
   await ensureDir(PATHS.playlists);
 
   const epgUrl = settings.playlists.link_epg ? publicUrl(settings, 'epg/guide.xml.gz') : null;
-  const context: BuildContext = { settings, epgUrl };
+  const numbers = meta.numbers ?? new Map<string, number>();
+  const context: BuildContext = { settings, epgUrl, numbers };
   const header: Record<string, string> = {};
   if (epgUrl) header['x-tvg-url'] = epgUrl;
 
@@ -117,7 +123,13 @@ export async function buildPlaylists(
     totalEntries += entries.length;
   };
 
-  const withStreams = channels.filter((channel) => channel.streams.length > 0);
+  // Ordered by channel number so players that ignore tvg-chno still list
+  // channels in a stable order; unnumbered channels go last.
+  const numberOf = (channel: EnrichedChannel): number =>
+    numbers.get(channel.id) ?? Number.MAX_SAFE_INTEGER;
+  const withStreams = channels
+    .filter((channel) => channel.streams.length > 0)
+    .sort((a, b) => numberOf(a) - numberOf(b));
 
   const groupFor = (channel: EnrichedChannel): string => {
     switch (settings.playlists.group_by) {

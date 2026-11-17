@@ -23,9 +23,9 @@ on:
       - '.github/workflows/sync.yml'
 
 permissions:
-  # Write is only used to refresh the generated PLAYLISTS.md and the README
-  # table on `main`. Sync never writes the state branch — Health Scan and EPG
-  # Grab own their own files there.
+  # Write refreshes the generated PLAYLISTS.md and README table on `main`,
+  # and publishes `channel-numbers.json` to the state branch (Sync owns only
+  # that file there; Health Scan and EPG Grab own theirs).
   contents: write
   pages: write
   id-token: write
@@ -69,12 +69,20 @@ jobs:
             nexus-state-
 
       - name: Restore persisted health database
+        id: restore
         continue-on-error: true
         run: |
           git fetch origin state:state --depth=1 2>/dev/null || exit 0
+          echo "state=ok" >> "$GITHUB_OUTPUT"
           mkdir -p .data
-          git show state:health.json > .data/health.json 2>/dev/null || true
-          git show state:discovery.json > .data/discovery.json 2>/dev/null || true
+          # Write through a temp file: a failed `git show` must not truncate
+          # the copy the cache just restored.
+          restore() { git show "state:$1" > ".data/$1.tmp" 2>/dev/null && mv ".data/$1.tmp" ".data/$1" || rm -f ".data/$1.tmp"; }
+          restore health.json
+          restore discovery.json
+          # Channel numbers must never change once assigned, so the registry
+          # is restored before every build rather than rebuilt from scratch.
+          restore channel-numbers.json
           ls -la .data || true
 
       - name: Aggregate channels and streams
@@ -100,6 +108,18 @@ jobs:
       # would have caught issue #14 on the first run.
       - name: Validate output
         run: node scripts/validate-api.mjs
+
+      # Persist newly assigned channel numbers. Runs only after validation
+      # passed, so a broken build cannot record numbers for a bad catalogue.
+      - name: Publish channel numbers
+        # Only when the state branch was readable: otherwise this run may have
+        # numbered from an empty registry and must not overwrite the real one.
+        if: ${{ github.ref == 'refs/heads/main' && steps.restore.outputs.state == 'ok' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bash scripts/publish-state.sh "numbers: $(date -u +%FT%TZ)" \
+            .data/channel-numbers.json:channel-numbers.json
 
       - name: Summarise
         id: summary

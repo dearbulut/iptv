@@ -33,6 +33,14 @@ import { buildPlaylists } from './playlists.js';
 import { buildSearchIndex } from './search-index.js';
 import { buildOpenApi } from './openapi.js';
 import { buildPlaylistCatalogue, buildReadmePlaylistBlock } from './catalogue.js';
+import {
+  browserBlocker,
+  channelAvailability,
+  historyString,
+  isBrowserPlayable,
+  type Availability,
+} from './compat.js';
+import { assignChannelNumbers, normaliseRegistry } from './channel-numbers.js';
 import type { EpgLink } from '../epg/index.js';
 
 const log = new Logger('api');
@@ -48,10 +56,16 @@ interface PublicStream {
   quality: string | null;
   rank: number;
   sources: string[];
+  /** Playable in a browser on an HTTPS page (no mixed content, no custom headers). */
+  browser_playable: boolean;
+  /** Why not, when it is not: `insecure` (http://), `headers`, or `format`. */
+  browser_blocker: 'insecure' | 'headers' | 'format' | null;
   health: {
     status: string;
     score: number;
     uptime: number;
+    /** One character per recorded check, oldest first: `1` up, `0` down. */
+    history: string;
     checked_at: string;
     last_online: string | null;
     latency_ms: number | null;
@@ -79,7 +93,13 @@ interface PublicChannel {
   logo: string | null;
   score: number;
   online: boolean;
+  /** online · regional (geo-blocked from our scanner) · offline · unchecked · none */
+  availability: Availability;
+  /** Stable channel number (`tvg-chno`); never reused. Null when unplayable. */
+  number: number | null;
   stream_count: number;
+  /** At least one stream plays in a browser. */
+  browser_playable: boolean;
   best_quality: string | null;
   streams: PublicStream[];
   guides: EnrichedChannel['guides'];
@@ -96,11 +116,14 @@ function toPublicStream(stream: EnrichedStream): PublicStream {
     quality: stream.health?.media?.resolution ?? stream.quality,
     rank: stream.rank,
     sources: [...new Set(stream.provenance.map((entry) => entry.source))],
+    browser_playable: isBrowserPlayable(stream),
+    browser_blocker: browserBlocker(stream),
     health: stream.health
       ? {
           status: stream.health.status,
           score: stream.health.score,
           uptime: uptimeRatio(stream.health),
+          history: historyString(stream.health),
           checked_at: stream.health.checked_at,
           last_online: stream.health.last_online,
           latency_ms: stream.health.latency_ms,
@@ -124,7 +147,11 @@ function bestQuality(streams: readonly EnrichedStream[]): string | null {
   return best;
 }
 
-function toPublicChannel(channel: EnrichedChannel, includeOffline: boolean): PublicChannel {
+function toPublicChannel(
+  channel: EnrichedChannel,
+  includeOffline: boolean,
+  number: number | null = null,
+): PublicChannel {
   const streams = includeOffline
     ? channel.streams
     : channel.streams.filter((stream) => stream.health?.status !== 'offline');
@@ -149,7 +176,10 @@ function toPublicChannel(channel: EnrichedChannel, includeOffline: boolean): Pub
     logo: channel.logo,
     score: channel.score,
     online: channel.online,
+    availability: channelAvailability(streams),
+    number,
     stream_count: streams.length,
+    browser_playable: streams.some((stream) => isBrowserPlayable(stream)),
     best_quality: bestQuality(streams),
     streams: streams.map(toPublicStream),
     guides: channel.guides,
@@ -262,9 +292,25 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     }
   }
 
+  // ---- stable channel numbers --------------------------------------------
+  // Restored from (and published back to) the state branch by Sync, so a
+  // channel keeps its number across every future run. Only channels with a
+  // stream are numbered; a channel that gains one later gets the next number.
+  const numbersPath = path.join(PATHS.data, 'channel-numbers.json');
+  const { registry, assigned } = assignChannelNumbers(
+    normaliseRegistry(await readJsonOr<unknown>(numbersPath, null)),
+    dataset.channels.filter((channel) => channel.streams.length > 0),
+  );
+  await writeJson(numbersPath, registry);
+  if (assigned > 0) log.info(`Assigned ${assigned} new channel number(s); highest is ${registry.last}`);
+
   // ---- collections --------------------------------------------------------
   const publicChannels = dataset.channels.map((channel) =>
-    toPublicChannel(channel, settings.api.include_offline),
+    toPublicChannel(
+      channel,
+      settings.api.include_offline,
+      channel.streams.length > 0 ? (registry.numbers[channel.id] ?? null) : null,
+    ),
   );
   const playable = publicChannels.filter((channel) => channel.stream_count > 0);
 
@@ -410,6 +456,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     countries: new Map(dataset.countries.map((country) => [country.code, country.name])),
     categories: new Map(dataset.categories.map((category) => [category.id, category.name])),
     languages: new Map(dataset.languages.map((language) => [language.code, language.name])),
+    numbers: new Map(Object.entries(registry.numbers)),
   });
   await emit('playlists.json', playlistResult.files, true);
 

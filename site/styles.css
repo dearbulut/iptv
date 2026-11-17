@@ -873,3 +873,42 @@ select:focus {
     padding: 0 9px;
   }
 }
+
+/* ---------------------------------------------------------------- player extras */
+
+.player__actions {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px 0;
+  flex-wrap: wrap;
+}
+
+.player__actions:empty {
+  display: none;
+}
+
+.uptime {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+.spark {
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.spark__up {
+  fill: var(--good);
+}
+
+.spark__down {
+  fill: var(--bad);
+  opacity: 0.85;
+}
+
+.stream-btn .spark {
+  margin-left: auto;
+}

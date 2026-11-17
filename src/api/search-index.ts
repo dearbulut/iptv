@@ -20,6 +20,11 @@ export const SEARCH_FIELDS = [
   'online',
   'streams',
   'quality',
+  // Appended 2026-11. Fields are only ever added at the end so clients that
+  // read positions keep working.
+  'browser',
+  'availability',
+  'number',
 ] as const;
 
 export type SearchRow = [
@@ -34,6 +39,9 @@ export type SearchRow = [
   0 | 1, // online
   number, // stream count
   string, // best quality
+  0 | 1, // at least one stream plays in a browser
+  string, // availability: online | regional | offline | unchecked | none
+  number, // stable channel number, 0 when unnumbered
 ];
 
 export interface SearchIndex {
@@ -56,6 +64,9 @@ interface IndexableChannel {
   online: boolean;
   stream_count: number;
   best_quality: string | null;
+  browser_playable?: boolean;
+  availability?: string;
+  number?: number | null;
 }
 
 /** Builds the positional search index. */
@@ -84,6 +95,9 @@ export function buildSearchIndex(channels: readonly IndexableChannel[]): SearchI
       channel.online ? 1 : 0,
       channel.stream_count,
       channel.best_quality ?? '',
+      channel.browser_playable ? 1 : 0,
+      channel.availability ?? (channel.online ? 'online' : 'unchecked'),
+      channel.number ?? 0,
     ];
   });
 

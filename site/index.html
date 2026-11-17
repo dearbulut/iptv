@@ -90,6 +90,11 @@
             Working streams only
           </label>
           <label class="switch">
+            <input type="checkbox" id="filter-browser" />
+            <span></span>
+            Plays in browser
+          </label>
+          <label class="switch">
             <input type="checkbox" id="filter-hd" />
             <span></span>
             HD and above
@@ -178,7 +183,10 @@
           <div class="player__overlay" id="player-status" hidden></div>
         </div>
 
+        <div class="player__actions" id="player-actions"></div>
+
         <div class="player__body">
+          <div class="player__uptime" id="player-uptime"></div>
           <div class="player__streams" id="player-streams"></div>
           <div class="player__epg" id="player-epg"></div>
           <details class="player__meta">

@@ -22,7 +22,7 @@ const state = {
   // `playable` defaults on: roughly three quarters of the catalogue is
   // metadata for channels with no stream at all, and showing those by
   // default promises far more than the site can actually play.
-  filters: { country: '', category: '', language: '', playable: true, online: false, hd: false, favourites: false },
+  filters: { country: '', category: '', language: '', playable: true, online: false, hd: false, browser: false, favourites: false },
   sort: 'relevance',
   detailCache: new Map(),
   epgCache: new Map(),
@@ -43,6 +43,10 @@ const F = {
   ONLINE: 8,
   STREAMS: 9,
   QUALITY: 10,
+  // Appended later — older indexes simply lack them.
+  BROWSER: 11,
+  AVAIL: 12,
+  NUMBER: 13,
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -233,7 +237,7 @@ function renderStats() {
 
 function applyFilters(resetScroll = true) {
   const query = normalise(state.query);
-  const { country, category, language, playable, online, hd, favourites } = state.filters;
+  const { country, category, language, playable, online, hd, browser, favourites } = state.filters;
 
   let rows = state.channels;
 
@@ -241,6 +245,7 @@ function applyFilters(resetScroll = true) {
   if (favourites) rows = rows.filter((row) => state.favourites.has(row[F.ID]));
   if (online) rows = rows.filter((row) => row[F.ONLINE] === 1);
   if (hd) rows = rows.filter((row) => parseInt(row[F.QUALITY], 10) >= 720);
+  if (browser) rows = rows.filter((row) => row[F.BROWSER] === 1);
   if (country) rows = rows.filter((row) => row[F.COUNTRY].toLowerCase() === country);
   if (category) {
     rows = rows.filter((row) => row[F.CATEGORIES].toLowerCase().split(';').includes(category));
@@ -311,6 +316,7 @@ function renderChips() {
   if (state.filters.playable) active.push(['playable', 'Has a stream']);
   if (state.filters.online) active.push(['online', 'Working only']);
   if (state.filters.hd) active.push(['hd', 'HD+']);
+  if (state.filters.browser) active.push(['browser', 'Plays in browser']);
   if (state.filters.favourites) active.push(['favourites', 'Favourites']);
 
   for (const [key, label] of active) {
@@ -326,7 +332,7 @@ function renderChips() {
 }
 
 function clearFilter(key) {
-  if (key === 'playable' || key === 'online' || key === 'hd' || key === 'favourites') {
+  if (['playable', 'online', 'hd', 'browser', 'favourites'].includes(key)) {
     state.filters[key] = false;
     $(`#filter-${key === 'favourites' ? 'favorites' : key}`).checked = false;
   } else {
@@ -337,11 +343,11 @@ function clearFilter(key) {
 }
 
 function resetFilters() {
-  state.filters = { country: '', category: '', language: '', playable: true, online: false, hd: false, favourites: false };
+  state.filters = { country: '', category: '', language: '', playable: true, online: false, hd: false, browser: false, favourites: false };
   state.query = '';
   $('#search').value = '';
   for (const id of ['country', 'category', 'language']) $(`#filter-${id}`).value = '';
-  for (const id of ['online', 'hd', 'favorites']) $(`#filter-${id}`).checked = false;
+  for (const id of ['online', 'hd', 'browser', 'favorites']) $(`#filter-${id}`).checked = false;
   $('#filter-playable').checked = true;
   applyFilters();
 }
@@ -382,7 +388,11 @@ function renderCard(row) {
   titles.append(el('div', 'card__name', row[F.NAME]));
 
   const country = state.countries.get(row[F.COUNTRY].toLowerCase());
-  const subtitle = [country ? `${country.flag ?? ''} ${country.name}` : row[F.COUNTRY], row[F.CATEGORIES].split(';')[0]]
+  const subtitle = [
+    row[F.NUMBER] ? `#${row[F.NUMBER]}` : null,
+    country ? `${country.flag ?? ''} ${country.name}` : row[F.COUNTRY],
+    row[F.CATEGORIES].split(';')[0],
+  ]
     .filter(Boolean)
     .join(' · ');
   titles.append(el('div', 'card__sub', subtitle));
@@ -401,19 +411,33 @@ function renderCard(row) {
     return card;
   }
 
-  const status = scoreClass(row[F.SCORE], row[F.ONLINE] === 1);
+  // Geo-blocked from our scanner is not the same as broken: the stream may
+  // well play where the viewer is.
+  const regional = row[F.ONLINE] !== 1 && row[F.AVAIL] === 'regional';
+  const status = regional ? 'warn' : scoreClass(row[F.SCORE], row[F.ONLINE] === 1);
   tags.append(el('span', `dot dot--${status}`));
-  tags.append(
-    el(
-      'span',
-      `tag tag--${status === 'unknown' ? '' : status}`.trim(),
-      row[F.ONLINE] === 1 ? 'Live' : row[F.SCORE] > 0 ? `${Math.round(row[F.SCORE])}%` : 'Unchecked',
-    ),
+  const statusTag = el(
+    'span',
+    `tag tag--${status === 'unknown' ? '' : status}`.trim(),
+    row[F.ONLINE] === 1
+      ? 'Live'
+      : regional
+        ? 'Regional'
+        : row[F.SCORE] > 0
+          ? `${Math.round(row[F.SCORE])}%`
+          : 'Unchecked',
   );
+  if (regional) statusTag.title = 'Refused our scanner with a geo-block — may work in your country';
+  tags.append(statusTag);
   if (row[F.QUALITY]) {
     tags.append(el('span', `tag${parseInt(row[F.QUALITY], 10) >= 720 ? ' tag--hd' : ''}`, row[F.QUALITY]));
   }
   if (row[F.STREAMS] > 1) tags.append(el('span', 'tag', `${row[F.STREAMS]} streams`));
+  if (row[F.BROWSER] === 0) {
+    const vlc = el('span', 'tag', 'VLC');
+    vlc.title = 'No stream for this channel plays in a browser — use VLC, Kodi or TiviMate';
+    tags.append(vlc);
+  }
   if (state.favourites.has(row[F.ID])) tags.append(el('span', 'tag', '★'));
   card.append(tags);
 
@@ -456,9 +480,16 @@ async function openChannel(id) {
   renderEpg(channel);
   renderMeta(channel);
 
-  const best = channel.streams?.[0];
-  if (best) playStream(best, 0);
-  else setStatus('No stream is currently listed for this channel.');
+  const streams = channel.streams ?? [];
+  if (streams.length === 0) {
+    renderActions(null);
+    setStatus('No stream is currently listed for this channel.');
+    return;
+  }
+  // Streams arrive best-first; play the best one a browser can actually open.
+  // Older API documents lack the flag, so treat a missing flag as playable.
+  const index = streams.findIndex((stream) => stream.browser_playable !== false);
+  playStream(streams[index === -1 ? 0 : index], index === -1 ? 0 : index);
 }
 
 function renderPlayerHeader(channel) {
@@ -514,6 +545,12 @@ function renderStreamList(channel) {
     }
     if (stream.health?.uptime) {
       button.append(el('span', 'tag', `${stream.health.uptime}%`));
+    }
+    if (stream.health?.history) button.append(sparkline(stream.health.history, 48, 14));
+    if (stream.browser_playable === false) {
+      const vlc = el('span', 'tag', 'VLC');
+      vlc.title = BLOCKER_TEXT[stream.browser_blocker] ?? BLOCKER_TEXT.format;
+      button.append(vlc);
     }
 
     button.addEventListener('click', () => playStream(stream, index));
@@ -636,6 +673,17 @@ function playStream(stream, index) {
     button.setAttribute('aria-current', String(i === index));
   });
 
+  renderActions(stream);
+  renderUptime(stream);
+
+  if (stream.browser_playable === false) {
+    setStatus(
+      `${BLOCKER_TEXT[stream.browser_blocker] ?? BLOCKER_TEXT.format} ` +
+        'Use “Copy URL” or “Open in player” below.',
+    );
+    return;
+  }
+
   setStatus('Connecting…');
 
   const onReady = () => setStatus(null);
@@ -676,6 +724,94 @@ function playStream(stream, index) {
   video.addEventListener('loadedmetadata', onReady, { once: true });
   video.addEventListener('error', () => onFail('playback error'), { once: true });
   video.play().catch(() => setStatus('Press play to start.'));
+}
+
+const BLOCKER_TEXT = {
+  insecure: 'This stream uses plain http://, which browsers block on a secure page.',
+  headers: 'This stream needs custom HTTP headers that a browser cannot send.',
+  format: 'This stream’s format does not play in a browser.',
+};
+
+/** Tiny bar chart of check history: one bar per check, oldest first. */
+function sparkline(history, width, height) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  const samples = history.slice(-30);
+  svg.setAttribute('viewBox', `0 0 ${samples.length} 1`);
+  svg.setAttribute('preserveAspectRatio', 'none');
+  svg.setAttribute('width', String(width));
+  svg.setAttribute('height', String(height));
+  svg.setAttribute('class', 'spark');
+  svg.setAttribute('role', 'img');
+  const up = [...samples].filter((value) => value === '1').length;
+  svg.setAttribute('aria-label', `${up} of ${samples.length} recent checks succeeded`);
+  [...samples].forEach((value, i) => {
+    const bar = document.createElementNS(ns, 'rect');
+    bar.setAttribute('x', String(i + 0.1));
+    bar.setAttribute('width', '0.8');
+    bar.setAttribute('y', value === '1' ? '0' : '0.6');
+    bar.setAttribute('height', value === '1' ? '1' : '0.4');
+    bar.setAttribute('class', value === '1' ? 'spark__up' : 'spark__down');
+    svg.append(bar);
+  });
+  return svg;
+}
+
+/** Uptime panel for the stream being played. */
+function renderUptime(stream) {
+  const container = $('#player-uptime');
+  if (!container) return;
+  container.innerHTML = '';
+  const history = stream?.health?.history ?? '';
+  if (!history) return;
+  container.append(el('p', 'section-title', 'Availability'));
+  const row = el('div', 'uptime');
+  row.append(sparkline(history, 240, 28));
+  const checks = Math.min(history.length, 30);
+  row.append(
+    el(
+      'span',
+      'muted',
+      `${stream.health.uptime ?? 0}% up over the last ${checks} check${checks === 1 ? '' : 's'}` +
+        (stream.health.last_online
+          ? ` · last seen up ${new Date(stream.health.last_online).toLocaleString()}`
+          : ''),
+    ),
+  );
+  container.append(row);
+}
+
+/** Copy / open-in-player actions, which work for every stream. */
+function renderActions(stream) {
+  const container = $('#player-actions');
+  if (!container) return;
+  container.innerHTML = '';
+  if (!stream) return;
+
+  const copy = el('button', 'btn', 'Copy URL');
+  copy.type = 'button';
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(stream.url);
+      copy.textContent = 'Copied';
+    } catch {
+      window.prompt('Copy this URL:', stream.url);
+    }
+    setTimeout(() => (copy.textContent = 'Copy URL'), 1500);
+  });
+
+  // A one-entry playlist opens in the default media player on every desktop
+  // OS and carries the headers that VLC needs, which a bare URL cannot.
+  const name = state.current?.name ?? 'stream';
+  const lines = ['#EXTM3U', `#EXTINF:-1,${name}`];
+  if (stream.user_agent) lines.push(`#EXTVLCOPT:http-user-agent=${stream.user_agent}`);
+  if (stream.referrer) lines.push(`#EXTVLCOPT:http-referrer=${stream.referrer}`);
+  lines.push(stream.url, '');
+  const open = el('a', 'btn', 'Open in player');
+  open.href = URL.createObjectURL(new Blob([lines.join('\n')], { type: 'audio/x-mpegurl' }));
+  open.download = `${name.replace(/[^\w.-]+/g, '_')}.m3u`;
+
+  container.append(copy, open);
 }
 
 function destroyPlayer() {
@@ -726,7 +862,7 @@ function readUrlState() {
       $(`#filter-${key}`).value = value.toLowerCase();
     }
   }
-  for (const [key, id] of [['online', 'online'], ['hd', 'hd'], ['favourites', 'favorites']]) {
+  for (const [key, id] of [['online', 'online'], ['hd', 'hd'], ['browser', 'browser'], ['favourites', 'favorites']]) {
     if (params.get(key) === '1') {
       state.filters[key] = true;
       $(`#filter-${id}`).checked = true;
@@ -773,6 +909,10 @@ function wireEvents() {
   });
   $('#filter-online').addEventListener('change', (event) => {
     state.filters.online = event.target.checked;
+    applyFilters();
+  });
+  $('#filter-browser').addEventListener('change', (event) => {
+    state.filters.browser = event.target.checked;
     applyFilters();
   });
   $('#filter-hd').addEventListener('change', (event) => {
