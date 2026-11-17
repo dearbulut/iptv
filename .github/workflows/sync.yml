@@ -18,6 +18,7 @@ on:
     branches: [main]
     paths:
       - 'config/**'
+      - 'data/**'
       - 'src/**'
       - 'site/**'
       - '.github/workflows/sync.yml'

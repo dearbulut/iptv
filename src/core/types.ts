@@ -111,9 +111,14 @@ export interface Timezone {
 }
 
 export interface BlocklistEntry {
+  /** Channel removed entirely. Empty when the entry removes one stream. */
   channel: string;
   reason: string;
   ref: string;
+  /** IPTV Nexus extension: remove only this stream URL. */
+  url?: string;
+  /** IPTV Nexus extension: when the entry was added. */
+  added_at?: string;
 }
 
 // ---------------------------------------------------------------------------

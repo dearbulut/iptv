@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Fix the guide of your own playlist
+    url: https://dearbulut.github.io/iptv/tools.html#fix
+    about: Match any M3U playlist to IPTV Nexus channel ids, in your browser.

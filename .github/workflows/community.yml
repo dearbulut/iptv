@@ -1,0 +1,99 @@
+name: Community
+
+# Processes the "Add a stream" and "Copyright / takedown request" issue forms
+# without a human in the loop:
+#
+#   stream     validate → probe live → match or create the channel → write to
+#              data/nexus → comment and close. Problems are explained and the
+#              issue stays open; editing it runs the checks again.
+#   takedown   remove the listed channels/streams at once (data/nexus/
+#              blocklist.ndjson), confirm to the requester, and assign the
+#              owner to review. Restoring an entry is deleting its line.
+#
+# The issue body is untrusted input: it only ever reaches the CLI through an
+# environment variable and a file, never the shell.
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  # One at a time, so commits to data/nexus never race.
+  group: community
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: >-
+      github.event.issue.state == 'open' &&
+      (startsWith(github.event.issue.title, '[Stream]') ||
+       startsWith(github.event.issue.title, '[Takedown]') ||
+       contains(github.event.issue.labels.*.name, 'stream-submission') ||
+       contains(github.event.issue.labels.*.name, 'takedown'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Process
+        id: process
+        env:
+          BODY: ${{ github.event.issue.body }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+          NUMBER: ${{ github.event.issue.number }}
+          URL: ${{ github.event.issue.html_url }}
+          KIND: ${{ (startsWith(github.event.issue.title, '[Takedown]') || contains(github.event.issue.labels.*.name, 'takedown')) && 'takedown' || 'stream' }}
+        run: |
+          printf '%s' "$BODY" > "$RUNNER_TEMP/body.md"
+          npm run --silent cli -- community --kind "$KIND" --body-file "$RUNNER_TEMP/body.md" \
+            --author "$AUTHOR" --issue "$NUMBER" --issue-url "$URL" --out "$RUNNER_TEMP/result.json"
+          node -e '
+            const r = require(process.argv[1]);
+            const fs = require("fs");
+            fs.writeFileSync(process.argv[2], r.message + "\n");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `status=${r.status}\nchanged=${r.changed}\nkind=${process.env.KIND}\n`);
+            fs.writeFileSync(process.argv[3], r.commit);
+          ' "$RUNNER_TEMP/result.json" "$RUNNER_TEMP/message.md" "$RUNNER_TEMP/commit.txt"
+
+      - name: Commit
+        if: steps.process.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/nexus
+          git commit -q -F "$RUNNER_TEMP/commit.txt"
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin main && git push origin HEAD:main && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1
+
+      - name: Reply
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          STATUS: ${{ steps.process.outputs.status }}
+          KIND: ${{ steps.process.outputs.kind }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/message.md"
+          case "$STATUS" in
+            accepted|duplicate)
+              gh issue edit "$NUMBER" --add-label accepted --remove-label needs-changes >/dev/null 2>&1 || true
+              gh issue close "$NUMBER" --reason completed ;;
+            removed)
+              gh issue edit "$NUMBER" --add-label removed --remove-label needs-changes --add-assignee "$OWNER" >/dev/null 2>&1 || true ;;
+            *)
+              gh issue edit "$NUMBER" --add-label needs-changes >/dev/null 2>&1 || true ;;
+          esac

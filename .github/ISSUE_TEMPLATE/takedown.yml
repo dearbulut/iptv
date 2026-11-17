@@ -1,0 +1,63 @@
+name: Copyright / takedown request
+description: Remove a channel or stream you hold the rights to — processed automatically
+title: '[Takedown] '
+labels: [takedown]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        IPTV Nexus does not host any video. It lists links to streams on third-party servers. If you hold the rights to content that is linked here and want it removed, fill in this form: **the listed channels and streams are removed automatically within minutes**, then the request is reviewed.
+
+        **This issue is public.** Do not include anything you do not want published. You can also file through [GitHub's DMCA process](https://docs.github.com/en/site-policy/content-removal-policies/submitting-content-removal-requests).
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+    validations:
+      required: true
+  - type: input
+    id: organisation
+    attributes:
+      label: Organisation
+      description: The rights holder, or who you act for.
+  - type: input
+    id: email
+    attributes:
+      label: Contact email
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: Copyrighted work
+      description: The work or rights concerned, e.g. "the live broadcast of Channel X".
+    validations:
+      required: true
+  - type: textarea
+    id: targets
+    attributes:
+      label: What to remove
+      description: One per line — a channel id (`TRT1.tr`), a link to the channel's page on the website, or a stream URL.
+      placeholder: |
+        TRT1.tr
+        https://example.com/live/index.m3u8
+    validations:
+      required: true
+  - type: checkboxes
+    id: statements
+    attributes:
+      label: Statements
+      options:
+        - label: I have a good-faith belief that the use described is not authorised by the rights holder, its agent or the law.
+          required: true
+        - label: The information in this notice is accurate, and under penalty of perjury, I am the rights holder or authorised to act on its behalf.
+          required: true
+        - label: I understand this request and my name will be public.
+          required: true
+  - type: input
+    id: signature
+    attributes:
+      label: Signature
+      description: Type your full name.
+    validations:
+      required: true

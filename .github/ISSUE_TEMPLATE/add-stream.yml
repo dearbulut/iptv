@@ -1,0 +1,76 @@
+name: Add a stream
+description: Add a free stream for a channel — checked and added automatically
+title: '[Stream] '
+labels: [stream-submission]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A bot checks your submission within a few minutes. If the stream plays and is free to watch, it is added and this issue is closed with a report. If something is wrong, the bot explains what — edit the issue and it checks again.
+
+        Only streams that are **free to watch and publicly available** are accepted: official broadcaster streams, FAST channels, public service media. Subscription (reseller panel) streams are rejected automatically.
+  - type: input
+    id: channel
+    attributes:
+      label: Channel
+      description: The channel's id (like `TRT1.tr`), a link to its page on https://dearbulut.github.io/iptv, or its name.
+      placeholder: TRT1.tr
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Stream URL
+      description: A direct http(s) link to the stream, usually ending in .m3u8.
+      placeholder: https://example.com/live/index.m3u8
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Two-letter country code. Helps find the channel by name; required for a new channel.
+      placeholder: TR
+  - type: input
+    id: referrer
+    attributes:
+      label: Referrer
+      description: Only if the stream refuses to play without it.
+  - type: input
+    id: user-agent
+    attributes:
+      label: User-Agent
+      description: Only if the stream refuses to play without it.
+  - type: checkboxes
+    id: new-channel
+    attributes:
+      label: New channel
+      description: Tick this only if the channel is not in IPTV Nexus yet. Then fill in the fields below.
+      options:
+        - label: This is a new channel, not yet in IPTV Nexus
+  - type: input
+    id: categories
+    attributes:
+      label: Categories
+      description: For a new channel, e.g. `news, religious`. See https://dearbulut.github.io/iptv/api/v1/categories.json
+  - type: input
+    id: languages
+    attributes:
+      label: Languages
+      description: For a new channel, three-letter codes, e.g. `ara, eng`.
+  - type: input
+    id: website
+    attributes:
+      label: Website
+  - type: input
+    id: logo
+    attributes:
+      label: Logo URL
+      description: For a new channel, an https:// link to a logo image.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This stream is free to watch and publicly available. It is not a subscription, paid or leaked service.
+          required: true

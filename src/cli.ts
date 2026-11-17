@@ -10,6 +10,13 @@ import { runHealthScan, pruneRetired } from './health/index.js';
 import { buildEpg } from './epg/index.js';
 import { runDiscovery } from './discovery/index.js';
 import { buildApi } from './api/build.js';
+import { promises as fsp } from 'node:fs';
+import { appendNexus, loadDatabase, NEXUS_DIR, readTable } from './database/index.js';
+import { reportMarkdown, syncDatabase } from './database/sync.js';
+import { processStreamSubmission, processTakedown } from './database/community.js';
+import { hasFfprobe, probeStream } from './health/probe.js';
+import { streamKey } from './core/http.js';
+import type { Channel } from './core/types.js';
 
 const program = new Command();
 
@@ -164,6 +171,90 @@ program
       logger.warn('Removed .data/ — health history is gone');
     }
   });
+
+program
+  .command('db-sync')
+  .description('Update the iptv-org mirror in data/ (refuses mass removals unless --force)')
+  .option('--force', 'apply even if a table would lose more than its limit', false)
+  .option('--report <file>', 'write the Markdown report here')
+  .action(async (options: { force: boolean; report?: string }) => {
+    const { settings } = await loadConfig();
+    const report = await logger.time('Database sync', () => syncDatabase(settings, { force: options.force }));
+    const markdown = reportMarkdown(report);
+    if (options.report) await fsp.writeFile(options.report, markdown);
+    else process.stdout.write(markdown);
+    // 3 = refused by the mass-removal guard; the workflow opens an issue.
+    if (!report.applied) process.exitCode = 3;
+  });
+
+program
+  .command('community')
+  .description('Process a community issue: a stream submission or a takedown request')
+  .requiredOption('--kind <kind>', 'stream | takedown')
+  .requiredOption('--body-file <file>', 'the issue body (Markdown from the issue form)')
+  .requiredOption('--author <login>', 'GitHub login of the issue author')
+  .requiredOption('--issue <number>', 'issue number', Number)
+  .option('--issue-url <url>', 'issue URL, recorded as the takedown reference', '')
+  .requiredOption('--out <file>', 'write the result JSON here')
+  .action(
+    async (options: { kind: string; bodyFile: string; author: string; issue: number; issueUrl: string; out: string }) => {
+      const { settings } = await loadConfig();
+      const body = await fsp.readFile(options.bodyFile, 'utf8');
+      const { data } = await loadDatabase();
+      const channels = data.channels as Channel[];
+      const now = new Date().toISOString();
+      let result: { status: string; message: string; changed: boolean; commit: string };
+
+      if (options.kind === 'takedown') {
+        const outcome = processTakedown(body, options.issueUrl, channels, now);
+        if (outcome.entries.length > 0) await appendNexus('blocklist', outcome.entries as never);
+        result = {
+          status: outcome.status,
+          message: outcome.message,
+          changed: outcome.entries.length > 0,
+          commit: `data: takedown request #${options.issue} (${outcome.entries.length} removal(s))`,
+        };
+      } else {
+        const community = await readTable(NEXUS_DIR, 'streams');
+        const dayAgo = Date.now() - 24 * 3600_000;
+        const useFfprobe = await hasFfprobe();
+        const outcome = await processStreamSubmission(body, options.author, options.issue, {
+          channels,
+          knownStreams: new Set(
+            [...data.streams.map((stream) => stream.url), ...community.map((stream) => String(stream['url']))].map(streamKey),
+          ),
+          blocklist: data.blocklist,
+          recentByAuthor: community.filter(
+            (s) => s['added_by'] === options.author && Date.parse(String(s['added_at'] ?? 0)) > dayAgo,
+          ).length,
+          countries: new Set(data.countries.map((c) => c.code.toUpperCase())),
+          categories: new Set(data.categories.map((c) => c.id)),
+          probe: (url, referrer, userAgent) =>
+            probeStream(url, {
+              timeoutMs: settings.health.timeout_seconds * 1000,
+              referrer,
+              userAgent,
+              useFfprobe,
+              probeDuration: settings.health.probe_duration,
+            }),
+          now,
+        });
+        if (outcome.status === 'accepted') {
+          if (outcome.channel) await appendNexus('channels', [outcome.channel]);
+          if (outcome.feed) await appendNexus('feeds', [outcome.feed]);
+          if (outcome.stream) await appendNexus('streams', [outcome.stream]);
+        }
+        result = {
+          status: outcome.status,
+          message: outcome.message,
+          changed: outcome.status === 'accepted',
+          commit: `data: add ${String(outcome.stream?.['channel'] ?? 'stream')} from #${options.issue}`,
+        };
+      }
+      await fsp.writeFile(options.out, JSON.stringify(result, null, 2));
+      logger.info(`${options.kind} #${options.issue}: ${result.status}`);
+    },
+  );
 
 // ---------------------------------------------------------------------------
 

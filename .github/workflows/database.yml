@@ -1,0 +1,102 @@
+name: Database Sync
+
+# Keeps data/iptv-org — our own copy of the iptv-org database — up to date.
+# Additions, corrections and removals upstream (including iptv-org's
+# blocklist, i.e. takedowns filed there) are committed daily. A mass removal
+# is refused: the last good copy is kept and an issue is opened, because that
+# is what a broken export or the upstream project going away looks like.
+# Our own data in data/nexus is never touched.
+
+on:
+  schedule:
+    # 01:30 UTC daily, before discovery (02:00) and the morning sync.
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Apply even a mass removal (after checking the alert issue)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: database-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync with iptv-org
+        id: sync
+        run: |
+          set +e
+          npm run --silent cli -- db-sync --report "$RUNNER_TEMP/report.md" ${{ inputs.force && '--force' || '' }}
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          # 0 = synced (or nothing to do), 3 = refused by the mass-removal guard.
+          if [ "$code" != "0" ] && [ "$code" != "3" ]; then exit "$code"; fi
+
+      - name: Commit
+        if: steps.sync.outputs.code == '0'
+        run: |
+          git add data/iptv-org
+          if git diff --cached --quiet; then
+            echo "Mirror unchanged"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Subject, then the report as the body, trimmed well under git's limits.
+          { echo "data: sync with iptv-org"; echo; head -c 50000 "$RUNNER_TEMP/report.md"; } > "$RUNNER_TEMP/message.txt"
+          git commit -q -F "$RUNNER_TEMP/message.txt"
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin main && git push origin HEAD:main && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1
+
+      - name: Alert on a refused sync
+        if: steps.sync.outputs.code == '3'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create database-alert --color B60205 --description "The database sync needs a human" --force >/dev/null 2>&1 || true
+          open=$(gh issue list --label database-alert --state open --json number --jq '.[0].number')
+          {
+            cat "$RUNNER_TEMP/report.md"
+            echo
+            echo "The previous copy of the database was kept. If this removal is genuine, run **Database Sync** with *force* enabled; otherwise nothing needs doing — the sync retries daily."
+          } > "$RUNNER_TEMP/alert.md"
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body-file "$RUNNER_TEMP/alert.md"
+          else
+            gh issue create --title "Database sync refused a mass removal" --label database-alert \
+              --assignee "${{ github.repository_owner }}" --body-file "$RUNNER_TEMP/alert.md"
+          fi
+
+      # Labels the community issue forms rely on. Idempotent.
+      - name: Ensure labels
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create stream-submission --color 0E8A16 --description "Stream submitted through the form" --force >/dev/null 2>&1 || true
+          gh label create takedown --color B60205 --description "Copyright / takedown request" --force >/dev/null 2>&1 || true
+          gh label create accepted --color 0E8A16 --description "Processed and added" --force >/dev/null 2>&1 || true
+          gh label create needs-changes --color FBCA04 --description "The bot could not process it yet" --force >/dev/null 2>&1 || true
+          gh label create removed --color 5319E7 --description "Takedown applied" --force >/dev/null 2>&1 || true

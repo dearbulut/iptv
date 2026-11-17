@@ -16,6 +16,8 @@ import type {
   Timezone,
 } from '../core/types.js';
 import { buildLogoIndex, fetchUpstream, type UpstreamData } from './upstream.js';
+import { databaseExists, loadDatabase } from '../database/index.js';
+import type { SourcedStream } from './sources.js';
 import { loadExtraSources } from './sources.js';
 import { mergeDataset, type MergeResult } from './merge.js';
 
@@ -69,10 +71,23 @@ export async function aggregate(options: AggregateOptions = {}): Promise<Dataset
   const config = await loadConfig();
   const { settings } = config;
 
-  const upstream = options.upstream ?? (await fetchUpstream(settings));
+  // Our own database (data/) is the source of truth. Fetching iptv-org
+  // directly is only a fallback for a fresh checkout that has none yet.
+  let upstream = options.upstream;
+  let communityStreams: SourcedStream[] = [];
+  if (!upstream) {
+    if (await databaseExists()) {
+      const database = await loadDatabase();
+      upstream = database.data;
+      communityStreams = database.communityStreams;
+    } else {
+      log.warn('No database in data/ yet — reading iptv-org directly. Run `db-sync` to create it.');
+      upstream = await fetchUpstream(settings);
+    }
+  }
   const extraStreams = options.upstreamOnly
     ? []
-    : await loadExtraSources(config.sources, settings);
+    : [...communityStreams, ...(await loadExtraSources(config.sources, settings))];
 
   const health = await loadHealthDb();
   log.info(`Loaded ${health.size} health record(s) from previous runs`);

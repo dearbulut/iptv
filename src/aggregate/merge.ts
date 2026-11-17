@@ -1,6 +1,7 @@
 /** Merges upstream + third-party streams into the canonical channel dataset. */
 
 import { isPlayableUrl, streamKey } from '../core/http.js';
+import { blockedUrls } from '../database/index.js';
 import { qualityWeight } from '../core/text.js';
 import { Logger } from '../core/logger.js';
 import type { Settings, StreamSource } from '../core/config.js';
@@ -98,9 +99,15 @@ export function mergeDataset(input: MergeInput): MergeResult {
   const { settings } = input;
   const index = buildChannelIndex(input.channels, input.feeds);
 
+  // Channel-level entries (iptv-org's, and ours) remove a whole channel;
+  // entries with a `url` (our takedowns) remove a single stream.
   const blocked = new Set(
-    settings.aggregate.respect_blocklist ? input.blocklist.map((entry) => entry.channel) : [],
+    settings.aggregate.respect_blocklist
+      ? input.blocklist.filter((entry) => entry.channel).map((entry) => entry.channel)
+      : [],
   );
+  const blockedStreams = blockedUrls(input.blocklist);
+  let blockedStreamCount = 0;
 
   const trustBySource = new Map(input.sources.map((source) => [source.id, source.trust]));
   const upstreamTrust = trustBySource.get('iptv-org') ?? 0.9;
@@ -229,6 +236,10 @@ export function mergeDataset(input: MergeInput): MergeResult {
       ),
     };
 
+    if (blockedStreams.has(accumulator.key)) {
+      blockedStreamCount++;
+      continue;
+    }
     if (!accumulator.channelId) {
       orphans.push(enriched);
       continue;
@@ -292,7 +303,7 @@ export function mergeDataset(input: MergeInput): MergeResult {
     duplicates,
     matched,
     orphaned: orphans.length,
-    blocked: blockedCount,
+    blocked: blockedCount + blockedStreamCount,
     nsfw_removed: nsfwRemoved,
   };
 
