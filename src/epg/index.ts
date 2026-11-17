@@ -7,7 +7,7 @@
 
 import path from 'node:path';
 import { loadConfig, PATHS, type EpgOverride, type Settings } from '../core/config.js';
-import { ensureDir, writeGzip, writeJson, writeText } from '../core/fs.js';
+import { ensureDir, remove, writeGzip, writeJson, writeText } from '../core/fs.js';
 import { Logger } from '../core/logger.js';
 import { matchKey } from '../core/text.js';
 import { writeXmltv } from '../core/xmltv.js';
@@ -319,6 +319,42 @@ export async function buildEpg(): Promise<EpgBuildResult> {
     if (settings.epg.gzip) await writeGzip(`${target}.gz`, xml);
     shards[country] = bucket.programmes.length;
   }
+
+  // Per-channel schedules for "now / next" lookups: the Xtream Worker's
+  // get_short_epg, the MCP endpoint and anyone who wants one channel's guide
+  // without downloading the whole file. Programmes already over are dropped;
+  // the next 48 hours are kept.
+  const channelsDir = path.join(PATHS.epg, 'channels');
+  await remove(channelsDir); // drop channels that left the guide
+  await ensureDir(channelsDir);
+  const horizonStart = Date.now() - 3 * 3600_000;
+  const horizonEnd = Date.now() + 48 * 3600_000;
+  const upcoming = new Map<string, EpgProgramme[]>();
+  for (const programme of merged) {
+    const stop = Date.parse(programme.stop);
+    const start = Date.parse(programme.start);
+    if (stop < horizonStart || start > horizonEnd) continue;
+    const bucket = upcoming.get(programme.channel) ?? [];
+    bucket.push(programme);
+    upcoming.set(programme.channel, bucket);
+  }
+  const generatedAt = new Date().toISOString();
+  for (const [channel, list] of upcoming) {
+    await writeJson(path.join(channelsDir, `${channel}.json`), {
+      channel,
+      generated_at: generatedAt,
+      programmes: list.map((programme) => ({
+        start: programme.start,
+        stop: programme.stop,
+        title: programme.title,
+        sub_title: programme.sub_title ?? undefined,
+        description: programme.description ? programme.description.slice(0, 400) : undefined,
+        categories: programme.categories.length > 0 ? programme.categories : undefined,
+        icon: programme.icon ?? undefined,
+      })),
+    });
+  }
+  log.info(`Wrote ${upcoming.size} per-channel schedules`);
 
   // Persist links so the API build can expose them per channel.
   await ensureDir(PATHS.epgDb);
