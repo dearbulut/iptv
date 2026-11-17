@@ -69,6 +69,19 @@ export interface EpgSource {
   license?: string;
 }
 
+/**
+ * A hand-made correction to EPG matching, from `config/epg-overrides.yml`.
+ * Either pins a guide channel to a Nexus channel, or marks it as one we
+ * deliberately do not carry. `site` may be `*` to match any guide.
+ */
+export interface EpgOverride {
+  site: string;
+  site_id: string;
+  channel?: string;
+  skip?: boolean;
+  note?: string;
+}
+
 export interface DiscoverySource {
   id: string;
   name: string;
@@ -179,6 +192,7 @@ export interface NexusConfig {
   sources: StreamSource[];
   epgSources: EpgSource[];
   discoverySources: DiscoverySource[];
+  epgOverrides: EpgOverride[];
 }
 
 // ---------------------------------------------------------------------------
@@ -308,6 +322,11 @@ export async function loadConfig(reload = false): Promise<NexusConfig> {
     {},
   );
 
+  const overridesFile = await loadYaml<{ overrides?: EpgOverride[] | null }>(
+    path.join(PATHS.config, 'epg-overrides.yml'),
+    {},
+  );
+
   /** Fills in per-entry defaults without clobbering explicit `false`/`0`. */
   const withDefaults = <T extends object>(entry: T, defaults: Partial<T>): T => {
     const result = { ...entry } as Record<string, unknown>;
@@ -332,6 +351,23 @@ export async function loadConfig(reload = false): Promise<NexusConfig> {
       errors.push(`stream source ${source.id} has trust outside 0-1`);
     }
   }
+  const epgOverrides = overridesFile.overrides ?? [];
+  const seenOverrides = new Set<string>();
+  for (const [i, entry] of epgOverrides.entries()) {
+    const where = `epg-overrides.yml entry ${i + 1}`;
+    if (!entry || !entry.site || !entry.site_id) {
+      errors.push(`${where} needs \`site\` and \`site_id\``);
+      continue;
+    }
+    entry.site_id = String(entry.site_id);
+    if (Boolean(entry.channel) === Boolean(entry.skip)) {
+      errors.push(`${where} (${entry.site}/${entry.site_id}) needs exactly one of \`channel\` or \`skip: true\``);
+    }
+    const key = `${entry.site}::${entry.site_id}`;
+    if (seenOverrides.has(key)) errors.push(`${where} duplicates ${entry.site}/${entry.site_id}`);
+    seenOverrides.add(key);
+  }
+
   if (errors.length > 0) {
     throw new Error(`Invalid configuration:\n  - ${errors.join('\n  - ')}`);
   }
@@ -345,6 +381,7 @@ export async function loadConfig(reload = false): Promise<NexusConfig> {
     discoverySources: (discoveryFile.sources ?? []).map((source) =>
       withDefaults(source, { enabled: true, trust: 0.3, mode: 'index' }),
     ),
+    epgOverrides,
   };
   return cached;
 }

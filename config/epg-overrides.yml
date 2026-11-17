@@ -1,0 +1,34 @@
+# Manual corrections to EPG matching.
+#
+# The EPG step links each guide channel to a Nexus channel automatically:
+# upstream guide mappings first, then exact ids, then fuzzy name matching.
+# Whatever it cannot link is published at:
+#
+#   https://dearbulut.github.io/iptv/api/v1/epg-unmatched.json
+#
+# Fix an entry from that list by adding it here. Overrides are applied before
+# every automatic rule, so they also correct a wrong fuzzy match.
+#
+#   site      the `site` from the unmatched report (or `*` for any guide)
+#   site_id   the guide's own channel id (`site_id` in the report)
+#   channel   the Nexus channel id to link it to, e.g. `TRT1.tr`
+#   skip      `true` for guide channels we deliberately do not carry, so
+#             they stop showing up in the report
+#   note      optional, for the next person
+#
+# Exactly one of `channel` or `skip` is required. A `channel` that does not
+# exist is logged and ignored rather than failing the build.
+#
+# Examples:
+#
+#   - site: tvplus-com-tr
+#     site_id: '1234'
+#     channel: TRT1.tr
+#     note: listed under a numeric id and a name too different to fuzzy-match
+#
+#   - site: pluto-tv
+#     site_id: 62e91384210bec0007ba714c
+#     skip: true
+#     note: FAST channel with no stream in the catalogue
+
+overrides: []

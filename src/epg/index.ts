@@ -6,7 +6,7 @@
  */
 
 import path from 'node:path';
-import { loadConfig, PATHS, type Settings } from '../core/config.js';
+import { loadConfig, PATHS, type EpgOverride, type Settings } from '../core/config.js';
 import { ensureDir, writeGzip, writeJson, writeText } from '../core/fs.js';
 import { Logger } from '../core/logger.js';
 import { matchKey } from '../core/text.js';
@@ -63,6 +63,11 @@ function buildUpstreamGuideIndex(guides: readonly Guide[]): Map<string, string> 
   return index;
 }
 
+/** Indexes overrides by `site::site_id`, with `*` as a wildcard site. */
+export function buildOverrideIndex(overrides: readonly EpgOverride[]): Map<string, EpgOverride> {
+  return new Map(overrides.map((entry) => [`${entry.site}::${entry.site_id}`, entry]));
+}
+
 /** Resolves every EPG channel in a bundle to a Nexus channel id. */
 export function linkEpgChannels(
   bundle: EpgBundle,
@@ -70,11 +75,37 @@ export function linkEpgChannels(
   upstreamGuides: Map<string, string>,
   settings: Settings,
   countries: string[] = [],
-): { links: Map<string, EpgLink>; unmatched: EpgChannel[] } {
+  overrides: ReadonlyMap<string, EpgOverride> = new Map(),
+): { links: Map<string, EpgLink>; unmatched: EpgChannel[]; skipped: number } {
   const links = new Map<string, EpgLink>();
   const unmatched: EpgChannel[] = [];
+  let skipped = 0;
 
   for (const epgChannel of bundle.channels) {
+    // 0. A human said so. Overrides win over everything, so they can also
+    //    correct a wrong fuzzy match, not only fill in a missing one.
+    const override =
+      overrides.get(`${bundle.site}::${epgChannel.id}`) ?? overrides.get(`*::${epgChannel.id}`);
+    if (override?.skip) {
+      skipped++;
+      continue;
+    }
+    if (override?.channel) {
+      if (index.byId.has(override.channel)) {
+        links.set(epgChannel.id, {
+          channel: override.channel,
+          site_id: epgChannel.id,
+          site: bundle.site,
+          confidence: 1,
+          method: 'manual',
+        });
+        continue;
+      }
+      log.warn(
+        `epg-overrides.yml maps ${bundle.site}/${epgChannel.id} to unknown channel "${override.channel}"`,
+      );
+    }
+
     // 1. Exact upstream guide mapping.
     const viaGuide =
       upstreamGuides.get(`${bundle.site}::${epgChannel.id}`) ??
@@ -90,8 +121,15 @@ export function linkEpgChannels(
       continue;
     }
 
-    // 2. The EPG id often *is* the channel id (`BBCNews.uk`).
-    const direct = index.byId.get(epgChannel.id) ?? index.byLowerId.get(epgChannel.id.toLowerCase());
+    // 2. The EPG id often *is* the channel id (`BBCNews.uk`), sometimes with
+    //    the iptv-org feed suffix (`TV85.tr@SD`, `AlJazeera.qa@English`).
+    const bareId = epgChannel.id.split('@')[0] ?? epgChannel.id;
+    const direct =
+      index.byId.get(epgChannel.id) ??
+      index.byLowerId.get(epgChannel.id.toLowerCase()) ??
+      (bareId !== epgChannel.id
+        ? (index.byId.get(bareId) ?? index.byLowerId.get(bareId.toLowerCase()))
+        : undefined);
     if (direct) {
       links.set(epgChannel.id, {
         channel: direct.id,
@@ -123,7 +161,7 @@ export function linkEpgChannels(
     }
   }
 
-  return { links, unmatched };
+  return { links, unmatched, skipped };
 }
 
 /** Deduplicates programmes that describe the same slot on the same channel. */
@@ -178,6 +216,7 @@ export async function buildEpg(): Promise<EpgBuildResult> {
 
   const bundles = await grabAll(config.epgSources, settings);
   const sourceById = new Map(config.epgSources.map((source) => [source.id, source]));
+  const overrides = buildOverrideIndex(config.epgOverrides);
 
   const allLinks = new Map<string, EpgLink>(); // `site::site_id` → link
   const unmatched: EpgBuildResult['unmatched'] = [];
@@ -194,6 +233,7 @@ export async function buildEpg(): Promise<EpgBuildResult> {
       upstreamGuides,
       settings,
       source?.countries ?? [],
+      overrides,
     );
 
     for (const [siteId, link] of links) {

@@ -292,6 +292,31 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     }
   }
 
+  // ---- EPG match report ---------------------------------------------------
+  // Guide channels no rule could link. Published so anyone can spot an easy
+  // fix and add it to config/epg-overrides.yml without running the pipeline.
+  const unmatchedEpg = await readJsonOr<Array<{ site: string; id: string; name: string }>>(
+    path.join(PATHS.epgDb, 'unmatched.json'),
+    [],
+  );
+  const unmatchedBySite: Record<string, number> = {};
+  for (const entry of unmatchedEpg) {
+    unmatchedBySite[entry.site] = (unmatchedBySite[entry.site] ?? 0) + 1;
+  }
+  await emit(
+    'epg-unmatched.json',
+    {
+      generated_at: dataset.generated_at,
+      total: unmatchedEpg.length,
+      by_site: unmatchedBySite,
+      how_to_fix: 'Add { site, site_id, channel } or { site, site_id, skip: true } to config/epg-overrides.yml',
+      channels: [...unmatchedEpg]
+        .sort((a, b) => a.site.localeCompare(b.site) || a.name.localeCompare(b.name))
+        .map((entry) => ({ site: entry.site, site_id: entry.id, name: entry.name })),
+    },
+    true,
+  );
+
   // ---- stable channel numbers --------------------------------------------
   // Restored from (and published back to) the state branch by Sync, so a
   // channel keeps its number across every future run. Only channels with a
@@ -513,6 +538,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       playlist: publicUrl(settings, 'playlists/index.m3u'),
       playlist_best: publicUrl(settings, 'playlists/best.m3u'),
       epg: publicUrl(settings, 'epg/guide.xml.gz'),
+      epg_unmatched: publicUrl(settings, 'api/v1/epg-unmatched.json'),
       openapi: publicUrl(settings, 'api/v1/openapi.json'),
     },
     upstream: dataset.upstream,

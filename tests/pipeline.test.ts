@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { extractPlaylistUrls } from '../src/discovery/index.js';
 import { buildSearchIndex, SEARCH_FIELDS } from '../src/api/search-index.js';
-import { linkEpgChannels } from '../src/epg/index.js';
+import { buildOverrideIndex, linkEpgChannels } from '../src/epg/index.js';
 import { buildChannelIndex } from '../src/aggregate/match.js';
 import { DEFAULT_SETTINGS } from '../src/core/config.js';
 import { mapConcurrent, createLimiter, shard, retry } from '../src/core/concurrency.js';
@@ -177,6 +177,63 @@ describe('linkEpgChannels', () => {
       DEFAULT_SETTINGS,
     );
     assert.equal(links.get('BBCNews.uk')?.method, 'exact');
+  });
+
+  it('strips the iptv-org feed suffix from EPG ids', () => {
+    const { links } = linkEpgChannels(
+      bundle([['BBCNews.uk@NorthAmerica', ['Whatever']]]),
+      index,
+      new Map(),
+      DEFAULT_SETTINGS,
+    );
+    assert.equal(links.get('BBCNews.uk@NorthAmerica')?.channel, 'BBCNews.uk');
+  });
+
+  it('applies manual overrides before anything else, including to fix a fuzzy match', () => {
+    const overrides = buildOverrideIndex([
+      { site: 'example.com', site_id: 'site-99', channel: 'BBCNews.uk' },
+      { site: '*', site_id: 'site-7', channel: 'TRT1.tr' },
+    ]);
+    const { links } = linkEpgChannels(
+      bundle([
+        ['site-99', ['TRT 1 HD']], // would fuzzy-match TRT 1
+        ['site-7', ['Unrecognisable']],
+      ]),
+      index,
+      new Map(),
+      DEFAULT_SETTINGS,
+      ['TR'],
+      overrides,
+    );
+    assert.equal(links.get('site-99')?.channel, 'BBCNews.uk');
+    assert.equal(links.get('site-99')?.method, 'manual');
+    assert.equal(links.get('site-7')?.channel, 'TRT1.tr');
+  });
+
+  it('drops skipped channels from both links and the unmatched report', () => {
+    const { links, unmatched, skipped } = linkEpgChannels(
+      bundle([['site-1', ['Some Regional Station Nobody Knows']]]),
+      index,
+      new Map(),
+      DEFAULT_SETTINGS,
+      [],
+      buildOverrideIndex([{ site: 'example.com', site_id: 'site-1', skip: true }]),
+    );
+    assert.equal(links.size, 0);
+    assert.equal(unmatched.length, 0);
+    assert.equal(skipped, 1);
+  });
+
+  it('ignores an override that points at an unknown channel', () => {
+    const { links } = linkEpgChannels(
+      bundle([['BBCNews.uk', ['BBC News']]]),
+      index,
+      new Map(),
+      DEFAULT_SETTINGS,
+      [],
+      buildOverrideIndex([{ site: '*', site_id: 'BBCNews.uk', channel: 'Nope.xx' }]),
+    );
+    assert.equal(links.get('BBCNews.uk')?.channel, 'BBCNews.uk');
   });
 
   it('falls back to fuzzy matching on display names', () => {
