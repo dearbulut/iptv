@@ -250,15 +250,20 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
       fail('stremio/manifest.json has no catalogs');
     } else {
       for (const catalog of stremio.catalogs) {
-        const first = await readJson(`stremio/catalog/tv/${catalog.id}.json`);
+        const first = await readJson(`stremio/catalog/${catalog.type}/${catalog.id}.json`);
         if (first && !Array.isArray(first.metas)) fail(`stremio catalog ${catalog.id} has no metas`);
         // Every option the app will offer must resolve to a file.
         const options = catalog.extra?.find((extra) => extra.name === 'genre')?.options ?? [];
         let missing = 0;
         for (const option of options) {
-          await fs.access(path.join(publicDir, 'stremio/catalog/tv', catalog.id, `genre=${option}.json`)).catch(() => missing++);
+          await fs.access(path.join(publicDir, 'stremio/catalog', catalog.type, catalog.id, `genre=${option}.json`)).catch(() => missing++);
         }
         if (missing > 0) fail(`stremio catalog ${catalog.id}: ${missing} genre option(s) have no file`);
+        // Every title in the first page must have its meta, and films their stream.
+        for (const meta of first?.metas?.slice(0, 5) ?? []) {
+          await assertExists(`stremio/meta/${catalog.type}/${meta.id}.json`);
+          if (catalog.type === 'movie') await assertExists(`stremio/stream/movie/${meta.id}.json`);
+        }
       }
       const sample = (await readJson(`stremio/catalog/tv/${stremio.catalogs[0].id}.json`))?.metas?.[0];
       if (sample) {
@@ -308,6 +313,35 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
     fail('api/v1/changes.xml is missing');
   }
   await fs.access(path.join(publicDir, 'tools.html')).catch(() => fail('tools.html is missing'));
+}
+
+// --- VOD (only when a catalogue was published) ------------------------------
+
+const vodExists = await fs.access(path.join(apiDir, 'vod.json')).then(() => true, () => false);
+if (vodExists) {
+  const vod = await readJson('api/v1/vod.json');
+  const xvod = await readJson('xtream/vod.json');
+  if (vod && xvod) {
+    if (!Array.isArray(vod.movies) || !Array.isArray(vod.series)) fail('vod.json has no movies/series arrays');
+    const titles = [...(vod.movies ?? []), ...(vod.series ?? [])];
+    const unlicensed = titles.filter((t) => !t.license?.label || !/^https:\/\/creativecommons\.org\//.test(t.license.url ?? ''));
+    if (unlicensed.length > 0) fail(`${unlicensed.length} VOD title(s) without an open licence`);
+    const numbers = new Set();
+    for (const t of titles) {
+      for (const n of [t.number, ...(t.episodes ?? []).map((e) => e.number)]) {
+        if (!Number.isInteger(n) || numbers.has(n)) fail(`VOD number ${n} is missing or used twice`);
+        numbers.add(n);
+      }
+    }
+    const httpsOnly = (u) => typeof u === 'string' && u.startsWith('https://');
+    const badUrls = (vod.movies ?? []).filter((m) => !httpsOnly(m.url)).length +
+      (vod.series ?? []).flatMap((s) => s.episodes ?? []).filter((e) => !httpsOnly(e.url)).length;
+    if (badUrls > 0) fail(`${badUrls} VOD video URL(s) are not https`);
+    if (xvod.movies?.length !== vod.movies?.length || xvod.series?.length !== vod.series?.length) {
+      fail('xtream/vod.json and api/v1/vod.json disagree');
+    }
+    if ((xvod.movies ?? []).some((row) => row.length !== 9)) fail('xtream/vod.json movie rows have the wrong arity');
+  }
 }
 
 // --- gzip siblings ----------------------------------------------------------

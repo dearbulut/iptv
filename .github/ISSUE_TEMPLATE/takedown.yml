@@ -37,7 +37,7 @@ body:
     id: targets
     attributes:
       label: What to remove
-      description: One per line — a channel id (`TRT1.tr`), a link to the channel's page on the website, or a stream URL.
+      description: One per line — a channel id (`TRT1.tr`), a link to the channel's page on the website, a stream URL, or a link to a film or series (Films page or archive.org).
       placeholder: |
         TRT1.tr
         https://example.com/live/index.m3u8

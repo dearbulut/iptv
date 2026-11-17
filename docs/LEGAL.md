@@ -45,6 +45,23 @@ each person to 10 additions a day, and records who added what and from which
 issue. Health checks then treat these streams like any other and retire them if
 they stop working.
 
+## Films and series
+
+The VOD catalogue lists Internet Archive items **only when archive.org records
+a public-domain dedication (Public Domain Mark, CC0) or a Creative Commons
+licence** for them (`licenseurl`). Items without a licence statement are left
+out, however old they are. Titles with adult subjects are left out too. Each
+title is published with its licence label and link and a link to the original
+item; nothing is copied — videos play from archive.org.
+
+A licence recorded on archive.org is the uploader's statement, and it can be
+wrong. Creative Commons titles keep their licence terms (for example
+attribution, or *NonCommercial*), which the original item page explains. If a
+title is listed in error, the takedown form below works for films too: name the
+title or paste its archive.org or Films page link, and it is removed from the
+catalogue at the next rebuild — and from archive.org's own collection only by
+archive.org.
+
 ## Takedown requests
 
 IPTV Nexus links to streams on third-party servers and hosts no video. If you

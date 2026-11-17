@@ -1,0 +1,71 @@
+# Films and series — openly licensed only.
+#
+# Each source is an Internet Archive search. Whatever the query, an item is
+# kept only if its `licenseurl` names a public-domain dedication (Public
+# Domain Mark, CC0) or a Creative Commons licence, and it passes a
+# general-audience filter. Videos are linked, never copied: playback goes
+# straight to archive.org.
+#
+#   kind: movies   one item = one film (multi-part films become a short series)
+#   kind: series   one item = one series, each video file an episode
+#   category       the shelf it appears on in apps (Xtream, Stremio, M3U)
+#   max            most-downloaded items first, up to this many
+#
+# The Weekly VOD workflow rebuilds the catalogue; Sync publishes it.
+
+sources:
+  - id: archive-feature-films
+    name: Internet Archive — Feature Films
+    kind: movies
+    category: Movies
+    query: 'collection:feature_films AND mediatype:movies'
+    max: 1500
+
+  - id: archive-film-noir
+    name: Internet Archive — Film Noir
+    kind: movies
+    category: Film Noir
+    query: 'collection:Film_Noir AND mediatype:movies'
+    max: 300
+
+  - id: archive-scifi-horror
+    name: Internet Archive — Sci-Fi / Horror
+    kind: movies
+    category: Sci-Fi & Horror
+    query: 'collection:SciFi_Horror AND mediatype:movies'
+    max: 400
+
+  - id: archive-comedy
+    name: Internet Archive — Comedy Films
+    kind: movies
+    category: Comedy
+    query: 'collection:Comedy_Films AND mediatype:movies'
+    max: 300
+
+  - id: archive-silent
+    name: Internet Archive — Silent Films
+    kind: movies
+    category: Silent Films
+    query: 'collection:silent_films AND mediatype:movies'
+    max: 300
+
+  - id: archive-animation
+    name: Internet Archive — Animation & Cartoons
+    kind: movies
+    category: Animation
+    query: 'collection:animationandcartoons AND mediatype:movies'
+    max: 500
+
+  - id: archive-open-movies
+    name: Blender and other open movies
+    kind: movies
+    category: Open Movies
+    query: 'mediatype:movies AND (subject:"open movie" OR creator:"Blender Foundation" OR creator:"Blender Studio")'
+    max: 100
+
+  - id: archive-classic-tv
+    name: Internet Archive — Classic TV
+    kind: series
+    category: Classic TV
+    query: 'collection:classic_tv AND mediatype:movies'
+    max: 400

@@ -14,6 +14,7 @@ normal day.
 | 03:00 | **Health Scan** | Probes every stream in 6 parallel shards, updates rolling scores, retires dead links |
 | 00:15 / 06:15 / 12:15 / 18:15 | **Sync & Deploy** | Re-reads upstream + all sources, rebuilds the API, playlists, guide and site, deploys to Pages |
 | 15:00 | **Health Scan** | Second pass |
+| Mon 05:40 | **VOD Catalogue** | Rebuilds the openly licensed films and series from `config/vod.yml`, publishes `vod/catalog.json` to the `state` branch and starts Sync |
 
 Plus **CI** on every push and pull request, and **Dependabot** monthly.
 
@@ -48,6 +49,11 @@ Plus **CI** on every push and pull request, and **Dependabot** monthly.
 - **Quality metadata.** Resolution, codec, bitrate and latency are re-measured
   on every scan, so a channel that silently drops from 1080p to 480p shows it.
 - **The guide.** Rebuilt nightly and re-matched to channel ids.
+- **Films and series.** Rebuilt weekly from the Internet Archive searches in
+  `config/vod.yml`, keeping every title's number. Only items with a public-domain
+  or Creative Commons licence are taken. If a rebuild comes back with less than
+  half of the previous titles (an archive.org outage looks like that), the
+  previous catalogue is kept.
 - **`PLAYLISTS.md` and the README table.** Regenerated and committed on sync.
 
 ## What still needs you
@@ -102,6 +108,7 @@ Every workflow has a **Run workflow** button with useful inputs:
 | Discover Streams | `max_probes`, `apply` (off = open a PR instead of committing) |
 | Health Scan | `limit` (streams per shard, 0 = all) |
 | Sync & Deploy | `skip_epg` |
+| VOD Catalogue | `force` (keep a much smaller result) |
 
 ## Cost
 

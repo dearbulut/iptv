@@ -9,9 +9,10 @@ One small, free Cloudflare Worker that adds what a static site cannot:
 | **Xtream Codes API** | server = the Worker URL | TiviMate, IPTV Smarters, XCIPTV, TV boxes |
 | **MCP endpoint** | `/mcp` | AI assistants: search channels, read the guide |
 | **Regional availability** | `/regional.json`, `/check/<number>` | Where each channel works, by viewer country |
+| **Films and series** | Xtream *VOD* and *Series* | Openly licensed titles from the Internet Archive |
 
 It stores nothing and no video passes through it. Its data is
-`xtream/index.json` and `epg/channels/<id>.json`, which the Sync workflow
+`xtream/index.json`, `xtream/vod.json` and `epg/channels/<id>.json`, which the Sync workflow
 rebuilds and publishes to GitHub Pages four times a day. Stream requests are
 answered with a redirect to the upstream URL.
 
@@ -99,10 +100,14 @@ only streams need headers get the direct URL with `#EXTVLCOPT` lines instead.
 | `/live/<user>/<pass>/<id>.ts` / `.m3u8` | smart redirect (see above) |
 | `xmltv.php` | the merged guide |
 | `get.php` | the full playlist, with smart links |
-| VOD and series actions | empty lists — Nexus is live TV only |
+| `get_vod_categories` / `get_vod_streams` / `get_vod_info` | free films (public domain or Creative Commons) |
+| `get_series_categories` / `get_series` / `get_series_info` | free series, one season each |
+| `/movie/<user>/<pass>/<id>.mp4` · `/series/<user>/<pass>/<id>.mp4` | redirect to the video on archive.org |
 
 `stream_id` is the channel's permanent Nexus number, so favourites and channel
-positions in your app survive every rebuild.
+positions in your app survive every rebuild. Films, series and episodes have
+permanent numbers too, so "continue watching" survives the weekly rebuild.
+Until the VOD workflow has run, the VOD and series lists are empty.
 
 ## MCP endpoint (AI assistants)
 
@@ -115,6 +120,7 @@ ChatGPT, Cursor or any MCP client. Tools:
 | `search_channels` | Find channels by name, country, category, language, working now |
 | `get_channel` | One channel's streams, health and website |
 | `whats_on` | What is on now and next |
+| `search_films` | Free films and series by title, with licence and a playable link |
 | `build_playlist` | A playlist builder URL for a given mix |
 
 Try: *"Which Turkish news channels work right now, and what is on TRT Haber?"*

@@ -308,6 +308,40 @@ Counts come from the Worker: channel streams tested from the Cloudflare
 location nearest each viewer, plus successful plays in the web player. The same
 data is on each channel as `regional`. Only the viewer's country is recorded.
 
+### `GET /api/v1/vod.json`
+
+Free films and series: Internet Archive items whose licence is a public-domain
+dedication or a Creative Commons licence. Published once the weekly **VOD
+Catalogue** workflow has built a catalogue (404 before that).
+
+```json
+{
+  "generated_at": "2026-11-23T05:52:10.000Z",
+  "counts": { "movies": 2800, "series": 120, "episodes": 2100 },
+  "movies": [
+    {
+      "id": "night_of_the_living_dead",
+      "number": 17,
+      "title": "Night of the Living Dead",
+      "year": 1968,
+      "categories": ["Feature Films", "Sci-Fi & Horror"],
+      "license": { "label": "Public Domain", "url": "https://creativecommons.org/publicdomain/mark/1.0/" },
+      "poster": "https://archive.org/services/img/night_of_the_living_dead",
+      "url": "https://archive.org/download/night_of_the_living_dead/night_of_the_living_dead.mp4",
+      "runtime": 5747,
+      "source_url": "https://archive.org/details/night_of_the_living_dead"
+    }
+  ],
+  "series": [{ "id": "…", "number": 40, "title": "…", "episodes": [{ "id": "…-e1", "number": 41, "episode": 1, "title": "…", "url": "…", "runtime": 1510 }] }]
+}
+```
+
+`number` is permanent and never reused; it is the Xtream `stream_id`,
+`series_id` and episode id. `id` is the archive.org identifier. Videos play
+straight from archive.org (MP4, H.264 where available). The same titles are in
+`/playlists/vod/movies.m3u`, `/playlists/vod/series.m3u`, the Stremio addon
+(`movie` and `series` types, ids prefixed `nexusvod-`) and `/xtream/vod.json`.
+
 ### `GET /epg/channels/{id}.json`
 
 One channel's guide from three hours ago to 48 hours ahead — enough for
@@ -320,7 +354,7 @@ programmes for the channel.
 | --- | --- |
 | `/api/v1/match.json` | Every channel's id, name, aliases, country, logo, number, state and guide flag as positional rows; what the browser playlist fixer uses |
 | `/stremio/manifest.json` | Static Stremio addon — install this URL in Stremio |
-| `/xtream/index.json` | Data behind the Xtream Codes Worker ([`workers/xtream`](../workers/xtream/README.md)) |
+| `/xtream/index.json` · `/xtream/vod.json` | Data behind the Xtream Codes Worker ([`workers/xtream`](../workers/xtream/README.md)) |
 
 Setup for Jellyfin, Plex, Kodi, TiviMate, Stremio and others:
 [CLIENTS.md](CLIENTS.md).

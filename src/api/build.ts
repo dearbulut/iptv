@@ -5,9 +5,9 @@
  * can be served by GitHub Pages / any CDN with no server and no rate limits.
  */
 
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
-import { loadConfig, PATHS, publicUrl, type Settings } from '../core/config.js';
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { loadConfig, PATHS, publicUrl, type Settings } from "../core/config.js";
 import {
   copyDir,
   ensureDir,
@@ -17,38 +17,52 @@ import {
   remove,
   writeJson,
   writeText,
-} from '../core/fs.js';
-import { Logger } from '../core/logger.js';
-import { slugify } from '../core/text.js';
+} from "../core/fs.js";
+import { Logger } from "../core/logger.js";
+import { slugify } from "../core/text.js";
 import type {
   ApiManifest,
   EnrichedChannel,
   EnrichedStream,
   HealthRecord,
-} from '../core/types.js';
-import { loadDataset, type Dataset } from '../aggregate/index.js';
-import { loadHealthDb } from '../aggregate/index.js';
-import { attachHealth } from '../health/index.js';
-import { summarise, uptimeRatio } from '../health/scoring.js';
-import { buildPlaylists } from './playlists.js';
-import { buildSearchIndex } from './search-index.js';
-import { buildOpenApi } from './openapi.js';
-import { buildPlaylistCatalogue, buildReadmePlaylistBlock } from './catalogue.js';
+} from "../core/types.js";
+import { loadDataset, type Dataset } from "../aggregate/index.js";
+import { loadHealthDb } from "../aggregate/index.js";
+import { attachHealth } from "../health/index.js";
+import { summarise, uptimeRatio } from "../health/scoring.js";
+import { buildPlaylists } from "./playlists.js";
+import { buildSearchIndex } from "./search-index.js";
+import { buildOpenApi } from "./openapi.js";
+import {
+  buildPlaylistCatalogue,
+  buildReadmePlaylistBlock,
+} from "./catalogue.js";
 import {
   browserBlocker,
   channelAvailability,
   historyString,
   isBrowserPlayable,
   type Availability,
-} from './compat.js';
-import { assignChannelNumbers, normaliseRegistry } from './channel-numbers.js';
-import { buildStremioAddon } from './stremio.js';
-import { buildXtreamIndex } from './xtream.js';
-import { changesAtom, computeChanges, normaliseHistory, normaliseSnapshot } from './changes.js';
-import { fetchRegional, regionalByChannel, type Regional } from './regional.js';
-import type { EpgLink } from '../epg/index.js';
+} from "./compat.js";
+import { assignChannelNumbers, normaliseRegistry } from "./channel-numbers.js";
+import { buildStremioAddon } from "./stremio.js";
+import { buildXtreamIndex } from "./xtream.js";
+import {
+  changesAtom,
+  computeChanges,
+  normaliseHistory,
+  normaliseSnapshot,
+} from "./changes.js";
+import { fetchRegional, regionalByChannel, type Regional } from "./regional.js";
+import {
+  loadVodBlocklist,
+  loadVodCatalog,
+  withoutBlocked,
+} from "../vod/index.js";
+import { stremioVod, vodApi, vodPlaylists, xtreamVod } from "./vod.js";
+import type { EpgLink } from "../epg/index.js";
 
-const log = new Logger('api');
+const log = new Logger("api");
 
 /** Public shape of a stream in the API — health flattened for easy consumption. */
 interface PublicStream {
@@ -64,7 +78,7 @@ interface PublicStream {
   /** Playable in a browser on an HTTPS page (no mixed content, no custom headers). */
   browser_playable: boolean;
   /** Why not, when it is not: `insecure` (http://), `headers`, or `format`. */
-  browser_blocker: 'insecure' | 'headers' | 'format' | null;
+  browser_blocker: "insecure" | "headers" | "format" | null;
   health: {
     status: string;
     score: number;
@@ -74,7 +88,7 @@ interface PublicStream {
     checked_at: string;
     last_online: string | null;
     latency_ms: number | null;
-    media: HealthRecord['media'];
+    media: HealthRecord["media"];
   } | null;
 }
 
@@ -109,7 +123,7 @@ interface PublicChannel {
   regional: Regional;
   best_quality: string | null;
   streams: PublicStream[];
-  guides: EnrichedChannel['guides'];
+  guides: EnrichedChannel["guides"];
 }
 
 /** Country codes with a gzipped guide shard in public/epg (`tr.xml.gz`, …). */
@@ -176,7 +190,7 @@ function toPublicChannel(
 ): PublicChannel {
   const streams = includeOffline
     ? channel.streams
-    : channel.streams.filter((stream) => stream.health?.status !== 'offline');
+    : channel.streams.filter((stream) => stream.health?.status !== "offline");
 
   return {
     id: channel.id,
@@ -220,7 +234,7 @@ function toPublicChannel(
  * `.data/epg/report.json`), every playlist's `x-tvg-url` pointed at the guide,
  * and the guide itself 404'd. See issue #14.
  */
-const PRESERVED_ON_CLEAN = new Set(['epg']);
+const PRESERVED_ON_CLEAN = new Set(["epg"]);
 
 /** Empties `public/` except for directories owned by other stages. */
 async function cleanPublic(): Promise<void> {
@@ -244,12 +258,15 @@ export interface ApiBuildResult {
 }
 
 /** Writes the whole static site + API into `public/`. */
-export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBuildResult> {
+export async function buildApi(
+  options: { clean?: boolean } = {},
+): Promise<ApiBuildResult> {
   const config = await loadConfig();
   const { settings } = config;
 
   const dataset = await loadDataset();
-  if (!dataset) throw new Error('No dataset found. Run `aggregate` before `api`.');
+  if (!dataset)
+    throw new Error("No dataset found. Run `aggregate` before `api`.");
 
   // Re-attach the newest health data — the scan may have run after aggregation.
   const healthDb = await loadHealthDb();
@@ -277,7 +294,9 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   ): Promise<void> => {
     const target = path.join(PATHS.api, relativePath);
     await ensureDir(path.dirname(target));
-    const serialized = pretty ? `${JSON.stringify(data, null, 2)}\n` : JSON.stringify(data);
+    const serialized = pretty
+      ? `${JSON.stringify(data, null, 2)}\n`
+      : JSON.stringify(data);
     const size = Buffer.byteLength(serialized);
     bytes += await writeJson(target, data, {
       pretty,
@@ -287,14 +306,17 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   };
 
   // ---- attach EPG links --------------------------------------------------
-  const epgLinks = await readJsonOr<EpgLink[]>(path.join(PATHS.epgDb, 'links.json'), []);
-  const linksByChannel = new Map<string, EnrichedChannel['guides']>();
+  const epgLinks = await readJsonOr<EpgLink[]>(
+    path.join(PATHS.epgDb, "links.json"),
+    [],
+  );
+  const linksByChannel = new Map<string, EnrichedChannel["guides"]>();
   for (const link of epgLinks) {
     const bucket = linksByChannel.get(link.channel) ?? [];
     bucket.push({
       site: link.site,
       site_id: link.site_id,
-      lang: '',
+      lang: "",
       confidence: link.confidence,
       method: link.method,
     });
@@ -303,7 +325,9 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   for (const channel of dataset.channels) {
     const generated = linksByChannel.get(channel.id);
     if (generated) {
-      const seen = new Set(channel.guides.map((guide) => `${guide.site}::${guide.site_id}`));
+      const seen = new Set(
+        channel.guides.map((guide) => `${guide.site}::${guide.site_id}`),
+      );
       for (const link of generated) {
         const key = `${link.site}::${link.site_id}`;
         if (!seen.has(key)) {
@@ -317,24 +341,31 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   // ---- EPG match report ---------------------------------------------------
   // Guide channels no rule could link. Published so anyone can spot an easy
   // fix and add it to config/epg-overrides.yml without running the pipeline.
-  const unmatchedEpg = await readJsonOr<Array<{ site: string; id: string; name: string }>>(
-    path.join(PATHS.epgDb, 'unmatched.json'),
-    [],
-  );
+  const unmatchedEpg = await readJsonOr<
+    Array<{ site: string; id: string; name: string }>
+  >(path.join(PATHS.epgDb, "unmatched.json"), []);
   const unmatchedBySite: Record<string, number> = {};
   for (const entry of unmatchedEpg) {
     unmatchedBySite[entry.site] = (unmatchedBySite[entry.site] ?? 0) + 1;
   }
   await emit(
-    'epg-unmatched.json',
+    "epg-unmatched.json",
     {
       generated_at: dataset.generated_at,
       total: unmatchedEpg.length,
       by_site: unmatchedBySite,
-      how_to_fix: 'Add { site, site_id, channel } or { site, site_id, skip: true } to config/epg-overrides.yml',
+      how_to_fix:
+        "Add { site, site_id, channel } or { site, site_id, skip: true } to config/epg-overrides.yml",
       channels: [...unmatchedEpg]
-        .sort((a, b) => a.site.localeCompare(b.site) || a.name.localeCompare(b.name))
-        .map((entry) => ({ site: entry.site, site_id: entry.id, name: entry.name })),
+        .sort(
+          (a, b) =>
+            a.site.localeCompare(b.site) || a.name.localeCompare(b.name),
+        )
+        .map((entry) => ({
+          site: entry.site,
+          site_id: entry.id,
+          name: entry.name,
+        })),
     },
     true,
   );
@@ -343,13 +374,16 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   // Restored from (and published back to) the state branch by Sync, so a
   // channel keeps its number across every future run. Only channels with a
   // stream are numbered; a channel that gains one later gets the next number.
-  const numbersPath = path.join(PATHS.data, 'channel-numbers.json');
+  const numbersPath = path.join(PATHS.data, "channel-numbers.json");
   const { registry, assigned } = assignChannelNumbers(
     normaliseRegistry(await readJsonOr<unknown>(numbersPath, null)),
     dataset.channels.filter((channel) => channel.streams.length > 0),
   );
   await writeJson(numbersPath, registry);
-  if (assigned > 0) log.info(`Assigned ${assigned} new channel number(s); highest is ${registry.last}`);
+  if (assigned > 0)
+    log.info(
+      `Assigned ${assigned} new channel number(s); highest is ${registry.last}`,
+    );
 
   // ---- regional availability ---------------------------------------------
   const regionalSummary = await fetchRegional(settings.project.worker_url);
@@ -360,12 +394,14 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     toPublicChannel(
       channel,
       settings.api.include_offline,
-      channel.streams.length > 0 ? (registry.numbers[channel.id] ?? null) : null,
+      channel.streams.length > 0
+        ? (registry.numbers[channel.id] ?? null)
+        : null,
       regional.get(channel.id),
     ),
   );
   await emit(
-    'regional.json',
+    "regional.json",
     {
       generated_at: regionalSummary?.generated_at ?? null,
       days: regionalSummary?.days ?? null,
@@ -375,12 +411,15 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   );
   const playable = publicChannels.filter((channel) => channel.stream_count > 0);
 
-  await emit('channels.json', publicChannels);
-  await emit('channels.online.json', playable.filter((channel) => channel.online));
+  await emit("channels.json", publicChannels);
+  await emit(
+    "channels.online.json",
+    playable.filter((channel) => channel.online),
+  );
 
   const allStreams = publicChannels.flatMap((channel) => channel.streams);
-  await emit('streams.json', allStreams);
-  await emit('orphans.json', dataset.orphans.map(toPublicStream));
+  await emit("streams.json", allStreams);
+  await emit("orphans.json", dataset.orphans.map(toPublicStream));
 
   // Counts make these collections directly useful for building UI filters.
   /**
@@ -421,13 +460,13 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     (channel, id) => channel.categories.includes(id),
   );
 
-  await emit('countries.json', countries, true);
-  await emit('languages.json', languages, true);
-  await emit('categories.json', categories, true);
-  await emit('regions.json', dataset.regions, true);
-  await emit('subdivisions.json', dataset.subdivisions, true);
-  await emit('timezones.json', dataset.timezones, true);
-  await emit('guides.json', dataset.guides);
+  await emit("countries.json", countries, true);
+  await emit("languages.json", languages, true);
+  await emit("categories.json", categories, true);
+  await emit("regions.json", dataset.regions, true);
+  await emit("subdivisions.json", dataset.subdivisions, true);
+  await emit("timezones.json", dataset.timezones, true);
+  await emit("guides.json", dataset.guides);
 
   // ---- match index ----------------------------------------------------------
   // Everything the browser-side M3U enricher (site/tools.html) needs to map a
@@ -435,16 +474,25 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   // have streams for, since a provider's own streams still need a tvg-id for
   // the guide. Compact positional rows, like search.json.
   const guideChannels = new Set(epgLinks.map((link) => link.channel));
-  const matchFields = ['id', 'name', 'alt', 'country', 'logo', 'number', 'state', 'guide'] as const;
-  await emit('match.json', {
+  const matchFields = [
+    "id",
+    "name",
+    "alt",
+    "country",
+    "logo",
+    "number",
+    "state",
+    "guide",
+  ] as const;
+  await emit("match.json", {
     fields: matchFields,
     count: publicChannels.length,
     channels: publicChannels.map((channel) => [
       channel.id,
       channel.name,
-      channel.alt_names.join('|'),
+      channel.alt_names.join("|"),
       channel.country,
-      channel.logo ?? '',
+      channel.logo ?? "",
       channel.number,
       /** 2 working now, 1 has a stream, 0 none. */
       channel.online ? 2 : channel.stream_count > 0 ? 1 : 0,
@@ -455,8 +503,8 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   // ---- changes since the previous build --------------------------------------
   // Snapshot and history are restored from (and published back to) the state
   // branch by Sync, like the channel numbers.
-  const snapshotPath = path.join(PATHS.data, 'catalogue-snapshot.json');
-  const historyPath = path.join(PATHS.data, 'changes.json');
+  const snapshotPath = path.join(PATHS.data, "catalogue-snapshot.json");
+  const historyPath = path.join(PATHS.data, "changes.json");
   const changes = computeChanges(
     normaliseSnapshot(await readJsonOr<unknown>(snapshotPath, null)),
     publicChannels.map((channel) => ({
@@ -471,35 +519,89 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   await writeJson(snapshotPath, changes.snapshot);
   await writeJson(historyPath, changes.history);
   if (changes.entry) {
-    log.info(`Changes: ${changes.entry.added.length} new, ${changes.entry.removed.length} gone`);
+    log.info(
+      `Changes: ${changes.entry.added.length} new, ${changes.entry.removed.length} gone`,
+    );
   }
-  await emit('changes.json', changes.history);
-  const siteUrl = settings.project.base_url ?? '';
+  await emit("changes.json", changes.history);
+  const siteUrl = settings.project.base_url ?? "";
   await writeText(
-    path.join(PATHS.api, 'changes.xml'),
+    path.join(PATHS.api, "changes.xml"),
     changesAtom(changes.history, {
       title: settings.project.name,
       siteUrl,
-      feedUrl: publicUrl(settings, 'api/v1/changes.xml'),
+      feedUrl: publicUrl(settings, "api/v1/changes.xml"),
       updated: dataset.generated_at,
     }),
   );
   files++;
 
   // ---- client integrations ------------------------------------------------
-  const countryNames = new Map(dataset.countries.map((country) => [country.code, country.name]));
-  const categoryNames = new Map(dataset.categories.map((category) => [category.id, category.name]));
+  const countryNames = new Map(
+    dataset.countries.map((country) => [country.code, country.name]),
+  );
+  const categoryNames = new Map(
+    dataset.categories.map((category) => [category.id, category.name]),
+  );
 
   // Static Stremio addon under public/stremio/.
   const stremioFiles = buildStremioAddon(playable, {
     name: settings.project.name,
     description: settings.project.description,
-    version: '1.0.0',
+    version: "1.0.0",
     homepage: settings.project.base_url,
     countries: countryNames,
     categories: categoryNames,
   });
-  const stremioRoot = path.join(PATHS.public, 'stremio');
+  // Openly licensed films and series (built weekly by the VOD workflow).
+  // Takedowns apply at the next sync, not only at the next weekly rebuild.
+  const storedVod = await loadVodCatalog();
+  const vodCatalog = storedVod
+    ? withoutBlocked(storedVod, await loadVodBlocklist())
+    : null;
+  if (vodCatalog && vodCatalog.movies.length + vodCatalog.series.length > 0) {
+    const vod = stremioVod(vodCatalog);
+    stremioFiles.push(...vod.files);
+    const manifestFile = stremioFiles.find(
+      (file) => file.path === "manifest.json",
+    );
+    const manifestData = manifestFile?.data as
+      | {
+          types: string[];
+          idPrefixes: string[];
+          catalogs: unknown[];
+          description: string;
+        }
+      | undefined;
+    if (manifestData) {
+      manifestData.types.push("movie", "series");
+      manifestData.idPrefixes.push("nexusvod-");
+      manifestData.catalogs.push(...vod.catalogs);
+      manifestData.description += ` Plus ${vodCatalog.movies.length.toLocaleString("en")} free films and ${vodCatalog.series.length.toLocaleString("en")} series in the public domain or under Creative Commons.`;
+    }
+    await emit("vod.json", vodApi(vodCatalog));
+    await ensureDir(path.join(PATHS.public, "xtream"));
+    bytes += await writeJson(
+      path.join(PATHS.public, "xtream", "vod.json"),
+      xtreamVod(vodCatalog),
+    );
+    const lists = vodPlaylists(vodCatalog);
+    await ensureDir(path.join(PATHS.playlists, "vod"));
+    await writeText(
+      path.join(PATHS.playlists, "vod", "movies.m3u"),
+      lists.movies,
+    );
+    await writeText(
+      path.join(PATHS.playlists, "vod", "series.m3u"),
+      lists.series,
+    );
+    files += 3;
+    log.info(
+      `VOD: ${vodCatalog.movies.length} films, ${vodCatalog.series.length} series`,
+    );
+  }
+
+  const stremioRoot = path.join(PATHS.public, "stremio");
   for (let i = 0; i < stremioFiles.length; i += 64) {
     await Promise.all(
       stremioFiles.slice(i, i + 64).map(async (file) => {
@@ -518,8 +620,11 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     countries: countryNames,
     categories: categoryNames,
   });
-  await ensureDir(path.join(PATHS.public, 'xtream'));
-  bytes += await writeJson(path.join(PATHS.public, 'xtream', 'index.json'), xtream);
+  await ensureDir(path.join(PATHS.public, "xtream"));
+  bytes += await writeJson(
+    path.join(PATHS.public, "xtream", "index.json"),
+    xtream,
+  );
   files++;
   log.info(`Xtream index: ${xtream.streams.length} live streams`);
 
@@ -535,7 +640,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
     settings.health.healthy_threshold,
   );
   await emit(
-    'health.json',
+    "health.json",
     {
       generated_at: dataset.generated_at,
       ...summary,
@@ -544,7 +649,11 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
           .filter((country) => country.channels > 0)
           .map((country) => [
             country.code,
-            { channels: country.channels, playable: country.playable, online: country.online },
+            {
+              channels: country.channels,
+              playable: country.playable,
+              online: country.online,
+            },
           ]),
       ),
     },
@@ -552,7 +661,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   );
 
   // ---- search index -------------------------------------------------------
-  await emit('search.json', buildSearchIndex(publicChannels));
+  await emit("search.json", buildSearchIndex(publicChannels));
 
   // ---- shards -------------------------------------------------------------
   if (settings.api.shards) {
@@ -565,7 +674,9 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       }
     };
 
-    const group = (keyOf: (channel: PublicChannel) => string[]): Map<string, PublicChannel[]> => {
+    const group = (
+      keyOf: (channel: PublicChannel) => string[],
+    ): Map<string, PublicChannel[]> => {
       const buckets = new Map<string, PublicChannel[]>();
       for (const channel of publicChannels) {
         for (const key of keyOf(channel)) {
@@ -578,15 +689,24 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       return buckets;
     };
 
-    await shardWrite('country', group((channel) => [channel.country ?? '']));
-    await shardWrite('category', group((channel) => channel.categories));
-    await shardWrite('language', group((channel) => channel.languages));
+    await shardWrite(
+      "country",
+      group((channel) => [channel.country ?? ""]),
+    );
+    await shardWrite(
+      "category",
+      group((channel) => channel.categories),
+    );
+    await shardWrite(
+      "language",
+      group((channel) => channel.languages),
+    );
   }
 
   // ---- per-channel documents ---------------------------------------------
   if (settings.api.channel_details) {
     const detailed =
-      settings.api.channel_details === 'all' ? publicChannels : playable;
+      settings.api.channel_details === "all" ? publicChannels : playable;
     log.info(
       `Writing ${detailed.length} channel document(s) (mode: ${settings.api.channel_details})`,
     );
@@ -599,26 +719,39 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   // Point players at the guide only when one is actually being published;
   // otherwise every playlist header would send them to a 404.
   const guideAvailable =
-    (await exists(path.join(PATHS.epg, 'guide.xml.gz'))) ||
-    (await exists(path.join(PATHS.epg, 'guide.xml')));
+    (await exists(path.join(PATHS.epg, "guide.xml.gz"))) ||
+    (await exists(path.join(PATHS.epg, "guide.xml")));
   const playlistSettings: Settings = guideAvailable
     ? settings
     : { ...settings, playlists: { ...settings.playlists, link_epg: false } };
   if (!guideAvailable && settings.playlists.link_epg) {
-    log.warn('No EPG guide in public/epg — playlists will omit x-tvg-url');
+    log.warn("No EPG guide in public/epg — playlists will omit x-tvg-url");
   }
-  const playlistResult = await buildPlaylists(dataset.channels, playlistSettings, {
-    countries: new Map(dataset.countries.map((country) => [country.code, country.name])),
-    categories: new Map(dataset.categories.map((category) => [category.id, category.name])),
-    languages: new Map(dataset.languages.map((language) => [language.code, language.name])),
-    numbers: new Map(Object.entries(registry.numbers)),
-    guideShards: guideAvailable && settings.epg.gzip ? await listGuideShards() : undefined,
-  });
-  await emit('playlists.json', playlistResult.files, true);
+  const playlistResult = await buildPlaylists(
+    dataset.channels,
+    playlistSettings,
+    {
+      countries: new Map(
+        dataset.countries.map((country) => [country.code, country.name]),
+      ),
+      categories: new Map(
+        dataset.categories.map((category) => [category.id, category.name]),
+      ),
+      languages: new Map(
+        dataset.languages.map((language) => [language.code, language.name]),
+      ),
+      numbers: new Map(Object.entries(registry.numbers)),
+      guideShards:
+        guideAvailable && settings.epg.gzip
+          ? await listGuideShards()
+          : undefined,
+    },
+  );
+  await emit("playlists.json", playlistResult.files, true);
 
   // ---- manifest -----------------------------------------------------------
   const epgReport = await readJsonOr<{ programmes?: number }>(
-    path.join(PATHS.epgDb, 'report.json'),
+    path.join(PATHS.epgDb, "report.json"),
     {},
   );
   // Only advertise programmes that are actually being served. The report lives
@@ -627,21 +760,27 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   // anyway is how the manifest claimed 111k programmes while the guide 404'd.
   const guideShipped = guideAvailable;
   if (!guideShipped && (epgReport.programmes ?? 0) > 0) {
-    log.warn('EPG report exists but no guide is in public/epg — reporting 0 programmes');
+    log.warn(
+      "EPG report exists but no guide is in public/epg — reporting 0 programmes",
+    );
   }
   const servedProgrammes = guideShipped ? (epgReport.programmes ?? 0) : 0;
 
   const manifest: ApiManifest = {
     name: settings.project.name,
-    version: '1.0.0',
+    version: "1.0.0",
     generated_at: dataset.generated_at,
     base_url: settings.project.base_url,
     counts: {
       channels: publicChannels.length,
       /** Channels with at least one stream — what a viewer can actually open. */
       playable_channels: playable.length,
-      online_channels: publicChannels.filter((channel) => channel.online).length,
-      feeds: dataset.channels.reduce((sum, channel) => sum + channel.feeds.length, 0),
+      online_channels: publicChannels.filter((channel) => channel.online)
+        .length,
+      feeds: dataset.channels.reduce(
+        (sum, channel) => sum + channel.feeds.length,
+        0,
+      ),
       streams: allStreams.length,
       online_streams: summary.online,
       guides: dataset.guides.length,
@@ -651,32 +790,39 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       categories: categories.filter((category) => category.channels > 0).length,
     },
     endpoints: {
-      manifest: publicUrl(settings, 'api/v1/index.json'),
-      channels: publicUrl(settings, 'api/v1/channels.json'),
-      channels_online: publicUrl(settings, 'api/v1/channels.online.json'),
-      streams: publicUrl(settings, 'api/v1/streams.json'),
-      countries: publicUrl(settings, 'api/v1/countries.json'),
-      languages: publicUrl(settings, 'api/v1/languages.json'),
-      categories: publicUrl(settings, 'api/v1/categories.json'),
-      regions: publicUrl(settings, 'api/v1/regions.json'),
-      guides: publicUrl(settings, 'api/v1/guides.json'),
-      health: publicUrl(settings, 'api/v1/health.json'),
-      search: publicUrl(settings, 'api/v1/search.json'),
-      channel_detail: publicUrl(settings, 'api/v1/channels/{id}.json'),
-      by_country: publicUrl(settings, 'api/v1/by-country/{code}.json'),
-      by_category: publicUrl(settings, 'api/v1/by-category/{id}.json'),
-      by_language: publicUrl(settings, 'api/v1/by-language/{code}.json'),
-      playlist: publicUrl(settings, 'playlists/index.m3u'),
-      playlist_best: publicUrl(settings, 'playlists/best.m3u'),
-      epg: publicUrl(settings, 'epg/guide.xml.gz'),
-      epg_unmatched: publicUrl(settings, 'api/v1/epg-unmatched.json'),
-      match: publicUrl(settings, 'api/v1/match.json'),
-      changes: publicUrl(settings, 'api/v1/changes.json'),
-      regional: publicUrl(settings, 'api/v1/regional.json'),
-      changes_feed: publicUrl(settings, 'api/v1/changes.xml'),
-      channel_guide: publicUrl(settings, 'epg/channels/{id}.json'),
-      stremio: publicUrl(settings, 'stremio/manifest.json'),
-      xtream_data: publicUrl(settings, 'xtream/index.json'),
+      manifest: publicUrl(settings, "api/v1/index.json"),
+      channels: publicUrl(settings, "api/v1/channels.json"),
+      channels_online: publicUrl(settings, "api/v1/channels.online.json"),
+      streams: publicUrl(settings, "api/v1/streams.json"),
+      countries: publicUrl(settings, "api/v1/countries.json"),
+      languages: publicUrl(settings, "api/v1/languages.json"),
+      categories: publicUrl(settings, "api/v1/categories.json"),
+      regions: publicUrl(settings, "api/v1/regions.json"),
+      guides: publicUrl(settings, "api/v1/guides.json"),
+      health: publicUrl(settings, "api/v1/health.json"),
+      search: publicUrl(settings, "api/v1/search.json"),
+      channel_detail: publicUrl(settings, "api/v1/channels/{id}.json"),
+      by_country: publicUrl(settings, "api/v1/by-country/{code}.json"),
+      by_category: publicUrl(settings, "api/v1/by-category/{id}.json"),
+      by_language: publicUrl(settings, "api/v1/by-language/{code}.json"),
+      playlist: publicUrl(settings, "playlists/index.m3u"),
+      playlist_best: publicUrl(settings, "playlists/best.m3u"),
+      epg: publicUrl(settings, "epg/guide.xml.gz"),
+      epg_unmatched: publicUrl(settings, "api/v1/epg-unmatched.json"),
+      match: publicUrl(settings, "api/v1/match.json"),
+      changes: publicUrl(settings, "api/v1/changes.json"),
+      regional: publicUrl(settings, "api/v1/regional.json"),
+      ...(vodCatalog
+        ? {
+            vod: publicUrl(settings, "api/v1/vod.json"),
+            vod_movies_m3u: publicUrl(settings, "playlists/vod/movies.m3u"),
+            vod_series_m3u: publicUrl(settings, "playlists/vod/series.m3u"),
+          }
+        : {}),
+      changes_feed: publicUrl(settings, "api/v1/changes.xml"),
+      channel_guide: publicUrl(settings, "epg/channels/{id}.json"),
+      stremio: publicUrl(settings, "stremio/manifest.json"),
+      xtream_data: publicUrl(settings, "xtream/index.json"),
       ...(settings.project.worker_url
         ? {
             worker: settings.project.worker_url,
@@ -686,13 +832,17 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
             mcp: `${settings.project.worker_url}/mcp`,
           }
         : {}),
-      openapi: publicUrl(settings, 'api/v1/openapi.json'),
+      openapi: publicUrl(settings, "api/v1/openapi.json"),
     },
     upstream: dataset.upstream,
   };
 
-  await emit('index.json', manifest, true);
-  await emit('openapi.json', buildOpenApi(settings, dataset.generated_at), true);
+  await emit("index.json", manifest, true);
+  await emit(
+    "openapi.json",
+    buildOpenApi(settings, dataset.generated_at),
+    true,
+  );
 
   // ---- repository-facing catalogue ---------------------------------------
   // PLAYLISTS.md lives at the repo root rather than in public/ so it renders
@@ -708,14 +858,16 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       online_streams: manifest.counts.online_streams,
       epg_programmes: manifest.counts.epg_programmes,
     },
-    countryFlags: new Map(dataset.countries.map((country) => [country.name, country.flag])),
+    countryFlags: new Map(
+      dataset.countries.map((country) => [country.name, country.flag]),
+    ),
   });
-  await writeText(path.join(PATHS.root, 'PLAYLISTS.md'), catalogue);
+  await writeText(path.join(PATHS.root, "PLAYLISTS.md"), catalogue);
 
   // Keep the README table in step with the generated catalogue.
-  const readmePath = path.join(PATHS.root, 'README.md');
+  const readmePath = path.join(PATHS.root, "README.md");
   if (await exists(readmePath)) {
-    const { readText } = await import('../core/fs.js');
+    const { readText } = await import("../core/fs.js");
     const readme = await readText(readmePath);
     const block = buildReadmePlaylistBlock(settings);
     const marked = /<!-- PLAYLISTS:START -->[\s\S]*?<!-- PLAYLISTS:END -->/;
@@ -724,14 +876,14 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       if (updated !== readme) await writeText(readmePath, updated);
     }
   }
-  log.info('Wrote PLAYLISTS.md');
+  log.info("Wrote PLAYLISTS.md");
 
   // ---- static site --------------------------------------------------------
   if (await exists(PATHS.site)) {
     await copyDir(PATHS.site, PATHS.public);
     // GitHub Pages would otherwise run Jekyll and drop `_`-prefixed paths.
-    await writeText(path.join(PATHS.public, '.nojekyll'), '');
-    log.info('Copied static site into public/');
+    await writeText(path.join(PATHS.public, ".nojekyll"), "");
+    log.info("Copied static site into public/");
   }
 
   log.success(
@@ -743,7 +895,7 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
 }
 
 export type { Dataset };
-export * from './playlists.js';
-export * from './search-index.js';
-export * from './openapi.js';
-export * from './catalogue.js';
+export * from "./playlists.js";
+export * from "./search-index.js";
+export * from "./openapi.js";
+export * from "./catalogue.js";

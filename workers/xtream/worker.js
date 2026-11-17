@@ -16,6 +16,8 @@
  *                         nearest Cloudflare location
  *   /regional.json        where channels work, by viewer country, from those
  *                         checks and from playback reports (needs D1)
+ *   Xtream VOD & series   openly licensed films and series (xtream/vod.json);
+ *                         /movie/… and /series/… redirect to archive.org
  *
  * It stores nothing and streams nothing. Its data is `xtream/index.json` and
  * `epg/channels/<id>.json`, which the Sync workflow publishes to GitHub Pages;
@@ -33,7 +35,7 @@
  */
 
 const DEFAULT_ORIGIN = 'https://dearbulut.github.io/iptv';
-const VERSION = '1.2.0';
+const VERSION = '1.3.0';
 /** Days of regional checks summarised in /regional.json; older rows are deleted after 30. */
 const REGIONAL_DAYS = 14;
 /** How long an isolate reuses the index before refetching it. */
@@ -50,6 +52,35 @@ const R = {
 };
 
 let cached = null; // { origin, at, index, byId, byEpg }
+let cachedVod = null; // { origin, at, vod, movies, series, episodes }
+
+/** Openly licensed films and series (xtream/vod.json), or null when there are none. */
+async function loadVod(origin) {
+  if (cachedVod && cachedVod.origin === origin && Date.now() - cachedVod.at < INDEX_TTL_MS) return cachedVod.vod ? cachedVod : null;
+  const response = await fetch(`${origin}/xtream/vod.json`, { cf: { cacheTtl: 3600, cacheEverything: true } });
+  if (!response.ok) {
+    cachedVod = { origin, at: Date.now(), vod: null };
+    return null;
+  }
+  const vod = await response.json();
+  const episodes = new Map();
+  for (const show of vod.series) for (const episode of show.episodes) episodes.set(episode[0], { show, episode });
+  cachedVod = {
+    origin,
+    at: Date.now(),
+    vod,
+    movies: new Map(vod.movies.map((movie) => [movie[0], movie])),
+    series: new Map(vod.series.map((show) => [show.number, show])),
+    episodes,
+  };
+  return cachedVod;
+}
+
+const extension = (url) => (url.match(/\.(mp4|mkv|m4v|ogv|webm|avi|mpeg|mpg|mov)(?:$|\?)/i)?.[1] ?? 'mp4').toLowerCase();
+const minutes = (seconds) => (seconds ? `${String(Math.floor(seconds / 3600)).padStart(2, '0')}:${String(Math.floor((seconds % 3600) / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}` : '');
+
+// Rows: movies [number, title, poster, year, category ids, url, runtime, description, licence]
+const M = { ID: 0, TITLE: 1, POSTER: 2, YEAR: 3, CATS: 4, URL: 5, RUNTIME: 6, PLOT: 7, LICENSE: 8 };
 
 async function loadIndex(origin) {
   if (cached && cached.origin === origin && Date.now() - cached.at < INDEX_TTL_MS) return cached;
@@ -483,12 +514,124 @@ async function playerApi(url, env) {
         : index.streams;
       return json(rows.map((row, i) => liveStream(row, byCountry, i + 1)));
     }
+    case 'get_vod_categories':
+    case 'get_series_categories': {
+      const data = await loadVod(origin);
+      const list = data ? (action === 'get_vod_categories' ? data.vod.categories.movies : data.vod.categories.series) : [];
+      return json(list.map(([id, name]) => ({ category_id: String(id), category_name: name, parent_id: 0 })));
+    }
+    case 'get_vod_streams': {
+      const data = await loadVod(origin);
+      if (!data) return json([]);
+      const wanted = params.get('category_id');
+      const rows = wanted ? data.vod.movies.filter((m) => m[M.CATS].some((id) => String(id) === wanted)) : data.vod.movies;
+      return json(
+        rows.map((movie, i) => ({
+          num: i + 1,
+          name: movie[M.YEAR] ? `${movie[M.TITLE]} (${movie[M.YEAR]})` : movie[M.TITLE],
+          stream_type: 'movie',
+          stream_id: movie[M.ID],
+          stream_icon: movie[M.POSTER],
+          rating: '',
+          rating_5based: 0,
+          added: '0',
+          is_adult: '0',
+          category_id: String(movie[M.CATS][0] ?? ''),
+          category_ids: movie[M.CATS],
+          container_extension: extension(movie[M.URL]),
+          custom_sid: '',
+          direct_source: '',
+        })),
+      );
+    }
+    case 'get_vod_info': {
+      const data = await loadVod(origin);
+      const movie = data?.movies.get(Number(params.get('vod_id')));
+      if (!movie) return json({ info: {}, movie_data: {} });
+      return json({
+        info: {
+          name: movie[M.TITLE],
+          o_name: movie[M.TITLE],
+          cover_big: movie[M.POSTER],
+          movie_image: movie[M.POSTER],
+          releasedate: movie[M.YEAR] ? String(movie[M.YEAR]) : '',
+          plot: `${movie[M.PLOT]}${movie[M.PLOT] ? '\n\n' : ''}${movie[M.LICENSE]} · Internet Archive`,
+          duration_secs: movie[M.RUNTIME] ?? 0,
+          duration: minutes(movie[M.RUNTIME]),
+          genre: movie[M.CATS].map((id) => data.vod.categories.movies.find(([c]) => c === id)?.[1]).filter(Boolean).join(', '),
+        },
+        movie_data: {
+          stream_id: movie[M.ID],
+          name: movie[M.TITLE],
+          added: '0',
+          category_id: String(movie[M.CATS][0] ?? ''),
+          container_extension: extension(movie[M.URL]),
+          custom_sid: '',
+          direct_source: '',
+        },
+      });
+    }
+    case 'get_series': {
+      const data = await loadVod(origin);
+      if (!data) return json([]);
+      const wanted = params.get('category_id');
+      const rows = wanted ? data.vod.series.filter((s) => s.categories.some((id) => String(id) === wanted)) : data.vod.series;
+      return json(
+        rows.map((show, i) => ({
+          num: i + 1,
+          name: show.title,
+          series_id: show.number,
+          cover: show.poster,
+          plot: show.description,
+          cast: '',
+          director: '',
+          genre: show.categories.map((id) => data.vod.categories.series.find(([c]) => c === id)?.[1]).filter(Boolean).join(', '),
+          releaseDate: show.year ? String(show.year) : '',
+          last_modified: '0',
+          rating: '0',
+          rating_5based: 0,
+          backdrop_path: [],
+          youtube_trailer: '',
+          episode_run_time: '',
+          category_id: String(show.categories[0] ?? ''),
+          category_ids: show.categories,
+        })),
+      );
+    }
+    case 'get_series_info': {
+      const data = await loadVod(origin);
+      const show = data?.series.get(Number(params.get('series_id')));
+      if (!show) return json({ seasons: [], info: {}, episodes: {} });
+      return json({
+        seasons: [{ season_number: 1, name: 'Season 1', episode_count: show.episodes.length, cover: show.poster, cover_big: show.poster }],
+        info: {
+          name: show.title,
+          cover: show.poster,
+          plot: `${show.description}${show.description ? '\n\n' : ''}${show.license} · Internet Archive`,
+          genre: show.categories.map((id) => data.vod.categories.series.find(([c]) => c === id)?.[1]).filter(Boolean).join(', '),
+          releaseDate: show.year ? String(show.year) : '',
+          category_id: String(show.categories[0] ?? ''),
+        },
+        episodes: {
+          1: show.episodes.map(([number, episode, title, url, runtime]) => ({
+            id: String(number),
+            episode_num: episode,
+            title,
+            container_extension: extension(url),
+            info: { duration_secs: runtime ?? 0, duration: minutes(runtime), movie_image: show.poster },
+            season: 1,
+            custom_sid: '',
+            added: '0',
+            direct_source: '',
+          })),
+        },
+      });
+    }
     case 'get_short_epg':
       return shortEpg(params, env, false);
     case 'get_simple_data_table':
       return shortEpg(params, env, true);
     default:
-      // VOD and series: Nexus is live TV only.
       return json([]);
   }
 }
@@ -531,6 +674,18 @@ const MCP_TOOLS = [
         hours: { type: 'number', default: 6, description: 'How far ahead to look' },
       },
       required: ['channel'],
+    },
+  },
+  {
+    name: 'search_films',
+    description: 'Search free films and series that are in the public domain or under Creative Commons (Internet Archive). Returns titles, years, licence and a playable link.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        query: { type: 'string', description: 'Part of the title' },
+        kind: { type: 'string', enum: ['film', 'series', 'any'], default: 'any' },
+        limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 },
+      },
     },
   },
   {
@@ -621,6 +776,20 @@ async function callTool(name, args, env, base) {
         upcoming: programmes.filter((p) => Date.parse(p.start) > now),
         note: programmes.length === 0 ? 'No guide data for this channel.' : undefined,
       };
+    }
+    case 'search_films': {
+      const data = await loadVod(origin);
+      if (!data) return { total: 0, results: [], note: 'No film catalogue is published yet.' };
+      const query = String(args.query ?? '').toLowerCase();
+      const kind = args.kind ?? 'any';
+      const limit = Math.min(Math.max(Number(args.limit) || 10, 1), 50);
+      const films = kind === 'series' ? [] : data.vod.movies.filter((m) => m[M.TITLE].toLowerCase().includes(query));
+      const shows = kind === 'film' ? [] : data.vod.series.filter((s) => s.title.toLowerCase().includes(query));
+      const results = [
+        ...films.map((m) => ({ type: 'film', title: m[M.TITLE], year: m[M.YEAR], licence: m[M.LICENSE], minutes: m[M.RUNTIME] ? Math.round(m[M.RUNTIME] / 60) : null, play: m[M.URL] })),
+        ...shows.map((s) => ({ type: 'series', title: s.title, year: s.year, licence: s.license, episodes: s.episodes.length, first_episode: s.episodes[0]?.[3] })),
+      ];
+      return { total: results.length, results: results.slice(0, limit) };
     }
     case 'build_playlist': {
       const params = new URLSearchParams();
@@ -724,6 +893,16 @@ export default {
       if (path === '/get.php') {
         if (!authorised(env, url.searchParams.get('password') ?? '')) return text('Invalid password', 401);
         return await buildPlaylist(url, env);
+      }
+
+      // /movie/<user>/<pass>/<id>.<ext> and /series/<user>/<pass>/<episode id>.<ext>
+      const vodPath = path.match(/^\/(movie|series)\/([^/]+)\/([^/]+)\/(\d+)(?:\.\w+)?$/);
+      if (vodPath) {
+        if (!authorised(env, decodeURIComponent(vodPath[3]))) return text('Invalid password', 401);
+        const data = await loadVod(origin);
+        const id = Number(vodPath[4]);
+        const target = vodPath[1] === 'movie' ? data?.movies.get(id)?.[M.URL] : data?.episodes.get(id)?.episode[3];
+        return target ? redirect(target) : text('Unknown title', 404);
       }
 
       // /live/<user>/<pass>/<id>.<ext>  and the short form /<user>/<pass>/<id>

@@ -14,12 +14,14 @@ IPTV Nexus is an open database of **31,000+ TV channels** in 230 countries, with
 Every stream is tested twice a day, dead links are retired, and a merged
 programme guide covers **270,000+ programmes**. Watch in the browser, add a
 playlist to any player, log in from TiviMate or IPTV Smarters, install it in
-Stremio — or use the data in your own app.
+Stremio — or use the data in your own app. Alongside live TV there is a
+catalogue of **free films and series** that are in the public domain or under
+Creative Commons.
 
 Everything runs on GitHub Actions, GitHub Pages and a free Cloudflare Worker.
 No server, no cost, no account needed.
 
-**[▶ Open the channel browser](https://dearbulut.github.io/iptv)** · **[🛠 Tools](https://dearbulut.github.io/iptv/tools.html)** ·
+**[▶ Open the channel browser](https://dearbulut.github.io/iptv)** · **[🎬 Free films](https://dearbulut.github.io/iptv/films.html)** · **[🛠 Tools](https://dearbulut.github.io/iptv/tools.html)** ·
 **[📖 Setup guides](docs/CLIENTS.md)** · **[⬇ Download the database](https://github.com/dearbulut/iptv/releases/tag/database)**
 
 ---
@@ -33,6 +35,7 @@ No server, no cost, no account needed.
 | **Your own mix** | `https://iptv-nexus-xtream.bulutworks.workers.dev/m3u?country=tr,de&category=news&online=1` — or build it on the [Tools page](https://dearbulut.github.io/iptv/tools.html#builder) |
 | **TiviMate, IPTV Smarters, XCIPTV, TV boxes** | Xtream login — server `https://iptv-nexus-xtream.bulutworks.workers.dev`, any username and password (username `country` groups by country) |
 | **Stremio** | `https://dearbulut.github.io/iptv/stremio/manifest.json` |
+| **Free films and series** | [Films page](https://dearbulut.github.io/iptv/films.html), `playlists/vod/movies.m3u` and `series.m3u` — and the *VOD* / *Series* sections of the Xtream login and the Stremio addon above |
 | **An AI assistant** (Claude, ChatGPT, Cursor…) | MCP server `https://iptv-nexus-xtream.bulutworks.workers.dev/mcp` — "which Turkish news channels work right now?" |
 
 Step-by-step instructions for every player: **[docs/CLIENTS.md](docs/CLIENTS.md)**.
@@ -71,6 +74,11 @@ Per-country, per-category and per-language playlists: [**PLAYLISTS.md**](PLAYLIS
 - **Honest status.** Channels that geo-block our checker are shown as
   *Regional*, not *offline*; streams a browser can't play say why and offer
   *Open in player*.
+- **Free films and series, legally.** Feature films, film noir, sci-fi and
+  horror, comedy, silent cinema, cartoons, open movies and classic TV from the
+  Internet Archive — only titles whose licence is public domain or Creative
+  Commons, each shown with its licence. Nothing is copied: they play from
+  archive.org.
 
 **For panel owners and providers**
 
@@ -156,6 +164,7 @@ Everything lives in this repository, under [`data/`](data):
 | **Community** | on issue | Process *add a stream*, *broken stream* and *takedown* forms |
 | **Repository Bot** | on issue / PR | Evaluate proposed sources, guide other issues, merge passing data PRs and Dependabot updates |
 | **Database Dump** | Sundays | Publish the database as one SQLite file |
+| **VOD Catalogue** | Mondays | Rebuild the openly licensed films and series from [`config/vod.yml`](config/vod.yml) |
 | **CI** | on push / PR | Typecheck, tests, pipeline smoke test |
 
 Details, schedules and manual controls: [docs/AUTOMATION.md](docs/AUTOMATION.md).
@@ -176,9 +185,10 @@ also come gzipped (`.gz`).
 | `/api/v1/search.json` | Compact index for client-side search |
 | `/api/v1/regional.json` | Where each channel works, by country |
 | `/api/v1/changes.json` · `changes.xml` | What became or stopped being watchable |
+| `/api/v1/vod.json` | Free films and series, with licence and permanent numbers |
 | `/epg/guide.xml.gz` · `/epg/{country}.xml.gz` · `/epg/channels/{id}.json` | Guide: merged, by country, by channel |
 | `/playlists/…` | M3U playlists — see [PLAYLISTS.md](PLAYLISTS.md) |
-| `/stremio/manifest.json` | Stremio addon |
+| `/stremio/manifest.json` | Stremio addon (live TV, films, series) |
 
 ```js
 const BASE = 'https://dearbulut.github.io/iptv';
@@ -241,7 +251,9 @@ every value has a sensible default.
 IPTV Nexus **hosts no video**. It lists links to streams on third-party servers
 — official free-to-air broadcasts, FAST channels and public service media — and
 describes whether they work. Subscription and credential-protected streams are
-excluded. Rights holders can have anything removed instantly with the
+excluded. Films and series are listed only when archive.org records a
+public-domain or Creative Commons licence for them. Rights holders can have
+anything removed instantly with the
 [takedown form](https://github.com/dearbulut/iptv/issues/new?template=takedown.yml). Details:
 [docs/LEGAL.md](docs/LEGAL.md).
 
@@ -251,6 +263,7 @@ The channel database began as a copy of [iptv-org](https://github.com/iptv-org/d
 which is in the public domain, and still receives its daily updates. Guides are
 grabbed with [iptv-org/epg](https://github.com/iptv-org/epg). Additional free
 streams are discovered from [Free-TV/IPTV](https://github.com/Free-TV/IPTV).
+Films and series come from the [Internet Archive](https://archive.org/details/movies).
 Browser playback uses [hls.js](https://github.com/video-dev/hls.js).
 
 ## License

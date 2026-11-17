@@ -184,9 +184,11 @@ function setupConnect() {
   const rows = [
     ['Any M3U player', e.playlist_best, 'Every channel, best stream each'],
     ['Programme guide (XMLTV)', e.epg, 'Matches the tvg-id of every playlist'],
-    ['Stremio', e.stremio, 'Paste into the Stremio search bar, then Install'],
-    ['Xtream Codes apps', e.xtream, 'Server URL — any username (or “country”) and password'],
+    ['Stremio', e.stremio, e.vod ? 'Paste into the Stremio search bar, then Install — live TV plus free films and series' : 'Paste into the Stremio search bar, then Install'],
+    ['Xtream Codes apps', e.xtream, e.vod ? 'Server URL — any username (or “country”) and password. Films and series appear under VOD and Series' : 'Server URL — any username (or “country”) and password'],
     ['AI assistants (MCP)', e.mcp, 'Add as a remote MCP server in Claude, ChatGPT, Cursor…'],
+    ['Free films (M3U)', e.vod_movies_m3u, 'Public-domain and Creative Commons films, for VLC, Kodi, TiviMate'],
+    ['Free series (M3U)', e.vod_series_m3u, 'Every episode, grouped by series'],
     ['What changed (Atom feed)', e.changes_feed, 'New and lost channels, for any feed reader'],
     ['Developers (OpenAPI)', e.openapi, 'The full static JSON API'],
   ].filter(([, url]) => url);

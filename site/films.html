@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>IPTV Nexus Films</title>
+    <meta
+      name="description"
+      content="Free films and series in the public domain or under Creative Commons, from the Internet Archive. Watch in the browser, or add them to Stremio and Xtream apps."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0e14" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235b8cff'/%3E%3Cpath d='M9 12h14v10H9z' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M12 8l4 4 4-4' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      try {
+        const stored = localStorage.getItem('nexus:theme');
+        if (stored) document.documentElement.dataset.theme = stored;
+        else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.dataset.theme = 'light';
+      } catch {}
+    </script>
+  </head>
+
+  <body class="films-page">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="./">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="currentColor" />
+            <path d="M9 12h14v10H9z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" />
+            <path d="M12 8l4 4 4-4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>
+            <span class="brand__name">IPTV Nexus</span>
+            <span class="brand__meta" id="films-count">Free films</span>
+          </div>
+        </a>
+        <div class="search">
+          <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <input id="films-search" type="search" placeholder="Search films and series…" autocomplete="off" aria-label="Search films and series" />
+        </div>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="./">Channels</a>
+          <a class="btn btn--ghost" href="tools.html#connect">Apps</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="films">
+      <p class="films__intro muted">
+        Films and series that are in the public domain or under a Creative Commons licence, from the
+        <a href="https://archive.org/details/movies" target="_blank" rel="noopener">Internet Archive</a>.
+        Each title shows its licence; videos play from archive.org. Also in Stremio and in Xtream apps
+        (<a href="tools.html#connect">Connect apps</a>).
+      </p>
+      <div class="films__bar">
+        <div class="segmented" role="tablist" aria-label="Kind">
+          <button role="tab" data-kind="movies" aria-selected="true">Films</button>
+          <button role="tab" data-kind="series" aria-selected="false">Series</button>
+        </div>
+        <div class="shelves" id="shelves" role="group" aria-label="Shelves"></div>
+      </div>
+      <div class="posters" id="posters" aria-live="polite"></div>
+      <div class="films__more"><button class="btn" id="more" hidden>Show more</button></div>
+    </main>
+
+    <div class="player" id="player" hidden aria-modal="true" role="dialog" aria-labelledby="player-title">
+      <div class="player__backdrop" data-close></div>
+      <div class="player__panel">
+        <header class="player__head">
+          <div class="player__titles">
+            <h2 id="player-title">Film</h2>
+            <p id="player-sub" class="muted"></p>
+          </div>
+          <button class="btn btn--icon" data-close title="Close" aria-label="Close player">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </header>
+        <div class="player__video">
+          <video id="video" controls playsinline preload="none"></video>
+        </div>
+        <div class="player__body">
+          <p class="film__licence" id="player-licence"></p>
+          <p class="film__plot" id="player-plot"></p>
+          <div class="player__streams" id="player-episodes"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="films.js" defer></script>
+  </body>
+</html>

@@ -123,6 +123,10 @@ minutes).
 
 Apps that also accept *M3U URL* work with the playlist URL directly.
 
+The same login fills the **VOD (Movies)** and **Series** sections with free
+films and series — public domain or Creative Commons, from the Internet
+Archive. Refresh the app's content after the first login to see them.
+
 ## Stremio
 
 Paste this into the Stremio search bar (or *Addons → Community addons →
@@ -132,7 +136,8 @@ paste URL*) and choose **Install**:
 https://dearbulut.github.io/iptv/stremio/manifest.json
 ```
 
-It adds two TV catalogues, by category and by country, under *Discover → TV*.
+It adds two TV catalogues, by category and by country, under *Discover → TV*,
+and **IPTV Nexus · Free Films** and **Free Series** under *Movies* and *Series*.
 Only channels that are online, regional or not yet checked are listed.
 Streams that need special headers play in the desktop and mobile apps (through
 Stremio's streaming server) but not in Stremio Web.
@@ -143,6 +148,19 @@ Stremio's streaming server) but not in Stremio Web.
 *Playlist* view. VLC applies `#EXTVLCOPT` headers. To try a single channel
 from the website, open the channel and choose **Open in player**: it downloads
 a one-channel playlist with the right headers.
+
+## Free films and series
+
+Open the [Films page](https://dearbulut.github.io/iptv/films.html) to browse and
+watch in the browser, or add these to any player that takes M3U:
+
+```
+https://dearbulut.github.io/iptv/playlists/vod/movies.m3u
+https://dearbulut.github.io/iptv/playlists/vod/series.m3u
+```
+
+Every title is in the public domain or under a Creative Commons licence, shown
+on the Films page with a link to the original on archive.org.
 
 ## Channels DVR
 

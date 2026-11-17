@@ -1,0 +1,103 @@
+name: VOD Catalogue
+
+# Rebuilds the catalogue of openly licensed films and series (config/vod.yml):
+# Internet Archive items whose licence is a public-domain dedication or a
+# Creative Commons licence. Nothing is copied; videos play from archive.org.
+#
+# The catalogue is kept on the `state` branch as vod/catalog.json; Sync turns
+# it into api/v1/vod.json, Xtream VOD and series, Stremio catalogues and M3U.
+
+on:
+  schedule:
+    # Mondays 05:40 UTC.
+    - cron: '40 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Keep the result even if it is much smaller than the last one'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: vod
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Film and episode numbers are permanent (Xtream apps keep favourites by
+      # them), so the previous catalogue is restored before every build.
+      - name: Restore the previous catalogue
+        id: restore
+        continue-on-error: true
+        run: |
+          mkdir -p .data
+          git fetch origin state:state --depth=1 2>/dev/null || exit 0
+          echo "state=ok" >> "$GITHUB_OUTPUT"
+          git show state:vod/catalog.json > .data/vod.json 2>/dev/null || rm -f .data/vod.json
+
+      - name: Build the catalogue
+        id: build
+        run: |
+          set +e
+          npm run --silent cli -- vod ${{ inputs.force && '--force' || '' }}
+          code=$?
+          set -e
+          if [ "$code" = "3" ]; then
+            echo "::warning::The new catalogue lost more than half of the titles; keeping the previous one."
+            echo "kept=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          exit $code
+
+      - name: Publish to the state branch
+        if: ${{ github.ref == 'refs/heads/main' && steps.restore.outputs.state == 'ok' && steps.build.outputs.kept != '1' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          test -s .data/vod.json || exit 1
+          bash scripts/publish-state.sh "vod: $(date -u +%FT%TZ)" .data/vod.json:vod/catalog.json
+
+      - name: Rebuild the site
+        if: ${{ github.ref == 'refs/heads/main' && steps.build.outputs.kept != '1' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run sync.yml --ref main -f skip_epg=true || echo "::notice::Sync will pick the catalogue up on its next run."
+
+      - name: Summarise
+        if: always()
+        run: |
+          test -f .data/vod.json || exit 0
+          node -e "
+            const c = require('./.data/vod.json');
+            const episodes = c.series.reduce((n, s) => n + s.episodes.length, 0);
+            const licences = {};
+            for (const t of [...c.movies, ...c.series]) licences[t.license.label] = (licences[t.license.label] || 0) + 1;
+            require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY, [
+              '## VOD catalogue',
+              '',
+              'Films: **' + c.movies.length + '** · Series: **' + c.series.length + '** (' + episodes + ' episodes)',
+              '',
+              '| Source | Added |', '| --- | --- |',
+              ...Object.entries(c.sources).map(([k, v]) => '| ' + k + ' | ' + v + ' |'),
+              '',
+              '| Licence | Titles |', '| --- | --- |',
+              ...Object.entries(licences).map(([k, v]) => '| ' + k + ' | ' + v + ' |'),
+            ].join('\n') + '\n');
+          "

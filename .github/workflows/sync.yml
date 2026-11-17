@@ -88,6 +88,8 @@ jobs:
           # api/v1/changes.json and the Atom feed.
           restore catalogue-snapshot.json
           restore changes.json
+          # Openly licensed films and series, built weekly by the VOD workflow.
+          git show state:vod/catalog.json > .data/vod.json.tmp 2>/dev/null && mv .data/vod.json.tmp .data/vod.json || rm -f .data/vod.json.tmp
           ls -la .data || true
 
       - name: Aggregate channels and streams
