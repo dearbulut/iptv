@@ -225,6 +225,47 @@ for (const relative of ['playlists/index.m3u', 'playlists/best.m3u']) {
   }
 }
 
+// --- client integrations ----------------------------------------------------
+
+{
+  const stremio = await readJson('stremio/manifest.json');
+  if (stremio) {
+    if (!Array.isArray(stremio.catalogs) || stremio.catalogs.length === 0) {
+      fail('stremio/manifest.json has no catalogs');
+    } else {
+      for (const catalog of stremio.catalogs) {
+        const first = await readJson(`stremio/catalog/tv/${catalog.id}.json`);
+        if (first && !Array.isArray(first.metas)) fail(`stremio catalog ${catalog.id} has no metas`);
+        // Every option the app will offer must resolve to a file.
+        const options = catalog.extra?.find((extra) => extra.name === 'genre')?.options ?? [];
+        let missing = 0;
+        for (const option of options) {
+          await fs.access(path.join(publicDir, 'stremio/catalog/tv', catalog.id, `genre=${option}.json`)).catch(() => missing++);
+        }
+        if (missing > 0) fail(`stremio catalog ${catalog.id}: ${missing} genre option(s) have no file`);
+      }
+      const sample = (await readJson(`stremio/catalog/tv/${stremio.catalogs[0].id}.json`))?.metas?.[0];
+      if (sample) {
+        const streams = await readJson(`stremio/stream/tv/${sample.id}.json`);
+        if (streams && !(streams.streams?.length > 0)) fail(`stremio stream file for ${sample.id} is empty`);
+        await assertExists(`stremio/meta/tv/${sample.id}.json`);
+      }
+      console.log(`stremio: ${stremio.catalogs.length} catalogs`);
+    }
+  }
+
+  const xtream = await readJson('xtream/index.json');
+  if (xtream) {
+    if (!Array.isArray(xtream.streams) || xtream.streams.length === 0) fail('xtream/index.json has no streams');
+    else {
+      const ids = new Set(xtream.streams.map((row) => row[0]));
+      if (ids.size !== xtream.streams.length) fail('xtream/index.json has duplicate stream ids');
+      if (xtream.streams.some((row) => !/^https?:\/\//.test(row[6]))) fail('xtream/index.json has a non-HTTP stream');
+      console.log(`xtream: ${xtream.streams.length} live streams`);
+    }
+  }
+}
+
 // --- gzip siblings ----------------------------------------------------------
 
 try {

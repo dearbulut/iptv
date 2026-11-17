@@ -41,6 +41,8 @@ import {
   type Availability,
 } from './compat.js';
 import { assignChannelNumbers, normaliseRegistry } from './channel-numbers.js';
+import { buildStremioAddon } from './stremio.js';
+import { buildXtreamIndex } from './xtream.js';
 import type { EpgLink } from '../epg/index.js';
 
 const log = new Logger('api');
@@ -393,6 +395,43 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
   await emit('timezones.json', dataset.timezones, true);
   await emit('guides.json', dataset.guides);
 
+  // ---- client integrations ------------------------------------------------
+  const countryNames = new Map(dataset.countries.map((country) => [country.code, country.name]));
+  const categoryNames = new Map(dataset.categories.map((category) => [category.id, category.name]));
+
+  // Static Stremio addon under public/stremio/.
+  const stremioFiles = buildStremioAddon(playable, {
+    name: settings.project.name,
+    description: settings.project.description,
+    version: '1.0.0',
+    homepage: settings.project.base_url,
+    countries: countryNames,
+    categories: categoryNames,
+  });
+  const stremioRoot = path.join(PATHS.public, 'stremio');
+  for (let i = 0; i < stremioFiles.length; i += 64) {
+    await Promise.all(
+      stremioFiles.slice(i, i + 64).map(async (file) => {
+        const target = path.join(stremioRoot, file.path);
+        await ensureDir(path.dirname(target));
+        bytes += await writeJson(target, file.data);
+        files++;
+      }),
+    );
+  }
+  log.info(`Stremio addon: ${stremioFiles.length} files`);
+
+  // Precomputed data for the Xtream Codes Worker (workers/xtream).
+  const xtream = buildXtreamIndex(playable, {
+    generatedAt: dataset.generated_at,
+    countries: countryNames,
+    categories: categoryNames,
+  });
+  await ensureDir(path.join(PATHS.public, 'xtream'));
+  bytes += await writeJson(path.join(PATHS.public, 'xtream', 'index.json'), xtream);
+  files++;
+  log.info(`Xtream index: ${xtream.streams.length} live streams`);
+
   // ---- health -------------------------------------------------------------
   const healthRecords = [...healthDb.values()];
   const summary = summarise(
@@ -539,6 +578,8 @@ export async function buildApi(options: { clean?: boolean } = {}): Promise<ApiBu
       playlist_best: publicUrl(settings, 'playlists/best.m3u'),
       epg: publicUrl(settings, 'epg/guide.xml.gz'),
       epg_unmatched: publicUrl(settings, 'api/v1/epg-unmatched.json'),
+      stremio: publicUrl(settings, 'stremio/manifest.json'),
+      xtream_data: publicUrl(settings, 'xtream/index.json'),
       openapi: publicUrl(settings, 'api/v1/openapi.json'),
     },
     upstream: dataset.upstream,

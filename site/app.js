@@ -172,9 +172,14 @@ async function boot() {
     for (const category of categories) state.categories.set(category.id, category);
     for (const language of languages) state.languages.set(language.code, language);
 
+    // Deep link to a channel (`?channel=TRT1.tr`), used by the Stremio links
+    // back to this site. Read it first: applyFilters rewrites the URL.
+    const deepLink = new URLSearchParams(location.search).get('channel');
+
     readUrlState();
     applyFilters();
     renderStats();
+    if (deepLink) openChannel(deepLink);
   } catch (error) {
     $('#result-count').textContent =
       'Could not load the channel index. If you are opening this file directly, serve it over HTTP instead.';

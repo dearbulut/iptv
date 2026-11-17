@@ -1,0 +1,11 @@
+# Cloudflare Worker serving an Xtream Codes compatible API for IPTV Nexus.
+# Deploy:  npx wrangler deploy   (see README.md in this folder)
+name = "iptv-nexus-xtream"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+# The GitHub Pages site the Worker reads xtream/index.json from.
+NEXUS_ORIGIN = "https://dearbulut.github.io/iptv"
+# Optional: require this password. Prefer a secret over a plain var:
+#   npx wrangler secret put XTREAM_PASSWORD
