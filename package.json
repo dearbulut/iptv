@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Self-updating, health-scored IPTV channel + EPG aggregator with a free static JSON API and web player.",
   "type": "module",
-  "license": "MIT",
+  "license": "Unlicense",
   "engines": {
     "node": ">=20.10.0"
   },
