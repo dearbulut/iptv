@@ -511,6 +511,7 @@
 {"channel":"5GPs.us","id":"UK","name":"UK","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Pacific/Auckland"],"languages":["eng"],"format":"576i"}
 {"channel":"5Kanal.kz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KZ"],"timezones":["Asia/Almaty"],"languages":["kaz","rus"],"format":"576i"}
 {"channel":"5Live.il","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IL"],"timezones":["Asia/Jerusalem"],"languages":["heb"],"format":"576i"}
+{"channel":"5Max.il","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IL"],"timezones":["Asia/Jerusalem"],"languages":["heb"],"format":"576i"}
 {"channel":"5minuttishiny.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"5onPlutoTV.de","id":"GB","name":"GB","alt_names":[],"is_main":true,"broadcast_area":["c/UK","c/IE"],"timezones":["Europe/London"],"languages":["eng"],"format":"720p"}
 {"channel":"5Plus.ch","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CH"],"timezones":["Europe/Zurich"],"languages":["deu"],"format":"576i"}
@@ -6571,6 +6572,7 @@
 {"channel":"CanalGambsheim.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/FR"],"timezones":["Europe/Paris"],"languages":["fra"],"format":"576i"}
 {"channel":"CanalGov.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"CanalGuanevision.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"576i"}
+{"channel":"CanalGuapa.py","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PY"],"timezones":["America/Asuncion"],"languages":["spa"],"format":"1080p"}
 {"channel":"CanalGuiaABE.bo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BO"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"576i"}
 {"channel":"CanalHabana.cu","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CU"],"timezones":["America/Havana"],"languages":["spa"],"format":"480i"}
 {"channel":"CanalHollywood.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
@@ -6881,6 +6883,7 @@
 {"channel":"CanalViva.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"CanalWomtv.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
 {"channel":"CanalWoyla.cm","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CM"],"timezones":["Africa/Douala"],"languages":["fra"],"format":"576i"}
+{"channel":"CanalX2.do","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"1080i"}
 {"channel":"CanalXFN.ar","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AR"],"timezones":["America/Argentina/Buenos_Aires"],"languages":["spa"],"format":"576i"}
 {"channel":"CanalYesTV.ni","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NI"],"timezones":["America/Managua"],"languages":["spa"],"format":"480i"}
 {"channel":"CanalZ.be","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/BE"],"timezones":["Europe/Brussels"],"languages":["fra"],"format":"1080i"}
@@ -9075,6 +9078,7 @@
 {"channel":"ColorsTamil.in","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"1080p"}
 {"channel":"ColorsTamil.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"576i"}
 {"channel":"ColorsTamil.in","id":"US","name":"US","alt_names":[],"is_main":false,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["tam"],"format":"1080i"}
+{"channel":"ColorVision.do","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"1080p"}
 {"channel":"ColorVision.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"ColosalTV.cr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CR"],"timezones":["America/Costa_Rica"],"languages":["spa"],"format":"480i"}
 {"channel":"ColosalTVCanal9.sv","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SV"],"timezones":["America/El_Salvador"],"languages":["spa"],"format":"576i"}
@@ -11335,6 +11339,7 @@
 {"channel":"DigiSport3.ro","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"1080i"}
 {"channel":"DigiSport3.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"DigiSport4.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
+{"channel":"Digital15.do","id":"HD","name":"HD","alt_names":["America/Santo_Domingo"],"is_main":false,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"1080p"}
 {"channel":"Digital15.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"Digital809TV.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"DigitAlbEuroFilm.al","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AL"],"timezones":["Europe/Tirane"],"languages":["sqi"],"format":"576i"}
@@ -22423,6 +22428,7 @@
 {"channel":"MediaTV.md","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MD"],"timezones":["Europe/Chisinau"],"languages":["ron","rus"],"format":"576i"}
 {"channel":"MediaTV.pe","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/PEHNT"],"timezones":["America/Lima"],"languages":["spa"],"format":"480i"}
 {"channel":"MediaTV.th","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TH"],"timezones":["Asia/Bangkok"],"languages":["tha"],"format":"576i"}
+{"channel":"MediavisionTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"MediBizTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["eng"],"format":"576i"}
 {"channel":"MediCOOLTV.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"MedinaBayeTV.sn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SN"],"timezones":["Africa/Dakar"],"languages":["fra"],"format":"576i"}
@@ -26394,6 +26400,7 @@
 {"channel":"Nova.bg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BG"],"timezones":["Europe/Sofia"],"languages":["bul"],"format":"576i"}
 {"channel":"Nova.es","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"1080i"}
 {"channel":"Nova.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
+{"channel":"Nova.me","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/ME"],"timezones":["Europe/Podgorica"],"languages":["cnr"],"format":"1080i"}
 {"channel":"Nova.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"Nova24TV.si","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/SI"],"timezones":["Europe/Ljubljana"],"languages":["slv"],"format":"1080i"}
 {"channel":"Nova24TV.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Ljubljana"],"languages":["slv"],"format":"576i"}
@@ -26446,7 +26453,6 @@
 {"channel":"NovasportsStart.gr","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/GR"],"timezones":["Europe/Athens"],"languages":["ell","eng"],"format":"1080i"}
 {"channel":"NovaTV.ba","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BA"],"timezones":["Europe/Sarajevo"],"languages":["bos"],"format":"576i"}
 {"channel":"NovaTV.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Zagreb"],"languages":["hrv"],"format":"576i"}
-{"channel":"NovaTV.me","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/ME"],"timezones":["Europe/Podgorica"],"languages":["cnr"],"format":"1080i"}
 {"channel":"NovaTV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"NovaTVAgrotour.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"NovaTVBrasov.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
@@ -30631,6 +30637,7 @@
 {"channel":"QUBETimeWeather.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"QubTV.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"Qudaah.jo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/JO"],"timezones":["Asia/Amman"],"languages":["ara"],"format":"576i"}
+{"channel":"QudsunaTV.ps","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/PS","r/ARAB","c/JO","c/SY","c/DZ"],"timezones":["Asia/Jerusalem"],"languages":["arb"],"format":"1080i"}
 {"channel":"QueensUnitedTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USMIA"],"timezones":["America/New_York"],"languages":["por"],"format":"480i"}
 {"channel":"QueretaroFemenilTV.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
 {"channel":"Quest.uk","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"1080i"}
@@ -30975,6 +30982,7 @@
 {"channel":"RadioCimaTV.ec","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/EC"],"timezones":["America/Guayaquil"],"languages":["spa"],"format":"480i"}
 {"channel":"RadioCiudad989FMTV.py","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PY"],"timezones":["America/Asuncion"],"languages":["spa"],"format":"576i"}
 {"channel":"RadioClasicaTV.bo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BO"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"576i"}
+{"channel":"RADIOCLUBDJTV.pl","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"1080p"}
 {"channel":"RadioClubedeLamego.pt","id":"Main","name":"Main","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"720p"}
 {"channel":"RadioClubeTV.pt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"576i"}
 {"channel":"RadioCoatanCanal21.gt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GT"],"timezones":["America/Guatemala"],"languages":["spa"],"format":"480i"}
@@ -31672,6 +31680,7 @@
 {"channel":"RedeGenesis.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"RedeGlobo.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"RedeGospel.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
+{"channel":"RedeImpactoGospelTV.br","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["r/WW"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"720p"}
 {"channel":"RedeInternacionaldeTV.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"RedeMais.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"RedeManchete.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
@@ -32656,6 +32665,7 @@
 {"channel":"RTLZ.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"RTLZwee.lu","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/LU"],"timezones":["Europe/Luxembourg"],"languages":["ltz","fra","deu"],"format":"576i"}
 {"channel":"RTLZwei.de","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"1080i"}
+{"channel":"RTLZwei.de","id":"Schweiz","name":"Schweiz","alt_names":[],"is_main":false,"broadcast_area":["c/CH"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
 {"channel":"RTLZwei.de","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
 {"channel":"RTMAManika.cd","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CD"],"timezones":["Africa/Lubumbashi"],"languages":["fra"],"format":"576i"}
 {"channel":"RTMASEAN.my","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MY","c/ID","c/SG","c/BN","c/PH","c/TH","c/MM","c/KH","c/LA","c/VN"],"timezones":["Asia/Kuala_Lumpur"],"languages":["eng"],"format":"576i"}
@@ -37599,9 +37609,11 @@
 {"channel":"TeleAmbienteTV.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"TeleAmiga.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
 {"channel":"TeleAmistad.ni","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NI"],"timezones":["America/Managua"],"languages":["spa"],"format":"480i"}
+{"channel":"TeleAndes.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"576i"}
 {"channel":"TeleAndinaCanal23.ec","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/EC"],"timezones":["America/Guayaquil"],"languages":["spa"],"format":"480i"}
 {"channel":"Teleangol.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"576i"}
 {"channel":"TeleangolRadio.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"576i"}
+{"channel":"TeleAntillas.do","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"1080p"}
 {"channel":"TeleAntillas.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"TeleAntilles.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/FR","c/GP","c/MQ","c/GF","c/HT"],"timezones":["Europe/Paris"],"languages":["fra"],"format":"576i"}
 {"channel":"Teleantioquia.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
@@ -37658,6 +37670,7 @@
 {"channel":"TeleCauquenes.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"480i"}
 {"channel":"Teleceiba.hn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HN"],"timezones":["America/Tegucigalpa"],"languages":["spa"],"format":"480i"}
 {"channel":"Telecentro.bo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BO"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"576i"}
+{"channel":"Telecentro.do","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"1080p"}
 {"channel":"Telecentro.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"TeleCentro.pe","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PE"],"timezones":["America/Lima"],"languages":["spa"],"format":"576i"}
 {"channel":"TeleCentro.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
@@ -38088,6 +38101,7 @@
 {"channel":"TeleSignal.ht","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HT"],"timezones":["America/Port-au-Prince"],"languages":["fra","hat"],"format":"576i"}
 {"channel":"TelesirioWebTV.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"Telesistema.cr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CR"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"480i"}
+{"channel":"Telesistema11.do","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"1080p"}
 {"channel":"Telesistema11.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"Telesistema3y7.hn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HN"],"timezones":["America/Tegucigalpa"],"languages":["spa"],"format":"480i"}
 {"channel":"TeleSocopo.ve","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/VE"],"timezones":["America/Caracas"],"languages":["spa"],"format":"480i"}

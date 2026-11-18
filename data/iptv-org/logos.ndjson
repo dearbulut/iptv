@@ -301,6 +301,7 @@
 {"channel":"5GPs.us","feed":null,"in_use":true,"tags":[],"width":480,"height":186,"format":"PNG","url":"https://i.imgur.com/xrK2M3o.png"}
 {"channel":"5Kanal.kz","feed":null,"in_use":true,"tags":[],"width":180,"height":40,"format":"PNG","url":"https://i.imgur.com/SyXVJdM.png"}
 {"channel":"5Live.il","feed":null,"in_use":true,"tags":[],"width":122,"height":60,"format":"PNG","url":"https://i.imgur.com/0yr3yvd.png"}
+{"channel":"5Max.il","feed":null,"in_use":true,"tags":[],"width":200,"height":200,"format":"PNG","url":"https://i.postimg.cc/XNmh01pH/5sport-max-il.png"}
 {"channel":"5minuttishiny.ru","feed":null,"in_use":true,"tags":[],"width":940,"height":493,"format":"JPEG","url":"https://cdn2-static.ntv.ru/home/promo/24740/5minut_live.jpg"}
 {"channel":"5onPlutoTV.de","feed":null,"in_use":true,"tags":[],"width":576,"height":288,"format":"PNG","url":"https://images.pluto.tv/channels/623c492627cb540007ca55c7/colorLogoPNG.png"}
 {"channel":"5onPlutoTV.de","feed":null,"in_use":true,"tags":[],"width":576,"height":288,"format":"SVG","url":"https://images.pluto.tv/channels/623c492627cb540007ca55c7/colorLogoSVG.svg"}
@@ -5156,6 +5157,7 @@
 {"channel":"CanalGambsheim.fr","feed":null,"in_use":true,"tags":[],"width":198,"height":100,"format":"PNG","url":"https://i.imgur.com/c7zxCgu.png"}
 {"channel":"CanalGov.br","feed":null,"in_use":true,"tags":[],"width":320,"height":147,"format":"PNG","url":"https://i.imgur.com/rHPY0Yv.png"}
 {"channel":"CanalGuanevision.co","feed":null,"in_use":true,"tags":[],"width":400,"height":400,"format":"JPEG","url":"https://i.imgur.com/TMCQilV.jpeg"}
+{"channel":"CanalGuapa.py","feed":null,"in_use":true,"tags":[],"width":2088,"height":2066,"format":"PNG","url":"https://canalguapa.tv/guapa-isologo.png"}
 {"channel":"CanalGuiaABE.bo","feed":null,"in_use":true,"tags":[],"width":512,"height":294,"format":"PNG","url":"https://i.imgur.com/NAvMyZK.png"}
 {"channel":"CanalHabana.cu","feed":null,"in_use":true,"tags":[],"width":512,"height":288,"format":"PNG","url":"https://i.imgur.com/0EUc52w.png"}
 {"channel":"CanalHollywood.es","feed":null,"in_use":true,"tags":[],"width":960,"height":474,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/HWD_logo.svg/960px-HWD_logo.svg.png"}
@@ -5467,6 +5469,7 @@
 {"channel":"CanalViva.br","feed":null,"in_use":true,"tags":[],"width":186,"height":187,"format":"PNG","url":"https://i.imgur.com/uNHu40M.png"}
 {"channel":"CanalWomtv.co","feed":null,"in_use":true,"tags":[],"width":512,"height":287,"format":"JPEG","url":"https://i.imgur.com/Nr4muMP.jpeg"}
 {"channel":"CanalWoyla.cm","feed":null,"in_use":true,"tags":[],"width":512,"height":505,"format":"JPEG","url":"https://i.imgur.com/VZcdWCf.jpeg"}
+{"channel":"CanalX2.do","feed":null,"in_use":true,"tags":[],"width":1254,"height":1254,"format":"PNG","url":"https://i.imgur.com/NHxIu1p.png"}
 {"channel":"CanalXFN.ar","feed":null,"in_use":true,"tags":[],"width":248,"height":152,"format":"PNG","url":"https://i.imgur.com/Hw37hNs.png"}
 {"channel":"CanalYesTV.ni","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/H1Pxyd1.jpg"}
 {"channel":"CanalZ.be","feed":null,"in_use":true,"tags":[],"width":512,"height":181,"format":"PNG","url":"https://i.imgur.com/qtiGLzZ.png"}
@@ -16562,6 +16565,7 @@
 {"channel":"M6.fr","feed":null,"in_use":true,"tags":[],"width":512,"height":372,"format":"PNG","url":"https://i.imgur.com/7GVp3fW.png"}
 {"channel":"M6.fr","feed":"Suisse","in_use":true,"tags":[],"width":1280,"height":961,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_M6_%282020%2C_fond_clair%29.svg/1280px-Logo_M6_%282020%2C_fond_clair%29.svg.png"}
 {"channel":"M6International.fr","feed":null,"in_use":true,"tags":[],"width":512,"height":339,"format":"PNG","url":"https://i.imgur.com/67KIo8a.png"}
+{"channel":"M6Music.fr","feed":null,"in_use":true,"tags":[],"width":1000,"height":285,"format":"SVG","url":"https://static.wikia.nocookie.net/logopedia/images/6/68/M6music-95cde0867d.svg/revision/latest?cb=20200412210630"}
 {"channel":"M7TV.ml","feed":null,"in_use":true,"tags":[],"width":451,"height":178,"format":"PNG","url":"https://i.imgur.com/lIX7VOH.png"}
 {"channel":"M95TelevisionMarbella.es","feed":null,"in_use":true,"tags":[],"width":275,"height":320,"format":"PNG","url":"https://i.imgur.com/RzAkP1V.png"}
 {"channel":"M9TVRomania.ro","feed":null,"in_use":true,"tags":[],"width":218,"height":180,"format":"PNG","url":"https://i.imgur.com/hRBNoVD.png"}
@@ -17188,6 +17192,7 @@
 {"channel":"MediaTV.it","feed":null,"in_use":true,"tags":[],"width":160,"height":160,"format":"JPEG","url":"https://i.ibb.co/sH68dFn/300071550-488761809922583-110799127788713907-n.jpg"}
 {"channel":"MediaTV.md","feed":null,"in_use":true,"tags":[],"width":512,"height":164,"format":"PNG","url":"https://i.imgur.com/OZyIXwz.png"}
 {"channel":"MediaTV.pe","feed":null,"in_use":true,"tags":[],"width":512,"height":502,"format":"PNG","url":"https://i.imgur.com/BAaR5T5.png"}
+{"channel":"MediavisionTV.in","feed":null,"in_use":true,"tags":[],"width":224,"height":224,"format":"PNG","url":"https://iptv.mediavisionlive.in/image/Media-Vision-TV.png"}
 {"channel":"MediBizTV.in","feed":null,"in_use":true,"tags":[],"width":1698,"height":1544,"format":"PNG","url":"https://www.medibiztv.com/assets/logo-E76jcvP9.png"}
 {"channel":"MediCOOLTV.ro","feed":null,"in_use":true,"tags":[],"width":512,"height":229,"format":"PNG","url":"https://i.imgur.com/Xe7x1k2.png"}
 {"channel":"MedinaBayeTV.sn","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/AysJqI4.jpeg"}
@@ -20063,6 +20068,8 @@
 {"channel":"Nova.bg","feed":null,"in_use":true,"tags":[],"width":511,"height":512,"format":"PNG","url":"https://i.imgur.com/WCsPSLX.png"}
 {"channel":"Nova.bg","feed":null,"in_use":true,"tags":[],"width":126,"height":33,"format":"SVG","url":"https://static.wikia.nocookie.net/logopedia/images/4/4d/Nova_logo_re.svg"}
 {"channel":"Nova.es","feed":null,"in_use":true,"tags":[],"width":576,"height":156,"format":"PNG","url":"https://i.imgur.com/Vx1F4o5.png"}
+{"channel":"Nova.me","feed":null,"in_use":false,"tags":[],"width":512,"height":512,"format":"PNG","url":"https://i.imgur.com/VOISNZc.png"}
+{"channel":"Nova.me","feed":null,"in_use":true,"tags":[],"width":418,"height":418,"format":"PNG","url":"https://novam.tv/wp-content/uploads/2022/12/Nova-M-2022-NEW-LOGO.png"}
 {"channel":"Nova.rs","feed":null,"in_use":true,"tags":[],"width":161,"height":81,"format":"PNG","url":"https://i.imgur.com/sU8UPPY.png"}
 {"channel":"Nova24TV.si","feed":null,"in_use":true,"tags":[],"width":300,"height":56,"format":"PNG","url":"https://i.imgur.com/z1HBwin.png"}
 {"channel":"Nova24TV2.si","feed":null,"in_use":true,"tags":[],"width":512,"height":93,"format":"PNG","url":"https://i.imgur.com/mTp7faz.png"}
@@ -20109,8 +20116,6 @@
 {"channel":"NovasportsStart.gr","feed":null,"in_use":true,"tags":[],"width":508,"height":192,"format":"PNG","url":"https://i.imgur.com/22CPcwO.png"}
 {"channel":"NovaTV.ba","feed":null,"in_use":true,"tags":[],"width":307,"height":307,"format":"PNG","url":"https://i.imgur.com/wTZxn8F.png"}
 {"channel":"NovaTV.hr","feed":null,"in_use":true,"tags":[],"width":960,"height":960,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nova_TV_Croatia_logo.png/960px-Nova_TV_Croatia_logo.png"}
-{"channel":"NovaTV.me","feed":null,"in_use":false,"tags":[],"width":512,"height":512,"format":"PNG","url":"https://i.imgur.com/VOISNZc.png"}
-{"channel":"NovaTV.me","feed":null,"in_use":true,"tags":[],"width":418,"height":418,"format":"PNG","url":"https://novam.tv/wp-content/uploads/2022/12/Nova-M-2022-NEW-LOGO.png"}
 {"channel":"NovaTV.rs","feed":null,"in_use":true,"tags":[],"width":433,"height":144,"format":"PNG","url":"https://i.imgur.com/hA9O8Bv.png"}
 {"channel":"NovaTVAgrotour.br","feed":null,"in_use":true,"tags":[],"width":320,"height":180,"format":"PNG","url":"https://i.imgur.com/cgN2hfm.png"}
 {"channel":"NovaTVBrasov.ro","feed":null,"in_use":true,"tags":[],"width":512,"height":204,"format":"PNG","url":"https://i.imgur.com/33Vn0Ij.png"}
@@ -23505,6 +23510,7 @@
 {"channel":"QUBETimeWeather.us","feed":null,"in_use":true,"tags":[],"width":512,"height":352,"format":"PNG","url":"https://i.imgur.com/gCjaY0F.png"}
 {"channel":"QubTV.ro","feed":null,"in_use":true,"tags":[],"width":325,"height":346,"format":"PNG","url":"https://i.imgur.com/GvyF2Wh.png"}
 {"channel":"Qudaah.jo","feed":null,"in_use":true,"tags":[],"width":131,"height":57,"format":"PNG","url":"https://i.imgur.com/Q7zcUyN.png"}
+{"channel":"QudsunaTV.ps","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":null,"url":"https://drive.google.com/file/d/1LEl-AhX5HZmP05kfBk4fwSmtJyPjVT3x/view?usp=drive_link"}
 {"channel":"QueensUnitedTV.us","feed":null,"in_use":true,"tags":[],"width":512,"height":248,"format":"PNG","url":"https://i.imgur.com/Ta2Ohor.png"}
 {"channel":"Quest.uk","feed":null,"in_use":true,"tags":[],"width":512,"height":122,"format":"PNG","url":"https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb6761.png"}
 {"channel":"Quest.us","feed":"KAJLLD","in_use":true,"tags":[],"width":496,"height":150,"format":"PNG","url":"https://i.imgur.com/6AYDwSi.png"}
@@ -23650,6 +23656,7 @@
 {"channel":"RadioCimaTV.ec","feed":null,"in_use":true,"tags":[],"width":512,"height":288,"format":"JPEG","url":"https://i.imgur.com/5uJZRhN.jpg"}
 {"channel":"RadioCiudad989FMTV.py","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/LaSLZwR.jpg"}
 {"channel":"RadioClasicaTV.bo","feed":null,"in_use":true,"tags":[],"width":304,"height":149,"format":"PNG","url":"https://radioclasicapotosi.com/players/nexoplayer/assets/logo.png"}
+{"channel":"RADIOCLUBDJTV.pl","feed":null,"in_use":true,"tags":[],"width":1080,"height":1080,"format":"JPEG","url":"https://radioclubdj.pro/studio/logo.png"}
 {"channel":"RadioClubedeLamego.pt","feed":null,"in_use":true,"tags":[],"width":900,"height":862,"format":"PNG","url":"https://www.rclamego.com/upload/design/5f68f7d3962619.43822648.png"}
 {"channel":"RadioClubeTV.pt","feed":null,"in_use":true,"tags":[],"width":512,"height":246,"format":"PNG","url":"https://i.imgur.com/Rr5MoMX.png"}
 {"channel":"RadioCoatanCanal21.gt","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"PNG","url":"https://i.imgur.com/569xc5o.png"}
@@ -24284,6 +24291,7 @@
 {"channel":"RedeGenesis.br","feed":null,"in_use":true,"tags":[],"width":180,"height":108,"format":"PNG","url":"https://i.imgur.com/OIkpWMl.png"}
 {"channel":"RedeGlobo.br","feed":null,"in_use":true,"tags":[],"width":232,"height":232,"format":"PNG","url":"https://i.imgur.com/O02TF2r.png"}
 {"channel":"RedeGospel.br","feed":null,"in_use":true,"tags":[],"width":256,"height":244,"format":"PNG","url":"https://i.imgur.com/mttSwgO.png"}
+{"channel":"RedeImpactoGospelTV.br","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"PNG","url":"https://redeimpactogospel.com/assets/logo-512.png"}
 {"channel":"RedeInternacionaldeTV.br","feed":null,"in_use":true,"tags":[],"width":186,"height":110,"format":"PNG","url":"https://i.imgur.com/i2psU4x.png"}
 {"channel":"RedeMais.br","feed":null,"in_use":true,"tags":[],"width":163,"height":196,"format":"PNG","url":"https://i.imgur.com/JSiZG2B.png"}
 {"channel":"RedeManchete.br","feed":null,"in_use":true,"tags":[],"width":960,"height":705,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Manchete_M_logo.svg/960px-Manchete_M_logo.svg.png"}
@@ -29156,6 +29164,7 @@
 {"channel":"TeleAmbienteTV.it","feed":null,"in_use":true,"tags":[],"width":128,"height":113,"format":"PNG","url":"https://i.imgur.com/c7w7DRL.png"}
 {"channel":"TeleAmiga.co","feed":null,"in_use":true,"tags":[],"width":184,"height":88,"format":"PNG","url":"https://i.imgur.com/gBZFZNv.png"}
 {"channel":"TeleAmistad.ni","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/PvbEeCo.jpeg"}
+{"channel":"TeleAndes.co","feed":null,"in_use":true,"tags":[],"width":290,"height":65,"format":"PNG","url":"https://i.imgur.com/0kZrwD3.png"}
 {"channel":"TeleAndinaCanal23.ec","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":"PNG","url":"https://pbs.twimg.com/profile_images/3662916076/2f22c891820771851ac056703bb037c3_400x400.png"}
 {"channel":"Teleangol.cl","feed":null,"in_use":true,"tags":[],"width":250,"height":250,"format":"PNG","url":"https://i.imgur.com/nhPFGs8.png"}
 {"channel":"TeleangolRadio.cl","feed":null,"in_use":true,"tags":[],"width":250,"height":250,"format":"PNG","url":"https://i.imgur.com/nhPFGs8.png"}

@@ -27,4 +27,5 @@
 {"id":"sports","name":"Sports","description":"Programming is sports"}
 {"id":"travel","name":"Travel","description":"Programming is travel related"}
 {"id":"weather","name":"Weather","description":"Programming is focused on weather"}
+{"id":"woman","name":"Woman","description":"Programming for specifically for a female audience"}
 {"id":"xxx","name":"XXX","description":"Programming is adult oriented and x-rated"}
