@@ -8528,25 +8528,25 @@
 {"channel":"CineStar1Bulgaria.bg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BG"],"timezones":["Europe/Sofia"],"languages":["bul"],"format":"576i"}
 {"channel":"CineStarActionBulgaria.bg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BG"],"timezones":["Europe/Sofia"],"languages":["bul"],"format":"576i"}
 {"channel":"CineStarTV1.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
-{"channel":"CineStarTV1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTV1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTV1.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineStarTV2.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["srp","hrv"],"format":"576i"}
-{"channel":"CineStarTV2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTV2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTV2.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineStarTVAction.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
-{"channel":"CineStarTVAction.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTVAction.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTVAction.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineStarTVComedy.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
-{"channel":"CineStarTVComedy.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTVComedy.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTVComedy.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineStarTVFantasy.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["hrv","srp"],"format":"576i"}
-{"channel":"CineStarTVFantasy.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTVFantasy.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTVFantasy.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineStarTVPremiere1.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["srp","hrv"],"format":"576i"}
-{"channel":"CineStarTVPremiere1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTVPremiere1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTVPremiere1.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineStarTVPremiere2.hr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HR"],"timezones":["Europe/Berlin"],"languages":["srp","hrv"],"format":"576i"}
-{"channel":"CineStarTVPremiere2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Berlin"],"languages":["hrv"],"format":"576i"}
+{"channel":"CineStarTVPremiere2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"CineStarTVPremiere2.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Berlin"],"languages":["slv","eng"],"format":"576i"}
 {"channel":"CineSureno.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["spa"],"format":"480i"}
 {"channel":"CinesVerdi.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
@@ -13137,7 +13137,7 @@
 {"channel":"EuronewsPortuguese.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Paris"],"languages":["por"],"format":"576i"}
 {"channel":"EuronewsRomania.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Paris"],"languages":["ron"],"format":"576i"}
 {"channel":"EuronewsRussian.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Paris"],"languages":["rus"],"format":"576i"}
-{"channel":"EuronewsSerbia.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Paris"],"languages":["srp"],"format":"576i"}
+{"channel":"EuronewsSerbia.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"EuronewsSpanish.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/AMER","r/EUR"],"timezones":["Europe/Paris"],"languages":["spa"],"format":"576i"}
 {"channel":"EuronewsTurkish.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
 {"channel":"EuropaEuropa.ar","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AR"],"timezones":["America/Argentina/Buenos_Aires"],"languages":["spa","eng"],"format":"576i"}
@@ -15641,6 +15641,7 @@
 {"channel":"GranCanariaTV.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/ESLPG"],"timezones":["Atlantic/Canary"],"languages":["spa"],"format":"576i"}
 {"channel":"GranCine.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["spa"],"format":"480i"}
 {"channel":"Grand.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
+{"channel":"Grand2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS","c/BA","c/ME"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"GrandCinema.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IR"],"timezones":["Europe/Istanbul"],"languages":["fas"],"format":"576i"}
 {"channel":"GrandeBolly.ng","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NG"],"timezones":["Africa/Lagos"],"languages":["eng"],"format":"576i"}
 {"channel":"GrandeGospel.ng","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NG"],"timezones":["Africa/Lagos"],"languages":["eng"],"format":"576i"}
@@ -15649,6 +15650,7 @@
 {"channel":"GrandeTV.ve","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/VE-K"],"timezones":["America/Caracas"],"languages":["spa"],"format":"576i"}
 {"channel":"GrandGeneveTV.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CH","c/FR"],"timezones":["Europe/Paris"],"languages":["fra"],"format":"576i"}
 {"channel":"GrandIslandTelevision.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USGRI"],"timezones":["America/Chicago"],"languages":["eng"],"format":"480i"}
+{"channel":"GrandNostalgija.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS","c/BA","c/ME"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"GrandPrairieTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USGDP"],"timezones":["America/Edmonton"],"languages":["eng"],"format":"480i"}
 {"channel":"GranducatoTV.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"GrandYoffTV.sn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SN"],"timezones":["Africa/Dakar"],"languages":["fra"],"format":"576i"}
@@ -19586,7 +19588,7 @@
 {"channel":"Katong.cn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"576i"}
 {"channel":"KatueteFM.py","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PY"],"timezones":["America/Asuncion"],"languages":["spa"],"format":"576i"}
 {"channel":"Katun24.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/RU-ALT"],"timezones":["Asia/Barnaul"],"languages":["rus"],"format":"576i"}
-{"channel":"KATV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"KATV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"Katyusha.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus","zho"],"format":"576i"}
 {"channel":"KaufBeiTV.de","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
 {"channel":"KaumudyTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"576i"}
@@ -25998,7 +26000,7 @@
 {"channel":"Nickelodeon.pt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"576i"}
 {"channel":"Nickelodeon.ro","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["eng"],"format":"1080i"}
 {"channel":"Nickelodeon.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["America/Toronto"],"languages":["ron"],"format":"576i"}
-{"channel":"Nickelodeon.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS","c/ME","c/MK","c/BA"],"timezones":["America/Toronto"],"languages":["eng"],"format":"576i"}
+{"channel":"Nickelodeon.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS","c/ME","c/MK","c/BA"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"Nickelodeon.ru","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080i"}
 {"channel":"Nickelodeon.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus","eng"],"format":"576i"}
 {"channel":"Nickelodeon.se","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SE"],"timezones":["Europe/Madrid"],"languages":["swe"],"format":"576i"}
@@ -26061,7 +26063,7 @@
 {"channel":"NickJr.pl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"576i"}
 {"channel":"NickJr.pt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"576i"}
 {"channel":"NickJr.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["eng"],"format":"576i"}
-{"channel":"NickJr.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS","c/ME","c/BA","c/MK"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"NickJr.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS","c/ME","c/BA","c/MK"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"NickJr.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/CIS"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"NickJr.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Ljubljana"],"languages":["eng"],"format":"576i"}
 {"channel":"NickJr.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
@@ -26721,7 +26723,7 @@
 {"channel":"NTV.mv","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MV"],"timezones":["Indian/Maldives"],"languages":["div"],"format":"576i"}
 {"channel":"NTV.na","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NA"],"timezones":["Africa/Windhoek"],"languages":["eng","afr"],"format":"576i"}
 {"channel":"NTV.ni","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NI"],"timezones":["America/Managua"],"languages":["spa"],"format":"576i"}
-{"channel":"NTV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"NTV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"NTV.ru","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080i"}
 {"channel":"NTV.ru","id":"Plus1","name":"+1","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"NTV.ru","id":"Plus2","name":"+2","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
@@ -32779,7 +32781,7 @@
 {"channel":"RTV.mg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MG"],"timezones":["Indian/Antananarivo"],"languages":["fra","mlg"],"format":"576i"}
 {"channel":"RTV.sr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SR"],"timezones":["America/Paramaribo"],"languages":["nld"],"format":"480i"}
 {"channel":"RTV1.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
-{"channel":"RTV1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp","swe"],"format":"576i"}
+{"channel":"RTV1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"RTV1Amstelveen.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"RTV2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"RTV21.xk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/XK"],"timezones":["Europe/Belgrade"],"languages":["sqi"],"format":"576i"}
@@ -32799,7 +32801,7 @@
 {"channel":"RTVBap.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"RTVBesa.xk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/XK"],"timezones":["Europe/Belgrade"],"languages":["sqi"],"format":"576i"}
 {"channel":"RTVBhakthi.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"576i"}
-{"channel":"RTVBosphorus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"RTVBosphorus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"RTVBPK.ba","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BA"],"timezones":["Europe/Sarajevo"],"languages":["bos"],"format":"576i"}
 {"channel":"RTVBranicevo.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"RTVBudva.me","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/ME-05"],"timezones":["Europe/Podgorica"],"languages":["cnr"],"format":"576i"}
@@ -32835,7 +32837,7 @@
 {"channel":"RTVEume.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa","glg"],"format":"576i"}
 {"channel":"RTVFocusTV.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"RTVFontana.xk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/XK"],"timezones":["Europe/Belgrade"],"languages":["sqi"],"format":"576i"}
-{"channel":"RTVGEM.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"RTVGEM.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"RTVGlasDrine.ba","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BA"],"timezones":["Europe/Sarajevo"],"languages":["bos"],"format":"576i"}
 {"channel":"RTVGO.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"RTVH.cd","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CD"],"timezones":["Africa/Kinshasa"],"languages":["fra"],"format":"576i"}
@@ -34193,7 +34195,7 @@
 {"channel":"ShoppingLive.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"ShoppingNT.kr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KR"],"timezones":["Asia/Seoul"],"languages":["kor"],"format":"480i"}
 {"channel":"ShoppingQueen.de","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
-{"channel":"ShoppsterTV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["slv"],"format":"576i"}
+{"channel":"ShoppsterTV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"ShopShow.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"Shoptel.ba","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BA"],"timezones":["Europe/Sarajevo"],"languages":["bos"],"format":"576i"}
 {"channel":"Shoptime.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
@@ -35872,6 +35874,7 @@
 {"channel":"StarLife.in","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["eng","hin","tam","ben","mar"],"format":"1080i"}
 {"channel":"StarLife.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["eng","hin","tam","ben","mar"],"format":"576i"}
 {"channel":"StarLife.pt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"576i"}
+{"channel":"StarLife.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"StarLife.si","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/SI"],"timezones":["Europe/Ljubljana"],"languages":["slv"],"format":"576i"}
 {"channel":"StarLife.si","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SI"],"timezones":["Europe/Ljubljana"],"languages":["slv"],"format":"576i"}
 {"channel":"StarLifeAfrica.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/AFR"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"576i"}
@@ -36859,6 +36862,7 @@
 {"channel":"SuperSportVariety4.za","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ZA"],"timezones":["Africa/Johannesburg"],"languages":["eng"],"format":"576i"}
 {"channel":"SuperStar.us","id":"Italy","name":"Italy","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"SUPERSTAR2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
+{"channel":"SUPERSTAR3.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"SUPERSTARTV.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"SuperTennis.it","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"1080i"}
 {"channel":"SuperTennis.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
@@ -40764,7 +40768,7 @@
 {"channel":"TVBNO.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVBoin.me","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ME"],"timezones":["Europe/Podgorica"],"languages":["sqi","cnr"],"format":"576i"}
 {"channel":"TVBoqueirao.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/BR-CE"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
-{"channel":"TVBor.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Africa/Juba"],"languages":["srp"],"format":"576i"}
+{"channel":"TVBor.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVBozsikeHamburgHD.de","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["r/WW"],"timezones":["Europe/Berlin"],"languages":["hun","deu"],"format":"1080p"}
 {"channel":"TVBrasil.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVBrasil2.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
@@ -40782,6 +40786,7 @@
 {"channel":"TVBRICSRussian.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"TVBRICSSpanish.es","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"1080p"}
 {"channel":"TVBrno1.cz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CZ"],"timezones":["Europe/Prague"],"languages":["ces"],"format":"576i"}
+{"channel":"TVBrus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVBrusque.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVBS.tw","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TW"],"timezones":["Asia/Taipei"],"languages":["zho"],"format":"480i"}
 {"channel":"TVBSAsia.tw","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TW"],"timezones":["Asia/Taipei"],"languages":["zho"],"format":"480i"}
@@ -41104,6 +41109,7 @@
 {"channel":"TVGMusigal.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["glg"],"format":"576i"}
 {"channel":"TVGoianiaBand.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVGolfoUraba.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"576i"}
+{"channel":"TVGolija.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVGPequerrechos.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["glg"],"format":"576i"}
 {"channel":"TVGracia.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
 {"channel":"TVGramado.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/BR-RS"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
@@ -41156,7 +41162,7 @@
 {"channel":"TVIndependencia.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
 {"channel":"TVInes.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVinet.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"480i"}
-{"channel":"TVInfo24.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"TVInfo24.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVInfo24plus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVInforBahia.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/BR-BA"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVIngolstadt.de","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
@@ -41264,7 +41270,7 @@
 {"channel":"TVLatinasatBrasil.br","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/BR","c/US","r/EUR","c/AR"],"timezones":["America/Fortaleza"],"languages":["por"],"format":"720p"}
 {"channel":"TVLav.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVLaVerdad.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["spa"],"format":"480i"}
-{"channel":"TVLavPlus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"TVLavPlus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVLegislativa.cr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CR"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"480i"}
 {"channel":"TVLegislativa.ec","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/EC"],"timezones":["America/Guayaquil"],"languages":["spa"],"format":"480i"}
 {"channel":"TVLeondeJuda.sv","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SV"],"timezones":["America/El_Salvador"],"languages":["spa"],"format":"480i"}
@@ -41596,7 +41602,6 @@
 {"channel":"TVParras.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
 {"channel":"TVPartizan.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVPassoFundo.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/BRPFO"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
-{"channel":"TVPCanal.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVPCuliacan.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
 {"channel":"TVPDokument.pl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"576i"}
 {"channel":"TVPE.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
@@ -41671,6 +41676,7 @@
 {"channel":"TVPPolonia.pl","id":"USA","name":"USA","alt_names":[],"is_main":false,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["pol"],"format":"1080p"}
 {"channel":"TVPrato.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"TVPrecabura.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/BR-CE"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
+{"channel":"TVPresevo.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["sqi"],"format":"576i"}
 {"channel":"TVPriboj.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVPrima.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVPrizreni.xk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/XK"],"timezones":["Europe/Belgrade"],"languages":["sqi"],"format":"576i"}
@@ -41862,7 +41868,7 @@
 {"channel":"TVSeteLagoas.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/BR-MG"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVSeventeen.lb","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/LB"],"timezones":["Asia/Beirut"],"languages":["ara"],"format":"576i"}
 {"channel":"TVSeverka.sk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SK"],"timezones":["Europe/Bratislava"],"languages":["slk"],"format":"576i"}
-{"channel":"TVSezam.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Africa/Juba"],"languages":["srp"],"format":"576i"}
+{"channel":"TVSezam.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVSFamilyChannel.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"TVSFilmNoirNetwork.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"TVSFlashbackNetwork.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
@@ -42063,7 +42069,7 @@
 {"channel":"TVValkenburg.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"TVVanguardaSaoJosedosCampos.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVVanguardaTaubate.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
-{"channel":"TVVAPlus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"TVVAPlus.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVVarezaGrande.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Cuiaba"],"languages":["por"],"format":"480i"}
 {"channel":"TVVarzish.tj","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TJ"],"timezones":["Asia/Dushanbe"],"languages":["tgk"],"format":"576i"}
 {"channel":"TVVega.sk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SK"],"timezones":["Europe/Bratislava"],"languages":["slk"],"format":"576i"}
@@ -42092,6 +42098,7 @@
 {"channel":"TVVitoria.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
 {"channel":"TVVitoria.mz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MZ"],"timezones":["Africa/Maputo"],"languages":["por"],"format":"720p"}
 {"channel":"TVVlaanderen.be","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BE"],"timezones":["Europe/Brussels"],"languages":["nld"],"format":"576i"}
+{"channel":"TVVlasotince.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVVraca.bg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BG"],"timezones":["Europe/Sofia"],"languages":["bul"],"format":"576i"}
 {"channel":"TVVranje.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"TVVrnjackaBanja.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
@@ -45123,10 +45130,10 @@
 {"channel":"ZabbChannel.th","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TH"],"timezones":["Asia/Bangkok"],"languages":["tha"],"format":"576i"}
 {"channel":"ZachodniopomorskaTelewizja.pl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"576i"}
 {"channel":"ZACUTV.rw","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RW"],"timezones":["Africa/Kigali"],"languages":["kin"],"format":"576i"}
-{"channel":"ZadrugaLive1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
-{"channel":"ZadrugaLive2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
-{"channel":"ZadrugaLive3.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
-{"channel":"ZadrugaLive4.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["eng"],"format":"576i"}
+{"channel":"ZadrugaLive1.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
+{"channel":"ZadrugaLive2.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
+{"channel":"ZadrugaLive3.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
+{"channel":"ZadrugaLive4.rs","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RS"],"timezones":["Europe/Belgrade"],"languages":["srp"],"format":"576i"}
 {"channel":"ZadTV.sa","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SA"],"timezones":["Asia/Riyadh"],"languages":["ara"],"format":"576i"}
 {"channel":"ZafraTV.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/ESZAF"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
 {"channel":"ZagorodnayaZhizn.ru","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080i"}

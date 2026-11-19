@@ -66244,7 +66244,7 @@
 {"channel":null,"feed":null,"site":"m.tv.sms.cz","site_id":"TV+Thathi+Recordtv","site_name":"TV Thathi Recordtv","lang":"cs","sources":[]}
 {"channel":"TVTrwam.pl","feed":"SD","site":"m.tv.sms.cz","site_id":"TV+Trwam","site_name":"TV Trwam","lang":"cs","sources":[]}
 {"channel":"TVC.pl","feed":"SD","site":"m.tv.sms.cz","site_id":"TVC","site_name":"TVC","lang":"cs","sources":[]}
-{"channel":"TVCGMNE.me","feed":"SD","site":"m.tv.sms.cz","site_id":"TVCG+SAT","site_name":"TVCG SAT","lang":"cs","sources":[]}
+{"channel":"TVCGMNE.me","feed":"HD","site":"m.tv.sms.cz","site_id":"TVCG+SAT","site_name":"TVCG SAT","lang":"cs","sources":[]}
 {"channel":"TVEInternacionalEuropeAsia.es","feed":"SD","site":"m.tv.sms.cz","site_id":"TVE","site_name":"TVE","lang":"cs","sources":[]}
 {"channel":"TVN.pl","feed":"SD","site":"m.tv.sms.cz","site_id":"TVN","site_name":"TVN","lang":"cs","sources":[]}
 {"channel":"TVN7.pl","feed":"SD","site":"m.tv.sms.cz","site_id":"TVN7","site_name":"TVN7","lang":"cs","sources":[]}
@@ -138855,7 +138855,7 @@
 {"channel":"CubavisionInternacional.cu","feed":"SD","site":"tv.blue.ch","site_id":"2062","site_name":"Cubavisión Int.","lang":"es","sources":[]}
 {"channel":"Telecupole.it","feed":"SD","site":"tv.blue.ch","site_id":"2063","site_name":"Telecupole","lang":"it","sources":[]}
 {"channel":"RadioItaliaTV.it","feed":"SD","site":"tv.blue.ch","site_id":"2064","site_name":"Radio Italia TV","lang":"it","sources":[]}
-{"channel":"TVCGMNE.me","feed":"SD","site":"tv.blue.ch","site_id":"2065","site_name":"TVCG MNE","lang":"sr","sources":[]}
+{"channel":"TVCGMNE.me","feed":"HD","site":"tv.blue.ch","site_id":"2065","site_name":"TVCG MNE","lang":"sr","sources":[]}
 {"channel":"TVPInfo.pl","feed":"SD","site":"tv.blue.ch","site_id":"2066","site_name":"TVP Info","lang":"pl","sources":[]}
 {"channel":"RTSH24.al","feed":"SD","site":"tv.blue.ch","site_id":"2067","site_name":"RTSH 24","lang":"sq","sources":[]}
 {"channel":"HRT4.hr","feed":"SD","site":"tv.blue.ch","site_id":"2069","site_name":"HRT 4","lang":"hr","sources":[]}
@@ -139498,7 +139498,7 @@
 {"channel":"SkyCinemaThriller.de","feed":"HD","site":"tv.magenta.at","site_id":"207381032392","site_name":"Sky Cinema Thriller HD","lang":"de","sources":[]}
 {"channel":null,"feed":null,"site":"tv.magenta.at","site_id":"207381032393","site_name":"Eurosport Türkiye","lang":"de","sources":[]}
 {"channel":"DubaiTV.ae","feed":"SD","site":"tv.magenta.at","site_id":"207381032394","site_name":"Dubai TV","lang":"en","sources":[]}
-{"channel":"TVCGMNE.me","feed":"SD","site":"tv.magenta.at","site_id":"207381032397","site_name":"MNE","lang":"de","sources":[]}
+{"channel":"TVCGMNE.me","feed":"HD","site":"tv.magenta.at","site_id":"207381032397","site_name":"MNE","lang":"de","sources":[]}
 {"channel":"Eurosport1.fr","feed":"Serbia","site":"tv.magenta.at","site_id":"207381032402","site_name":"Eurosport 1 Srbija","lang":"de","sources":[]}
 {"channel":"Hayat.ba","feed":"SD","site":"tv.magenta.at","site_id":"207381032405","site_name":"Hayat","lang":"de","sources":[]}
 {"channel":"Duna.hu","feed":"SD","site":"tv.magenta.at","site_id":"207381032406","site_name":"Duna TV","lang":"hu","sources":[]}
@@ -143134,7 +143134,7 @@
 {"channel":"TV8.se","feed":"SD","site":"tv24.se","site_id":"tv8","site_name":"TV8","lang":"sv","sources":[]}
 {"channel":"TV10.se","feed":"SD","site":"tv24.se","site_id":"tv10","site_name":"TV10","lang":"sv","sources":[]}
 {"channel":"TV12.se","feed":"SD","site":"tv24.se","site_id":"tv12","site_name":"TV12","lang":"sv","sources":[]}
-{"channel":"TVCGMNE.me","feed":"SD","site":"tv24.se","site_id":"tvcg-sat","site_name":"TVCG Sat","lang":"sv","sources":[]}
+{"channel":"TVCGMNE.me","feed":"HD","site":"tv24.se","site_id":"tvcg-sat","site_name":"TVCG Sat","lang":"sv","sources":[]}
 {"channel":"TVVisjonNorway.no","feed":"SD","site":"tv24.se","site_id":"visjon-norge-hd","site_name":"Visjon Norge HD","lang":"sv","sources":[]}
 {"channel":"VFilmAction.se","feed":"SD","site":"tv24.se","site_id":"v-film-action-hd","site_name":"V Film Action HD","lang":"sv","sources":[]}
 {"channel":"VFilmFamily.se","feed":"SD","site":"tv24.se","site_id":"v-film-family","site_name":"V Film Family","lang":"sv","sources":[]}
@@ -143181,7 +143181,7 @@
 {"channel":"HRT2.hr","feed":"SD","site":"tv2go.t-2.net","site_id":"106","site_name":"HRT 2","lang":"sl","sources":[]}
 {"channel":"PinkPlus.rs","feed":"SD","site":"tv2go.t-2.net","site_id":"107","site_name":"Pink Plus","lang":"sl","sources":[]}
 {"channel":"RTSKlasika.rs","feed":"SD","site":"tv2go.t-2.net","site_id":"108","site_name":"RTS","lang":"sl","sources":[]}
-{"channel":"TVCGMNE.me","feed":"SD","site":"tv2go.t-2.net","site_id":"109","site_name":"MNE","lang":"sl","sources":[]}
+{"channel":"TVCGMNE.me","feed":"HD","site":"tv2go.t-2.net","site_id":"109","site_name":"MNE","lang":"sl","sources":[]}
 {"channel":null,"feed":null,"site":"tv2go.t-2.net","site_id":"110","site_name":"Hayat 2","lang":"sl","sources":[]}
 {"channel":null,"feed":null,"site":"tv2go.t-2.net","site_id":"122","site_name":"TV AS","lang":"sl","sources":[]}
 {"channel":"TVIDEA.si","feed":"SD","site":"tv2go.t-2.net","site_id":"123","site_name":"TV IDEA","lang":"sl","sources":[]}
@@ -168110,7 +168110,7 @@
 {"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tv-net","site_name":"TV Net","lang":"en","sources":[]}
 {"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tv-silesia","site_name":"TV Silesia","lang":"en","sources":[]}
 {"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tv-trwam","site_name":"TV Trwam","lang":"en","sources":[]}
-{"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tvcg3","site_name":"Televizija Crne Gore 3","lang":"en","sources":[]}
+{"channel":"TVCG3.me","feed":"HD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg3","site_name":"Televizija Crne Gore 3","lang":"en","sources":[]}
 {"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tvdr","site_name":"Televizija Doktor","lang":"en","sources":[]}
 {"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tvn-7","site_name":"TVN 7","lang":"en","sources":[]}
 {"channel":null,"feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#tvn-style","site_name":"TVN Style","lang":"en","sources":[]}
@@ -169605,7 +169605,7 @@
 {"channel":"NovaCinema.cz","feed":"SD","site":"tvprofil.com","site_id":"tvprogram#nova-plus-cinema","site_name":"Nova Plus Cinema","lang":"hr","sources":[]}
 {"channel":"NovaTV.ba","feed":"SD","site":"tvprofil.com","site_id":"ba/tvprogram#nova-bh","site_name":"Nova BH","lang":"hr","sources":[]}
 {"channel":"NovaTV.hr","feed":"SD","site":"tvprofil.com","site_id":"tvprogram#tv-nova","site_name":"TV NOVA Pula","lang":"hr","sources":[]}
-{"channel":"NovaTV.me","feed":"SD","site":"tvprofil.com","site_id":"me/tvprogram#nova-m","site_name":"Nova M","lang":"hr","sources":[]}
+{"channel":"Nova.me","feed":"HD","site":"tvprofil.com","site_id":"me/tvprogram#nova-m","site_name":"Nova M","lang":"hr","sources":[]}
 {"channel":"NovaWorld.hr","feed":"SD","site":"tvprofil.com","site_id":"tvprogram#nova-world","site_name":"Nova World","lang":"hr","sources":[]}
 {"channel":"NovosadskaTV.rs","feed":"SD","site":"tvprofil.com","site_id":"rs/tvprogram#novosadska-tv","site_name":"Novosadska TV","lang":"hr","sources":[]}
 {"channel":"OBN.ba","feed":"SD","site":"tvprofil.com","site_id":"al/programacioni#obn","site_name":"OBN","lang":"hr","sources":[]}
@@ -169733,9 +169733,9 @@
 {"channel":"TV2Sef.hu","feed":"SD","site":"tvprofil.com","site_id":"hu/tvmusor#tv2-sef","site_name":"TV2 Séf","lang":"hr","sources":[]}
 {"channel":"TV4.hu","feed":"SD","site":"tvprofil.com","site_id":"hu/tvmusor#tv4-hu","site_name":"TV4 HU","lang":"hr","sources":[]}
 {"channel":"TVArena.si","feed":"SD","site":"tvprofil.com","site_id":"si/tvspored#tv-arena","site_name":"TV Arena","lang":"hr","sources":[]}
-{"channel":"TVCG1.me","feed":"SD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg1","site_name":"Televizija Crne Gore 1","lang":"hr","sources":[]}
-{"channel":"TVCG2.me","feed":"SD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg2","site_name":"Televizija Crne Gore 2","lang":"hr","sources":[]}
-{"channel":"TVCGMNE.me","feed":"SD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg-sat","site_name":"Televizija Crne Gore MNE","lang":"hr","sources":[]}
+{"channel":"TVCG1.me","feed":"HD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg1","site_name":"Televizija Crne Gore 1","lang":"hr","sources":[]}
+{"channel":"TVCG2.me","feed":"HD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg2","site_name":"Televizija Crne Gore 2","lang":"hr","sources":[]}
+{"channel":"TVCGMNE.me","feed":"HD","site":"tvprofil.com","site_id":"me/tvprogram#tvcg-sat","site_name":"Televizija Crne Gore MNE","lang":"hr","sources":[]}
 {"channel":"TVGalaksija32.rs","feed":"SD","site":"tvprofil.com","site_id":"rs/tvprogram#tv-galaksija","site_name":"TV Galaksija","lang":"hr","sources":[]}
 {"channel":"TVHram.rs","feed":"SD","site":"tvprofil.com","site_id":"ba/tvprogram#tv-hram","site_name":"Телевизија Храм","lang":"hr","sources":[]}
 {"channel":"TVKCN1.rs","feed":"SD","site":"tvprofil.com","site_id":"ba/tvprogram#kopernikus","site_name":"K::CN 1 Kopernikus","lang":"hr","sources":[]}
