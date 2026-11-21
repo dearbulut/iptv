@@ -1265,6 +1265,7 @@
 {"channel":"ZeeZest.in","feed":"SD","site":"airtelxstream.in","site_id":"LIVETV_LIVETVCHANNEL_ZEE_ZEST","site_name":"Zee Zest","lang":"en","sources":[]}
 {"channel":"Zing.in","feed":"SD","site":"airtelxstream.in","site_id":"LIVETV_LIVETVCHANNEL_ZING","site_name":"Zing","lang":"en","sources":[]}
 {"channel":"Zoom.in","feed":"SD","site":"airtelxstream.in","site_id":"LIVETV_LIVETVCHANNEL_ZOOM","site_name":"Zoom","lang":"en","sources":[]}
+{"channel":"Kanal8.mk","feed":"HD","site":"alexastream.kanal8.mk","site_id":"Kanal8.mk","site_name":"Kanal 8","lang":"mk","sources":[]}
 {"channel":"AlJazeera2.qa","feed":"HD","site":"aljazeera.com","site_id":"aja#aj2","site_name":"Al Jazeera 2","lang":"ar","sources":[]}
 {"channel":"AlJazeera.qa","feed":"Arabic","site":"aljazeera.com","site_id":"aja#","site_name":"Al Jazeera Arabic","lang":"ar","sources":[]}
 {"channel":"AlJazeera.qa","feed":"English","site":"aljazeera.com","site_id":"aje#","site_name":"Al Jazeera English","lang":"en","sources":[]}
@@ -28533,7 +28534,7 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1096","site_name":"O Kanal Plus HD","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1097","site_name":"O Kanal Music HD","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1102","site_name":"IDJKids HD (BIH)","lang":"hr","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1104","site_name":"Grand International HD (BIH)","lang":"hr","sources":[]}
+{"channel":"Grand.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1104","site_name":"Grand International HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1105","site_name":"Cartoon Network (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1120","site_name":"Da Vinci HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1142","site_name":"SK 5 HD (BIH)","lang":"hr","sources":[]}
@@ -28548,7 +28549,7 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1493","site_name":"RTL Living HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1494","site_name":"Nova Television HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1495","site_name":"RTL Kockica HD (BIH)","lang":"hr","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1496","site_name":"IDJTV HD (BIH)","lang":"hr","sources":[]}
+{"channel":"IDJTV.rs","feed":"HD","site":"epg.telemach.ba","site_id":"1496","site_name":"IDJTV HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1497","site_name":"SK 1 HR (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1498","site_name":"SK 10 HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1500","site_name":"SK 7 HD (BIH)","lang":"hr","sources":[]}
@@ -28567,10 +28568,10 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1514","site_name":"Kino TV HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1518","site_name":"CNN (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1519","site_name":"Current Time (BIH)","lang":"hr","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1520","site_name":"Grand narodna televizija 2 (BIH)","lang":"hr","sources":[]}
+{"channel":"Grand2.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1520","site_name":"Grand narodna televizija 2 (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1522","site_name":"Cinemania HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1523","site_name":"Bujrum TV (BIH)","lang":"hr","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1524","site_name":"RTV Novi Pazar (BIH)","lang":"hr","sources":[]}
+{"channel":"RTVNoviPazar.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1524","site_name":"RTV Novi Pazar (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1526","site_name":"Tropik TV","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1527","site_name":"MTV (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1582","site_name":"Prva World (BIH)","lang":"hr","sources":[]}
@@ -28581,7 +28582,7 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1591","site_name":"RTL DE (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1592","site_name":"RTL 2 DE (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1593","site_name":"DM Sat (BIH)","lang":"hr","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1594","site_name":"Grand Nostalgija (BIH)","lang":"hr","sources":[]}
+{"channel":"GrandNostalgija.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1594","site_name":"Grand Nostalgija (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1595","site_name":"Narodna TV (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1596","site_name":"CMC HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1597","site_name":"Pink Music (BIH)","lang":"hr","sources":[]}
@@ -28656,7 +28657,7 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1695","site_name":"Pink Family (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1696","site_name":"Pink Serije (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1697","site_name":"Brainz HD (BIH)","lang":"hr","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1698","site_name":"Nova S HD (BIH)","lang":"hr","sources":[]}
+{"channel":"Nova.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1698","site_name":"Nova S HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1700","site_name":"SLO 1 HD (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1740","site_name":"Kitchen TV (BIH)","lang":"hr","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1742","site_name":"Marquee TV (BIH)","lang":"hr","sources":[]}
@@ -28736,7 +28737,7 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"874","site_name":"Srpska TV (ME)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"979","site_name":"TVCG 3 exParlamentarni kanal (ME)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1088","site_name":"Gradska TV (ME)","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1104","site_name":"Grand International HD (BIH)","lang":"bs","sources":[]}
+{"channel":"Grand.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1104","site_name":"Grand International HD (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1135","site_name":"Adriatic Sport 1 (ME)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1136","site_name":"Adriatic Sport 2 (ME)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1137","site_name":"Adriatic Sport 3 (ME)","lang":"bs","sources":[]}
@@ -28746,22 +28747,22 @@
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1491","site_name":"Cartoonito (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1492","site_name":"Disney Junior (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1494","site_name":"Nova Television HD (BIH)","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1496","site_name":"IDJTV HD (BIH)","lang":"bs","sources":[]}
+{"channel":"IDJTV.rs","feed":"HD","site":"epg.telemach.ba","site_id":"1496","site_name":"IDJTV HD (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1505","site_name":"Eurosport 2 HD (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1510","site_name":"BabyTV HD (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1511","site_name":"Minimax (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1512","site_name":"HRT 3 HD (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1518","site_name":"CNN (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1519","site_name":"Current Time (BIH)","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1520","site_name":"Grand narodna televizija 2 (BIH)","lang":"bs","sources":[]}
+{"channel":"Grand2.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1520","site_name":"Grand narodna televizija 2 (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1522","site_name":"Cinemania HD (BIH)","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1524","site_name":"RTV Novi Pazar (BIH)","lang":"bs","sources":[]}
+{"channel":"RTVNoviPazar.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1524","site_name":"RTV Novi Pazar (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1582","site_name":"Prva World (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1583","site_name":"Prva Kick (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1584","site_name":"Prva Plus (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1587","site_name":"Yachting TV (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1593","site_name":"DM Sat (BIH)","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1594","site_name":"Grand Nostalgija (BIH)","lang":"bs","sources":[]}
+{"channel":"GrandNostalgija.rs","feed":"SD","site":"epg.telemach.ba","site_id":"1594","site_name":"Grand Nostalgija (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1595","site_name":"Narodna TV (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1596","site_name":"CMC HD (BIH)","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"epg.telemach.ba","site_id":"1597","site_name":"Pink Music (BIH)","lang":"bs","sources":[]}
@@ -66776,8 +66777,8 @@
 {"channel":"AlJazeeraBalkans.ba","feed":"SD","site":"maxtvgo.mk","site_id":"127","site_name":"Aljazeera Balkans HD","lang":"mk","sources":[]}
 {"channel":"ViasatHistory.se","feed":"SD","site":"maxtvgo.mk","site_id":"128","site_name":"Viasat History","lang":"mk","sources":[]}
 {"channel":"M1Gold.hr","feed":"SD","site":"maxtvgo.mk","site_id":"131","site_name":"M1 Gold","lang":"mk","sources":[]}
-{"channel":"Fox.rs","feed":"SD","site":"maxtvgo.mk","site_id":"610324","site_name":"STAR CHANNEL HD","lang":"mk","sources":[]}
-{"channel":"FoxLife.rs","feed":"SD","site":"maxtvgo.mk","site_id":"610327","site_name":"STAR LIFE HD","lang":"mk","sources":[]}
+{"channel":"StarChannelBalkans.rs","feed":"SD","site":"maxtvgo.mk","site_id":"610324","site_name":"STAR CHANNEL HD","lang":"mk","sources":[]}
+{"channel":"StarLife.rs","feed":"SD","site":"maxtvgo.mk","site_id":"610327","site_name":"STAR LIFE HD","lang":"mk","sources":[]}
 {"channel":"FoxMovies.rs","feed":"SD","site":"maxtvgo.mk","site_id":"610328","site_name":"STAR MOVIES HD","lang":"mk","sources":[]}
 {"channel":"FoxCrime.rs","feed":"SD","site":"maxtvgo.mk","site_id":"610330","site_name":"STAR CRIME HD","lang":"mk","sources":[]}
 {"channel":"NationalGeographic.gr","feed":"HD","site":"maxtvgo.mk","site_id":"610332","site_name":"National Geographic HD","lang":"en","sources":[]}
@@ -70250,7 +70251,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-19-rts-svet","site_name":"RTS Svet","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-20-rts-2","site_name":"RTS 2","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-21-rts-nauka-hd","site_name":"RTS Nauka HD","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-22-rtv-1","site_name":"RTV 1","lang":"bs","sources":[]}
+{"channel":"RTV1.rs","feed":"SD","site":"mtel.ba","site_id":"iptv#ch-22-rtv-1","site_name":"RTV 1","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-25-al-jazeera-balkans","site_name":"AL Jazeera Balkans","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-26-o-kanal","site_name":"O Kanal HD","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-29-kcn","site_name":"K:CN","lang":"bs","sources":[]}
@@ -70425,7 +70426,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-295-id-hd","site_name":"ID HD","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-296-gametoon","site_name":"Gametoon","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-327-rts-3","site_name":"RTS 3","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-330-tv-hram","site_name":"TV Hram","lang":"bs","sources":[]}
+{"channel":"TVHram.rs","feed":"SD","site":"mtel.ba","site_id":"iptv#ch-330-tv-hram","site_name":"TV Hram","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-331-koreni","site_name":"Koreni","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-332-travel-channel","site_name":"Travel Channel","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-334-mtv-europe","site_name":"MTV Europe","lang":"bs","sources":[]}
@@ -70453,7 +70454,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-378-adult-3","site_name":"Adult 3","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-379-adult-4","site_name":"Adult 4","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-383-tv-partizan","site_name":"TV Partizan","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-385-rtv-2","site_name":"RTV 2","lang":"bs","sources":[]}
+{"channel":"RTV2.rs","feed":"SD","site":"mtel.ba","site_id":"iptv#ch-385-rtv-2","site_name":"RTV 2","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-388-rts-poletarac","site_name":"RTS Poletarac","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-390-tv-niksic","site_name":"TV Nikšić","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-391-timeless-dizi-channel","site_name":"Timeless Dizi Channel","lang":"bs","sources":[]}
@@ -70474,7 +70475,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-410-tv-dr","site_name":"TV DR","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-411-k1","site_name":"K1","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-412-viasat-nature-hd","site_name":"Viasat Nature HD","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-419-kurir-tv-hd","site_name":"Kurir TV HD","lang":"bs","sources":[]}
+{"channel":"KurirTV.rs","feed":"SD","site":"mtel.ba","site_id":"iptv#ch-419-kurir-tv-hd","site_name":"Kurir TV HD","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-420-rtv-usk-hd","site_name":"RTV USK HD","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-424-nicktoons","site_name":"NickToons","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"iptv#ch-425-super-sat-tv","site_name":"Super Sat TV","lang":"bs","sources":[]}
@@ -70590,7 +70591,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-15-bht","site_name":"BHT 1","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-16-obn","site_name":"OBN","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-18-rtrs-plus","site_name":"RTRS Plus","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-22-rtv-1","site_name":"RTV 1","lang":"bs","sources":[]}
+{"channel":"RTV1.rs","feed":"SD","site":"mtel.ba","site_id":"msat#ch-22-rtv-1","site_name":"RTV 1","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-24-kitchen","site_name":"24 Kitchen","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-29-kcn","site_name":"K:CN","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-30-hrt-1","site_name":"HRT 1","lang":"bs","sources":[]}
@@ -70660,10 +70661,10 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-310-rts-1-hd","site_name":"RTS 1 HD","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-311-rts-2-hd","site_name":"RTS 2 HD","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-313-prva-max","site_name":"Prva MAX","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-315-sos-kanal-plus","site_name":"SOS Kanal Plus","lang":"bs","sources":[]}
+{"channel":"SOSKanalPlus.rs","feed":"SD","site":"mtel.ba","site_id":"msat#ch-315-sos-kanal-plus","site_name":"SOS Kanal Plus","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-327-rts-3","site_name":"RTS 3","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-329-al-jazeera","site_name":"Al Jazeera","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-330-tv-hram","site_name":"TV Hram","lang":"bs","sources":[]}
+{"channel":"TVHram.rs","feed":"SD","site":"mtel.ba","site_id":"msat#ch-330-tv-hram","site_name":"TV Hram","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-331-koreni","site_name":"Koreni","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-335-euronews","site_name":"Euronews","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-336-dw-english","site_name":"DW English","lang":"bs","sources":[]}
@@ -70674,7 +70675,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-361-prva-world","site_name":"Prva World","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-363-prva-life","site_name":"Prva Life","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-364-prva-files","site_name":"Prva Files","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-385-rtv-2","site_name":"RTV 2","lang":"bs","sources":[]}
+{"channel":"RTV2.rs","feed":"SD","site":"mtel.ba","site_id":"msat#ch-385-rtv-2","site_name":"RTV 2","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-388-rts-poletarac","site_name":"RTS Poletarac","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-390-tv-niksic","site_name":"TV Nikšić","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-391-timeless-dizi-channel","site_name":"Timeless Dizi Channel","lang":"bs","sources":[]}
@@ -70689,7 +70690,7 @@
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-409-kazbuka","site_name":"Kazbuka","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-410-tv-dr","site_name":"TV DR","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-411-k1","site_name":"K1","lang":"bs","sources":[]}
-{"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-421-kurir-tv","site_name":"Kurir TV","lang":"bs","sources":[]}
+{"channel":"KurirTV.rs","feed":"SD","site":"mtel.ba","site_id":"msat#ch-421-kurir-tv","site_name":"Kurir TV","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-422-msat-info","site_name":"m:SAT Info","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-423-dexy-tv","site_name":"Dexy TV","lang":"bs","sources":[]}
 {"channel":null,"feed":null,"site":"mtel.ba","site_id":"msat#ch-426-superstar-tv-hd","site_name":"Superstar HD","lang":"bs","sources":[]}
@@ -139616,7 +139617,7 @@
 {"channel":null,"feed":null,"site":"tv.magenta.at","site_id":"225897000148","site_name":"Radio Swiss Jazz","lang":"de","sources":[]}
 {"channel":null,"feed":null,"site":"tv.magenta.at","site_id":"225897000223","site_name":"ERF Plus","lang":"de","sources":[]}
 {"channel":"Vesti.rs","feed":"SD","site":"tv.magenta.at","site_id":"229039144336","site_name":"VESTI","lang":"de","sources":[]}
-{"channel":"FilmKlub.rs","feed":"SD","site":"tv.magenta.at","site_id":"229041191972","site_name":"Film Klub","lang":"de","sources":[]}
+{"channel":null,"feed":null,"site":"tv.magenta.at","site_id":"229041191972","site_name":"Film Klub","lang":"de","sources":[]}
 {"channel":"ToxicTV.rs","feed":"HD","site":"tv.magenta.at","site_id":"229041703980","site_name":"Toxic TV HD","lang":"de","sources":[]}
 {"channel":"SkyNature.de","feed":"HD","site":"tv.magenta.at","site_id":"229429288190","site_name":"Sky Nature HD","lang":"de","sources":[]}
 {"channel":"SkyDocumentaries.de","feed":"HD","site":"tv.magenta.at","site_id":"229429799984","site_name":"Sky Documentaries HD","lang":"de","sources":[]}
@@ -143286,10 +143287,10 @@
 {"channel":null,"feed":null,"site":"tv2go.t-2.net","site_id":"1000302","site_name":"Nickelodeon","lang":"sl","sources":[]}
 {"channel":"HustlerHD.nl","feed":"SD","site":"tv2go.t-2.net","site_id":"1000306","site_name":"Hustler TV","lang":"sl","sources":[]}
 {"channel":"24Kitchen.us","feed":"Slovenia","site":"tv2go.t-2.net","site_id":"1000307","site_name":"24Kitchen Adria","lang":"sl","sources":[]}
-{"channel":"Fox.rs","feed":"SD","site":"tv2go.t-2.net","site_id":"1000308","site_name":"STAR","lang":"sl","sources":[]}
-{"channel":"FoxLife.rs","feed":"SD","site":"tv2go.t-2.net","site_id":"1000309","site_name":"STAR Life","lang":"sl","sources":[]}
-{"channel":"FoxCrime.rs","feed":"SD","site":"tv2go.t-2.net","site_id":"1000310","site_name":"STAR Crime","lang":"sl","sources":[]}
-{"channel":"FoxMovies.si","feed":"SD","site":"tv2go.t-2.net","site_id":"1000311","site_name":"STAR Movies","lang":"sl","sources":[]}
+{"channel":"StarChannel.si","feed":"SD","site":"tv2go.t-2.net","site_id":"1000308","site_name":"STAR","lang":"sl","sources":[]}
+{"channel":"StarLife.si","feed":"SD","site":"tv2go.t-2.net","site_id":"1000309","site_name":"STAR Life","lang":"sl","sources":[]}
+{"channel":"StarCrime.si","feed":"SD","site":"tv2go.t-2.net","site_id":"1000310","site_name":"STAR Crime","lang":"sl","sources":[]}
+{"channel":"StarMovies.si","feed":"SD","site":"tv2go.t-2.net","site_id":"1000311","site_name":"STAR Movies","lang":"sl","sources":[]}
 {"channel":"RTL.hr","feed":"SD","site":"tv2go.t-2.net","site_id":"1000314","site_name":"RTL Televizija","lang":"sl","sources":[]}
 {"channel":"RTL2.hr","feed":"SD","site":"tv2go.t-2.net","site_id":"1000322","site_name":"RTL 2 HR","lang":"sl","sources":[]}
 {"channel":"RTLLiving.de","feed":"SD","site":"tv2go.t-2.net","site_id":"1000323","site_name":"RTL Living","lang":"sl","sources":[]}
@@ -168164,7 +168165,7 @@
 {"channel":"PassionXXX.nl","feed":"SD","site":"tvprofil.com","site_id":"bg/tv-programa#passion-xxx","site_name":"Passion XXX","lang":"en","sources":[]}
 {"channel":"RadioTelevizijaBIH.me","feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#bht1","site_name":"Radio Televizija BIH","lang":"en","sources":[]}
 {"channel":"ShowTürk.me","feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#show-turk","site_name":"Show Türk","lang":"en","sources":[]}
-{"channel":"Superstar3.me","feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#superstar-3","site_name":"Superstar 3","lang":"en","sources":[]}
+{"channel":"SUPERSTAR3.rs","feed":"SD","site":"tvprofil.com","site_id":"me/tvprogram#superstar-3","site_name":"Superstar 3","lang":"en","sources":[]}
 {"channel":"TheVoice.bg","feed":"SD","site":"tvprofil.com","site_id":"bg/tv-programa#the-voice-bg","site_name":"The Voice BG","lang":"en","sources":[]}
 {"channel":"TRTHaber.me","feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#trt-haber","site_name":"TRT Haber","lang":"en","sources":[]}
 {"channel":"ÜlkeTV.me","feed":null,"site":"tvprofil.com","site_id":"me/tvprogram#ulke-tv","site_name":"Ülke TV","lang":"en","sources":[]}

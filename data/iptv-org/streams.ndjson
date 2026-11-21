@@ -2589,6 +2589,7 @@
 {"channel":"AajTak.in","feed":"SD","title":"Aaj Tak","url":"https://aajtaklive-amd.akamaized.net/hls/live/2014416/aajtak/aajtaklive/live_404p/chunks.m3u8","quality":"404p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AakaashAath.in","feed":"SD","title":"Aakaash Aath","url":"https://cdn.pishow.tv/ott/live/969/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AakaashAath.in","feed":"SD","title":"Aakaash Aath","url":"https://mumt03.tangotv.in/Dsly5z3HAAKASHAATH/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"AakaashAath.in","feed":"SD","title":"Aakaash Aath","url":"https://samitaorigin.tangotv.in/AAKASHAATH/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AamarBangla.in","feed":"SD","title":"Aamar Bangla","url":"https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/amarbanglatv.stream/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AaryaaTV.in","feed":"SD","title":"Aaryaa TV","url":"https://stream.ottlive.co.in/aryatvtamil/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AaseervathamTV.in","feed":"SD","title":"Aaseervatham TV","url":"https://mumt04.tangotv.in/m18aqlK4AASEERVATHAMTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -2813,9 +2814,6 @@
 {"channel":"AdrenalinaPuraTV.us","feed":"Brazil","title":"Adrenalina Pura TV","url":"https://jmp2.uk/plu-61b790b985706b00072cb797.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AdrenalinaPuraTV.us","feed":"SD","title":"Adrenalina Pura TV","url":"https://jmp2.uk/plu-61b793ccf571b80007b7a610.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AdriaMusicTelevision.de","feed":"SD","title":"Adria Music Television","url":"https://adriaapp.b-cdn.net/1080p/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"AdriaticSport1.ba","feed":"SD","title":"Adriatic Sport 1","url":"http://sultanios.alwaysdata.net/vavo.php?ID=3645291205","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"AdriaticSport2.ba","feed":"SD","title":"Adriatic Sport 2","url":"http://sultanios.alwaysdata.net/vavo.php?ID=2665922581","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"AdriaticSport3.ba","feed":"SD","title":"Adriatic Sport 3","url":"http://sultanios.alwaysdata.net/vavo.php?ID=2743527845","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AdultSwim.us","feed":"West","title":"Adult Swim West","url":"https://turnerlive.warnermediacdn.com/hls/live/2023185/aswest/noslate/VIDEO_1_5128000.m3u8","quality":null,"labels":["Not 24/7","Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"AdventureEarth.de","feed":"SD","title":"Adventure Earth","url":"https://a57e9c69976649b582a8d7604c00e69a.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RlaxxTV-eu_AdventureEarth/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AdventureEarth.de","feed":"SD","title":"Adventure Earth","url":"https://autentic-adventure-earth-1-eu.rakuten.wurl.tv/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -3385,7 +3383,7 @@
 {"channel":"AnwarTV2.iq","feed":"SD","title":"Anwar TV2","url":"https://cloud.odysee.live/content/f92670235a1ce2bce4cf77671cc4dcc2188baa1d/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":"https://odysee.com/"}
 {"channel":"AnzoateguiTV.ve","feed":"SD","title":"Anzoátegui TV","url":"https://vcp2.myplaytv.com/anzoateguitv/anzoateguitv/playlist.m3u8","quality":"360p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"apartTV.lu","feed":"SD","title":"apart TV","url":"https://2-fss-2.streamhoster.com/pl_124/206820-4338160-1/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"APATv.az","feed":"SD","title":"APA TV HD","url":"http://stream.apa.tv/apastream/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"APATV.az","feed":"HD","title":"APA TV HD","url":"http://stream.apa.tv/apastream/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"APlusTV.pk","feed":"SD","title":"A-Plus TV","url":"http://115.42.65.142:9981/stream/channelid/113328724","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"APlusTV.pk","feed":"SD","title":"A-Plus TV","url":"http://103.86.135.164:9981/stream/channelid/1522598263?profile=pass&ticket=8F210F02E7EF3471D45EFD9B293E0E07CE3532BF","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"APlusTV.pk","feed":"SD","title":"A-Plus TV","url":"https://cdn4.mjunoon.tv:8087/streamtest/118M/chunks.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -3395,6 +3393,7 @@
 {"channel":"APN.in","feed":"SD","title":"APN","url":"https://stream.ottlive.co.in/apnnews/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ApnaChannel.pk","feed":"SD","title":"Apna Channel","url":"http://115.42.65.142:9981/stream/channelid/1273966657","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ApnaPunjabTV.ca","feed":"SD","title":"Apna Punjab TV","url":"https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ApnaPunjabTV.in","feed":"SD","title":"Apna Punjab TV","url":"https://samitaorigin.tangotv.in/APNAPUNJAB/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ApostolTV.hu","feed":"SD","title":"Apostol TV","url":"https://live.apostoltv.hu/live/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ApostropheTV.ua","feed":"SD","title":"Apostrophe TV","url":"https://ext.cdn.nashnet.tv/228.0.2.165/index.m3u8","quality":"1080p","labels":[],"user_agent":"curl/8.16.0","referrer":null}
 {"channel":"ApprovalTV.ng","feed":"HD","title":"Approval TV","url":"https://live.approvaltv.com/approvaltv/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":"https://live.approvaltv.com/"}
@@ -3417,6 +3416,9 @@
 {"channel":"AratuOn.br","feed":"SD","title":"Aratu On","url":"https://cdn.live.br1.jmvstream.com/w/LVW-9359/LVW9359_XSyReL0QVf/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AraTV.ir","feed":"SD","title":"Ara","url":"https://ncdn.telewebion.ir/ara/live/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AraxTV.ir","feed":"SD","title":"Arax TV","url":"https://araxhls.wns.live/hls/stream.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"ARB24.az","feed":"HD","title":"ARB 24 HD","url":"http://185.32.44.154:80/arb24/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"ARB24.az","feed":"SD","title":"ARB 24","url":"https://operativmm.az/tvs/arb24/stream/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"ARB24.az","feed":"SD","title":"ARB 24","url":"https://az.tvstream.az/hls/stream5/stream.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36","referrer":"https://tvstream.az/"}
 {"channel":"ArboldeVidaTV.sv","feed":"SD","title":"Árbol de Vida TV","url":"https://yupistream.top:19360/livearbol/livearbol.m3u8","quality":"240p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"ARCanal.pa","feed":"SD","title":"A&R Canal Adventista","url":"http://51.222.9.192:3589/stream/play.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ArchivosForenses.us","feed":"Spain","title":"Archivos Forenses","url":"https://jmp2.uk/plu-5f984f4a09e92d0007d74647.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -3591,6 +3593,7 @@
 {"channel":"AtlanticTV.tt","feed":"SD","title":"Atlantic TV","url":"https://trinicricket.com/hls/0/stream.m3u8","quality":null,"labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"AtlantisRadioTV.pe","feed":"SD","title":"Atlantis Radio TV","url":"https://live-evg8.tv360.bitel.com.pe/bitel/atlantisSRT/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Atlas.us","feed":"SD","title":"Atlas","url":"https://cdn.whiplash.cc/whiplash-atlas/index.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ATMRozrywkaREWORK.pl","feed":"HD","title":"ATM Rozrywka REWORK","url":"https://183.giatvcdn.com/giatvplayout7/giatv-211353/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ATNBangla.bd","feed":"SD","title":"ATN Bangla","url":"http://tvsen5.aynascope.net/atnbangla/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ATNBangla.bd","feed":"SD","title":"ATN Bangla","url":"https://tvsen5.aynaott.com/atnbangla/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ATNBanglaUK.uk","feed":"SD","title":"ATN Bangla UK","url":"https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbanglauk-off.stream/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -3699,9 +3702,10 @@
 {"channel":"AXN.br","feed":"SD","title":"AXN","url":"http://170.83.16.50/AXN/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXN.br","feed":"SD","title":"AXN","url":"http://170.83.49.66:8083/AXNHD/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXN.es","feed":"HD","title":"AXN HD","url":"http://90.170.214.40:9700/stream/avatel/axn/master.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"AXN.es","feed":"SD","title":"AXN","url":"http://sultanios.alwaysdata.net/vavo.php?ID=4238619703","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"AXN.es","feed":"SD","title":"AXN","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fgeil.to%2Flive%2Fplay%2F4238619703","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXN.pt","feed":"SD","title":"AXN","url":"http://188.115.15.121:8000/play/a02z","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXN.pt","feed":"SD","title":"AXN","url":"http://znty.dyndns.org:5010/hls/axn.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
+{"channel":"AXN.pt","feed":"SD","title":"AXN","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F538838100d0590731cf6d","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNAsia.sg","feed":"Indonesia","title":"AXN Asia Indonesia","url":"http://202.150.165.66:8088/play/301-AXN/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNAsia.sg","feed":"Taiwan","title":"AXN Asia Taiwan","url":"http://125.227.210.55:4050/VideoInput/play.ts","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNAsia.sg","feed":"Thailand","title":"AXN Asia Thailand","url":"http://103.253.74.210:7070/stream/89/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
@@ -3723,7 +3727,6 @@
 {"channel":"AXNLatinAmerica.us","feed":"Panregional","title":"AXN Latin America","url":"http://15.204.246.24:8080/AXNHD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNLatinAmerica.us","feed":"Panregional","title":"AXN Latin America","url":"http://190.93.224.42/AXN/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNLatinAmerica.us","feed":"South","title":"AXN Latin America South","url":"http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/10.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"AXNMovies.es","feed":"SD","title":"AXN Movies","url":"http://sultanios.alwaysdata.net/vavo.php?ID=2493319111","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNMovies.pt","feed":"SD","title":"AXN Movies","url":"http://50.7.120.34:8080/AXN_BLACK/index.m3u8","quality":"720p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
 {"channel":"AXNPoland.pl","feed":"SD","title":"AXN Poland","url":"http://92.114.85.87:8015/play/a00f/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNSpin.hu","feed":"Poland","title":"AXN Spin Poland","url":"https://polska.hach.workers.dev/14847.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","referrer":"https://ritsatv.ru/"}
@@ -3735,6 +3738,7 @@
 {"channel":"AXNWhite.us","feed":"Poland","title":"AXN White Poland","url":"http://185.227.34.179:8080/axn-white/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNWhite.us","feed":"Portugal","title":"AXN White Portugal","url":"http://188.115.15.121:8000/play/a01u","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXNWhite.us","feed":"Portugal","title":"AXN White Portugal","url":"http://50.7.120.34:8080/AXN_WHITE/index.m3u8","quality":"480p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
+{"channel":"AXNWhite.us","feed":"Portugal","title":"AXN White Portugal","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F328698532772b83e8ca83a","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AXSTV.us","feed":"SD","title":"AXS TV","url":"https://tvsen3.aynaott.com/P2fJzfsg/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AyazTV.az","feed":"HD","title":"Ayaz TV HD","url":"https://janya-ayaztv.vgcdn.net/ptnr-WebApp/title-Ayaz_TV/v1/vglive-sk-934820/1080p/1080p.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AyazTV.az","feed":"SD","title":"Ayaz TV","url":"https://janya-ayaztv.vgcdn.net/ptnr-WebApp/title-Ayaz_TV/v1/vglive-sk-934820/720p/720p.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -3755,7 +3759,7 @@
 {"channel":"AzCorazon.mx","feed":"SD","title":"Az Corazon","url":"http://200.115.120.1:8000/play/ca020/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AzMundo.mx","feed":"SD","title":"Az Mundo","url":"http://15.204.142.109:22880/DIRECTV-ARGENTINA-AZMUNDO/INTERNACIONAL/video.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AznewsTV.se","feed":"SD","title":"Azerbaijan News TV","url":"https://edge1.socialsmart.tv/aznews/smil/playlist.m3u8","quality":"720p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
-{"channel":"AzStarTV.ca","feed":"SD","title":"Azstar TV HD","url":"https://live.livestreamtv.ca/azstar/amlst:azstar/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"AzStarTV.az","feed":"HD","title":"Azstar TV HD","url":"https://live.livestreamtv.ca/azstar/amlst:azstar/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"AzStarTV.ca","feed":"SD","title":"Az Star TV","url":"http://live.azstartv.com/azstar/smil:azstar.smil/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"AzStarTV.ca","feed":"SD","title":"Az Star TV","url":"https://live.livestreamtv.ca/azstar/ngrp:azstar/playlist.m3u8","quality":"240p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Azteca7.mx","feed":"SD","title":"Azteca 7","url":"http://187.245.231.226:8000/play/a0uz/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -3850,8 +3854,8 @@
 {"channel":"BailenTV.es","feed":"SD","title":"Bailén TV","url":"http://cpd.bailen.tv:8080/Playlist_CANAL_24H/playlist.m3u8","quality":"720p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"BajaiTV.hu","feed":"SD","title":"Bajai TV","url":"https://cloudfront41.lexanetwork.com:1344/relay01/livestream002.sdp/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"BajoTechoTV.do","feed":"SD","title":"Bajo Techo TV","url":"https://fox.hostlagarto.com:8081/bajotechotv/tracks-v1a1/mono.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
-{"channel":"Baku","feed":"HD","title":"Baku TV HD","url":"https://rtmp.baku.tv/hls/bakutv_1080p.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"BakuTV.az","feed":"SD","title":"Baku.TV","url":"https://rtmp.baku.tv/hls/bakutv.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"BakuTV.az","feed":"HD","title":"Baku TV HD","url":"https://rtmp.baku.tv/hls/bakutv_1080p.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"BakuTV.az","feed":"SD","title":"Baku TV","url":"https://rtmp.baku.tv/hls/bakutv.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Balabol.ru","feed":"SD","title":"Balabol","url":"https://cdn-dvr.ntv.ru/Balabol/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"BalafonTV.cm","feed":"SD","title":"Balafon TV","url":"https://broadcasting-channels.com:9044/hls/test.m3u8","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"Balapan.kz","feed":"HD","title":"Balapan HD","url":"https://balapantv-stream.qazcdn.com/balapantv/balapantv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -4143,6 +4147,7 @@
 {"channel":"BeijingSatelliteTV.cn","feed":"SD","title":"BRTV 北京卫视","url":"http://ivi.bupt.edu.cn/hls/btv1.m3u8","quality":null,"labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"BeijingSatelliteTV.cn","feed":"SD","title":"北京衛視","url":"http://14.152.88.77/liveplay-kk.rtxapp.com/live/program/live/bjwshd/4000000/mnf.m3u8","quality":"1080p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"beINSports1.qa","feed":"MENA","title":"beIN Sports 1","url":"https://vg162.adcdsd123321.shop/7.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"beINSports1Turk.tr","feed":"SD","title":"beIN Sports 1 Turk","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F300113394ceebba66c8ad","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"beINSports1Turk.tr","feed":"SD","title":"beIN Sports 1 Turk","url":"http://57.129.0.61:1990/stream/117/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"beINSportsUSA.us","feed":"SD","title":"beIN Sports USA","url":"https://tvsen6.aynaott.com/beinsports/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"beINSPORTSXTRA.us","feed":"SD","title":"beIN SPORTS XTRA","url":"https://bein-xtra-bein.amagi.tv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -4474,7 +4479,6 @@
 {"channel":"BondiRescue.us","feed":"CA","title":"Bondi Rescue","url":"https://jmp2.uk/plu-66166989635c7500084105a2.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"BoogleBollywood.in","feed":"SD","title":"Boogle Bollywood","url":"https://yuppnimrestreammum.akamaized.net/181224/smil:bogglebollywood.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Boomerang.fr","feed":"HD","title":"Boomerang HD","url":"http://41.205.93.154/BOOMERANG/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"Boomerang.it","feed":"SD","title":"Boomerang","url":"http://sultanios.alwaysdata.net/vavo.php?ID=2705627802","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Boomerang.th","feed":"SD","title":"Boomerang","url":"https://live-us1.thaimomo.com/live-as/chboomerang-2/chunklist_w135479847.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Boomerang.us","feed":"SD","title":"Boomerang","url":"http://23.237.104.106:8080/USA_BOOMERANG/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Boomerang.us","feed":"SD","title":"Boomerang","url":"http://212.5.144.156:8080/boomerang/index.m3u8","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
@@ -4544,6 +4548,7 @@
 {"channel":"BritishComedy.us","feed":"CA","title":"Pluto TV British Comedy","url":"https://jmp2.uk/plu-638e11951177840007fdd6b2.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"BRKNews.in","feed":"SD","title":"BRK News","url":"https://mumbai-edge.smartplaytv.in/BRKNEWS/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"BRKNews.in","feed":"SD","title":"BRK News","url":"https://mumt03.tangotv.in/Dsly5z3HBRKNEWS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"BRKNews.in","feed":"SD","title":"BRK News","url":"https://samitaorigin.tangotv.in/BRKNEWS/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"BRKNews.in","feed":"SD","title":"BRK News","url":"https://cdn.pishow.tv/ott/live/1037/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"BroadCity.se","feed":"DK","title":"Broad City","url":"https://jmp2.uk/plu-65cba73611ced700082123bc.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"BroadCity.se","feed":"NO","title":"Broad City","url":"https://jmp2.uk/plu-65cba778ec452d0008acbe86.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -4635,6 +4640,7 @@
 {"channel":"C1.mn","feed":"SD","title":"C1","url":"https://cdn4.skygo.mn/live/disk1/C1/DASH-FTA/C1.mpd","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","referrer":null}
 {"channel":"C1.mn","feed":"SD","title":"C1","url":"https://cdn4.skygo.mn/live/disk1/C1/HLSv3-FTA/C1.m3u8","quality":"720p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","referrer":null}
 {"channel":"C9N.py","feed":"SD","title":"C9N","url":"https://d2b5h5wyivfnfl.cloudfront.net/live/48f53430-9014-4459-a048-6169dac14140/ts:abr.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"C10.in","feed":"SD","title":"C-10","url":"https://samitaorigin.tangotv.in/C10/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"C31Melbourne.au","feed":"SD","title":"C31 Melbourne","url":"https://d1k6kax80wecy5.cloudfront.net/RLnAKY/index.m3u8","quality":"240p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CableImagenArmstrong.ar","feed":"SD","title":"Cable Imagen Armstrong","url":"https://stream.arcast.com.ar/casse/casse/playlist.m3u8","quality":"540p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"Cablenoticias.co","feed":"SD","title":"Cablenoticias","url":"http://181.78.211.244:8005/play/a09u/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -4936,6 +4942,7 @@
 {"channel":"CanalIPe.pe","feed":"SD","title":"Canal IPe","url":"http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/ipemovil/playlist.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36","referrer":null}
 {"channel":"CanalIPe.pe","feed":"SD","title":"Canal IPe","url":"https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/ipe.stream/playlist.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36","referrer":null}
 {"channel":"CanalISB.cl","feed":"SD","title":"Canal ISB (Iglesia San Bernardo)","url":"https://unlimited1-us.dps.live/isb/isb.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"CanalJ.fr","feed":"SD","title":"Canal J","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F3860888136d301b247640b","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalLatino54.cl","feed":"SD","title":"Canal Latino 54","url":"https://videostream.chileservidores.com:8081/latina/index.m3u8","quality":"360p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalLibras.br","feed":"SD","title":"Canal Libras","url":"https://canallibras-stream.ebc.com.br/mux_video_ts/index-1.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalLocal.cl","feed":"SD","title":"Canal Local","url":"https://v2.tustreaming.cl/canallocalcl/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -4974,18 +4981,14 @@
 {"channel":"CanalPlusActionEurope.nl","feed":"Slovakia","title":"Canal+ Action Europe Slovakia","url":"http://151.80.18.177:86/Canal+_Family_HD/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusDomo.pl","feed":"SD","title":"Canal+ Domo","url":"http://92.114.85.87:8019/play/a008/index.m3u8","quality":"576i","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusKuchnia.pl","feed":"SD","title":"Canal+ Kuchnia","url":"http://92.114.85.87:8019/play/a009/index.m3u8","quality":"576i","labels":[],"user_agent":null,"referrer":null}
-{"channel":"CanalPlusSport2.pl","feed":"SD","title":"Canal+ Sport 2","url":"http://57.129.96.133:888/stream/94/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"CanalPlusSport2SK.sk","feed":"SD","title":"Canal+ Sport 2 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport2/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"CanalPlusSport3.pl","feed":"SD","title":"Canal+ Sport 3","url":"http://57.129.96.133:888/stream/93/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"CanalPlusSport3SK.sk","feed":"SD","title":"Canal+ Sport 3 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport3/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"CanalPlusSport4.pl","feed":"SD","title":"Canal+ Sport 4","url":"http://57.129.96.133:888/stream/95/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"CanalPlusSport4SK.sk","feed":"SD","title":"Canal+ Sport 4 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport4/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusSport5SK.sk","feed":"SD","title":"Canal+ Sport 5 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport5/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusSport6SK.sk","feed":"SD","title":"Canal+ Sport 6 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport6/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusSport7SK.sk","feed":"SD","title":"Canal+ Sport 7 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport7/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusSport8SK.sk","feed":"SD","title":"Canal+ Sport 8 SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport8/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPlusSport.fr","feed":"SD","title":"Canal+ Sport","url":"http://tv.streambox.fr/live/testlivestream/testlivestream/31.m3u8","quality":"1080p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
-{"channel":"CanalPlusSport.pl","feed":"SD","title":"Canal+ Sport","url":"http://57.129.96.133:888/stream/92/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"CanalPlusSportSK.sk","feed":"SD","title":"Canal+ Sport SK","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport/live_fullhd?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CanalPro.py","feed":"SD","title":"Canal Pro","url":"https://www.desde-paraguay.com/pro.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":"https://www.canalpro.com.py/en-vivo"}
 {"channel":"CanalProvincial.ar","feed":"SD","title":"Canal Provincial","url":"https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8","quality":"360p","labels":[],"user_agent":null,"referrer":null}
@@ -5194,6 +5197,8 @@
 {"channel":"CartoonNetworkLatinAmerica.us","feed":"SouthAtlantic","title":"Cartoon Network Latin America South Atlantic","url":"http://158.172.217.18:8000/play/a03a/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CartoonNetworkLatinAmerica.us","feed":"SouthAtlanticHD","title":"Cartoon Network Latin America","url":"https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/cartoonnetwork.stream/chunks.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 VLC/3.0.18 LibVLC/3.0.18","referrer":null}
 {"channel":"CartoonNetworkLatinAmerica.us","feed":"SouthPacific","title":"Cartoon Network Latin America South Pacific","url":"http://45.167.1.138:8000/play/a00w","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"CartoonNetworkWesternEurope.uk","feed":"Portugal","title":"Cartoon Network Western Europe Portugal","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F327818589842dbaee1327c","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"CartoonNetworkWesternEurope.uk","feed":"Portugal","title":"Cartoon Network Western Europe Portugal","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F2672740913728a31b548ec","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CarubanTV.id","feed":"HD","title":"Caruban TV","url":"https://stream.carubantv.id/hls/0/stream.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":"https://stream.carubantv.id"}
 {"channel":"CasaItalia53.it","feed":"SD","title":"Casa Italia 53","url":"https://ovp-live.akamaized.net/ac115_live/canale3.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CascaraTV.do","feed":"SD","title":"Cascara TV","url":"https://ss2.tvrdomi.com:1936/cascaratv/cascaratv/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -5215,6 +5220,7 @@
 {"channel":"CBBC.uk","feed":"SD","title":"CBBC HD","url":"https://vs-cmaf-pushb-uk.live.fastly.md.bbci.co.uk/x=4/i=urn:bbc:pips:service:cbbc_hd/iptv_hd_abr_v1.mpd","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"CBBC.uk","feed":"SD","title":"CBBC HD","url":"https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:cbbc_hd/mobile_wifi_main_hd_abr_v2.m3u8","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"CBBC.uk","feed":"SD","title":"CBBC HD (1080p) (HEVC)","url":"https://vs-cmaf-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:cbbc_hd/hevc_iptv_mse_v0.mpd","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
+{"channel":"CBC.az","feed":"HD","title":"CBC","url":"http://185.118.50.218:80/cbc/video.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"CBCNewsNetwork.ca","feed":"SD","title":"CBC News Network","url":"https://aka-live1050.delivery.roku.com/0c24a9ef-e9c3-485c-bf68-3f1ae5ef3e85/t2-origin/out/v1/live.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CBCNewsNetwork.ca","feed":"SD","title":"CBC News Network","url":"https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master5.m3u8","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"CBCNewsNetwork.ca","feed":"SD","title":"CBC News","url":"https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -5669,6 +5675,7 @@
 {"channel":"CinemaxLatinAmerica.us","feed":"SD","title":"Cinemax Latin America","url":"https://streaming.onnethn.com/CINEMAX/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CineNanar.fr","feed":"SD","title":"Zylo Ciné Nanar","url":"https://zylo-cinenanar-rakuten.amagi.tv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CinePlus.ua","feed":"SD","title":"Cine+","url":"http://777905.live.tvstitch.com/playlist.m3u8?master=567&source=aHR0cDovLzE3Ni4xMjIuMTAzLjUxOjcwMDAvY2gzMy90cmFja3MtdjJhMS9tb25vLm0zdTg/bGl2ZT0xJmlwPTE3OC4xMzYuNDIuMjIwJmlkPTk0ODg2NSZzZWNyZXQ9bjF1N3VpMDYmc3NsPTEmMjF5bz0wJmU9MTc5MDc1MjM2MiZzdD12bmp2elZKY2JtUndKMkFzY1l0UWpR","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36","referrer":"http://live.tvstitch.com/"}
+{"channel":"CinePlusClassic.fr","feed":"SD","title":"Cine+ Classic","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fgeil.to%2Flive%2Fplay%2F1398934027","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"CinePlusClassic.fr","feed":"SD","title":"Cine+ Classic","url":"http://99.27.51.147/CineClassic/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
 {"channel":"CinePlusFrisson.fr","feed":"SD","title":"Cine+ Frisson","url":"http://99.27.51.147:8080/CineFrisson/index.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
 {"channel":"CinePlusHit.ua","feed":"SD","title":"Cine+ Hit","url":"http://777905.live.tvstitch.com/playlist.m3u8?master=539&source=aHR0cDovLzE3Ni4xMjIuMTAzLjI0MTo3MDAwL2NoNDAvdHJhY2tzLXYyYTEvbW9uby5tM3U4P2xpdmU9MSZpcD0xNzguMTM2LjQyLjIyMCZpZD05NDg4NjUmc2VjcmV0PW4xdTd1aTA2JnNzbD0xJjIxeW89MCZlPTE3OTA3NTI3NDUmc3Q9cVZaQ3Vpd2l3UzEwLW1tMzEwMktDZw==","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36","referrer":"http://live.tvstitch.com/"}
@@ -6245,7 +6252,6 @@
 {"channel":"DatingNakedUK.se","feed":"SE","title":"Dating Naked UK","url":"https://jmp2.uk/plu-692edd6bdb8695f63e14f3b9.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"DatisTV.ir","feed":"SD","title":"Datis TV","url":"https://ronhls.wns.live/hls/stream.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"DavikaTV.id","feed":"SD","title":"Davika TV","url":"https://5bf7b725107e5.streamlock.net/davika/davika/playlist.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":"https://davikatv.co/livestreaming/"}
-{"channel":"DaVinci.pl","feed":"SD","title":"Da Vinci","url":"http://116.90.120.149:8000/play/a0ad/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DaVinci.ru","feed":"SD","title":"Da Vinci","url":"http://116.90.120.149:8000/play/a0s6/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DaVinci.ru","feed":"SD","title":"Da Vinci","url":"http://stream.mcquack.net/238/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DaVinci.ru","feed":"SD","title":"Da Vinci","url":"https://fs.uplink.kz/da_vinci/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -6480,6 +6486,7 @@
 {"channel":"DhammaTV.id","feed":"SD","title":"Dhamma TV","url":"https://b.webcache.maxindo.net.id/dhamma/dhamma.m3u8","quality":"720p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"DharmSandesh.in","feed":"SD","title":"Dharm Sandesh","url":"https://d2lk5u59tns74c.cloudfront.net/out/v1/aed713462c734923aac946a547265288/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DharmSandesh.in","feed":"SD","title":"Dharm Sandesh","url":"https://fta.ektv.in/live/625/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
+{"channel":"DharmSandesh.in","feed":"SD","title":"Dharm Sandesh","url":"https://samitaorigin.tangotv.in/DHARMSANDESH/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DharsanTV.in","feed":"SD","title":"Dharsan TV","url":"https://cable91tataplay.akamaized.net/live/dharshantv/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DHE.us","feed":"SD","title":"DHE","url":"http://15.204.246.24:8080/DHEHD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DHE.us","feed":"SD","title":"DHE","url":"https://cablered.iptvperu.tv:1936/cablered/dhe_new/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -6507,10 +6514,6 @@
 {"channel":"DiffrentStrokesArnold.us","feed":"Brazil","title":"Diff’rent Strokes Arnold","url":"https://jmp2.uk/plu-61f1d27a189ed10007b7393e.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Digi4K.ro","feed":"UHD","title":"Digi 4K","url":"https://vip-acasatv.online:25463/lrZuGxAuP3/6782859900/5928.m3u8","quality":"2160p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"Digi24.ro","feed":"SD","title":"Digi 24","url":"https://edge-ar.rcs-rds.ro/digi24ar/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"DigiSport1.ro","feed":"HD","title":"Digi Sport 1 HD","url":"http://sultanios.alwaysdata.net/vavo.php?ID=3174529991","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"DigiSport2.ro","feed":"HD","title":"Digi Sport 2 HD","url":"http://sultanios.alwaysdata.net/vavo.php?ID=867728420","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"DigiSport3.ro","feed":"HD","title":"Digi Sport 3 HD","url":"http://sultanios.alwaysdata.net/vavo.php?ID=4279401658","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"DigiSport4.ro","feed":"SD","title":"Digi Sport 4","url":"http://sultanios.alwaysdata.net/vavo.php?ID=4124538275","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Digital15.do","feed":"SD","title":"Digital 15","url":"https://live2.telemicro.com.do/live/digital15cast_1080p/playlist.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:152.0) Gecko/20100101 Firefox/152.0","referrer":"https://telemicro.com.do/players/15tv/index_pc.php"}
 {"channel":"Digital15.do","feed":"SD","title":"Digital 15","url":"https://live4.telemicro.com.do/live/digital15cast_1080p/playlist.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36","referrer":"https://telemicro.com.do/players/5tv/"}
 {"channel":"DigitalChannel.bj","feed":"SD","title":"Digital Channel","url":"https://stream.digitalchannel.bj/live/ds_64de185c18c9d786a760f01e0e592348.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
@@ -6582,6 +6585,7 @@
 {"channel":"DisneyChannel.de","feed":"HD","title":"Disney Channel HD","url":"http://109.85.181.77:9981/stream/channelid/652495718?profile=pass","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"DisneyChannel.de","feed":"SD","title":"Disney Channel","url":"https://s6.hopslan.com/disneyX/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"DisneyChannel.de","feed":"SD","title":"Disney Channel","url":"http://178.27.12.3:9981/stream/channelid/269948147?profile=pass","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"DisneyChannel.fr","feed":"SD","title":"Disney Channel","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F11741266772bc970bcdea5","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"DisneyChannel.hu","feed":"SD","title":"Disney Channel","url":"http://88.212.7.14/live/disney_channel_hun/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","referrer":null}
 {"channel":"DisneyChannel.hu","feed":"SD","title":"Disney Channel","url":"http://193.33.39.108:9019/play/a00n","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"DisneyChannel.in","feed":"HD","title":"Disney Channel HD","url":"http://116.90.120.149:8000/play/a11r/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -6883,7 +6887,6 @@
 {"channel":"E24.in","feed":"SD","title":"E 24","url":"https://mumt04.tangotv.in/m18aqlK4E24/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"E40.py","feed":"SD","title":"E40","url":"https://copacotf.desdeparaguay.net/e40tv/e40tv_py_alta/playlist.m3u8?admin=tvaccion","quality":"1080p","labels":[],"user_agent":null,"referrer":"https://www.estacion40.com.py/"}
 {"channel":"E.pl","feed":"SD","title":"E!","url":"http://116.90.120.149:8000/play/a0kz/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"E.ro","feed":"SD","title":"E!","url":"http://sultanios.alwaysdata.net/vavo.php?ID=3166915380","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"E.us","feed":"East","title":"E!","url":"http://23.237.104.106:8080/USA_E/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"EACNewsTV.kh","feed":"SD","title":"EAC News TV","url":"https://live.eac-news.com/LiveApp/streams/eacnews.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"EagleNews.mn","feed":"SD","title":"Eagle News HD","url":"https://cdn4.skygo.mn/live/disk1/Eagle/DASH-FTA/Eagle.mpd","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","referrer":null}
@@ -7018,8 +7021,7 @@
 {"channel":"ElTrece.ar","feed":"SD","title":"El Trece","url":"https://livetrx01.vodgc.net/eltrecetv/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":"https://vodgc.net"}
 {"channel":"ElTrece.ar","feed":"SD","title":"El Trece","url":"http://190.108.83.69:8000/play/a01d/index.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ElTreceInternacionalLatinAmerica.ar","feed":"SD","title":"El Trece Internacional Latin America","url":"http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/23.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"ELTV.az","feed":"SD","title":"EL TV","url":"https://live.eltv.az/live/eltv/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"ELTV.az","feed":"SD","title":"EL TV","url":"http://85.132.53.162:1935/live/eltv/playlist.m3u8","quality":"260p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ELTV.az","feed":"SD","title":"EL TV","url":"https://live.eltv.az/live/eltv/playlist.m3u8","quality":null,"labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"ElWatania1.tn","feed":"SD","title":"El Watania 1","url":"https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8","quality":"1080i","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ElWatania1.tn","feed":"SD","title":"El Watania 1","url":"https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/playlist.m3u8?DVR","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ElWatania1.tn","feed":"SD","title":"El Watania 1","url":"https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/chunklist.m3u8","quality":"1080i","labels":[],"user_agent":null,"referrer":null}
@@ -7363,10 +7365,10 @@
 {"channel":"Eurosport2.fr","feed":"Turkiye","title":"Eurosport 2 Turkiye","url":"https://andro.mangeinde4.lat/checklist/androstreamlivees2.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Eurosport2.fr","feed":"UK","title":"Eurosport 2 UK","url":"https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_2_en/live.livx/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Eurosport2Polska.pl","feed":"SD","title":"Eurosport 2 Polska","url":"http://57.128.210.196:8080/263/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"Eurosport3Polska.pl","feed":"SD","title":"Eurosport 3 Polska","url":"http://sultanios.alwaysdata.net/vavo.php?ID=512159637","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"Eurosport3Polska.pl","feed":"SD","title":"Eurosport 3 Polska","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F5121596371c5191ed9b35","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Eurosport4K.fr","feed":"Romania","title":"Eurosport 4K Romania","url":"https://vip-acasatv.online:25463/lrZuGxAuP3/6782859900/5449.m3u8","quality":"2160p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"Eurosport4KCzechia.cz","feed":"UHD","title":"Eurosport 4K Czechia","url":"http://88.212.15.50/live/esp_4k_atk/playlist.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","referrer":null}
-{"channel":"Eurosport4Polska.pl","feed":"SD","title":"Eurosport 4 Polska","url":"http://sultanios.alwaysdata.net/vavo.php?ID=2896573317","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"Eurosport4Polska.pl","feed":"SD","title":"Eurosport 4 Polska","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F2896573317d9d69e0e2d72","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Eurosport.fr","feed":"Asia","title":"Eurosport","url":"http://103.253.74.210:7070/stream/122/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"Eurosport.in","feed":"HD","title":"Eurosport HD","url":"http://116.90.120.149:8000/play/a118/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Eurosport.in","feed":"HD","title":"Eurosport HD","url":"https://livetv.shamon-cable.net:8443/Eurosport-HD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -7518,6 +7520,8 @@
 {"channel":"FatehTV.in","feed":"SD","title":"Fateh TV","url":"https://stream.ottlive.co.in/fatehtv/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FatehTV.in","feed":"SD","title":"Fateh TV","url":"https://cdn.pishow.tv/ott/live/349/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FatehTV.in","feed":"SD","title":"Fateh TV","url":"https://fta.ektv.in/live/635/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
+{"channel":"FatehTV.in","feed":"SD","title":"Fateh TV","url":"https://mumt05.tangotv.in/87NeALx2FATEHTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"FatehTV.in","feed":"SD","title":"Fateh TV","url":"https://samitaorigin.tangotv.in/FATEHTV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FatehTV.in","feed":"SD","title":"Fateh TV","url":"https://ott.livelegitpro.in/fatehtv/fatehtv/index.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"Fauna.ua","feed":"SD","title":"Fauna","url":"http://stream.mcquack.net/401/index.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
 {"channel":"FavoritTV.ro","feed":"SD","title":"Favorit TV","url":"https://hls02ns.antenaplay.ro/hls/favorit-sd/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -7588,10 +7592,6 @@
 {"channel":"FightNetwork.ca","feed":"SD","title":"Fight Network","url":"https://a-cdn.klowdtv.com/live2/fight_720p/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FilAmTVNetwork.us","feed":"HD","title":"FilAmTV Network","url":"https://cdn.vegasplus.us/vegas/ftv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FilinfoTV.bf","feed":"SD","title":"Filinfo TV","url":"https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"Film1Action.nl","feed":"SD","title":"Film1 Action","url":"http://86.87.15.10:8008/play/a01l/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
-{"channel":"Film1Drama.nl","feed":"SD","title":"Film1 Drama","url":"http://86.87.15.10:8008/play/a01k/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
-{"channel":"Film1Family.nl","feed":"SD","title":"Film1 Family","url":"http://86.87.15.10:8008/play/a01m/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
-{"channel":"Film1Premiere.nl","feed":"SD","title":"Film1 Premiere","url":"http://86.87.15.10:8008/play/a01n/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
 {"channel":"Film4.hu","feed":"SD","title":"Film4","url":"http://88.212.7.14/live/film4_hun/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","referrer":null}
 {"channel":"FilmArts.ar","feed":"Panregional","title":"Film & Arts","url":"http://15.204.246.24:8080/FilmArtsHD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FilmArts.ar","feed":"Panregional","title":"Film & Arts","url":"http://200.115.120.1:8000/play/ca131/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -7697,6 +7697,7 @@
 {"channel":"FoodFood.in","feed":"SD","title":"Food Food","url":"https://fta.ektv.in/live/143/143_0.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"FoodFood.in","feed":"SD","title":"Food Food","url":"https://mumbai-edge.smartplaytv.in/FoodFood/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FoodFood.in","feed":"SD","title":"Food Food","url":"https://mumt03.tangotv.in/Dsly5z3HFOODFOOD/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"FoodFood.in","feed":"SD","title":"Food Food","url":"https://samitaorigin.tangotv.in/FOODFOOD/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"FoodNetwork.cz","feed":"SD","title":"Food Network","url":"http://88.212.15.50/live/test_food_network_atk_tv/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"FoodNetwork.hu","feed":"SD","title":"Food Network","url":"http://88.212.7.14/live/fn_hungary/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"FoodNetwork.it","feed":"SD","title":"Food Network","url":"https://streaming.aurora.enhanced.live/live/mpc/enl0eG1mLmVncmVzcy5mZDJ2eHI=/out/v1/IT_SIMULCAST/FOODNETWORK/CMAF/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -8162,6 +8163,7 @@
 {"channel":"GoldenPremier.mx","feed":"SD","title":"Golden Premier","url":"http://200.57.28.141:8540/play/a0ln","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldenPremier.mx","feed":"SD","title":"Golden Premier","url":"http://200.229.147.210:9999/play/a00k/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Goldmines2.in","feed":"SD","title":"Goldmines 2","url":"https://mumt03.tangotv.in/Dsly5z3HGOLDMINES2/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"Goldmines2.in","feed":"SD","title":"Goldmines 2","url":"https://samitaorigin.tangotv.in/GOLDMINES2/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Goldmines.in","feed":"SD","title":"Goldmines","url":"http://163.61.226.31:9981/stream/channelid/863672695?profile=pass","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Goldmines.in","feed":"SD","title":"Goldmines","url":"https://mumt04.tangotv.in/m18aqlK4GOLDMINES/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Goldmines.in","feed":"SD","title":"Goldmines","url":"https://streams.tangotv.in/GOLDMINES/ORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -8169,8 +8171,10 @@
 {"channel":"Goldmines.in","feed":"SD","title":"Goldmines","url":"https://cdn.pishow.tv/ott/live/1459/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldminesAction.in","feed":"SD","title":"Goldmines Action","url":"https://fta.ektv.in/live/584/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"GoldminesAction.in","feed":"SD","title":"Goldmines Action","url":"https://mumt03.tangotv.in/Dsly5z3HGOLDMINESACTION/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"GoldminesAction.in","feed":"SD","title":"Goldmines Action","url":"https://samitaorigin.tangotv.in/GOLDMINESACTION/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldminesBollywood.in","feed":"SD","title":"Goldmines Bollywood","url":"http://163.61.226.31:9981/stream/channelid/1436412639?profile=pass","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldminesBollywood.in","feed":"SD","title":"Goldmines Bollywood","url":"https://mumt03.tangotv.in/Dsly5z3HGOLDMINESBOLLYWOOD/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"GoldminesBollywood.in","feed":"SD","title":"Goldmines Bollywood","url":"https://samitaorigin.tangotv.in/GOLDMINESBOLLYWOOD/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldminesBollywood.in","feed":"SD","title":"Goldmines Bollywood","url":"https://streams.tangotv.in/GOLDMINESBOLLYWOOD/ORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldminesBollywood.in","feed":"SD","title":"Goldmines Bollywood","url":"https://mumt03.tangotv.in/Dsly5z3HGOLDMINESBOLLYWOOD/tracks-v2a1/mono.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"GoldminesMovies.in","feed":"SD","title":"Goldmines Movies","url":"http://163.61.226.31:9981/stream/channelid/1393052638?profile=pass","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -8291,6 +8295,7 @@
 {"channel":"GuangzhouTV.cn","feed":"SD","title":"Guangzhou TV","url":"https://tencentplaybusiness.gztv.com/live/zonghes.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"GuaranteeNews.in","feed":"SD","title":"Guarantee News","url":"https://guaranteenews.in:8443/live/gnews/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GuaranteeNews.in","feed":"SD","title":"Guarantee News","url":"https://mumt03.tangotv.in/Dsly5z3HGAURANTEENEWS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"GuaranteeNews.in","feed":"SD","title":"Guarantee News","url":"https://samitaorigin.tangotv.in/GAURANTEENEWS/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GuardianTalkRadio.bs","feed":"SD","title":"Guardian Talk Radio","url":"https://cdn-edge1.streamcomedia.com/abr_tngr969fm/abr-tngr969fm_streams/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GuaroTV.ve","feed":"SD","title":"Guaro TV","url":"https://stream.guarotv.net:3592/hybrid/play.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Guatevision.gt","feed":"SD","title":"Guatevision","url":"http://200.115.120.1:8000/play/ca066/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -8313,6 +8318,7 @@
 {"channel":"GujaratFirst.in","feed":"SD","title":"Gujarat First","url":"https://d2gvyg6lvauoko.cloudfront.net/230226/gujaratfirst/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GujaratFirst.in","feed":"SD","title":"Gujarat First","url":"https://fta.ektv.in/live/655/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"GujaratFirst.in","feed":"SD","title":"Gujarat First","url":"https://mumt03.tangotv.in/Dsly5z3HGUJARATFIRST/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"GujaratFirst.in","feed":"SD","title":"Gujarat First","url":"https://samitaorigin.tangotv.in/GUJARATFIRST/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GulistanNews.in","feed":"SD","title":"Gulistan News","url":"https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/030a117c40d84ca99ac8927d3e2a1eec/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"GulistanNews.in","feed":"SD","title":"Gulistan News","url":"https://fta.ektv.in/live/427/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"Gulli.fr","feed":"SD","title":"Gulli","url":"http://99.27.51.147:8080/Gulli/index.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
@@ -8402,6 +8408,7 @@
 {"channel":"HarPalGeo.pk","feed":"SD","title":"HarPal Geo","url":"https://jk3lz82elw79-hls-live.5centscdn.com/harPalGeo/955ad3298db330b5ee880c2c9e6f23a0.sdp/playlist.m3u8","quality":"360p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HarvestTV.in","feed":"SD","title":"Harvest TV","url":"https://mumbai-edge.smartplaytv.in/HarvestTV/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HarvestTV.in","feed":"SD","title":"Harvest TV","url":"https://7mbd4ogkr3gx-hls-live.wmncdn.net/harvesttvlive1/bbb19eae240ec100af921d511efc86a0.sdp/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"HarvestTV.in","feed":"SD","title":"Harvest TV","url":"https://samitaorigin.tangotv.in/HARVESTTV24X7/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HarvestTVKeralam.in","feed":"SD","title":"Harvest TV Keralam","url":"https://7mbd4ogkr3gx-hls-live.wmncdn.net/harvestenglish/d1796a22d24e8696c7d5d0b5c349fdd2.sdp/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HarvestUSA.in","feed":"SD","title":"Harvest USA","url":"https://7mbd4ogkr3gx-hls-live.wmncdn.net/harvestusa/d57ffba6564caea2fee3f4085f19a098.sdp/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HasbroLegends.us","feed":"SD","title":"Hasbro Legends","url":"https://amg02713-amg02713c11-amgplt0852.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg02713-amg02713c11-amgplt0852/playlist.m3u8","quality":"1080p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
@@ -8509,6 +8516,7 @@
 {"channel":"Hidabroot.il","feed":"SD","title":"Hidabroot","url":"https://cdn.cybercdn.live/HidabrootIL/Live97/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HiDost.in","feed":"SD","title":"Hi Dost!","url":"https://fta.ektv.in/live/713/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"HiDost.in","feed":"SD","title":"Hi Dost!","url":"https://mumt03.tangotv.in/Dsly5z3HHIDOST/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"HiDost.in","feed":"SD","title":"Hi Dost!","url":"https://samitaorigin.tangotv.in/HIDOST/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HiDost.in","feed":"SD","title":"Hi Dost!","url":"https://cdn.pishow.tv/ott/live/224/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HighChannelTV.cn","feed":"SD","title":"高台电视台","url":"http://117.156.28.119/270000001111/1110000146/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HighNews.in","feed":"SD","title":"High News","url":"https://highmedia.livebox.co.in/HIGHNEWShls/LIVE.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
@@ -8523,6 +8531,7 @@
 {"channel":"HimlenTV7.fi","feed":"SD","title":"Himlen TV7","url":"https://vod.tv7.fi/tv7-se/smil:tv7-se.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HindiHits.in","feed":"SD","title":"Hindi Hits","url":"http://146.59.253.52:8080/hindihitshd/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HindiHits.in","feed":"SD","title":"Hindi Hits","url":"https://samitaorigin.tangotv.in/HINDIHITS/SAMITAORIGIN/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"HindiHits.in","feed":"SD","title":"Hindi Hits SD","url":"https://mumt01.tangotv.in/O5aw8Zn3HINDIHITS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HindiKhabar.in","feed":"SD","title":"Hindi Khabar","url":"https://livingindiaottlive.akamaized.net/hindikhabar/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HindiKhabar.in","feed":"SD","title":"Hindi Khabar","url":"https://stream.ottlive.co.in/hindikhabar/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HindiKhabar.in","feed":"SD","title":"Hindi Khabar","url":"https://fta.ektv.in/live/96/96_0.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
@@ -8614,9 +8623,11 @@
 {"channel":"HmongStarTV.us","feed":"SD","title":"Hmong Star TV","url":"https://livefta.malimarcdn.com/ftaedge00/hmongstartv.sdp/playlist.m3u8","quality":"720p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"HmongTVNetwork.us","feed":"SD","title":"Hmong TV Network","url":"https://livefta.malimarcdn.com/ftaedge00/cvabroadcasting.stream/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HMTV.in","feed":"SD","title":"HMTV","url":"https://mumbai-edge.smartplaytv.in/HMTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"HMTV.in","feed":"SD","title":"HMTV","url":"https://mumt04.tangotv.in/m18aqlK4HMTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HMTV.in","feed":"SD","title":"HMTV","url":"https://yuppnimresmum.akamaized.net/28072023/smil:hmtv.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HMTV.in","feed":"SD","title":"HMTV","url":"https://cdn.pishow.tv/ott/live/280/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HMTV.ng","feed":"SD","title":"HMTV","url":"https://customer-yzxu6n447dx2x45h.cloudflarestream.com/f255a1e5ef17a8277e15e5f409951e98/manifest/video.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"HNN24x7.in","feed":"SD","title":"HNN 24x7","url":"https://mumt07.tangotv.in/zHjX9OFlHNN24X7/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HNN24x7.in","feed":"SD","title":"HNN 24x7","url":"https://ott.livelegitpro.in:9899/hnnnews/hnnnews/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HobbyMaker.uk","feed":"SD","title":"Hobby Maker","url":"https://lo3.gemporia.com/abrhobbymakerukgfx/smil:livestreamFullHD.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"HodHodFarsiTV.ir","feed":"SD","title":"HodHod Farsi TV","url":"https://northtelecom.b-cdn.net/hodhodtv.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -8848,9 +8859,9 @@
 {"channel":"IdeaalTV.nl","feed":"SD","title":"Ideaal TV","url":"https://ms2.mx-cd.net/dtv-09/236-2051366/Ideaal_TV.smil/playlist.m3u8","quality":"480p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"IdentiteTeleCaraibes.mq","feed":"SD","title":"Identité Télé Caraïbes","url":"https://vdo2.pro-fhi.net:3769/stream/play.m3u8","quality":"548p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"IDJTV.rs","feed":"SD","title":"IDJTV","url":"https://best-str.umn.cdn.united.cloud/stream?channel=idjhd&p=In$trum300na765ta&player=m3u8&sp=idjtv&stream=hp1400&u=idjtv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"İdman.az","feed":"HD","title":"İdman TV HD","url":"http://172.110.210.14:80/gQUkHt52/jAZUsz6/2021633","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
-{"channel":"İdman.az","feed":"HD","title":"İdman TV","url":"https://idman.tvstream.az/hls/stream4/stream.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36","referrer":"https://tvstream.az/"}
-{"channel":"İdman.az","feed":"SD","title":"İdman TV","url":"http://185.32.44.154:80/idmanaz/index.m3u8","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
+{"channel":"Idman.az","feed":"HD","title":"İdman TV HD","url":"http://172.110.210.14:80/gQUkHt52/jAZUsz6/2021633","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
+{"channel":"Idman.az","feed":"HD","title":"İdman TV","url":"https://idman.tvstream.az/hls/stream4/stream.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36","referrer":"https://tvstream.az/"}
+{"channel":"Idman.az","feed":"SD","title":"İdman TV","url":"http://185.32.44.154:80/idmanaz/index.m3u8","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"IeanJesusEcuador.ec","feed":"SD","title":"IeanJesus Ecuador","url":"https://cloud37.ecuatel.com/iglesia2020/Stream1/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"IERTBCSCanal82.mx","feed":"SD","title":"IERTBCS Canal 8.2 La Paz","url":"https://s5.mexside.net:1936/xhbzc82/xhbzc82/playlist.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"IFC.us","feed":"East","title":"IFC","url":"http://23.237.104.106:8080/USA_IFC/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -8926,6 +8937,7 @@
 {"channel":"IndiaDailyLive.in","feed":"SD","title":"India Daily Live","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/60d22520-d44d-48a5-b1f1-75d2742ad209/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"IndiaNews.in","feed":"SD","title":"India News","url":"https://fta.ektv.in/live/297/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"IndiaNews.in","feed":"SD","title":"India News","url":"https://mumt03.tangotv.in/Dsly5z3HINDIANEWS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"IndiaNews.in","feed":"SD","title":"India News","url":"https://samitaorigin.tangotv.in/INDIANEWS/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"IndiaNewsGujarati.in","feed":"SD","title":"India News Gujarati","url":"https://cdn.pishow.tv/ott/live/339/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"IndiaNewsGujarati.in","feed":"SD","title":"India News Gujarati","url":"https://fta.ektv.in/live/653/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"IndiaNewsHaryana.in","feed":"SD","title":"India News Haryana","url":"https://fta.ektv.in/live/590/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
@@ -8963,6 +8975,7 @@
 {"channel":"IneditTV.ro","feed":"SD","title":"Inedit TV","url":"https://hls02ns.antenaplay.ro/hls/inedit-tv-hd/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"INews.in","feed":"SD","title":"INews","url":"https://mumbai-edge.smartplaytv.in/INews/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INews.in","feed":"SD","title":"INews","url":"https://mumt03.tangotv.in/Dsly5z3HINEWS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"INews.in","feed":"SD","title":"INews","url":"https://samitaorigin.tangotv.in/INEWS/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INews.in","feed":"SD","title":"INews","url":"https://yuppnimresmum.akamaized.net/28072023/smil:inews.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INews.in","feed":"SD","title":"INews","url":"https://cdn.pishow.tv/ott/live/411/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INews.iq","feed":"SD","title":"iNEWS TV","url":"https://live.i-news.tv/hls/stream.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -8983,6 +8996,7 @@
 {"channel":"IngenioTV.mx","feed":"SD","title":"Ingenio TV","url":"https://aprende-usea.streaming.media.azure.net/9317ea3f-03a0-4266-9292-ac97a0e41c4d/output-20230609-123537-manifest.ism/manifest(format=m3u8-cmaf).m3u8","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"Ingushetia.ru","feed":"SD","title":"Ингушетия ТВ","url":"https://ingushetia.mediacdn.ru/cdn/ingushetia/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INH24x7.in","feed":"SD","title":"INH 24x7","url":"https://fta.ektv.in/live/99/99_0.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
+{"channel":"INH24x7.in","feed":"SD","title":"INH 24x7","url":"https://mumt01.tangotv.in/O5aw8Zn3INH24X7/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INH24x7.in","feed":"SD","title":"INH 24x7","url":"https://d1msejlow1t3l4.cloudfront.net/fta/inh24x7/playlist.m3u8","quality":"396p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"INH24x7.in","feed":"SD","title":"INH 24x7","url":"https://7epd6o8edk9b-hls-live.wmncdn.net/inh24/live.stream/playlist.m3u8","quality":"360p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"InkMaster.us","feed":"CA","title":"Ink Master","url":"https://jmp2.uk/plu-655f2d713944b60008bc7e90.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -9158,6 +9172,7 @@
 {"channel":"JaihindTV.in","feed":"SD","title":"Jaihind TV","url":"https://fta.ektv.in/live/700/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"JaihindTV.in","feed":"SD","title":"Jaihind TV","url":"https://mumt03.tangotv.in/Dsly5z3HJAIHIND/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"JaihindTV.in","feed":"SD","title":"Jaihind TV","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/JaihindTV.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"JaihindTV.in","feed":"SD","title":"Jaihind TV","url":"https://samitaorigin.tangotv.in/JAIHIND/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"JaihindTV.in","feed":"SD","title":"Jaihind TV","url":"https://yuppnimrestreammum.akamaized.net/260723/smil:jaihind1.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"396p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Jail.uk","feed":"SD","title":"Jail","url":"https://e85541db4ae943d9b5a09477d6b1d8ab.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-eu_Jail/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"JaiMaharashtra.in","feed":"SD","title":"Jai Maharashtra","url":"https://d1msejlow1t3l4.cloudfront.net/fta/jaimaharashtra/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -9277,6 +9292,7 @@
 {"channel":"JinTV.nl","feed":"SD","title":"Jin TV","url":"https://live.jintv.org/medialive/jintv.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"JinvaniChannel.in","feed":"SD","title":"Jinvani Channel","url":"https://fta.ektv.in/live/169/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"JinvaniChannel.in","feed":"SD","title":"Jinvani Channel","url":"https://mumt03.tangotv.in/Dsly5z3HJINVANI/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"JinvaniChannel.in","feed":"SD","title":"Jinvani Channel","url":"https://samitaorigin.tangotv.in/JINVANI/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"JinvaniChannel.in","feed":"SD","title":"Jinvani Channel","url":"https://cdn.pishow.tv/ott/live/989/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"JiuquanTVNewsComprehensiveChannel.cn","feed":"SD","title":"酒泉新闻综合","url":"http://117.156.28.119/270000001111/1110000001/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"JK24x7News.in","feed":"SD","title":"JK 24x7 News","url":"https://samitaorigin.tangotv.in/JKL24X7NEWS/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -9382,6 +9398,7 @@
 {"channel":"Kadak.in","feed":"SD","title":"Kadak","url":"https://n18syndication.akamaized.net/bpk-tv/Kadak_NW18_MOB/output01/master.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KaifaTV.jo","feed":"SD","title":"Kaifa TV","url":"http://82.212.74.2:8000/live/7311.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KairaliArabia.in","feed":"SD","title":"Kairali Arabia","url":"https://mumt03.tangotv.in/Dsly5z3HKAIRALIARABIA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"KairaliArabia.in","feed":"SD","title":"Kairali Arabia","url":"https://samitaorigin.tangotv.in/KAIRALIARABIA/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KairaliNews.in","feed":"SD","title":"Kairali News","url":"https://mumt01.tangotv.in/O5aw8Zn3KAIRALINEWS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KairaliNews.in","feed":"SD","title":"Kairali News","url":"https://cdn.pishow.tv/ott/live/1469/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KairaliTV.in","feed":"SD","title":"Kairali TV","url":"https://mumt01.tangotv.in/O5aw8Zn3KAIRALI/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -9528,6 +9545,7 @@
 {"channel":"KentuckyEducationalTelevision.us","feed":"WKPCTV","title":"PBS KET KY","url":"https://2-fss-2.streamhoster.com/pl_132/amlst:200914-1315486/playlist.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KeralaVision.in","feed":"SD","title":"Kerala Vision","url":"https://cdn.pishow.tv/ott/live/243/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KeralaVision.in","feed":"SD","title":"Kerala Vision","url":"https://mumt03.tangotv.in/Dsly5z3HKERALAVISION/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"KeralaVision.in","feed":"SD","title":"Kerala Vision","url":"https://samitaorigin.tangotv.in/KERALAVISION/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KermanTV.ir","feed":"SD","title":"Kerman","url":"https://ncdn.telewebion.ir/kerman/live/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"KernCountyTV.us","feed":"SD","title":"Kern County Television","url":"https://cdn3.wowza.com/5/dk84U1p2UUdoMGxT/kern/G0169_003/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KerussoTV.hn","feed":"SD","title":"Kerusso TV","url":"https://s.emisoras.tv:8081/kerussotv/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -9674,6 +9692,7 @@
 {"channel":"KolkataTV.in","feed":"SD","title":"Kolkata TV","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/d4017753-7155-4cee-8755-10f1b3eb6d77/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KolkataTV.in","feed":"SD","title":"Kolkata TV","url":"https://cdn.pishow.tv/ott/live/1511/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KolkataTV.in","feed":"SD","title":"Kolkata TV","url":"https://mumt03.tangotv.in/Dsly5z3HKOLKATATV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"KolkataTV.in","feed":"SD","title":"Kolkata TV","url":"https://samitaorigin.tangotv.in/KOLKATATV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"KolkataTV.in","feed":"SD","title":"Kolkata TV","url":"https://tvsen6.aynaott.com/kolkatatv/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Kolyokklub.hu","feed":"SD","title":"Kolyokklub","url":"http://88.212.7.14/live/kolyokklub_atk/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","referrer":null}
 {"channel":"KomalaTV.se","feed":"SD","title":"Komala TV","url":"https://komhls.wns.live/hls/stream.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -10229,6 +10248,7 @@
 {"channel":"MahaaMax.in","feed":"SD","title":"Mahaa Max","url":"https://d1msejlow1t3l4.cloudfront.net/fta/mahaamax/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MahaaMax.in","feed":"SD","title":"Mahaa Max","url":"https://fta.ektv.in/live/684/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"MahaaMax.in","feed":"SD","title":"Mahaa Max","url":"https://mumt03.tangotv.in/Dsly5z3HMAHAAMAX/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"MahaaMax.in","feed":"SD","title":"Mahaa Max","url":"https://samitaorigin.tangotv.in/MAHAAMAX/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MahaaNews.in","feed":"SD","title":"Mahaa News","url":"https://mumbai-edge.smartplaytv.in/MahaNews/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MahaaNews.in","feed":"SD","title":"Mahaa News","url":"https://cdn.pishow.tv/ott/live/401/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MahaaNews.in","feed":"SD","title":"Mahaa News","url":"https://fta.ektv.in/live/689/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
@@ -10325,6 +10345,7 @@
 {"channel":"ManoranjanTV.in","feed":"SD","title":"Manoranjan TV","url":"https://tvsen6.aynaott.com/vhu6qz5Nsd/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ManoranjanTV.in","feed":"SD","title":"Manoranjan TV","url":"https://cdn.pishow.tv/ott/live/1013/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Manoto.uk","feed":"SD","title":"Manoto TV","url":"https://ca-rt.onetv.app/manototv/index-0.m3u8?token=onetv202","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"MansudaeTelevision.kp","feed":"HD","title":"Mansudae Television","url":"https://live.koryocdn.org/mansudae/index.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"MantavyaNews.in","feed":"SD","title":"Mantavya News","url":"https://d1msejlow1t3l4.cloudfront.net/fta/mantavya/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MantavyaNews.in","feed":"SD","title":"Mantavya News","url":"https://fta.ektv.in/live/656/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"MantavyaNews.in","feed":"SD","title":"Mantavya News","url":"https://fta.ektv.in/live/657/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
@@ -10448,6 +10469,7 @@
 {"channel":"MazhavilManorama.in","feed":"SD","title":"Mazhavil Manorama","url":"https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/ad6c59acd03b4b5a9928e32d7fee66db/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MazhavilManorama.in","feed":"SD","title":"Mazhavil Manorama","url":"https://mumt03.tangotv.in/Dsly5z3HMAZHAVILMANORAMAINT/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MazhavilManorama.in","feed":"SD","title":"Mazhavil Manorama","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/MazhavilManoramaInternational.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"MazhavilManorama.in","feed":"SD","title":"Mazhavil Manorama","url":"https://samitaorigin.tangotv.in/MAZHAVILMANORAMAINT/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MazhavilManorama.in","feed":"SD","title":"Mazhavil Manorama","url":"https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/mazhavilmanorama_nim_https/050522/mazhavilmanorama/playlist.m3u8","quality":"396p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Mazzika.eg","feed":"SD","title":"Mazzika","url":"http://149.100.11.235:8080/Mazzika/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MBC1.ae","feed":"SD","title":"MBC 1","url":"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1/15cf99af5de54063fdabfefe66adc075/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -10481,6 +10503,7 @@
 {"channel":"MBCTV.in","feed":"SD","title":"MBC TV","url":"https://cdn.pishow.tv/ott/live/1017/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MBCTV.in","feed":"SD","title":"MBC TV","url":"https://fta.ektv.in/live/667/master.m3u8","quality":"576p","labels":[],"user_agent":"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"MBCTV.in","feed":"SD","title":"MBC TV","url":"https://mumbai-edge.smartplaytv.in/MBCTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"MBCTV.in","feed":"SD","title":"MBC TV","url":"https://samitaorigin.tangotv.in/MBCTV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MBGTV.id","feed":"FHD","title":"MBG TV","url":"https://stream.convergen.co/mbg_stream/smil:mbStream.smil/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MBTV.us","feed":"SD","title":"Miami Beach Tv (MBTV) (Miami Beach FL)","url":"https://edge-f.swagit.com/live/miamibeachfl/live-1-a/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MC.mx","feed":"SD","title":"MC","url":"http://168.196.127.137:6001/play/a070/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -10583,6 +10606,7 @@
 {"channel":"MercyTV.in","feed":"SD","title":"Mercy TV","url":"https://fta.ektv.in/live/637/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"MercyTV.in","feed":"SD","title":"Mercy TV","url":"https://mumbai-edge.smartplaytv.in/MercyTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MercyTV.in","feed":"SD","title":"Mercy TV","url":"https://mumt03.tangotv.in/Dsly5z3HMERCYTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"MercyTV.in","feed":"SD","title":"Mercy TV","url":"https://samitaorigin.tangotv.in/MERCYTV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MercyTV.sl","feed":"SD","title":"Mercy TV","url":"https://cdn-cloudfront.eu-central-1.prod.ingest.aws-infra.dacast.com/live/bff8bd53-ee89-2c76-6a51-95a0003f7d96/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MerejaTV.et","feed":"SD","title":"Mereja TV","url":"https://g4wlkqp8l23a-hls-live.5centscdn.com/MerejaTV/955ad3298db330b5ee880c2c9e6f23a0.sdp/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"MerejaTV.et","feed":"SD","title":"Mereja TV","url":"https://rumble.com/live-hls-dvr/4c14o3/playlist.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
@@ -10635,6 +10659,7 @@
 {"channel":"MHOneDilSe.in","feed":"SD","title":"MH One Dil Se","url":"https://streams.tangotv.in/MHONEDILSE/ORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MHOneMovies.in","feed":"SD","title":"MH One Movies","url":"https://fta.ektv.in/live/639/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"MHOneMovies.in","feed":"SD","title":"MH One Movies","url":"https://mumt03.tangotv.in/Dsly5z3HMHONEMOVIE/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"MHOneMovies.in","feed":"SD","title":"MH One Movies","url":"https://samitaorigin.tangotv.in/MHONEMOVIE/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MHOneShraddha.in","feed":"SD","title":"MH One Shraddha","url":"https://fta.ektv.in/live/344/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"MHOneShraddha.in","feed":"SD","title":"MH One Shraddha","url":"https://livestream.jswk.online/mhoneshraddha/live/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MHOneShraddha.in","feed":"SD","title":"MH One Shraddha","url":"https://mumt01.tangotv.in/O5aw8Zn3MHONESHRADDHA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -10859,6 +10884,7 @@
 {"channel":"MoonbugKids.uk","feed":"SD","title":"Moonbug","url":"https://dq2a9ghraf7sw.cloudfront.net/Moonbug.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MoonTV.in","feed":"SD","title":"Moon TV","url":"https://cdn.pishow.tv/ott/live/1121/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MoonTV.in","feed":"SD","title":"Moon TV","url":"https://d1msejlow1t3l4.cloudfront.net/fta/moontv/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"MoonTV.in","feed":"SD","title":"Moon TV","url":"https://samitaorigin.tangotv.in/MOONTV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MoonTV.in","feed":"SD","title":"Moon TV","url":"https://samitaorigin.tangotv.in/ONTV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"MoozDance.ro","feed":"HD","title":"Mooz Dance HD","url":"https://meta.vcdn.biz/bb45aeed3156b62f01b6ca222920d46b_megogo/live/hls/b/700_2500/u_sid/0/o/183161921/rsid/20877e0c-fb47-4c47-a29d-19fadadbccb7/u_uid/2260062697/u_vod/0/u_device/cms_html5/u_devicekey/_site/lip/81.196.174.41*asn/u_srvc/109126/u_did/web_c02d0d195494991ada83b5ae2a2f87d6041c11b1b8f79fc86ae5b7b557894fa0/type.live/playlist.m3u8","quality":"1080i","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"MoraNetTV.hu","feed":"SD","title":"Móra-Net TV","url":"https://stream.moranettv.hu/live/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -11453,6 +11479,7 @@
 {"channel":"NDTVIndia.in","feed":"SD","title":"NDTV India","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/NDTVIndia.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVIndia.in","feed":"SD","title":"NDTV India","url":"https://cdn.pishow.tv/ott/live/299/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVIndia.in","feed":"SD","title":"NDTV India","url":"https://mumt03.tangotv.in/Dsly5z3HNDTVINDIA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NDTVIndia.in","feed":"SD","title":"NDTV India","url":"https://samitaorigin.tangotv.in/NDTVINDIA/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVIndia.in","feed":"SD","title":"NDTV India","url":"https://ndtvindiaelemarchana.akamaized.net/hls/live/2003679/ndtvindia/master.m3u8","quality":"480p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"NDTVLANKA.lk","feed":"SD","title":"NDTV LANKA","url":"https://g4wlkqqwl23a-hls-live.5centscdn.com/NDTVLANKA/1ff5fa54d14c3ff6c6bd3918bbb7db5d.sdp/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVMadhyaPradeshChhattisgarh.in","feed":"SD","title":"NDTV Madhya Pradesh Chhattisgarh","url":"https://ndtvregional.akamaized.net/hls/live/2102726-b/ndtvmpcg/master_1.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -11461,6 +11488,7 @@
 {"channel":"NDTVMadhyaPradeshChhattisgarh.in","feed":"SD","title":"NDTV Madhya Pradesh Chhattisgarh","url":"https://mumt06.tangotv.in/qYyB8fXVNDTVMPCG/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVMarathi.in","feed":"SD","title":"NDTV Marathi","url":"https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/master_1.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":"https://marathi.ndtv.com/"}
 {"channel":"NDTVMarathi.in","feed":"SD","title":"NDTV Marathi","url":"https://janya-ndtv.akamaized.net/ptnr-monitoring/vglive-sk-238731/ndtvmarathi_1500k.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NDTVMarathi.in","feed":"SD","title":"NDTV Marathi","url":"https://mumt04.tangotv.in/m18aqlK4NDTVMARATHI/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVMarathi.in","feed":"SD","title":"NDTV Marathi","url":"https://vg-ndtvwatcho.akamaized.net/vglive-sk-238731/main.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVProfit.in","feed":"HD","title":"NDTV Profit","url":"https://ndtvprofit.akamaized.net/hls/live/2107404/ndtvprofit/master_1.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVProfit.in","feed":"SD","title":"NDTV Profit","url":"https://ndtvprofit.akamaized.net/hls/live/2107404/ndtvprofit/chunklist_5.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -11470,6 +11498,7 @@
 {"channel":"NDTVRajasthan.in","feed":"SD","title":"NDTV Rajasthan","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/46b5543f-e66f-40c7-a687-1ce4e7ecb4f4/main.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVRajasthan.in","feed":"SD","title":"NDTV Rajasthan","url":"https://cdn.pishow.tv/ott/live/1489/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NDTVRajasthan.in","feed":"SD","title":"NDTV Rajasthan","url":"https://mumt03.tangotv.in/Dsly5z3HNDTVRAJASTHAN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NDTVRajasthan.in","feed":"SD","title":"NDTV Rajasthan","url":"https://samitaorigin.tangotv.in/NDTVRAJASTHAN/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NdurumeniTV.ke","feed":"SD","title":"Ndurumeni TV","url":"https://goliveafrica.media:9998/live/6389d571d20af/index.m3u8","quality":"480p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"NeaTV.gr","feed":"SD","title":"Nea TV","url":"https://live.neatv.gr:8888/hls/neatv.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NeaTV.gr","feed":"SD","title":"Nea TV","url":"https://live.neatv.gr:8888/hls/neatv_high/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -11526,6 +11555,7 @@
 {"channel":"News1st.in","feed":"SD","title":"News 1st","url":"https://d1msejlow1t3l4.cloudfront.net/fta/News1st/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"News1st.in","feed":"SD","title":"News 1st","url":"https://fta.ektv.in/live/691/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"News1st.in","feed":"SD","title":"News 1st","url":"https://mumt03.tangotv.in/Dsly5z3HNEWS1STKANNADA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"News1st.in","feed":"SD","title":"News 1st","url":"https://samitaorigin.tangotv.in/NEWS1STKANNADA/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"News1st.in","feed":"SD","title":"News 1st","url":"https://cdn.pishow.tv/ott/live/268/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"News7Tamil.in","feed":"SD","title":"News 7 Tamil","url":"https://cdn.pishow.tv/ott/live/1498/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"News7Tamil.in","feed":"SD","title":"News 7 Tamil","url":"https://mumt07.tangotv.in/zHjX9OFlNEWS7TAMIL/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -11666,6 +11696,7 @@
 {"channel":"NewsStateUPUK.in","feed":"SD","title":"News State UP & UK","url":"https://jmp2.uk/stvp-IN3000846P","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewsStateUPUK.in","feed":"SD","title":"News State UP & UK","url":"https://prasarbharti-nn.vidgyor.com/nntv/nnup/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewsStateUPUK.in","feed":"SD","title":"News State UP & UK","url":"https://fta.ektv.in/live/302/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
+{"channel":"NewsStateUPUK.in","feed":"SD","title":"News State UP & UK","url":"https://mumt07.tangotv.in/zHjX9OFlNEWSSTATEUPUK/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewsTamil24x7.in","feed":"SD","title":"News Tamil 24x7","url":"https://stream.ottlive.co.in/newstamil/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewsTamil24x7.in","feed":"SD","title":"News Tamil 24x7","url":"https://vglivessai.akamaized.net/ptnr-yupptv/title-News_Tamil/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/bc657abd-5bf5-4526-9038-d42bbb9ca249/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewsTamil24x7.in","feed":"SD","title":"News Tamil 24x7","url":"https://cdn.pishow.tv/ott/live/1433/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -11679,6 +11710,7 @@
 {"channel":"NewsXWorld.in","feed":"HD","title":"NewsX World","url":"https://cdn.pishow.tv/ott/live/1049/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewsXWorld.in","feed":"HD","title":"NewsX World","url":"https://fta.ektv.in/live/610/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"NewsXWorld.in","feed":"HD","title":"NewsX World","url":"https://mumt03.tangotv.in/Dsly5z3HNEWSXWORLD/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NewsXWorld.in","feed":"HD","title":"NewsX World","url":"https://samitaorigin.tangotv.in/NEWSXWORLD/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Newsy.us","feed":"SD","title":"Newsy","url":"https://547f72e6652371c3.mediapackage.us-east-1.amazonaws.com/out/v1/e3e6e29095844c4ba7d887f01e44a5ef/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Newsy.us","feed":"SD","title":"Newsy","url":"https://linear-460.frequency.stream/dist/vix/460/hls/master/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"NewTV.pl","feed":"SD","title":"NewTV","url":"https://1409502578.rsc.cdn77.org/live/stream-1/chunklist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -11743,8 +11775,8 @@
 {"channel":"Nickelodeon.in","feed":"SD","title":"Nickelodeon","url":"http://dksmedia.tv/play/live.php?extension=ts&mac=00:1A:79:B6:60:3D&play_token=8FNt7g9GJ5&stream=1752848","quality":"576p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"Nickelodeon.it","feed":"SD","title":"Nickelodeon","url":"http://185.227.34.104/stream/117/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"Nickelodeon.nl","feed":"SD","title":"Nickelodeon","url":"http://185.77.12.179:9981/stream/channelid/788918401?profile=pass","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"Nickelodeon.pt","feed":"SD","title":"Nickelodeon","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F398241518529a84217dd1f","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Nickelodeon.ro","feed":"SD","title":"Nickelodeon","url":"http://178.76.68.60:7442/64/mpegts","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"Nickelodeon.ro","feed":"SD","title":"Nickelodeon","url":"http://sultanios.alwaysdata.net/vavo.php?ID=181751695","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"Nickelodeon.ru","feed":"SD","title":"Nickelodeon","url":"http://stream.mcquack.net/443/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Nickelodeon.uk","feed":"SD","title":"Nickelodeon","url":"http://93.186.201.93/stream/397/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"Nickelodeon.us","feed":"East","title":"Nickelodeon","url":"https://cache0.wonvt.st/live/1ewxgzu023dos60vlh62k/master.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":"https://tvnow.st/"}
@@ -11791,6 +11823,7 @@
 {"channel":"NickJrPlutoTV.us","feed":"CA","title":"Nick Jr. Pluto TV","url":"https://jmp2.uk/plu-62bdb75c3afd1200079146a6.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"NickJrPlutoTV.us","feed":"US","title":"Nick Jr. Pluto TV","url":"https://jmp2.uk/plu-5ca6748a37b88b269472dad9.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NickOnline.br","feed":"HD","title":"NickOnline HD","url":"https://x1colegal.com/hls/stream.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NickOnlineBobEsponja.br","feed":"HD","title":"NickOnline Bob Esponja","url":"https://bob.x1colegal.com/hls/stream.m3u8","quality":null,"labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"NickSchweiz.ch","feed":"SD","title":"Nick Schweiz","url":"https://hostemea1236.s.gy/hostemea/nickschweiz/28/25/65/74/gg/locos.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"NickToons90s.au","feed":"AU","title":"NickToons 90s","url":"https://i.mjh.nz/.r/10-nicktoons-90s.m3u8","quality":null,"labels":["Geo-blocked"],"user_agent":"otg/1.5.1 (AppleTv Apple TV 4; tvOS16.0; appletv.client) libcurl/7.58.0 OpenSSL/1.0.2o zlib/1.2.11 clib/1.8.56","referrer":null}
 {"channel":"Nicktoons.cz","feed":"SD","title":"Nicktoons","url":"http://88.212.15.50/live/test_nicktoons/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -11841,9 +11874,11 @@
 {"channel":"NKRTVKannada.in","feed":"SD","title":"NKR TV Kannada","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/bd25b31b-5ce2-453d-a544-d073555d85f3/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NKRTVKannada.in","feed":"SD","title":"NKR TV Kannada","url":"https://mumt05.tangotv.in/87NeALx2NKRTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NKTV24x7.in","feed":"SD","title":"NK TV 24x7","url":"https://nktv.smartstream.video/smartstream-us/nktvplus/nktvplus/chunks.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NKTV24x7.in","feed":"SD","title":"NK TV 24x7","url":"https://stream.ottlive.co.in/nktv/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NKTV24x7.in","feed":"SD","title":"NK TV 24x7","url":"https://d2gvyg6lvauoko.cloudfront.net/230226/nktv/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NKTV24x7.in","feed":"SD","title":"NK TV 24x7","url":"https://mumt05.tangotv.in/87NeALx2NKTVPLUS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NKTVBangla.in","feed":"SD","title":"NK TV Bangla","url":"https://nktv.smartstream.video/smartstream-us/nkbangla/nkbangla/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"NKTVBangla.in","feed":"SD","title":"NK TV Bangla","url":"https://mumt05.tangotv.in/87NeALx2NKTVPLUSBANGLA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"NMBTV.us","feed":"SD","title":"North Miami Beach TV (NMBTV) (North Miami Beach FL)","url":"https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/citynmb/G2044_002/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"noa4Hamburg.de","feed":"SD","title":"Noa 4 Hamburg","url":"https://hls1.wtnet.de/noa4hh/apple/wifi6500.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"noa4Norderstedt.de","feed":"SD","title":"Noa 4 Norderstedt","url":"https://hls1.wtnet.de/noa4/apple/wifi6500.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -12243,6 +12278,7 @@
 {"channel":"One31.th","feed":"SD","title":"One 31","url":"https://live-us1.thaimomo.com/live-as/chone-3/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"One31.th","feed":"SD","title":"One 31","url":"https://bcovlive-a.akamaihd.net/b6603a14ea59440a95e9235e14bc9332/ap-southeast-1/6415628290001/9c3d7fc7d10840a69e48b5939ae886e0/playlist_ssaiM.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"One31.th","feed":"SD","title":"ONE HD 31","url":"https://lb1-live-mv.v2h-cdn.com/hls/ffba/yogvfi/yogvfi.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"One.il","feed":"SD","title":"One","url":"https://r.il.cdn-redge.media/livehls/oil/freetv/live/one_1/live.livx/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"One.mt","feed":"SD","title":"One","url":"https://2-fss-1.streamhoster.com/pl_148/201830-1293592-1/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"One.mt","feed":"SD","title":"ONE","url":"http://80.79.6.221:25461/smash/public/21","quality":null,"labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"OneAdria.de","feed":"SD","title":"One Adria","url":"https://oneadriaapp.b-cdn.net/1080p/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -12458,7 +12494,7 @@
 {"channel":"ParaguayTV.py","feed":"SD","title":"Paraguay TV","url":"https://stream.paraguaytv.gov.py/memfs/bbe36fed-9b49-4d1d-adaa-4bd6d1b2e386.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ParaisoTV.pr","feed":"SD","title":"Paraíso TV","url":"https://stream.eleden.com/livewtpm/ngrp:livewtpm_all/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ParamountMovieChannel.us","feed":"SD","title":"Paramount Movie Channel","url":"https://jmp2.uk/plu-5cb0cae7a461406ffe3f5213.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"ParamountNetwork.pl","feed":"SD","title":"Paramount Network","url":"http://sultanios.alwaysdata.net/vavo.php?ID=3390498693","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"ParamountNetwork.pl","feed":"SD","title":"Paramount Network","url":"https://guard.sekobes.workers.dev/?url=https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fgeil.to%2Flive%2Fplay%2F3390498693","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ParamountNetwork.us","feed":"East","title":"Paramount Network","url":"http://23.237.104.106:8080/USA_PARAMOUNT_NETWORK/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ParamountPlusPicks.us","feed":"SD","title":"Paramount+ Picks","url":"https://jmp2.uk/plu-5ff8c708653d080007361b14.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"ParanormalState.us","feed":"UK","title":"Paranormal State","url":"https://jmp2.uk/plu-60804d85858bd00007c5d591.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -12551,6 +12587,7 @@
 {"channel":"PeaceofMindTV.in","feed":"SD","title":"Peace of Mind TV","url":"https://fta.ektv.in/live/170/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"PeaceofMindTV.in","feed":"SD","title":"Peace of Mind TV","url":"https://mumbai-edge.smartplaytv.in/PeaceOfMind/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PeaceofMindTV.in","feed":"SD","title":"Peace of Mind TV","url":"https://mumt03.tangotv.in/Dsly5z3HPEACEOFMIND/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"PeaceofMindTV.in","feed":"SD","title":"Peace of Mind TV","url":"https://samitaorigin.tangotv.in/PEACEOFMIND/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PeaceofMindTV.in","feed":"SD","title":"Peace of Mind TV","url":"https://yuppnimrestreammum.akamaized.net/181224/smil:peaceofmind.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PeaceTVBangla.ae","feed":"SD","title":"Peace TV Bangla","url":"http://103.135.253.32:8080/Pace-TV-Bangla/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PeaceTVBangla.ae","feed":"SD","title":"Peace TV Bangla","url":"https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -13131,10 +13168,12 @@
 {"channel":"PolimerTV.in","feed":"SD","title":"Polimer TV","url":"https://cdn.pishow.tv/ott/live/1241/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Polonia1.pl","feed":"SD","title":"Polonia 1","url":"http://92.114.85.87:8012/play/a006/index.m3u8","quality":"576i","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Polsat1.pl","feed":"SD","title":"Polsat 1","url":"https://kotmruk.github.io/polish-potato/polsat1.m3u8","quality":null,"labels":["Not 24/7"],"user_agent":null,"referrer":null}
+{"channel":"Polsat1.pl","feed":"SD","title":"Polsat 1","url":"https://raw.githubusercontent.com/yaskar661-lgtm/poland-iptv/refs/heads/main/test/polsat1.m3u8","quality":null,"labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"Polsat2.pl","feed":"SD","title":"Polsat 2","url":"http://57.128.210.196:8080/208/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Polsat.pl","feed":"SD","title":"Polsat","url":"https://cdn-s-playnow-live.pluscdn.pl/ch/1502600/308/dash/20a18c30/live.mpd","quality":"1080p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"PolsatFilm.pl","feed":"HD","title":"Polsat Film HD","url":"http://92.63.196.180:8080/live/74173747597177/7vfxky4rjx3j/10208.m3u8?token=Q0FaWEpZFFsXAwNWUFMEBwJXAwMDVlpTBgVTVwEHAQNeWgoACVVXVQAVGEZGFUdTUl9qWwIVAlBSAQBdGENHQ10RbVBdEwxDAgANUAJVFxoRRlxfAxUCUU4RQA1QQwheTQ9eFRtUThVQRVoFWT5RU0VbVldEDVYUDl8cRlsPbVRdDlNXXRMMQwQVGEZcEkUUCVxAXgobGgMLR0IFQAQQClYWXlUVE1UOQFlAFkxDDxRjfhceRFJAFQddQw1bDxAKGg4BTAETGkNcRGsWUBJBRFZTWFcUFQJDUhEcRlkASm9bDFxXXFJCCFpZR0YPQwQUHxBYXQheTA4QbEANUEMIXk0PXkQ=","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"PolsatGames.pl","feed":"HD","title":"Polsat Games HD","url":"http://92.63.196.180:8080/live/74173747597177/7vfxky4rjx3j/10209.m3u8?token=Q0FaWEpZFFsXAwNWUFMEBwJXAwMDVlpTBgVTVwEHAQNeWgoACVVXVQAVGEZGFUdTUl9qWwIVAlBSAQBdGENHQ10RbVBdEwxDAgANUAJVFxoRRlxfAxUCUU4RQA1QQwheTQ9eFRtUThVQRVoFWT5RU0VbVldEDVYUDl8cRlsPbVRdDlNXXRMMQwQVGEZcEkUUCVxAXgobGgMLR0IFQAQQClYWXlUVE1UOQFlAFkxDDxRjfhceRFJAFQddQw1bDxAKGg4BTAETGkNcRGsWUBJBRFZTWFcUFQJDUhEcRlkASm9bDFxXXFJCCFpZR0YPQwQUHxBYXQheTA4QbEANUEMIXk0PXkQ=","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"PolsatGames.pl","feed":"HD","title":"Polsat Games HD","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fgeil.to%2Flive%2Fplay%2F426276697","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PolsatJimJam.pl","feed":"SD","title":"Polsat JimJam","url":"http://92.114.85.87:8014/play/a00d/index.m3u8","quality":"576i","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PolsatJimJam.pl","feed":"SD","title":"Polsat JimJam","url":"http://185.227.34.179:8080/jimjam/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PolsatMusic.pl","feed":"SD","title":"Polsat Music","url":"http://92.114.85.87:8001/play/a00z/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -13224,6 +13263,7 @@
 {"channel":"PraiseTV.pk","feed":"SD","title":"Praise TV","url":"https://pixelsmedia.live/livepraisetv/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrameyaNews7.in","feed":"SD","title":"Prameya News7","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/7c8ab820-a4ad-4c48-b326-2d7bc6639cef/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrameyaNews7.in","feed":"SD","title":"Prameya News7","url":"https://mumt03.tangotv.in/Dsly5z3HPRAMEYANEWS7/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"PrameyaNews7.in","feed":"SD","title":"Prameya News7","url":"https://samitaorigin.tangotv.in/PRAMEYANEWS7/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrarthanaBhawanTV.in","feed":"SD","title":"Prarthana Bhawan TV","url":"https://fta.ektv.in/live/623/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"PrarthanaBhawanTV.in","feed":"SD","title":"Prarthana Bhawan TV","url":"https://mumt03.tangotv.in/Dsly5z3HPRATHANABHAWAN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrarthanaLife.in","feed":"SD","title":"Prarthana Life","url":"https://livetv.tarangplus.in/prarthana-origin/live/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -13267,9 +13307,8 @@
 {"channel":"PrimAntennaTV.it","feed":"SD","title":"PrimAntenna TV","url":"https://5f22d76e220e1.streamlock.net/primantenna14/primantenna14/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrimaShow.cz","feed":"SD","title":"Prima Show","url":"http://88.212.15.50/live/test_prima_show_hevc_25p/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrimaSK.sk","feed":"HD","title":"Prima SK","url":"http://88.212.15.50/live/test_prima_plus_25p/playlist.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","referrer":null}
-{"channel":"PrimaSport2.ro","feed":"HD","title":"Prima Sport 2 HD","url":"http://sultanios.alwaysdata.net/vavo.php?ID=3381201599","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"PrimaSport3.ro","feed":"HD","title":"Prima Sport 3 HD","url":"http://sultanios.alwaysdata.net/vavo.php?ID=2762629881","quality":null,"labels":[],"user_agent":null,"referrer":null}
-{"channel":"PrimaSport4.ro","feed":"HD","title":"Prima Sport 4 HD","url":"http://sultanios.alwaysdata.net/vavo.php?ID=3194919143","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"PrimaSport1.ro","feed":"HD","title":"Prima Sport 1 HD","url":"https://rundle.tv/proxy5.php?src=https%3A%2F%2Firon1.xn--x2rw19a.space%2Fpuk1%2Fusergenrx0cir27aq-got.htm","quality":null,"labels":[],"user_agent":null,"referrer":"https://rundle.tv/"}
+{"channel":"PrimaSport2.ro","feed":"HD","title":"Prima Sport 2 HD","url":"https://rundle.tv/proxy5.php?src=https%3A%2F%2Firon1.xn--x2rw19a.space%2Fpuk2%2Fusergenrnd0clv03fyt-got.htm","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrimaSportCzechia.cz","feed":"SD","title":"Prima Sport Czechia","url":"http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/prima_sport/live_mq?offsetSeconds=0","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrimaSportPPV1.ro","feed":"SD","title":"Prima Sport PPV 1","url":"https://rundle.tv/proxy5.php?src=https%3A%2F%2Fpulse1.sanseny001.shop%2Fpuki1%2Fusergendx6kal0r2bsm-got.htm","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"PrimaSportPPV2.ro","feed":"SD","title":"Prima Sport PPV 2","url":"https://rundle.tv/proxy5.php?src=https%3A%2F%2Fpulse1.sanseny001.shop%2Fpuki2%2Fusergendxpk2s6utg0l-got.htm","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -13912,6 +13951,7 @@
 {"channel":"RealTelevision.pe","feed":"SD","title":"Real Television","url":"https://live-evg10.tv360.bitel.com.pe/bitel/realtv/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RealTime.it","feed":"HD","title":"Real Time HD","url":"http://102.129.186.182:81/realtime/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RealTime.it","feed":"SD","title":"Real Time","url":"https://streaming.aurora.enhanced.live/live/mpc/enl0eG1mLmVncmVzcy5mZDJ2eHI=/out/v1/IT_SIMULCAST/REALTIME/CMAF/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"RealTV.az","feed":"HD","title":"Real TV","url":"http://185.118.50.218:80/realtv/video.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"RealWild.uk","feed":"SD","title":"Real Wild","url":"https://lds-realwild-samsungau.amagi.tv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RealWild.uk","feed":"SD","title":"Real Wild","url":"https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00426-littledotstudio-realwildnz-samsungnz/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RealWild.uk","feed":"SD","title":"Real Wild","url":"https://lds-realwild-rakuten.amagi.tv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -14264,6 +14304,7 @@
 {"channel":"RPlusGold.in","feed":"SD","title":"R Plus Gold","url":"https://vglivessai.akamaized.net/ptnr-lg/title-Rplus_Gold/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/33172241-82f7-4c91-8ae8-4754309b66a0/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RPlusGold.in","feed":"SD","title":"R Plus Gold","url":"https://fta.ektv.in/live/198/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"RPlusGold.in","feed":"SD","title":"R Plus Gold","url":"https://mumt03.tangotv.in/Dsly5z3HRPLUSGOLD/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"RPlusGold.in","feed":"SD","title":"R Plus Gold","url":"https://samitaorigin.tangotv.in/RPLUSGOLD/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RPlusGold.in","feed":"SD","title":"R Plus Gold","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/cf883da3-f9f5-4c70-b0ef-b3ac2e2ad1e3/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RPlusGold.in","feed":"SD","title":"R Plus Gold","url":"https://cdn.pishow.tv/ott/live/1231/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"RPLWoerden.nl","feed":"SD","title":"RPL TV Woerden","url":"https://d1893oi5c6e5u0.cloudfront.net/nlpo/clr-nlpo/rpltvwoerden/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -14864,6 +14905,7 @@
 {"channel":"SaiTV.in","feed":"SD","title":"Sai TV","url":"https://cdn.pishow.tv/ott/live/1235/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SaiTV.in","feed":"SD","title":"Sai TV","url":"https://mumbai-edge.smartplaytv.in/SaiTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SaiTV.in","feed":"SD","title":"Sai TV","url":"https://mumt03.tangotv.in/Dsly5z3HSAITV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SaiTV.in","feed":"SD","title":"Sai TV","url":"https://samitaorigin.tangotv.in/SAITV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SaiTV.in","feed":"SD","title":"Sai TV","url":"https://account31.livebox.co.in/saitvhls/live.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"SakshiTV.in","feed":"SD","title":"Sakshi TV","url":"https://stream.ottlive.co.in/sakshitv/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SakshiTV.in","feed":"SD","title":"Sakshi TV","url":"https://cdn.pishow.tv/ott/live/409/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -15259,6 +15301,7 @@
 {"channel":"ShoppingNT.kr","feed":"SD","title":"Shopping NT","url":"https://live.shoppingntmall.com/live/10011.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShoutFactoryTV.us","feed":"SD","title":"Shout! TV","url":"https://d1s1wrpgemt9re.cloudfront.net/Shout_TV.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShowdoMilhao.br","feed":"SD","title":"Show do Milhao","url":"https://d38s7rrdbnh4oy.cloudfront.net/v1/master/215c0da80606fed29372070168106400a6ca7e1a/SSAI-Saudades/index.m3u8","quality":"1080p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
+{"channel":"ShowPlusTV.az","feed":"HD","title":"Show Plus TV","url":"https://rtmp.showplus.tv/hls/myshow.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShowtimeFamilyZone.us","feed":"East","title":"Showtime Family Zone","url":"http://23.237.104.106:8080/USA_SHOWTIME_FAMILY/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShowTurk.tr","feed":"SD","title":"Show Turk","url":"https://raw.githubusercontent.com/bnyusuf67-crypto/streams/refs/heads/main/streams/shturk.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShowVenTV.ve","feed":"SD","title":"ShowVen TV","url":"https://cdnbarinas.tvzamora.com/showven/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -15270,6 +15313,7 @@
 {"channel":"ShubhCinemaTV.in","feed":"SD","title":"Shubh Cinema TV","url":"https://d393sxaxig6bax.cloudfront.net/out/v1/589cf2cf44bf42bb941e817a2240d62e/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShubhCinemaTV.in","feed":"SD","title":"Shubh Cinema TV","url":"https://fta.ektv.in/live/49/49_0.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"ShubhCinemaTV.in","feed":"SD","title":"Shubh Cinema TV","url":"https://mumt03.tangotv.in/Dsly5z3HSHUBHCINEMA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ShubhCinemaTV.in","feed":"SD","title":"Shubh Cinema TV","url":"https://samitaorigin.tangotv.in/SHUBHCINEMA/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShubhsandeshTV.in","feed":"SD","title":"Shubhsandesh TV","url":"https://cdn.pishow.tv/ott/live/457/master.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShubhsandeshTV.in","feed":"SD","title":"Shubhsandesh TV","url":"https://fta.ektv.in/live/627/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"ShubhsandeshTV.in","feed":"SD","title":"Shubhsandesh TV","url":"https://mumt03.tangotv.in/Dsly5z3HSHUBHSANDESH/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -15277,6 +15321,7 @@
 {"channel":"ShubhTV.in","feed":"SD","title":"Shubh TV","url":"https://d2g1vdc6ozl2o8.cloudfront.net/out/v1/0a0dc7d7911b4fddbb4dfc963fdd4b9e/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ShubhTV.in","feed":"SD","title":"Shubh TV","url":"https://fta.ektv.in/live/626/master.m3u8","quality":"576p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","referrer":null}
 {"channel":"ShubhTV.in","feed":"SD","title":"Shubh TV","url":"https://mumt03.tangotv.in/Dsly5z3HSHUBHTV/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ShubhTV.in","feed":"SD","title":"Shubh TV","url":"https://samitaorigin.tangotv.in/SHUBHTV/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Sibir24.ru","feed":"KYA","title":"Сибирь 24 (Красноярск)","url":"https://vgtrkregion-reg.cdnvideo.ru/vgtrk/krasnoyarsk/sibir24-hd/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Sibir24.ru","feed":"NVS","title":"Сибирь 24 (Новосибирск)","url":"https://vgtrkregion-reg.cdnvideo.ru/vgtrk/novosibirsk/sibir24-hd/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SIC.pt","feed":"SD","title":"SIC","url":"https://sic.live.impresa.pt/sic.m3u8","quality":"1080p","labels":["Geo-blocked"],"user_agent":"Mozilla/5.0 (X11; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0","referrer":"https://sic.pt/"}
@@ -15320,6 +15365,7 @@
 {"channel":"SIPSETV81.mx","feed":"SD","title":"SIPSE TV 8.1","url":"https://webprod.sipse.com.mx:8080/show/merida.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"SIPSETVCUN81.mx","feed":"SD","title":"SIPSE TVCUN 8.1","url":"https://webprod.sipse.com.mx:8080/show/tvcun.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"SiriKannada.in","feed":"SD","title":"Siri Kannada","url":"https://mumt03.tangotv.in/Dsly5z3HSIRIKANNADA/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SiriKannada.in","feed":"SD","title":"Siri Kannada","url":"https://samitaorigin.tangotv.in/SIRIKANNADA/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SiriKannadaAllTime.in","feed":"SD","title":"Siri Kannada All Time","url":"https://mumt07.tangotv.in/zHjX9OFlSIRIKANNADAALLTIME/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SirippoliTV.in","feed":"SD","title":"Sirippoli TV","url":"https://segment.yuppcdn.net/240122/siripoli/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SirisTV.nl","feed":"SD","title":"Siris TV","url":"https://cdn.streammy.events/siris/playout/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -15378,6 +15424,7 @@
 {"channel":"SkySport8.nz","feed":"SD","title":"Sky Sport 8","url":"http://37.49.224.5/stream/70/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"SkySport9.nz","feed":"SD","title":"Sky Sport 9","url":"http://37.49.224.5/stream/52/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"SkySportF1.de","feed":"SD","title":"Sky Sport F1","url":"http://94.130.48.67:8042/stream/51/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
+{"channel":"SkySportF1.it","feed":"SD","title":"Sky Sport F1","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F22890389722acc4573933d","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"SkySportGolf.de","feed":"SD","title":"Sky Sport Golf","url":"http://94.130.48.67:8042/stream/56/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"SkySportMix.de","feed":"SD","title":"Sky Sport Mix","url":"http://94.130.48.67:8042/stream/53/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
 {"channel":"SkySportNews.de","feed":"SD","title":"Sky Sport News","url":"http://94.130.48.67:8042/stream/49/index.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":null}
@@ -15491,6 +15538,7 @@
 {"channel":"SonicTV.us","feed":"SD","title":"Sonic TV","url":"https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=16764","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonnenklarTV.de","feed":"SD","title":"Sonnenklar TV","url":"http://euvia.cdn.ses-ps.com/HLS-Live/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonoOndaTV.ec","feed":"SD","title":"Sono Onda TV","url":"https://live.obslivestream.com/sonoondatv/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SonUmidTV.az","feed":"SD","title":"Son Umid TV","url":"https://cdn-sonumidtv.yayin.com.tr/sonumidtv/sonumidtv/chunklist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonusFM.de","feed":"SD","title":"Sonus FM TV","url":"http://www.sonus.fm:1935/public/stream_source/playlist.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"SonusFM.de","feed":"SD","title":"Sonus FM TV","url":"https://60015180a7f57.streamlock.net:444/public/stream_source/playlist.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"SonyAath.in","feed":"SD","title":"Sony Aath","url":"http://27.124.71.27/Sony_Aath/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -15527,7 +15575,12 @@
 {"channel":"SonyPal.in","feed":"SD","title":"Sony Pal","url":"http://59.103.38.46:8000/play/a0ac/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonyPal.in","feed":"SD","title":"Sony Pal","url":"http://163.61.226.31:9981/stream/channelid/1571254341?profile=pass","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonyPix.in","feed":"HD","title":"Sony Pix HD","url":"http://116.90.120.149:8000/play/a138/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SonySAB.in","feed":"HD","title":"Sony SAB HD","url":"http://116.90.120.149:8000/play/a128/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SonySportsTen1.in","feed":"HD","title":"Sony Sports Ten 1 HD","url":"http://116.90.120.149:8000/play/a11t/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SonySportsTen1.in","feed":"SD","title":"Sony Sports Ten 1","url":"http://116.90.120.149:8000/play/a126/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SonySportsTen2.in","feed":"HD","title":"Sony Sports Ten 2 HD","url":"http://116.90.120.149:8000/play/a137/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonySportsTen3Hindi.in","feed":"SD","title":"Sony Sports Ten 3 Hindi","url":"https://r2.amml.in/sony-ten-3-hd/live.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"SonySportsTen5.in","feed":"SD","title":"Sony Sports Ten 5","url":"http://116.90.120.149:8000/play/a117/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonyWah.in","feed":"SD","title":"Sony Wah","url":"http://163.61.226.31:9981/stream/channelid/1743466790?profile=pass","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SonyWah.in","feed":"SD","title":"Sony Wah","url":"https://sl.vodep39240327.workers.dev/channel/SONY+WAH.m3u8","quality":"1080p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"SonyYay.in","feed":"SD","title":"Sony Yay!","url":"https://r2.amml.in/sony-yay/live.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -15645,6 +15698,7 @@
 {"channel":"SpiritTV.us","feed":"SD","title":"Spirit TV","url":"https://cdnlive.myspirit.tv/LS-ATL-43240-2/index.m3u8","quality":"720p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"Spondon.in","feed":"SD","title":"Spondon","url":"https://indianews-yupptv.vgcdn.net/vglive-sk-926943/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Spondon.in","feed":"SD","title":"Spondon","url":"https://nktv.smartstream.video/smartstream-us/spondon/spondon/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"Spondon.in","feed":"SD","title":"Spondon","url":"https://stream.ottlive.co.in/spondon/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Spondon.in","feed":"SD","title":"Spondon","url":"https://vglivessai.akamaized.net/sg/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/4f13c5ec-ea4e-4a11-aebe-c03654daf4bd/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Spondon.in","feed":"SD","title":"Spondon","url":"https://mumt05.tangotv.in/87NeALx2SPONDON/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"SpongeBobSchwammkopf.de","feed":"DACH","title":"SpongeBob Schwammkopf","url":"https://jmp2.uk/plu-5d00e8adaab96b5635b2a005.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -15726,6 +15780,7 @@
 {"channel":"StaraTV.id","feed":"Parahyangan","title":"Stara TV Parahyangan","url":"https://parahyangan.staratv.id/hls/0/stream.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":"https://parahyangan.staratv.id/"}
 {"channel":"StaraTV.id","feed":"SumedangMajalengka","title":"Stara TV","url":"https://stream.staratv.id/hls/0/stream.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":"https://stream.staratv.id/"}
 {"channel":"StarBharat.in","feed":"HD","title":"Star Bharat HD","url":"http://103.135.253.32:8080/STAR-BHARAT/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarBharat.in","feed":"HD","title":"Star Bharat HD","url":"http://116.90.120.149:8000/play/a13b/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarBharat.uk","feed":"SD","title":"Star Bharat","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/gb/YuppTV/UtsavBharat.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarChannel.bg","feed":"SD","title":"Star Channel","url":"http://213.91.179.28:8000/play/a0c9","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
 {"channel":"StarChannel.cl","feed":"SD","title":"Star Channel","url":"http://138.121.15.230:9002/STAR-CHANNEL/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -15748,6 +15803,10 @@
 {"channel":"StarCrime.pt","feed":"SD","title":"Star Crime","url":"http://znty.dyndns.org:5010/hls/foxcrime.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
 {"channel":"StarCrime.si","feed":"SD","title":"Star Crime","url":"http://92.36.202.5:10001/play/a02o","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
 {"channel":"StarFamily.ru","feed":"SD","title":"Star Family","url":"https://dash2.antik.sk/live/test_star_family_atktv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarGold2.in","feed":"SD","title":"Star Gold 2","url":"http://116.90.120.149:8000/play/a12b/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarGold.in","feed":"HD","title":"Star Gold HD","url":"http://116.90.120.149:8000/play/a12a/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarGoldRomance.in","feed":"SD","title":"Star Gold Romance","url":"http://116.90.120.149:8000/play/a12c/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarGoldSelect.in","feed":"HD","title":"Star Gold Select HD","url":"http://116.90.120.149:8000/play/a131/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarJalsha.in","feed":"HD","title":"Star Jalsha HD","url":"http://103.135.253.32:8080/STAR-JALSHA-HD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarJalsha.in","feed":"HD","title":"Star Jalsha HD","url":"https://livetv.shamon-cable.net:8443/Star-Jalsha/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarJalsha.in","feed":"HD","title":"Star Jalsha HD","url":"https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starjalsha.smil/chunklist_b1928000.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -15758,17 +15817,23 @@
 {"channel":"StarLife.si","feed":"SD","title":"Star Life","url":"http://92.36.202.5:10001/play/a02n","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
 {"channel":"StarMaa.in","feed":"HD","title":"Star Maa HD","url":"https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starmaa1.smil/chunklist_b2628000.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarMaaMovies.in","feed":"HD","title":"Star Maa Movies HD","url":"https://da86m1sqpm3o0.cloudfront.net/28072023/smil:maamovies.smil/chunklist_b2628000.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarMovies.in","feed":"HD","title":"Star Movies HD","url":"http://116.90.120.149:8000/play/a13a/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarMovies.pt","feed":"SD","title":"Star Movies","url":"http://znty.dyndns.org:5010/hls/foxm.m3u8","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36","referrer":null}
 {"channel":"StarMovies.si","feed":"SD","title":"Star Movies","url":"http://92.36.202.5:10001/play/a01o","quality":null,"labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3","referrer":null}
+{"channel":"StarMoviesSelect.in","feed":"HD","title":"Star Movies Select HD","url":"http://116.90.120.149:8000/play/a139/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Starnet.in","feed":"SD","title":"Starnet","url":"https://5a1178b42cc03.streamlock.net/8220/8220/playlist.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarNews.bd","feed":"SD","title":"Star News","url":"http://103.135.253.32:8080/Star-News/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarPlus.in","feed":"HD","title":"StarPlus HD","url":"http://66.102.126.10:8000/play/a008/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarPlus.in","feed":"HD","title":"StarPlus HD","url":"http://103.135.253.32:8080/STAR-PLUS/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarPlus.in","feed":"HD","title":"StarPlus HD","url":"http://103.185.24.134:3001/Star-Plus/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarPlus.in","feed":"HD","title":"StarPlus HD","url":"http://116.90.120.149:8000/play/a11w/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarPlus.in","feed":"HD","title":"StarPlus HD","url":"https://livetv.shamon-cable.net:8443/Star-Plus-HD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarPlus.uk","feed":"SD","title":"StarPlus","url":"https://d1rc86nwwc9fag.cloudfront.net/260723/starplusuk_2500/chunks.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarPlusTelevizija.mk","feed":"SD","title":"Star Plus Music","url":"https://live.muzickatv.mk/live/StarMusic2.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"StarPravah.in","feed":"HD","title":"Star Pravah HD","url":"https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starpravah.smil/chunklist_b1928000.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarSports1.in","feed":"HD","title":"Star Sports 1 HD","url":"http://116.90.120.149:8000/play/a11x/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarSports1Hindi.in","feed":"HD","title":"Star Sports 1 Hindi HD","url":"http://116.90.120.149:8000/play/a122/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"StarSports2.in","feed":"HD","title":"Star Sports 2 HD","url":"http://116.90.120.149:8000/play/a120/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"StarsTV.pl","feed":"SD","title":"Stars TV","url":"http://92.114.85.87:8001/play/a00o/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"STARTAir.ru","feed":"SD","title":"START Air","url":"http://176.118.197.101/START_AIR/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"STARTAir.ru","feed":"SD","title":"START Air","url":"http://stream.mcquack.net/128/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -16203,6 +16268,7 @@
 {"channel":"TBNInspire.us","feed":"SD","title":"TBN Inspire","url":"https://livecdn.use1-0004.jwplive.com/live/sites/Yal8cmyO/media/yfFI83Xz/live.isml/.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TBNNejatTV.ir","feed":"SD","title":"TBN Nejat TV","url":"https://hls.nejat.live/hls/stream.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"TBNPacific.us","feed":"SD","title":"TBN Pacific","url":"https://broadcast.tbnpacific.org.au:4430/stream/TBNPacificTV/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"TBNPolska.pl","feed":"SD","title":"TBN Polska","url":"https://prx-y5cf8.mediatool.tv/playout/tbn-abr67/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TBNUK.uk","feed":"SD","title":"TBN UK","url":"https://live-tbn-ssai.simplestreamcdn.com/v1/master/774d979dd66704abea7c5b62cb34c6815fda0d35/tbn-live/manifest.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TBNUkraine.us","feed":"SD","title":"TBN Україна","url":"https://5d23269b3ec0c.streamlock.net/WEB_Ukraine24/ngrp:Ukraine24.stream-adaptive/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TBS.us","feed":"East","title":"TBS","url":"https://turnerlive.warnermediacdn.com/hls/live/2023172/tbseast/slate/VIDEO_0_3564000.m3u8","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
@@ -16274,7 +16340,6 @@
 {"channel":"TeleAmiga.co","feed":"SD","title":"Tele Amiga","url":"https://liveingesta118.cdnmedia.tv/teleamigatvlive/smil:dvrlive.smil/playlist.m3u8","quality":"480p","labels":["Not 24/7"],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160","referrer":null}
 {"channel":"Teleangol.cl","feed":"SD","title":"Teleangol","url":"https://pantera1-100gb-cl-movistar.dps.live/teleangol/teleangol.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TeleangolRadio.cl","feed":"SD","title":"Teleangol Radio","url":"https://pantera1-100gb-cl-movistar.dps.live/teleangolradio/teleangolradio.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
-{"channel":"TeleAntillas.do","feed":"SD","title":"Tele Antillas","url":"http://45.171.108.253:8888/TELEANTILLAS/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TeleAntillas.do","feed":"SD","title":"Tele Antillas","url":"https://hls.tvabierta.net/hls/010.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Teleantioquia.co","feed":"SD","title":"Teleantioquia","url":"http://138.121.15.230:9002/TELEANTIOQUIA/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Teleantioquia.co","feed":"SD","title":"Teleantioquia","url":"http://181.78.82.130:8000/play/a0rs/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -16582,6 +16647,7 @@
 {"channel":"TelevizijaUrslja.si","feed":"SD","title":"TV Uršlja","url":"http://ott.sgn.net/hls/tvurslja.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"Televsesvit.ua","feed":"SD","title":"Televsesvit","url":"https://televsesvit.cdn-04.cosmonova.net.ua/hls/televsesvit_ua_hi/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TelewizjaBiznesowa.pl","feed":"SD","title":"Telewizja Biznesowa","url":"https://s-pl-01.mediatool.tv/playout/tbpl-abr/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"TelewizjaImperium.pl","feed":"SD","title":"Telewizja Imperium","url":"https://str10.imperiummedia.pl/TVIMPERIUM/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TelewizjaiTTV.pl","feed":"SD","title":"Telewizja iTTV","url":"https://5d84fe297ee2b.streamlock.net/sercanie/scj_florek.stream_aac/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TelewizjaJaslo.pl","feed":"SD","title":"Telewizja Jaslo","url":"https://cdn01.aztv.pl/live_tvjaslo/live_tvjaslo.stream/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TelewizjaLuban.pl","feed":"SD","title":"Telewizja Lubań","url":"http://stream.herissons.cloud/hls/tvluban.m3u8","quality":"720p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
@@ -16925,6 +16991,7 @@
 {"channel":"TLC.cz","feed":"SD","title":"TLC","url":"http://88.212.15.50/live/test_tlc_1200_atk/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"TLC.de","feed":"SD","title":"TLC","url":"https://s6.hopslan.com/tlcX/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TLC.hu","feed":"SD","title":"TLC","url":"http://88.212.7.14/live/tlc_hungary/index.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
+{"channel":"TLC.in","feed":"HD","title":"TLC HD","url":"http://116.90.120.149:8000/play/a11g/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TLC.ru","feed":"SD","title":"TLC","url":"http://stream.mcquack.net/168/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TLCLatinAmerica.us","feed":"Brazil","title":"TLC Latin America Brazil","url":"http://79.127.238.228:14433","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TLCLatinAmerica.us","feed":"Panregional","title":"TLC Latin America","url":"http://38.134.250.110:8000/play/a00n/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -16962,6 +17029,7 @@
 {"channel":"TNews.in","feed":"SD","title":"T News","url":"https://mumbai-edge.smartplaytv.in/TNews/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TNews.in","feed":"SD","title":"T News","url":"https://mumt03.tangotv.in/Dsly5z3HTNEWS/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TNews.in","feed":"SD","title":"T News","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/TNews.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"TNews.in","feed":"SD","title":"T News","url":"https://samitaorigin.tangotv.in/TNEWS/SAMITAORIGIN/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TNews.in","feed":"SD","title":"T News","url":"https://yuppnimresmum.akamaized.net/120723/smil:tnews.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TNews.in","feed":"SD","title":"T News","url":"https://cdn.pishow.tv/ott/live/385/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TNH.ht","feed":"SD","title":"TNH","url":"https://bozztv.com/dvrfl03/hdirect/hdirect-telecaraibes/index.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
@@ -17133,6 +17201,7 @@
 {"channel":"TraceAyiti.fr","feed":"SD","title":"Trace Ayiti","url":"https://channels.trace.plus/Traceprod/AYITI_hd/index.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":"https://trace.plus"}
 {"channel":"TraceBrazuca.fr","feed":"HD","title":"Trace Brasil","url":"https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracebrazuca-samsungbr/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TraceBrazuca.fr","feed":"HD","title":"Trace Brasil","url":"https://channels.trace.plus/Traceprod/BRAZIL_hd/index.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":"https://trace.plus"}
+{"channel":"TraceBrazuca.fr","feed":"SD","title":"Trace Brazuca","url":"https://channels.trace.plus/Traceprod/BRAZIL_sd/index.m3u8","quality":"1090p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":"https://trace.plus"}
 {"channel":"TraceBrazuca.fr","feed":"SD","title":"TRACE Brazuca","url":"https://amg01131-tracetv-amg01131c4-stirr-us-4390.playouts.now.amagi.tv/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TraceCaribbean.fr","feed":"SD","title":"Trace Caribbean","url":"https://channels.trace.plus/Traceprod/CARIBBEAN_hd/index.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":"https://trace.plus"}
 {"channel":"TraceGospel.fr","feed":"NigeriaandEastAfrica","title":"Trace Gospel Nigeria and East Africa","url":"https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8","quality":"1080p","labels":[],"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36","referrer":"https://trace.plus"}
@@ -17236,6 +17305,7 @@
 {"channel":"TRSport.it","feed":"SD","title":"TR Sport","url":"https://livetr.teleromagna.it/mia/live/playlist.m3u8","quality":"480p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TRT1.tr","feed":"SD","title":"TRT 1","url":"https://tv-trt1.medya.trt.com.tr/master.m3u8","quality":"1440p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TRT2.tr","feed":"SD","title":"TRT 2","url":"https://tv-trt2.medya.trt.com.tr/master.m3u8","quality":"1440p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
+{"channel":"TRT3.tr","feed":"SD","title":"TRT 3","url":"https://vuvuu-geil-m3u8.yaskar661.workers.dev/?url=https%3A%2F%2Fvavoo.to%2Fvavoo-iptv%2Fplay%2F418740351278f04c94b243","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TRT3.tr","feed":"SD","title":"TRT 3","url":"https://tv-trt3.live.trt.com.tr/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TRT.gr","feed":"SD","title":"TRT","url":"https://av.hellasnet.tv/rst/trt/main_stream.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TRT.ve","feed":"SD","title":"TRT","url":"https://vcp12.myplaytv.com/trt/trt/playlist.m3u8","quality":"410p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
@@ -17757,6 +17827,7 @@
 {"channel":"TVKaliente.pe","feed":"SD","title":"TV Kaliente","url":"https://lbgo.bozztv.com/ssh101/ssh101/kalientecusco/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TVKeszthely.hu","feed":"SD","title":"TV Keszthely","url":"https://cloudfront44.lexanetwork.com:1344/freerelay/keszthelyivtv.sdp/playlist.m3u8","quality":"360p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TVKragujevac.rs","feed":"SD","title":"TV Kragujevac","url":"https://edge-rs-03.maksnet.tv/rtvkg/uzivo/playlist.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"TVKSMNT.pl","feed":"HD","title":"TVK SMNT","url":"https://tvk.smnt.pl/memfs/cf3a66ef-133a-4579-86da-5995ab23ae2a.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TVKStella.pl","feed":"SD","title":"TVK Stella","url":"https://stream.tvkstella.pl/stella/stella.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TVKU.id","feed":"SD","title":"TVKU","url":"https://tvku.tv/hlsstream/hls/live.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"TVKujawy.pl","feed":"SD","title":"TV Kujawy","url":"http://stream.tvkujawy.pl:8080/live/broadcast.m3u8","quality":"576p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
@@ -18260,6 +18331,9 @@
 {"channel":"UniregionTV.cl","feed":"SD","title":"Uniregion TV","url":"https://5ff3d9babae13.streamlock.net/ubyecbxnfd/ubyecbxnfd/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"UnisonTV.mx","feed":"SD","title":"Unison TV","url":"https://stream.unison.mx/hls/unisontvatem.m3u8","quality":"1080p","labels":["Not 24/7"],"user_agent":null,"referrer":null}
 {"channel":"UnisulTV.br","feed":"SD","title":"UNISUL TV","url":"https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"Unite8Sports1.in","feed":"HD","title":"Unite8 Sports 1 HD","url":"http://116.90.120.149:8000/play/a125/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"Unite8Sports1.in","feed":"SD","title":"Unite8 Sports 1","url":"http://116.90.120.149:8000/play/a11l/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"Unite8Sports2.in","feed":"HD","title":"Unite8 Sports 2 HD","url":"http://116.90.120.149:8000/play/a129/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Unitel.bo","feed":"Cochabamba","title":"Unitel Cochabamba","url":"http://190.181.61.93:8000/play/1913/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Unitel.bo","feed":"LaPaz","title":"Unitel La Paz","url":"http://190.181.61.93:8000/play/1910/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"Unitel.bo","feed":"LaPaz","title":"Unitel La Paz","url":"http://190.181.61.93:8000/play/a00t/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
@@ -18559,13 +18633,16 @@
 {"channel":"ViiMEDIA.in","feed":"SD","title":"Vii MEDIA","url":"https://viimediacdn.wiseplayout.com/viimedia/master.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"VijayTakkar.in","feed":"APAC","title":"Vijay Takkar APAC","url":"https://tglmp01.akamaized.net/out/v1/c1071012b73f4f189b202e1529e8f802/manifest.mpd","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuExplore.ru","feed":"SD","title":"viju Explore","url":"http://46.53.200.153:7777/play/a01i/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"vijuExplore.ru","feed":"SD","title":"viju Explore","url":"http://116.90.120.149:8000/play/a0ar/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuExplore.ru","feed":"SD","title":"viju Explore","url":"http://stream.mcquack.net/239/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuExplore.ru","feed":"SD","title":"viju Explore","url":"https://fs.uplink.kz/viju_explore/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuHistory.ru","feed":"SD","title":"viju History","url":"http://46.53.200.153:7777/play/a01j/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"vijuHistory.ru","feed":"SD","title":"viju History","url":"http://116.90.120.149:8000/play/a0as/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuHistory.ru","feed":"SD","title":"viju History","url":"http://178.124.179.122:8080/HistoryHD/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuHistory.ru","feed":"SD","title":"viju History","url":"http://stream.mcquack.net/101/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuHistory.ru","feed":"SD","title":"viju History","url":"https://fs.uplink.kz/viju_history/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuNature.ru","feed":"SD","title":"viju Nature","url":"http://46.53.200.153:7777/play/a01k/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"vijuNature.ru","feed":"SD","title":"viju Nature","url":"http://116.90.120.149:8000/play/a0at/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuNature.ru","feed":"SD","title":"viju Nature","url":"https://fs.uplink.kz/viju_nature/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuNature.ru","feed":"SD","title":"viju Nature","url":"https://stream8.cinerama.uz/1228/tracks-v1a1/mono.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuPlusComedy.ru","feed":"HD","title":"viju+ Comedy HD","url":"http://46.53.200.153:7777/play/Viju_Comedy_HD/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -18580,13 +18657,16 @@
 {"channel":"vijuPlusSport.ru","feed":"HD","title":"viju+ Sport HD","url":"http://46.53.200.153:7777/play/a01l/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuPlusSport.ru","feed":"SD","title":"viju+ Sport","url":"http://31.148.5.241/Viasat_Sport/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuPlusSport.ru","feed":"SD","title":"viju+ Sport","url":"http://46.53.200.153:7777/play/Viasat_Sport/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"vijuPlusSport.ru","feed":"SD","title":"viju+ Sport","url":"http://116.90.120.149:8000/play/a0au/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuPlusSport.ru","feed":"SD","title":"viju+ Sport","url":"http://stream.mcquack.net/333/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuPlusSport.ru","feed":"SD","title":"viju+ Sport","url":"https://fs.uplink.kz/viju_sport/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuPlusSport.ru","feed":"SD","title":"viju+ Sport","url":"https://stream8.cinerama.uz/1229/tracks-v1a1/mono.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000.ru","feed":"SD","title":"viju TV1000","url":"http://46.53.200.153:7777/play/TV_1000/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"vijuTV1000.ru","feed":"SD","title":"viju TV1000","url":"http://116.90.120.149:8000/play/a0ap/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000.ru","feed":"SD","title":"viju TV1000","url":"http://stream.mcquack.net/110/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000.ru","feed":"SD","title":"viju TV1000","url":"https://fs.uplink.kz/viju_tv1000/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000action.ru","feed":"SD","title":"viju TV1000 action","url":"http://46.53.200.153:7777/play/a01h/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"vijuTV1000action.ru","feed":"SD","title":"viju TV1000 action","url":"http://116.90.120.149:8000/play/a0aq/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000action.ru","feed":"SD","title":"viju TV1000 action","url":"http://stream.mcquack.net/100/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000action.ru","feed":"SD","title":"viju TV1000 action","url":"https://fs.uplink.kz/viju_tv1000_action/mono.m3u8?token=onlinetv","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"vijuTV1000action.ru","feed":"SD","title":"viju TV1000 action","url":"https://stream8.cinerama.uz/1225/tracks-v1a1/mono.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
@@ -19213,6 +19293,7 @@
 {"channel":"ZeeBusiness.in","feed":"SD","title":"Zee Business","url":"https://dwby15d04agvq.cloudfront.net/index_1.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeCineClassic.in","feed":"SD","title":"Zee Cine Classic","url":"https://amg00862-amg00862c8-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c8-amgplt0173/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeCinema.in","feed":"APAC","title":"Zee Cinema APAC","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/sg/YuppTV/ZeeCinemaAPAC.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ZeeClassic.in","feed":"SD","title":"Zee Classic","url":"http://116.90.120.149:8000/play/a121/index.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeComedyNation.in","feed":"HD","title":"Zee Comedy Nation","url":"https://amg00862-amg00862c5-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c5-amgplt0173/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeDelhiNCRHaryana.in","feed":"SD","title":"Zee Delhi NCR Haryana","url":"https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeedelhincr/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/cc483a15-1b39-4642-872d-5d08d362ed01/main.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeDilSe.in","feed":"HD","title":"Zee Dil Se","url":"https://amg00862-amg00862c6-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c6-amgplt0173/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
@@ -19233,9 +19314,11 @@
 {"channel":"ZeeOne.uk","feed":"UK","title":"Zee One","url":"https://87e3eec452134557a82da031f54a1899.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RakutenTV-fr_ZeeMagic/playlist.m3u8","quality":null,"labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeOne.uk","feed":"UK","title":"Zee One","url":"https://4bc5d2b3.wurl.com/v1/asia_tv_limited_zeeworld_1/ohlscdn_us/V00000001/7200/HLS/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeOne.uk","feed":"UK","title":"Zee One","url":"https://536ec699.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9aZWVXb3JsZC0xX0hMUw/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ZeePower.in","feed":"HD","title":"Zee Power HD","url":"http://116.90.120.149:8000/play/a11p/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeePunjabHaryanaHimachal.in","feed":"SD","title":"Zee Punjab Haryana Himachal","url":"https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeepunjabharyanahima/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/65eed269-2f3a-4dd0-ac89-d18959af28e3/main.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeRajasthan.in","feed":"SD","title":"Zee Rajasthan","url":"https://vg-zeefta.akamaized.net/ptnr-yupptv/title-zeerajashthannews/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/8e864b9a-1681-41a0-99a6-387490bc5b24/main.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeSouthFlix.in","feed":"HD","title":"Zee South Flix","url":"https://amg00862-amg00862c9-amgplt0173.playout.now3.amagi.tv/playlist/amg00862-amg00862c9-amgplt0173/playlist.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ZeeTalkies.in","feed":"HD","title":"Zee Talkies HD","url":"http://116.90.120.149:8000/play/a116/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTamil.in","feed":"HD","title":"Zee Tamil HD","url":"https://d2o8pibksxtln6.cloudfront.net/live/media/Zee_Tamil_HD/hls/Zee_Tamil_HD.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTamil.in","feed":"HD","title":"Zee Tamil HD","url":"https://da86m1sqpm3o0.cloudfront.net/28072023/smil:zeetamil1.smil/playlist.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTamil.in","feed":"SD","title":"Zee Tamil","url":"https://ev-eu-hw-fast-mpd.starzplayarabia.com/Zee_Tamil/dash/drm/index.mpd","quality":"576p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
@@ -19243,7 +19326,9 @@
 {"channel":"ZeeTelugu.in","feed":"HD","title":"Zee Telugu HD","url":"https://listas-m3u8.github.io/iptv/128.19.173.10:8888/ZEETELUGUHD.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTelugu.in","feed":"HD","title":"Zee Telugu HD","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/ZeeTeluguHD.m3u8","quality":"576p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTeluguNews.in","feed":"SD","title":"Zee Telugu News","url":"https://d116gfrn8orazi.cloudfront.net/index.m3u8?akes=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NjcxOTc5NzJ9.O4qmdMPbHwKrCg6hFXvD70vjSPWKQd0a7NrjmFdeMB8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ZeeThirai.in","feed":"HD","title":"Zee Thirai HD","url":"http://116.90.120.149:8000/play/a11q/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTV.in","feed":"HD","title":"Zee TV HD","url":"http://103.135.253.32:8080/ZEE-TV/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
+{"channel":"ZeeTV.in","feed":"HD","title":"Zee TV HD","url":"http://116.90.120.149:8000/play/a11v/index.m3u8","quality":"1080p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeTV.in","feed":"HD","title":"Zee TV HD","url":"http://41.205.93.154/ZEE-TV/index.m3u8","quality":"720p","labels":["Geo-blocked"],"user_agent":null,"referrer":null}
 {"channel":"ZeeTVAsiaPacific.sg","feed":"SD","title":"Zee TV Asia Pacific","url":"https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/sg/YuppTV/ZeeTVHDAPAC.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
 {"channel":"ZeeUttarPradeshUttarakhand.in","feed":"SD","title":"Zee Uttar Pradesh/Uttarakhand","url":"https://duw35ict5q7th.cloudfront.net/index_3.m3u8","quality":"720p","labels":[],"user_agent":null,"referrer":null}
