@@ -2329,6 +2329,7 @@
 {"channel":"AsempaTV.gh","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/cAdDOGS.jpeg"}
 {"channel":"AsenaTV.uk","feed":null,"in_use":true,"tags":[],"width":143,"height":173,"format":"PNG","url":"https://i.imgur.com/g4X6owR.png"}
 {"channel":"AsfiyahiTV.sn","feed":null,"in_use":true,"tags":[],"width":194,"height":196,"format":"PNG","url":"https://i.imgur.com/tDuvfsh.png"}
+{"channel":"ASFTV.tr","feed":null,"in_use":true,"tags":[],"width":450,"height":85,"format":"PNG","url":"https://asftv.com.tr/config/api/file.php?path=uploads%2Fbiz-logo-20260926213839-7535.png"}
 {"channel":"Asgabat.tm","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":"PNG","url":"https://i.imgur.com/EzjR1vo.png"}
 {"channel":"AshamTV.et","feed":null,"in_use":true,"tags":[],"width":305,"height":129,"format":"PNG","url":"https://i.imgur.com/YEasUNg.png"}
 {"channel":"AsharqDiscovery.sa","feed":null,"in_use":true,"tags":[],"width":322,"height":120,"format":"PNG","url":"https://i.imgur.com/Czxi7yk.png"}
@@ -5259,6 +5260,7 @@
 {"channel":"CanalPlusBoxOffice.fr","feed":null,"in_use":true,"tags":[],"width":200,"height":80,"format":"PNG","url":"https://i.imgur.com/RPZFpcH.png"}
 {"channel":"CanalPlusCaledonie.nc","feed":null,"in_use":true,"tags":[],"width":132,"height":64,"format":"PNG","url":"https://i.imgur.com/ENI1Llz.png"}
 {"channel":"CanalPlusCaraibes.fr","feed":null,"in_use":true,"tags":[],"width":284,"height":71,"format":"PNG","url":"https://i.imgur.com/1CWs7Hg.png"}
+{"channel":"CanalPlusCesko.cz","feed":null,"in_use":true,"tags":[],"width":952,"height":240,"format":"SVG","url":"https://static.wikia.nocookie.net/logopedia/images/4/40/Canal%2B_logo.svg/revision/latest?cb=20161116153721"}
 {"channel":"CanalPlusChaTate.mm","feed":null,"in_use":true,"tags":[],"width":470,"height":189,"format":"PNG","url":"https://i.imgur.com/9lII9HV.png"}
 {"channel":"CanalPlusCinema1.et","feed":null,"in_use":true,"tags":[],"width":98,"height":74,"format":"PNG","url":"https://i.imgur.com/3OGBNrC.png"}
 {"channel":"CanalPlusCinema2.et","feed":null,"in_use":true,"tags":[],"width":98,"height":74,"format":"PNG","url":"https://i.imgur.com/El54APt.png"}
@@ -5267,7 +5269,9 @@
 {"channel":"CanalPlusCinemaReunion.fr","feed":null,"in_use":true,"tags":[],"width":249,"height":113,"format":"PNG","url":"https://i.imgur.com/TSm9gAX.png"}
 {"channel":"CanalPlusCinemaReunion.fr","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":null,"url":"https://iptv-org.github.io/iptv/index.m3u"}
 {"channel":"CanalPlusCinemas.fr","feed":null,"in_use":true,"tags":[],"width":320,"height":242,"format":"JPEG","url":"https://i.imgur.com/fvPoNEa.jpeg"}
+{"channel":"CanalPlusClassics.cz","feed":null,"in_use":true,"tags":[],"width":828,"height":332,"format":"SVG","url":"https://static.wikia.nocookie.net/logopedia/images/3/3f/Canal%2B_Classics_2026.svg/revision/latest?cb=20261022162713"}
 {"channel":"CanalPlusComedy.se","feed":null,"in_use":false,"tags":[],"width":797,"height":100,"format":"PNG","url":"https://i.imgur.com/ozXTSfA.png"}
+{"channel":"CanalPlusCrime.cz","feed":null,"in_use":true,"tags":[],"width":828,"height":332,"format":"SVG","url":"https://static.wikia.nocookie.net/logopedia/images/5/51/Canal%2B_Crime_2026.svg/revision/latest?cb=20261022160852"}
 {"channel":"CanalPlusDecale.fr","feed":null,"in_use":true,"tags":[],"width":512,"height":233,"format":"PNG","url":"https://i.imgur.com/nNyNFEG.png"}
 {"channel":"CanalPlusDikDik.et","feed":null,"in_use":true,"tags":[],"width":98,"height":74,"format":"PNG","url":"https://i.imgur.com/CB0hUFi.png"}
 {"channel":"CanalPlusDiscover.et","feed":null,"in_use":true,"tags":[],"width":98,"height":74,"format":"PNG","url":"https://i.imgur.com/uyHbtjz.png"}
@@ -5275,6 +5279,7 @@
 {"channel":"CanalPlusDokument.pl","feed":null,"in_use":true,"tags":[],"width":512,"height":201,"format":"PNG","url":"https://i.imgur.com/La6WF7D.png"}
 {"channel":"CanalPlusDomo.pl","feed":null,"in_use":true,"tags":[],"width":512,"height":228,"format":"PNG","url":"https://i.imgur.com/Iz2BxbR.png"}
 {"channel":"CanalPlusDrama.se","feed":null,"in_use":false,"tags":[],"width":797,"height":100,"format":"PNG","url":"https://i.imgur.com/8RYBMml.png"}
+{"channel":"CanalPlusDramaCzechia.cz","feed":null,"in_use":true,"tags":[],"width":828,"height":332,"format":"SVG","url":"https://static.wikia.nocookie.net/logopedia/images/a/ab/Canal%2B_Drama_2026.svg/revision/latest?cb=20261022161753"}
 {"channel":"CanalPlusEllesCentre.fr","feed":null,"in_use":true,"tags":[],"width":225,"height":115,"format":"PNG","url":"https://i.imgur.com/d90LTl7.png"}
 {"channel":"CanalPlusEllesOuest.fr","feed":null,"in_use":true,"tags":[],"width":226,"height":115,"format":"PNG","url":"https://i.imgur.com/5KWTEzs.png"}
 {"channel":"CanalPlusEmotion.se","feed":null,"in_use":false,"tags":[],"width":500,"height":63,"format":"PNG","url":"https://i.imgur.com/KwN4Fzh.png"}
@@ -8296,6 +8301,7 @@
 {"channel":"DeluxeLounge.de","feed":null,"in_use":true,"tags":[],"width":444,"height":512,"format":"PNG","url":"https://i.imgur.com/pgCA35z.png"}
 {"channel":"DeluxeMusic.de","feed":null,"in_use":true,"tags":[],"width":444,"height":512,"format":"PNG","url":"https://i.imgur.com/HimuPPb.png"}
 {"channel":"DeluxeRap.de","feed":null,"in_use":true,"tags":[],"width":444,"height":512,"format":"PNG","url":"https://i.imgur.com/s3h67hx.png"}
+{"channel":"DEMAINOutremer.gp","feed":null,"in_use":true,"tags":[],"width":384,"height":121,"format":"PNG","url":"https://i.imgur.com/Utj2T82.png"}
 {"channel":"DemainTV.fr","feed":null,"in_use":true,"tags":[],"width":121,"height":38,"format":"PNG","url":"https://i.imgur.com/EIjYLyj.png"}
 {"channel":"DemaisTV.br","feed":null,"in_use":true,"tags":[],"width":281,"height":114,"format":"PNG","url":"https://i.imgur.com/Md3xibE.png"}
 {"channel":"DemandAfrica.us","feed":null,"in_use":true,"tags":[],"width":480,"height":80,"format":"PNG","url":"https://i.imgur.com/usqoEug.png"}
@@ -16235,6 +16241,7 @@
 {"channel":"LivingTV.al","feed":null,"in_use":true,"tags":[],"width":512,"height":185,"format":"PNG","url":"https://i.imgur.com/3aBliIM.png"}
 {"channel":"LivingTV.kr","feed":null,"in_use":true,"tags":[],"width":235,"height":158,"format":"PNG","url":"https://i.imgur.com/dikPhda.png"}
 {"channel":"LivoniaTelevision.us","feed":null,"in_use":true,"tags":[],"width":273,"height":72,"format":"PNG","url":"https://i.imgur.com/zgz1kpc.png"}
+{"channel":"LixdofTV.gh","feed":null,"in_use":true,"tags":[],"width":800,"height":600,"format":"WebP","url":"https://raw.githubusercontent.com/songwenhui239/Songwenhui239/refs/heads/main/Lixdof%20TV.jpeg"}
 {"channel":"LiyuanTV.cn","feed":null,"in_use":true,"tags":[],"width":125,"height":73,"format":"PNG","url":"https://i.imgur.com/5mn4PJn.png"}
 {"channel":"LJTVWorldwide.et","feed":null,"in_use":true,"tags":[],"width":132,"height":99,"format":"PNG","url":"https://i.imgur.com/ahFD10I.png"}
 {"channel":"LjubljanaTV.si","feed":null,"in_use":true,"tags":[],"width":93,"height":47,"format":"PNG","url":"https://i.imgur.com/aGnx0Jb.png"}
@@ -20236,6 +20243,7 @@
 {"channel":"NRTMexicoRegionCarbonifera.mx","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/ZqFJhAk.jpg"}
 {"channel":"NRTMexicoRegionCentro.mx","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/yjNUzYD.jpg"}
 {"channel":"NRTMexicoRegionSureste.mx","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/rxVVrZV.jpg"}
+{"channel":"NRTSport.iq","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":"PNG","url":"https://mixmedia.tv/wp-content/uploads/2022/08/nrt-sport.png"}
 {"channel":"NRTTV.iq","feed":null,"in_use":true,"tags":[],"width":108,"height":67,"format":"PNG","url":"https://i.imgur.com/uGKGtbW.png"}
 {"channel":"NRTV.ch","feed":null,"in_use":true,"tags":[],"width":113,"height":41,"format":"PNG","url":"https://i.imgur.com/sXiFPfk.png"}
 {"channel":"NRTV.us","feed":null,"in_use":true,"tags":[],"width":108,"height":107,"format":"PNG","url":"https://i.imgur.com/K6gtIcB.png"}
@@ -20391,7 +20399,6 @@
 {"channel":"NuevaEcijaTV48.ph","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://i.imgur.com/B0AoxFO.jpeg"}
 {"channel":"NuevaFamiliaTelevision.gt","feed":null,"in_use":true,"tags":[],"width":469,"height":463,"format":"JPEG","url":"https://i.imgur.com/ogOJiLB.jpg"}
 {"channel":"NuevaRegionTV.cl","feed":null,"in_use":true,"tags":[],"width":226,"height":158,"format":"PNG","url":"https://i.imgur.com/xPaYM2p.png"}
-{"channel":"NuevaVidaFM.pr","feed":null,"in_use":true,"tags":[],"width":450,"height":111,"format":"PNG","url":"https://i.ibb.co/3mbZWyN/nav-Bar-title-Image-iphone6plus.png"}
 {"channel":"Nuevavision.cu","feed":null,"in_use":true,"tags":[],"width":260,"height":260,"format":"JPEG","url":"https://i.imgur.com/ck4zyaa.jpeg"}
 {"channel":"NuevaVision14.do","feed":null,"in_use":true,"tags":[],"width":294,"height":165,"format":"PNG","url":"https://imgur.com/0fWQS53.png"}
 {"channel":"Nueve.mx","feed":null,"in_use":true,"tags":[],"width":960,"height":238,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nueve_%282018_logo%29.png/960px-Nueve_%282018_logo%29.png"}
@@ -20429,6 +20436,7 @@
 {"channel":"NuurTV.et","feed":null,"in_use":true,"tags":[],"width":220,"height":132,"format":"JPEG","url":"https://i.imgur.com/Ncntu05.jpg"}
 {"channel":"NuViewTV.za","feed":null,"in_use":true,"tags":[],"width":512,"height":378,"format":"PNG","url":"https://i.imgur.com/dYRJ7F0.png"}
 {"channel":"NVCCTV.us","feed":null,"in_use":true,"tags":[],"width":512,"height":69,"format":"PNG","url":"https://i.imgur.com/Ixiz6cS.png"}
+{"channel":"NVision.in","feed":null,"in_use":true,"tags":[],"width":508,"height":491,"format":"PNG","url":"https://livetv.ashokadigital.net/upload/logo/1739890627_WhatsApp_Image_2025-02-18_at_8.25.19_PM__1_-removebg-preview.png"}
 {"channel":"NVKSakha.ru","feed":null,"in_use":true,"tags":[],"width":194,"height":41,"format":"PNG","url":"https://i.imgur.com/LwXNUhf.png"}
 {"channel":"NVTV.uk","feed":null,"in_use":true,"tags":[],"width":263,"height":63,"format":"PNG","url":"https://i.imgur.com/i6PT0iO.png"}
 {"channel":"NWBCTV.ge","feed":null,"in_use":true,"tags":[],"width":100,"height":100,"format":"PNG","url":"https://i.imgur.com/tezKN1d.png"}
@@ -32993,6 +33001,7 @@
 {"channel":"UnitepcTV.bo","feed":null,"in_use":true,"tags":[],"width":512,"height":512,"format":"JPEG","url":"https://rednalcomcanal15lapaz.wordpress.com/wp-content/uploads/2017/11/cropped-cropped-whatsapp-image-2017-11-09-at-13-10-43.jpeg"}
 {"channel":"Uniteve.ar","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":"JPEG","url":"https://pbs.twimg.com/profile_images/720276300888453120/a_SDOmBc_400x400.jpg"}
 {"channel":"Unitv.ec","feed":null,"in_use":true,"tags":[],"width":444,"height":450,"format":"JPEG","url":"https://i.imgur.com/mB1M3ZK.jpeg"}
+{"channel":"UniTV.mm","feed":null,"in_use":true,"tags":[],"width":180,"height":79,"format":"PNG","url":"https://admin.unitvmm.com/storage/images/channels/01KZND8DJVF4FBDKRQRXVN3KXP.png"}
 {"channel":"UniTV.ve","feed":null,"in_use":true,"tags":[],"width":390,"height":169,"format":"PNG","url":"https://i.imgur.com/KLGeznX.png"}
 {"channel":"UniTVPortoAlegre.br","feed":null,"in_use":true,"tags":[],"width":150,"height":88,"format":"PNG","url":"https://i.imgur.com/GmA5uuk.png"}
 {"channel":"UnivalleTelevision.bo","feed":null,"in_use":true,"tags":[],"width":487,"height":512,"format":"PNG","url":"https://i.imgur.com/qgrWDIs.png"}
@@ -34267,7 +34276,6 @@
 {"channel":"WCAYCD.us","feed":null,"in_use":true,"tags":[],"width":400,"height":90,"format":"PNG","url":"https://i.imgur.com/os2okGl.png"}
 {"channel":"WCCATV.us","feed":null,"in_use":true,"tags":[],"width":258,"height":317,"format":"PNG","url":"https://i.imgur.com/XJGY8iv.png"}
 {"channel":"WCCB181.us","feed":null,"in_use":true,"tags":[],"width":960,"height":422,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/The_CW_2024.svg/960px-The_CW_2024.svg.png"}
-{"channel":"WCCVTV541.pr","feed":null,"in_use":true,"tags":[],"width":192,"height":184,"format":"PNG","url":"https://i.imgur.com/is94lXe.png"}
 {"channel":"WCEALD.us","feed":null,"in_use":true,"tags":[],"width":512,"height":410,"format":"JPEG","url":"https://i.imgur.com/3Oh05hV.jpeg"}
 {"channel":"WCETVDigitalChannel318.us","feed":null,"in_use":true,"tags":[],"width":789,"height":204,"format":"PNG","url":"https://i.imgur.com/l0UO27k.png"}
 {"channel":"WCGtv.ca","feed":null,"in_use":true,"tags":[],"width":143,"height":60,"format":"PNG","url":"https://i.imgur.com/q7UPbEG.png"}
@@ -34300,7 +34308,7 @@
 {"channel":"WDVM251.us","feed":null,"in_use":true,"tags":[],"width":512,"height":137,"format":"PNG","url":"https://i.imgur.com/hhjSppw.png"}
 {"channel":"WDVMTV251.us","feed":null,"in_use":true,"tags":[],"width":960,"height":491,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Heroes_%26_Icons_logo.svg/960px-Heroes_%26_Icons_logo.svg.png"}
 {"channel":"WDWL361.pr","feed":null,"in_use":true,"tags":[],"width":300,"height":120,"format":"PNG","url":"https://i.imgur.com/B7lqYZe.png"}
-{"channel":"WDWL582.pr","feed":null,"in_use":true,"tags":[],"width":74,"height":40,"format":"PNG","url":"https://i.imgur.com/j2f2sCW.png"}
+{"channel":"WDWL362.pr","feed":null,"in_use":true,"tags":[],"width":74,"height":40,"format":"PNG","url":"https://i.imgur.com/j2f2sCW.png"}
 {"channel":"We.am","feed":null,"in_use":true,"tags":[],"width":158,"height":217,"format":"PNG","url":"https://i.imgur.com/dsCv9QJ.png"}
 {"channel":"WEAO492.us","feed":null,"in_use":true,"tags":[],"width":1215,"height":504,"format":"SVG","url":"https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg"}
 {"channel":"WeatherNation.us","feed":"KNENLD","in_use":true,"tags":[],"width":320,"height":197,"format":"PNG","url":"https://i.imgur.com/XP817GN.png"}
@@ -34318,7 +34326,7 @@
 {"channel":"WebTVAlternativa.br","feed":null,"in_use":true,"tags":[],"width":1080,"height":1080,"format":"JPEG","url":"https://landingwebimg.s3.amazonaws.com/uploads/landing_page_business/logo/30003/image-upload1645141554.jpeg"}
 {"channel":"WebTVGuyane.gf","feed":null,"in_use":true,"tags":[],"width":500,"height":500,"format":"PNG","url":"https://i.imgur.com/Ae19ETn.png"}
 {"channel":"WebTVUniversitedeBejaia.dz","feed":null,"in_use":true,"tags":[],"width":107,"height":62,"format":"PNG","url":"https://i.imgur.com/8kiUuTU.png"}
-{"channel":"WECN.pr","feed":null,"in_use":true,"tags":[],"width":200,"height":255,"format":"PNG","url":"https://i.imgur.com/NYBZBY0.png"}
+{"channel":"WECN641.pr","feed":null,"in_use":true,"tags":[],"width":200,"height":255,"format":"PNG","url":"https://i.imgur.com/NYBZBY0.png"}
 {"channel":"WeddingatFirstSightChannel.il","feed":null,"in_use":true,"tags":[],"width":220,"height":132,"format":"PNG","url":"https://static.g-cdn.app/streams/wedding-at-first-sight-channel-il-hd.png"}
 {"channel":"WeddingTV.it","feed":null,"in_use":true,"tags":[],"width":512,"height":179,"format":"PNG","url":"https://i.imgur.com/dFCrfbk.png"}
 {"channel":"WedoBigStories.ch","feed":null,"in_use":true,"tags":["white"],"width":1500,"height":1000,"format":"PNG","url":"https://provider-static.plex.tv/epg/cms/production/49cf6309-0a4a-4d39-bdcc-fa48e4ef84a7/WEDOBIGSTORIES_LIGHTTHEME_-_Sorin_Stoian.png"}
@@ -34536,7 +34544,6 @@
 {"channel":"WKTVChannel26.us","feed":null,"in_use":true,"tags":[],"width":144,"height":96,"format":"PNG","url":"https://i.imgur.com/ou1UKTX.png"}
 {"channel":"WLAETV321.us","feed":null,"in_use":true,"tags":[],"width":1215,"height":504,"format":"SVG","url":"https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg"}
 {"channel":"WLCT96.us","feed":null,"in_use":true,"tags":[],"width":142,"height":83,"format":"PNG","url":"https://i.imgur.com/ooby0ka.png"}
-{"channel":"WLIIDT112.pr","feed":null,"in_use":true,"tags":[],"width":500,"height":535,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_UniM%C3%A1s.svg/500px-Logo_UniM%C3%A1s.svg.png"}
 {"channel":"WLLA641.us","feed":null,"in_use":true,"tags":[],"width":538,"height":480,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/commons/6/69/WLLA-TV64-Logo.png"}
 {"channel":"WLMA441.us","feed":null,"in_use":true,"tags":[],"width":259,"height":101,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/en/a/ab/WTLW.png"}
 {"channel":"WLMB.us","feed":null,"in_use":true,"tags":[],"width":200,"height":63,"format":"PNG","url":"https://i.imgur.com/KeELZ1Y.png"}
