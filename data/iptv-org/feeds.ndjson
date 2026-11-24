@@ -208,6 +208,7 @@
 {"channel":"312Muzyka.kg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KG"],"timezones":["Asia/Bishkek"],"languages":["rus","kir"],"format":"576i"}
 {"channel":"312TV.kg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KG"],"timezones":["Asia/Bishkek"],"languages":["rus","kir"],"format":"576i"}
 {"channel":"313Digital.sn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SN"],"timezones":["Africa/Dakar"],"languages":["fra"],"format":"576i"}
+{"channel":"316Channel.sa","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SA"],"timezones":["Asia/Riyadh"],"languages":["ara","eng"],"format":"576i"}
 {"channel":"31Kanal.kz","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/KZ"],"timezones":["Asia/Almaty"],"languages":["kaz","rus"],"format":"1080i"}
 {"channel":"31Kanal.kz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KZ"],"timezones":["Asia/Almaty"],"languages":["kaz"],"format":"576i"}
 {"channel":"33TV.uy","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UY"],"timezones":["America/Montevideo"],"languages":["spa"],"format":"576i"}
@@ -218,6 +219,7 @@
 {"channel":"360.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"360.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
 {"channel":"360AfricaTV.ss","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SS"],"timezones":["Africa/Juba"],"languages":["eng","pga"],"format":"576i"}
+{"channel":"360Anime.vn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/VN"],"timezones":["Asia/Ho_Chi_Minh"],"languages":["vie","eng"],"format":"576i"}
 {"channel":"360Bundesliga.vn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/VN"],"timezones":["Asia/Ho_Chi_Minh"],"languages":["vie","eng"],"format":"576i"}
 {"channel":"360Golf.vn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/VN"],"timezones":["Asia/Ho_Chi_Minh"],"languages":["vie","eng"],"format":"576i"}
 {"channel":"360News.ru","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080i"}
@@ -3832,6 +3834,7 @@
 {"channel":"BalapanInternational.kz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KZ"],"timezones":["Asia/Almaty"],"languages":["kaz"],"format":"576i"}
 {"channel":"Balastan.kg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/CAS"],"timezones":["Asia/Bishkek"],"languages":["kir","rus"],"format":"576i"}
 {"channel":"BalatonTV.hu","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HU"],"timezones":["Europe/Budapest"],"languages":["hun"],"format":"576i"}
+{"channel":"BalcanMusicTV.ro","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"1080i"}
 {"channel":"BalchiTV.aw","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AW"],"timezones":["America/Aruba"],"languages":["nld","pap"],"format":"480i"}
 {"channel":"BaletOpera.ru","id":"International","name":"International","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"480p"}
 {"channel":"BalikpapanTV.id","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/IDBPN"],"timezones":["Asia/Makassar"],"languages":["ind"],"format":"576i"}
@@ -4678,6 +4681,7 @@
 {"channel":"Bigudi.ua","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UA"],"timezones":["Europe/Kyiv"],"languages":["ukr"],"format":"576i"}
 {"channel":"BihorTV.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"BijoyTV.bd","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BD"],"timezones":["Asia/Dhaka"],"languages":["ben"],"format":"576i"}
+{"channel":"BiKanal.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
 {"channel":"BikeChannel.it","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"1080i"}
 {"channel":"BikeChannel.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"BilalTV.et","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ET"],"timezones":["Africa/Addis_Ababa"],"languages":["amh"],"format":"576i"}
@@ -5045,6 +5049,7 @@
 {"channel":"BorderTV.ke","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KE"],"timezones":["Africa/Nairobi"],"languages":["eng"],"format":"576i"}
 {"channel":"Boreal.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"BoricuaTV.pr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"480i"}
+{"channel":"BoricuaTV.pr","id":"WWXYLD","name":"WWXY-LD","alt_names":[],"is_main":false,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"480i"}
 {"channel":"BorjanadeTelevision.bo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BO"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"576i"}
 {"channel":"BorjomiTV.ge","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GE"],"timezones":["Asia/Tbilisi"],"languages":["kat"],"format":"576i"}
 {"channel":"BosoloTelevision.cd","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CD"],"timezones":["Africa/Kinshasa"],"languages":["fra","lin"],"format":"576i"}
@@ -5984,6 +5989,7 @@
 {"channel":"Canal13CerrodelVerdun.uy","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UY"],"timezones":["America/Montevideo"],"languages":["spa"],"format":"576i"}
 {"channel":"Canal13Chiapas.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
 {"channel":"Canal13ChimoreTV.bo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BO"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"576i"}
+{"channel":"Canal13Chiquimula.gt","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["ct/GTCIQ"],"timezones":["America/Guatemala"],"languages":["spa"],"format":"1080p"}
 {"channel":"Canal13Esquipulas.gt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GT"],"timezones":["America/Guatemala"],"languages":["spa"],"format":"480i"}
 {"channel":"Canal13Guadalajara.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
 {"channel":"Canal13Jujuy.ar","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/ARSSJ"],"timezones":["America/Argentina/Buenos_Aires"],"languages":["spa"],"format":"576i"}
@@ -7717,6 +7723,7 @@
 {"channel":"CCTVGolfTennis.cn","id":"SD","name":"SD","alt_names":[],"is_main":false,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"576i"}
 {"channel":"CCTVHealth.cn","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"1080p"}
 {"channel":"CCTVHealth.cn","id":"SD","name":"SD","alt_names":[],"is_main":false,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"576i"}
+{"channel":"CCTVKunnamkulam.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"720p"}
 {"channel":"CCTVNostalgiaTheater.cn","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"1080p"}
 {"channel":"CCTVNostalgiaTheater.cn","id":"SD","name":"SD","alt_names":[],"is_main":false,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"576i"}
 {"channel":"CCTVOpera.cn","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["zho"],"format":"1080p"}
@@ -7748,6 +7755,8 @@
 {"channel":"CDFPremium.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"480i"}
 {"channel":"CDirect.fr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/FR","c/CD","c/CG"],"timezones":["Europe/Paris"],"languages":["fra"],"format":"576i"}
 {"channel":"CDMInternacional.pr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa","eng"],"format":"480i"}
+{"channel":"CDMInternacional.pr","id":"WCCVTV","name":"WCCVTV","alt_names":[],"is_main":false,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"1080i"}
+{"channel":"CDMInternacional.pr","id":"WVSNTV","name":"WVSNTV","alt_names":[],"is_main":false,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"1080i"}
 {"channel":"CDN.do","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"720p"}
 {"channel":"CDN.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
 {"channel":"CDNDeportes.do","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DO"],"timezones":["America/Santo_Domingo"],"languages":["spa"],"format":"480i"}
@@ -8615,6 +8624,7 @@
 {"channel":"CityChannel.mx","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"576i"}
 {"channel":"CityChannel.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USBMG"],"timezones":["America/Indiana/Indianapolis"],"languages":["eng"],"format":"480i"}
 {"channel":"CityChannelDubuque.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USDBQ"],"timezones":["America/Chicago"],"languages":["eng"],"format":"480i"}
+{"channel":"CityChannelHD.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"CityChannelPittsburgh.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USPIT"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"CityEdenAutoGid.ru","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080p"}
 {"channel":"CityEdenBirmaPlay.ru","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080p"}
@@ -8700,6 +8710,7 @@
 {"channel":"CityTVSantaBarbara.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USSBA"],"timezones":["America/Santiago"],"languages":["eng"],"format":"480i"}
 {"channel":"CitytvSaskatchewan.ca","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CA"],"timezones":["America/Regina"],"languages":["eng"],"format":"480i"}
 {"channel":"CityTVWhittier.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USWHR"],"timezones":["America/Anchorage"],"languages":["eng"],"format":"480i"}
+{"channel":"CityVisionKannur.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"CiudadanoRadio.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"576i"}
 {"channel":"CiudadelaTV.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
 {"channel":"CiudadesdelOcioTV.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/ES-VC"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
@@ -11519,13 +11530,11 @@
 {"channel":"DiscoveryScienceEurope.uk","id":"UKHD","name":"UK HD","alt_names":[],"is_main":false,"broadcast_area":["c/UK"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"1080i"}
 {"channel":"DiscoveryScienceEurope.uk","id":"UKPlus1","name":"UK +1","alt_names":[],"is_main":false,"broadcast_area":["c/UK"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"576i"}
 {"channel":"DiscoveryScienceLatinAmerica.us","id":"Brazil","name":"Brazil","alt_names":[],"is_main":false,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
-{"channel":"DiscoveryScienceLatinAmerica.us","id":"ColombiaPeru","name":"ColombiaPeru","alt_names":[],"is_main":false,"broadcast_area":["c/CO","c/PE"],"timezones":["America/Bogota","America/Lima"],"languages":["spa"],"format":"480i"}
 {"channel":"DiscoveryScienceLatinAmerica.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/HISPAM"],"timezones":["America/New_York"],"languages":["spa"],"format":"480i"}
 {"channel":"DiscoveryScienceMiddleEast.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/MIDEAST"],"timezones":["Europe/London"],"languages":["ara"],"format":"576i"}
 {"channel":"DiscoveryScienceSoutheastAsia.sg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/SEA"],"timezones":["Asia/Singapore"],"languages":["eng"],"format":"576i"}
 {"channel":"DiscoveryScienceSoutheastAsia.sg","id":"Taiwan","name":"Taiwan","alt_names":[],"is_main":false,"broadcast_area":["c/TW"],"timezones":["Asia/Singapore"],"languages":["zho","eng"],"format":"480i"}
 {"channel":"DiscoveryTheater.br","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
-{"channel":"DiscoveryTheaterLatinAmerica.us","id":"ColombiaPeru","name":"ColombiaPeru","alt_names":[],"is_main":false,"broadcast_area":["c/CO","c/PE"],"timezones":["America/Bogota","America/Lima"],"languages":["spa"],"format":"480i"}
 {"channel":"DiscoveryTheaterLatinAmerica.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/HISPAM"],"timezones":["America/New_York"],"languages":["spa"],"format":"480i"}
 {"channel":"DiscoveryTourismGuyana.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/GY"],"timezones":["America/Los_Angeles"],"languages":["eng"],"format":"480i"}
 {"channel":"DiscoveryTurbo.au","id":"Australia","name":"Australia","alt_names":[],"is_main":true,"broadcast_area":["c/AU"],"timezones":["Australia/Sydney"],"languages":["eng"],"format":"576i"}
@@ -11538,7 +11547,6 @@
 {"channel":"DiscoveryTurbo.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"576i"}
 {"channel":"DiscoveryTurbo.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"576i"}
 {"channel":"DiscoveryTurboLatinAmerica.us","id":"Brazil","name":"Brazil","alt_names":["Brasil"],"is_main":false,"broadcast_area":["c/BR"],"timezones":["America/Sao_Paulo"],"languages":["por"],"format":"480i"}
-{"channel":"DiscoveryTurboLatinAmerica.us","id":"ColombiaPeru","name":"ColombiaPeru","alt_names":[],"is_main":false,"broadcast_area":["c/CO","c/PE"],"timezones":["America/Bogota","America/Lima"],"languages":["spa"],"format":"480i"}
 {"channel":"DiscoveryTurboLatinAmerica.us","id":"Panregional","name":"Panregional","alt_names":[],"is_main":true,"broadcast_area":["r/HISPAM"],"timezones":["America/New_York"],"languages":["spa"],"format":"480i"}
 {"channel":"DiscoveryUltra.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"DiscoveryVelocity.ca","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CA"],"timezones":["America/Toronto"],"languages":["eng"],"format":"480i"}
@@ -11935,6 +11943,8 @@
 {"channel":"DrGeneScott.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/Los_Angeles"],"languages":["eng"],"format":"480i"}
 {"channel":"DrGMedicalExaminer.pl","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/PL","r/EU"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"720p"}
 {"channel":"DrinkTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
+{"channel":"DrishyaTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
+{"channel":"DrisyaTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"DritaTV.ch","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CH"],"timezones":["Europe/Zurich"],"languages":["sqi"],"format":"576i"}
 {"channel":"Drive.ru","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080i"}
 {"channel":"Drive.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
@@ -12020,6 +12030,7 @@
 {"channel":"DUBTV.pe","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PE"],"timezones":["America/Lima"],"languages":["spa"],"format":"576i"}
 {"channel":"DuckDynasty.us","id":"UK","name":"UK","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"576i"}
 {"channel":"DuckHuntingTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
+{"channel":"DuckTV.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"ducktv.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"ducktv.sk","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["r/EUR","r/SAS","r/MIDEAST"],"timezones":["Europe/Bratislava"],"languages":["eng"],"format":"1080i"}
 {"channel":"ducktv.sk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/EUR","r/SAS","r/MIDEAST"],"timezones":["Europe/Bratislava"],"languages":["eng"],"format":"576i"}
@@ -19552,6 +19563,7 @@
 {"channel":"KartoonCircus.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"KartuliTV.ge","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GE"],"timezones":["Asia/Tbilisi"],"languages":["kat"],"format":"576i"}
 {"channel":"KasapaTV.gh","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GH"],"timezones":["Africa/Accra"],"languages":["eng","twi"],"format":"576i"}
+{"channel":"KasargodVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"KasetChannel.th","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TH"],"timezones":["Asia/Bangkok"],"languages":["tha"],"format":"576i"}
 {"channel":"KasetNewsChannel.th","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TH"],"timezones":["Asia/Bangkok"],"languages":["tha"],"format":"576i"}
 {"channel":"Kashish.pk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PK"],"timezones":["Asia/Karachi"],"languages":["eng"],"format":"576i"}
@@ -19642,6 +19654,7 @@
 {"channel":"KCM.sg","id":"India","name":"India","alt_names":[],"is_main":false,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["eng"],"format":"1080p"}
 {"channel":"KCM.sg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SG"],"timezones":["Asia/Singapore"],"languages":["eng"],"format":"576i"}
 {"channel":"KCMNLD426.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USMKC"],"timezones":["America/Chicago"],"languages":["eng"],"format":"480i"}
+{"channel":"KCNKasargod.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"KCNTV4.ai","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AI"],"timezones":["America/Anguilla"],"languages":["eng"],"format":"480i"}
 {"channel":"KContentbyCJENM.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"KCPOLD261.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USFSD"],"timezones":["America/Chicago"],"languages":["eng"],"format":"480i"}
@@ -19712,6 +19725,7 @@
 {"channel":"KenTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"KEQILD221.gu","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GU"],"timezones":["Pacific/Guam"],"languages":["eng"],"format":"576i"}
 {"channel":"Keralabhumi.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
+{"channel":"KeralaTodayTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"KeralaVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"KeralaVisionNews.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"KermanTV.ir","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IR"],"timezones":["Asia/Tehran"],"languages":["fas"],"format":"576i"}
@@ -21279,7 +21293,7 @@
 {"channel":"LifetimeAsia.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/SEA"],"timezones":["Asia/Singapore"],"languages":["eng","tha","ind"],"format":"480i"}
 {"channel":"LifetimeLatinAmerica.us","id":"Brazil","name":"Brazil","alt_names":[],"is_main":false,"broadcast_area":["c/BR"],"timezones":["America/New_York"],"languages":["por"],"format":"480i"}
 {"channel":"LifetimeLatinAmerica.us","id":"Mexico","name":"Mexico","alt_names":[],"is_main":false,"broadcast_area":["c/MX"],"timezones":["America/Mexico_City"],"languages":["spa"],"format":"480i"}
-{"channel":"LifetimeLatinAmerica.us","id":"Panregional","name":"Panregional","alt_names":[],"is_main":true,"broadcast_area":["r/LATAM","r/CARIB"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
+{"channel":"LifetimeLatinAmerica.us","id":"Panregional","name":"Panregional","alt_names":[],"is_main":true,"broadcast_area":["c/AR","c/BO","c/CL","c/CO","c/EC","c/PY","c/PE","c/DO","c/UY","c/VE","r/CENAMER"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
 {"channel":"LifetimeMovies.us","id":"East","name":"East","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng","spa"],"format":"480i"}
 {"channel":"LifetimeMovies.us","id":"West","name":"West","alt_names":[],"is_main":false,"broadcast_area":["c/US"],"timezones":["America/Los_Angeles"],"languages":["eng"],"format":"480i"}
 {"channel":"LifetimeRealWomen.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
@@ -21943,12 +21957,14 @@
 {"channel":"MakulaKiKa.ug","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UG"],"timezones":["Africa/Kampala"],"languages":["lug"],"format":"576i"}
 {"channel":"MakulaTV.ug","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UG"],"timezones":["Africa/Kampala"],"languages":["lug"],"format":"576i"}
 {"channel":"MalabarNews.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
+{"channel":"MalabarPlus.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"720p"}
 {"channel":"MalabarVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"Malaga24h.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
 {"channel":"MalagasyTV.mg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MG"],"timezones":["Indian/Antananarivo"],"languages":["mlg"],"format":"576i"}
 {"channel":"MalaikaTV.cd","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CD"],"timezones":["Africa/Lubumbashi"],"languages":["fra","swa"],"format":"576i"}
 {"channel":"MalaiMurasuTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"576i"}
 {"channel":"MalanaduTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
+{"channel":"MalappuramCableVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"MalappuramChannel.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"MalarTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"576i"}
 {"channel":"MalatyaVuslatTV.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
@@ -25697,6 +25713,7 @@
 {"channel":"NewTVFinance.id","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ID"],"timezones":["Asia/Jakarta"],"languages":["zho"],"format":"576i"}
 {"channel":"NewTVVariety.id","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ID"],"timezones":["Asia/Jakarta"],"languages":["zho"],"format":"576i"}
 {"channel":"NewVision.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UK","c/IE"],"timezones":["America/Toronto"],"languages":["urd"],"format":"576i"}
+{"channel":"NewVisionHD.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"NewVisionTV.lb","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/LB"],"timezones":["Asia/Beirut"],"languages":["ara"],"format":"576i"}
 {"channel":"NewVisionTV.ng","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NG"],"timezones":["Africa/Lagos"],"languages":["eng"],"format":"576i"}
 {"channel":"NewzroomAfrika.za","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ZA"],"timezones":["Africa/Johannesburg"],"languages":["eng"],"format":"576i"}
@@ -26182,6 +26199,7 @@
 {"channel":"NLTV54.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USITO"],"timezones":["Pacific/Honolulu"],"languages":["eng"],"format":"480i"}
 {"channel":"NLTV55.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USITO"],"timezones":["Pacific/Honolulu"],"languages":["eng"],"format":"480i"}
 {"channel":"NMBTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USZGV"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
+{"channel":"NMMediaChannelHD.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"NMTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USBNE"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"NNPSTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USNNS"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"NNT.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/RU-DA"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
@@ -26730,6 +26748,7 @@
 {"channel":"NTVStyle.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"NTVSvoyaigra.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"1080p"}
 {"channel":"NTVTelugu.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tel"],"format":"576i"}
+{"channel":"NTVUAEHD.ae","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AE"],"timezones":["Asia/Dubai"],"languages":["mal"],"format":"720p"}
 {"channel":"NTVUganda.ug","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UG"],"timezones":["Africa/Kampala"],"languages":["eng"],"format":"576i"}
 {"channel":"NTVUnknownRussia.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
 {"channel":"NTVVitrina.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Moscow"],"languages":["rus"],"format":"576i"}
@@ -27312,6 +27331,7 @@
 {"channel":"OraNews.al","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AL"],"timezones":["Europe/Tirane"],"languages":["sqi"],"format":"576i"}
 {"channel":"OrangeBanglaTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["ben"],"format":"576i"}
 {"channel":"OrangeGovernmentAccessTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USORB"],"timezones":["Australia/Sydney"],"languages":["eng"],"format":"480i"}
+{"channel":"OrangeInfo.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"OrangeSport1.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"OrangeSport2.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"OrangeSport3.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
@@ -27920,6 +27940,7 @@
 {"channel":"PateplumaTelevision.hn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/HN"],"timezones":["America/Tegucigalpa"],"languages":["spa"],"format":"576i"}
 {"channel":"PathwayTV.ng","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NG"],"timezones":["Africa/Lagos"],"languages":["eng"],"format":"576i"}
 {"channel":"PatientChannel.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
+{"channel":"PatiTV.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
 {"channel":"PatnagarNetworkNews.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["guj"],"format":"576i"}
 {"channel":"PatraTV.gr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GR"],"timezones":["Europe/Athens"],"languages":["ell"],"format":"576i"}
 {"channel":"PatridaTV.gr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GR"],"timezones":["Europe/Athens"],"languages":["ell"],"format":"576i"}
@@ -28831,6 +28852,7 @@
 {"channel":"PerfectTV.tg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TG"],"timezones":["Africa/Lome"],"languages":["fra"],"format":"576i"}
 {"channel":"PerfilesTV.uy","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UY"],"timezones":["America/Montevideo"],"languages":["spa"],"format":"576i"}
 {"channel":"Perheonparas.se","id":"FI","name":"FI","alt_names":[],"is_main":true,"broadcast_area":["c/FI"],"timezones":["Europe/Helsinki"],"languages":["eng","fin"],"format":"720p"}
+{"channel":"PeriyarVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"PerlaTV.ni","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NI"],"timezones":["America/Managua"],"languages":["spa"],"format":"480i"}
 {"channel":"Perlavision.cu","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CU"],"timezones":["America/Havana"],"languages":["spa"],"format":"480i"}
 {"channel":"PerryMason.us","id":"CA","name":"CA","alt_names":[],"is_main":false,"broadcast_area":["c/CA"],"timezones":["America/Toronto"],"languages":["eng"],"format":"720p"}
@@ -30044,6 +30066,7 @@
 {"channel":"PowerTV.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["tur"],"format":"576i"}
 {"channel":"PowerTV.zm","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ZM","c/BW","c/MW","c/NA","c/ZW"],"timezones":["Africa/Lusaka"],"languages":["eng"],"format":"576i"}
 {"channel":"PowervisionTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
+{"channel":"PowranMedia.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"PoyoTV.kr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KR"],"timezones":["Asia/Seoul"],"languages":["kor"],"format":"480i"}
 {"channel":"PPMtv.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USPSM"],"timezones":["Europe/London"],"languages":["eng"],"format":"480i"}
 {"channel":"PPPTV.ke","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/KE"],"timezones":["Africa/Nairobi"],"languages":["eng"],"format":"576i"}
@@ -30159,6 +30182,7 @@
 {"channel":"PrimaCoolSK.sk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SK"],"timezones":["Europe/Bratislava"],"languages":["slk"],"format":"1080p"}
 {"channel":"PrimadaVision.cu","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CU"],"timezones":["America/Havana"],"languages":["spa"],"format":"576i"}
 {"channel":"PrimaFree.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
+{"channel":"PrimaHistory.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron","eng"],"format":"576i"}
 {"channel":"PrimaKrimi.cz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CZ"],"timezones":["Europe/Prague"],"languages":["ces"],"format":"576i"}
 {"channel":"PrimaKrimiSK.sk","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/SK"],"timezones":["Europe/Bratislava"],"languages":["slk"],"format":"1080p"}
 {"channel":"PrimaLove.cz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CZ"],"timezones":["Europe/Prague"],"languages":["ces"],"format":"576i"}
@@ -30181,6 +30205,7 @@
 {"channel":"PrimaSport5.ro","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"1080i"}
 {"channel":"PrimaSport5.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"PrimaSportCzechia.cz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CZ"],"timezones":["Europe/Prague"],"languages":["cze"],"format":"576i"}
+{"channel":"PrimaSportMoldova.md","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MD"],"timezones":["Europe/Chisinau"],"languages":["ron"],"format":"576i"}
 {"channel":"PrimaSportPPV1.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"720p"}
 {"channel":"PrimaSportPPV2.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"720p"}
 {"channel":"PrimaStar.cz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CZ"],"timezones":["Europe/Prague"],"languages":["ces"],"format":"576i"}
@@ -31507,6 +31532,7 @@
 {"channel":"RealLife.au","id":"Plus2","name":"+2","alt_names":[],"is_main":false,"broadcast_area":["c/AU"],"timezones":["Australia/Sydney"],"languages":["eng"],"format":"576i"}
 {"channel":"RealLife.au","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AU"],"timezones":["Australia/Sydney"],"languages":["eng"],"format":"576i"}
 {"channel":"RealLife.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
+{"channel":"RealLifeNetwork.us","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"RealLifeonVerizon.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"Really.ie","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IE"],"timezones":["Europe/Dublin"],"languages":["eng"],"format":"576i"}
 {"channel":"Really.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"576i"}
@@ -35300,6 +35326,7 @@
 {"channel":"SouthParkVersionOriginal.de","id":"ES","name":"ES","alt_names":[],"is_main":true,"broadcast_area":["c/ES"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"720p"}
 {"channel":"SouthParkWelcometoCanada.us","id":"CA","name":"CA","alt_names":[],"is_main":true,"broadcast_area":["c/CA"],"timezones":["America/Toronto"],"languages":["eng"],"format":"720p"}
 {"channel":"SouthStation.in","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"1080p"}
+{"channel":"SouthVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"SouthwestMediaNetwork.et","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ET"],"timezones":["Africa/Addis_Ababa"],"languages":["amh"],"format":"576i"}
 {"channel":"SouthwickChannel15.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USSZW"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"SoutMasr.eg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/EG"],"timezones":["Africa/Cairo"],"languages":["ara"],"format":"576i"}
@@ -36803,6 +36830,7 @@
 {"channel":"SuroyoTV.se","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SE"],"timezones":["Europe/Stockholm"],"languages":["syr"],"format":"576i"}
 {"channel":"SurPeru.pe","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PE"],"timezones":["America/Lima"],"languages":["spa"],"format":"480i"}
 {"channel":"SurpriseTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USURS"],"timezones":["America/New_York"],"languages":["eng","spa"],"format":"480i"}
+{"channel":"SurprizeTV.md","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MD"],"timezones":["Europe/Chisinau"],"languages":["ron"],"format":"576i"}
 {"channel":"SURTV.bo","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BO"],"timezones":["America/La_Paz"],"languages":["spa"],"format":"576i"}
 {"channel":"SURTV.cl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CL"],"timezones":["America/Santiago"],"languages":["spa"],"format":"480i"}
 {"channel":"SurTv.co","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CO"],"timezones":["America/Bogota"],"languages":["spa"],"format":"480i"}
@@ -38408,6 +38436,7 @@
 {"channel":"ThalaaTV.in","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"1080p"}
 {"channel":"ThaneDirect.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"576i"}
 {"channel":"ThanhHoaTV.vn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/VN"],"timezones":["Asia/Ho_Chi_Minh"],"languages":["vie"],"format":"576i"}
+{"channel":"Thanima.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"ThanthiOne.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"576i"}
 {"channel":"ThanthiTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["tam"],"format":"576i"}
 {"channel":"ThaqalaynTV.tr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TR"],"timezones":["Europe/Istanbul"],"languages":["ara"],"format":"576i"}
@@ -42526,6 +42555,7 @@
 {"channel":"UnsolvedMysteries.us","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"UNTV.ph","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PH"],"timezones":["Asia/Manila"],"languages":["tgl","eng"],"format":"480i"}
 {"channel":"UNTVNewsRecue.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
+{"channel":"UNUTV.md","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/MD"],"timezones":["Europe/Chisinau"],"languages":["ron"],"format":"576i"}
 {"channel":"UNWebTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/UN"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"UpaharTV.np","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NP"],"timezones":["Asia/Kathmandu"],"languages":["nep"],"format":"576i"}
 {"channel":"UPAOTelevision.pe","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/PE-LAL"],"timezones":["America/Lima"],"languages":["spa"],"format":"480i"}
@@ -42646,6 +42676,7 @@
 {"channel":"UTVAction.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"576i"}
 {"channel":"UTVAfrica.ng","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NG"],"timezones":["Africa/Lagos"],"languages":["eng"],"format":"576i"}
 {"channel":"UTVHD.in","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin","eng"],"format":"1080i"}
+{"channel":"UTVHD24x7.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
 {"channel":"UTVMovies.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"576i"}
 {"channel":"UTVPalakkad.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN","s/IN-KL","ct/INPAL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"576i"}
 {"channel":"UTVStars.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"576i"}
@@ -43454,6 +43485,7 @@
 {"channel":"VOD206.pl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"576i"}
 {"channel":"VOD207.pl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"576i"}
 {"channel":"VOD208.pl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PL"],"timezones":["Europe/Warsaw"],"languages":["pol"],"format":"576i"}
+{"channel":"VodafoneInfo.ro","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron"],"format":"576i"}
 {"channel":"VodafoneTV.de","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
 {"channel":"VodiyTV.uz","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UZ"],"timezones":["Asia/Tashkent"],"languages":["uzb"],"format":"576i"}
 {"channel":"Vogue.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
@@ -43829,6 +43861,8 @@
 {"channel":"WavezFM.aw","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/AW"],"timezones":["America/Aruba"],"languages":["nld","pap"],"format":"576i"}
 {"channel":"WAWD581.us","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["ct/USFWB"],"timezones":["America/New_York"],"languages":["eng"],"format":"720p"}
 {"channel":"WayanadVision.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN","s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"1080p"}
+{"channel":"WayanadVisionMovies.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"720p"}
+{"channel":"WayanadVisionPlus.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/IN-KL"],"timezones":["Asia/Kolkata"],"languages":["mal"],"format":"720p"}
 {"channel":"WaypointTV.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"WayraTV.pe","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PE"],"timezones":["America/Lima"],"languages":["spa"],"format":"576i"}
 {"channel":"WayTV.pt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"576i"}
@@ -44183,7 +44217,6 @@
 {"channel":"WKAQTV22.pr","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"1080i"}
 {"channel":"WKBJLD204.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USJAX"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"WKNXTV71.us","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["ct/USTYS"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080i"}
-{"channel":"WKPV203.pr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"480i"}
 {"channel":"WKTBCD471.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USATL"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"WKTV23.us","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["ct/USUCA"],"timezones":["America/New_York"],"languages":["eng"],"format":"720p"}
 {"channel":"WKTVChannel25.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/US-MI"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
@@ -44233,7 +44266,6 @@
 {"channel":"WODHLD343.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USJAX"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"WoezorTV.gh","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GH"],"timezones":["Africa/Accra"],"languages":["eng"],"format":"576i"}
 {"channel":"WolaitaTV.et","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/ET"],"timezones":["Africa/Addis_Ababa"],"languages":["amh","eng","wal"],"format":"576i"}
-{"channel":"WOLEDT122.pr","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"720p"}
 {"channel":"WolvesValleyTV.tw","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/TW"],"timezones":["Asia/Taipei"],"languages":["zho"],"format":"480i"}
 {"channel":"Woman.bg","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/BG"],"timezones":["Europe/Sofia"],"languages":["bul","eng"],"format":"1080i"}
 {"channel":"Woman.bg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BG"],"timezones":["Europe/Sofia"],"languages":["bul"],"format":"576i"}
@@ -44593,7 +44625,6 @@
 {"channel":"WWMT32.us","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["ct/USAZO"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080i"}
 {"channel":"WWONTVChannel48.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/US-NY"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"WWTV.de","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["deu"],"format":"576i"}
-{"channel":"WWXYLD191.pr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"480i"}
 {"channel":"WWXYLD193.pr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"480i"}
 {"channel":"WXODLD246.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USPAB"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"WXODLD247.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USPAB"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
@@ -45252,7 +45283,6 @@
 {"channel":"ZerounoTVMusic.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"ZerounoTVNews.it","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IT"],"timezones":["Europe/Rome"],"languages":["ita"],"format":"576i"}
 {"channel":"Zeste.ca","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CA"],"timezones":["America/Toronto"],"languages":["fra"],"format":"480i"}
-{"channel":"Zeta93.pr","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PR"],"timezones":["America/Puerto_Rico"],"languages":["spa"],"format":"480i"}
 {"channel":"ZFBTV.bm","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BM"],"timezones":["Atlantic/Bermuda"],"languages":["eng"],"format":"576i"}
 {"channel":"ZFMZoetermeerTV.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"ZFtv.es","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["s/ES-EX"],"timezones":["Europe/Madrid"],"languages":["spa"],"format":"576i"}
