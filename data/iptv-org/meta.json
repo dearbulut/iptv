@@ -1,11 +1,11 @@
 {
   "source": "https://iptv-org.github.io/api",
-  "synced_at": "2026-11-25T09:57:29.137Z",
+  "synced_at": "2026-11-26T09:41:34.563Z",
   "counts": {
-    "channels": 31894,
-    "feeds": 45466,
-    "logos": 35719,
-    "streams": 19293,
+    "channels": 31899,
+    "feeds": 45475,
+    "logos": 35725,
+    "streams": 19300,
     "guides": 180663,
     "categories": 31,
     "languages": 7893,
@@ -13,6 +13,6 @@
     "subdivisions": 4997,
     "regions": 42,
     "timezones": 416,
-    "blocklist": 753
+    "blocklist": 754
   }
 }

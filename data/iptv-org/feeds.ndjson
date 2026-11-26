@@ -7045,6 +7045,7 @@
 {"channel":"Cartoonito.pt","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/PT"],"timezones":["Europe/Lisbon"],"languages":["por"],"format":"576i"}
 {"channel":"Cartoonito.uk","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"1080i"}
 {"channel":"Cartoonito.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"576i"}
+{"channel":"CartoonitoAsia.sg","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/SG"],"timezones":["Asia/Singapore"],"languages":["eng"],"format":"1080i"}
 {"channel":"CartoonitoAsia.sg","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SG"],"timezones":["Asia/Singapore"],"languages":["eng"],"format":"576i"}
 {"channel":"CartoonitoAsia.sg","id":"Vietnam","name":"Vietnam","alt_names":[],"is_main":false,"broadcast_area":["c/VN"],"timezones":["Asia/Singapore"],"languages":["vie","eng"],"format":"576i"}
 {"channel":"CartoonitoCEE.uk","id":"Bulgary","name":"Bulgary","alt_names":[],"is_main":false,"broadcast_area":["c/BG"],"timezones":["America/Toronto"],"languages":["bul"],"format":"576i"}
@@ -11791,6 +11792,7 @@
 {"channel":"DocuBayTV.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["eng"],"format":"576i"}
 {"channel":"DocuBox.nl","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["r/AMER","r/EMEA","r/APAC"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"1080i"}
 {"channel":"DocuBox.nl","id":"Polska","name":"Polska","alt_names":[],"is_main":false,"broadcast_area":["c/PL"],"timezones":["Europe/Amsterdam"],"languages":["pol"],"format":"576i"}
+{"channel":"DocuBox.nl","id":"Romania","name":"Romania","alt_names":[],"is_main":false,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron","eng"],"format":"576i"}
 {"channel":"DocuBox.nl","id":"Russia","name":"Russia","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Warsaw"],"languages":["rus"],"format":"576i"}
 {"channel":"DocuBox.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/AMER","r/EMEA","r/APAC"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"576i"}
 {"channel":"DocuCrime.uk","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UK"],"timezones":["Europe/London"],"languages":["eng"],"format":"576i"}
@@ -13592,6 +13594,7 @@
 {"channel":"Fashion.ua","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/UA"],"timezones":["Europe/Kyiv"],"languages":["ukr"],"format":"576i"}
 {"channel":"FashionAfricaTV.sn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/SN"],"timezones":["Africa/Dakar"],"languages":["eng"],"format":"576i"}
 {"channel":"FashionBox.nl","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["r/EUR","r/ASIA","r/SSA"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"1080i"}
+{"channel":"FashionBox.nl","id":"Romania","name":"Romania","alt_names":[],"is_main":false,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron","eng"],"format":"576i"}
 {"channel":"FashionBox.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/EUR","r/ASIA","r/SSA"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"576i"}
 {"channel":"FashionFinds.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["ct/USWCT"],"timezones":["America/New_York"],"languages":["eng"],"format":"480i"}
 {"channel":"FashionIndia.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["hin"],"format":"576i"}
@@ -13629,6 +13632,7 @@
 {"channel":"FasoTV.bf","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/BF"],"timezones":["Africa/Ouagadougou"],"languages":["fra"],"format":"576i"}
 {"channel":"FassoTVKankan.gn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/GN"],"timezones":["Africa/Conakry"],"languages":["fra"],"format":"576i"}
 {"channel":"Fast1.in","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/IN"],"timezones":["Asia/Kolkata"],"languages":["pan"],"format":"576i"}
+{"channel":"FastFunBox.nl","id":"Romania","name":"Romania","alt_names":[],"is_main":false,"broadcast_area":["c/RO"],"timezones":["Europe/Bucharest"],"languages":["ron","eng"],"format":"576i"}
 {"channel":"FastFunBox.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["r/EUR","r/ASIA","r/SSA"],"timezones":["Europe/Warsaw"],"languages":["eng"],"format":"576i"}
 {"channel":"FastFunBox.ru","id":"HD","name":"HD","alt_names":[],"is_main":false,"broadcast_area":["c/RU"],"timezones":["Europe/Warsaw"],"languages":["rus"],"format":"1080i"}
 {"channel":"FastFunBox.ru","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/RU"],"timezones":["Europe/Warsaw"],"languages":["rus"],"format":"576i"}
@@ -44735,10 +44739,14 @@
 {"channel":"XinjiangTV9.cn","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/CN"],"timezones":["Asia/Shanghai"],"languages":["uig"],"format":"576i"}
 {"channel":"XITE.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"576i"}
 {"channel":"XITE60s70sGroove.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
+{"channel":"XITE80sFlashback.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITE90sThrowback.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/CA"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITEAllOutDance.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld"],"format":"1080p"}
 {"channel":"XITECelebrates.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/CA"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
+{"channel":"XITEChristianHits.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITEClassicCountry.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
+{"channel":"XITECountryToday.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
+{"channel":"XITEGospel.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITEHipHopEvolution.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/CA"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITEHits.nl","id":"Germany","name":"Germany","alt_names":[],"is_main":false,"broadcast_area":["c/DE"],"timezones":["Europe/Berlin"],"languages":["eng","deu"],"format":"1080p"}
 {"channel":"XITEHits.nl","id":"NL","name":"NL","alt_names":["Netherlands"],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["eng","nld"],"format":"1080p"}
@@ -44748,6 +44756,7 @@
 {"channel":"XITELekkerHollands.nl","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/NL"],"timezones":["Europe/Amsterdam"],"languages":["nld","deu"],"format":"1080p"}
 {"channel":"XITENuevoLatino.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/CA"],"timezones":["America/New_York"],"languages":["spa","por"],"format":"1080p"}
 {"channel":"XITERapGame.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/CA"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
+{"channel":"XITERBClassicJams.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITERBFeels.us","id":"SD","name":"SD","alt_names":[],"is_main":true,"broadcast_area":["c/US","c/CA"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}
 {"channel":"XITEReggaeVibes.nl","id":"HD","name":"HD","alt_names":[],"is_main":true,"broadcast_area":["c/NL","c/US"],"timezones":["Europe/Amsterdam"],"languages":["eng"],"format":"576i"}
 {"channel":"XITERockxMetal.nl","id":"US","name":"US","alt_names":[],"is_main":true,"broadcast_area":["c/US"],"timezones":["America/New_York"],"languages":["eng"],"format":"1080p"}

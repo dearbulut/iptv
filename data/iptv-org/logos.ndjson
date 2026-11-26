@@ -13182,6 +13182,7 @@
 {"channel":"HTVCFamily.vn","feed":null,"in_use":true,"tags":[],"width":481,"height":336,"format":"PNG","url":"https://i.ibb.co/BVQtkHgF/IMG-2899.png"}
 {"channel":"HTVCMovies.vn","feed":null,"in_use":true,"tags":[],"width":2949,"height":2749,"format":"PNG","url":"https://raw.githubusercontent.com/HaNoiIPTV/HaNoiIPTV.m3u/refs/heads/master/HTVC%20Phim%20HD.png"}
 {"channel":"HTVCMusic.vn","feed":null,"in_use":true,"tags":[],"width":200,"height":125,"format":"PNG","url":"https://raw.githubusercontent.com/HaNoiIPTV/HaNoiIPTV.m3u/refs/heads/master/HTVC%20Ca%20Nh%E1%BA%A1c%20HD.png"}
+{"channel":"HTVCoop.vn","feed":null,"in_use":true,"tags":[],"width":266,"height":63,"format":"SVG","url":"https://static.wikia.nocookie.net/logos/images/8/8f/HTV_co.op_logo_with_slogan.svg/revision/latest?cb=20231212151051&path-prefix=vi"}
 {"channel":"HTVCPlus.vn","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":"PNG","url":"https://i.ibb.co/BVckCtnc/IMG-2902.png"}
 {"channel":"HTVCPureVietnamese.vn","feed":null,"in_use":true,"tags":[],"width":700,"height":282,"format":"PNG","url":"https://upload.wikimedia.org/wikipedia/vi/8/8c/HTVC_thuanviet.png"}
 {"channel":"HTVCTravelandLife.vn","feed":null,"in_use":true,"tags":[],"width":0,"height":0,"format":"JPEG","url":"https://i.ibb.co/wrLsstBH/IMG-2901.jpg"}
@@ -34922,11 +34923,15 @@
 {"channel":"XinjiangTV9.cn","feed":null,"in_use":true,"tags":[],"width":127,"height":80,"format":"PNG","url":"https://i.imgur.com/YQYumoR.png"}
 {"channel":"XITE.nl","feed":null,"in_use":true,"tags":[],"width":512,"height":287,"format":"PNG","url":"https://i.imgur.com/jxuwGRi.png"}
 {"channel":"XITE60s70sGroove.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://provider-static.plex.tv/epg/cms/production/8889551a-8796-41d0-b6b5-c7fad08fb62e/xite60s70sgroove_logo_WHT-_Arlette_FiranRDX.png"}
+{"channel":"XITE80sFlashback.nl","feed":null,"in_use":true,"tags":[],"width":500,"height":281,"format":"PNG","url":"https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/xite_80s_flashback_072024._SL500_FMpng_.png"}
 {"channel":"XITE90sThrowback.us","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/vwpOzuz.png"}
 {"channel":"XITEAllOutDance.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/hMxbtu0.png"}
 {"channel":"XITECelebrates.us","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/coSrUwV.png"}
+{"channel":"XITEChristianHits.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/tmy7tK7.png"}
 {"channel":"XITEClassicCountry.nl","feed":null,"in_use":true,"tags":["color"],"width":576,"height":288,"format":"PNG","url":"https://i.imgur.com/XQrMCkT.png"}
 {"channel":"XITEClassicCountry.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://provider-static.plex.tv/epg/cms/production/511ebc88-a7f7-4f6d-85ff-38c849bbb4a3/xiteclassiccountry_logo_light_-_Arlette_FiranRDX.png"}
+{"channel":"XITECountryToday.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/06CWHqh.png"}
+{"channel":"XITEGospel.nl","feed":null,"in_use":true,"tags":[],"width":1200,"height":675,"format":"WebP","url":"https://wwwimage-us.plutostatic.tv/thumbnails/photos/w1200-q90/ptv/channels/623b93628e6ded0007337d4d/featuredImage.jpg?format=webp"}
 {"channel":"XITEHipHopEvolution.us","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/KtJgZjj.png"}
 {"channel":"XITEHits.nl","feed":null,"in_use":true,"tags":["white"],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/N51Rp7E.png"}
 {"channel":"XITEHits.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://provider-static.plex.tv/epg/cms/production/b79c1102-0a7d-4310-a0df-6cbe6fb660e2/xitehits_logo_WHITE_-_Arlette_FiranRDX2.png"}
@@ -34934,6 +34939,7 @@
 {"channel":"XITELekkerHollands.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/yHleeDL.png"}
 {"channel":"XITENuevoLatino.us","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/2qyl2y3.png"}
 {"channel":"XITERapGame.us","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/UaRyaoW.png"}
+{"channel":"XITERBClassicJams.nl","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/goYzOu7.png"}
 {"channel":"XITERBFeels.us","feed":null,"in_use":true,"tags":[],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/lEu4NGV.png"}
 {"channel":"XITEReggaeVibes.nl","feed":null,"in_use":true,"tags":["white"],"width":1500,"height":1000,"format":"PNG","url":"https://provider-static.plex.tv/epg/cms/production/c7506335-967f-46a9-917a-2a35475cd96c/xitereggaevibes_logo_light_-_Arlette_FiranRDX.png"}
 {"channel":"XITERockxMetal.nl","feed":null,"in_use":true,"tags":["white"],"width":1500,"height":1000,"format":"PNG","url":"https://i.imgur.com/szDM09P.png"}
